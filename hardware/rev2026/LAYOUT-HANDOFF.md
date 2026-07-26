@@ -54,26 +54,28 @@ This matters for how you use the old board as a reference:
 
 ## Task 10 — Board setup and HV layout
 
-### Step 1: Measure the reference HV clearance
+### Step 1: HV clearance — already decided, 1.0 mm
 
-The HV netclass value is **derived, not invented**. Open
-`hardware/altium_src/kc/ChipShouter-Pico.kicad_pcb` and use
-**Inspect → Clearance Resolution**.
+**This is done.** The netclass is configured; no measurement needed.
 
-These are the HV-rail net names on that board:
+The value is **upstream's own design rule**, annotated on `SCH-PICOEMP-REV04.PDF`:
 
-| Net | Extent |
+> `ISOLATION BARRIER, 400V MIN.  >1MM CLEARANCE PER 61010-1.`
+
+Corroborated by measurement — pad geometry on the hi-pot-validated original board gives
+~1.002 mm across the barrier in routed copper.
+
+**Voltages, from primary sources** (component ratings are headroom, not operating points):
+
+| | |
 |---|---|
-| `NetC3_2` | 53 — the main HV node |
-| `NetJ3_2` | 20 |
-| `NetC3_1` | 18 |
-| `NetD4_K` | 17 |
-| `NetJ1_2` | 14 — SMA centre |
-| `NetD5_K` | 12 |
-| `NetD2_A` | 5 |
+| HV capacitor charge | **~250 V** — firmware states this explicitly |
+| Upstream barrier design rating | **400 V min** |
+| Hi-pot proof test | 1 kV, "well beyond the voltages the device can generate" |
 
-Find the three visually tightest places where HV copper approaches non-HV copper or the
-board edge, measure each, and **take the minimum**. Write it down — it becomes the DRC rule.
+**Known exception:** T1's own primary↔secondary pad spacing is 0.770 mm, below this rule.
+That is the ATB3225 package's geometry, not a routing choice, and upstream accepted it.
+When it flags in DRC, add a targeted exclusion for that pad pair — do not loosen the class.
 
 ### Step 2: Board Setup
 
