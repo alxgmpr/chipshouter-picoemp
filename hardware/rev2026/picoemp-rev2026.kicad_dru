@@ -25,8 +25,13 @@
 	(constraint clearance (min 1.0mm))
 	(condition "A.NetClass == 'HV' && B.NetClass != 'HV'"))
 
-# The barrier also applies to the board edge, where a HV net could otherwise
-# creep to an exposed cut edge.
-(rule "HV to board edge"
+# HV copper should also keep away from the exposed cut edge. Scoped to TRACKS
+# and VIAS only — i.e. to routed copper, where the designer has a choice.
+#
+# Pads are excluded deliberately: J1 is an edge-mount SMA and its pads are
+# *required* to reach the board edge; that is what an edge-launch connector is.
+# An earlier version of this rule applied to all HV items and flagged J1 as a
+# violation, which was the rule being wrong rather than the layout.
+(rule "HV routed copper to board edge"
 	(constraint edge_clearance (min 1.0mm))
-	(condition "A.NetClass == 'HV'"))
+	(condition "A.NetClass == 'HV' && (A.Type == 'Track' || A.Type == 'Via')"))

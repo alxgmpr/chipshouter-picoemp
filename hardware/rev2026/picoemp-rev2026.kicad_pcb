@@ -5368,7 +5368,7 @@
 	(footprint "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount"
 		(layer "F.Cu")
 		(uuid "5cdf80ae-2b7e-4d9f-8061-5f1ecbde7e82")
-		(at 124.3900 34.8700 180)
+		(at 124.3900 22.5000 90)
 		(descr "https://www.amphenolrf.com/library/download/link/link_id/595984/parent/132289/")
 		(tags "SMA")
 		(property "Reference" "J4"
@@ -15191,8 +15191,8 @@
 		(embedded_fonts no)
 	)
 	(gr_line
-		(start 104.389995 35.121974)
-		(end 104.390005 143.601973)
+		(start 104.39 21.122)
+		(end 104.39 143.602)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15200,20 +15200,10 @@
 		(layer "Edge.Cuts")
 		(uuid "c76cc479-ea48-4ae4-a3df-1e7eb9f30b5c")
 	)
-	(gr_line
-		(start 104.390005 35.141974)
-		(end 104.389995 35.121974)
-		(stroke
-			(width 0.05)
-			(type solid)
-		)
-		(layer "Edge.Cuts")
-		(uuid "20d6ed99-a12a-408a-a149-3898b4fd20d7")
-	)
 	(gr_arc
-		(start 104.390005 35.141974)
-		(mid 104.761979 34.243948)
-		(end 105.660005 33.871974)
+		(start 104.39 21.142)
+		(mid 104.762 20.2439)
+		(end 105.66 19.872)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15222,9 +15212,9 @@
 		(uuid "8ab02069-1671-4f32-a879-c0aad674264c")
 	)
 	(gr_arc
-		(start 105.660004 144.871974)
-		(mid 104.761979 144.499999)
-		(end 104.390005 143.601973)
+		(start 105.66 144.872)
+		(mid 104.762 144.5)
+		(end 104.39 143.602)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15233,18 +15223,8 @@
 		(uuid "4fbed2e1-d991-4014-9e27-b66a6b429f5a")
 	)
 	(gr_line
-		(start 105.660004 144.871974)
-		(end 105.660005 144.871974)
-		(stroke
-			(width 0.05)
-			(type solid)
-		)
-		(layer "Edge.Cuts")
-		(uuid "24d0be6b-eb82-4d0d-8d3a-b8982592782b")
-	)
-	(gr_line
-		(start 105.660005 144.871974)
-		(end 117.390005 144.871974)
+		(start 105.66 144.872)
+		(end 117.39 144.872)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15253,8 +15233,8 @@
 		(uuid "a30ea5e1-3c12-4eea-872b-9ad2ba53fb20")
 	)
 	(gr_line
-		(start 112.711405 136.784174)
-		(end 112.736805 100.055774)
+		(start 112.711 136.784)
+		(end 112.737 100.056)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15263,8 +15243,8 @@
 		(uuid "64cf73ff-9063-4e54-b2cd-9213df4d9b3b")
 	)
 	(gr_line
-		(start 112.736805 100.055774)
-		(end 113.981405 100.055774)
+		(start 112.737 100.056)
+		(end 113.981 100.056)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15273,8 +15253,8 @@
 		(uuid "9fda7d95-82f6-4f91-be51-c74fece86b22")
 	)
 	(gr_line
-		(start 113.651205 96.144174)
-		(end 115.099005 96.144174)
+		(start 113.651 96.1442)
+		(end 115.099 96.1442)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15283,8 +15263,8 @@
 		(uuid "0b85a9ef-fc6b-42e5-bb0b-92de1d21e878")
 	)
 	(gr_line
-		(start 113.651205 99.319174)
-		(end 113.651205 96.144174)
+		(start 113.651 99.3192)
+		(end 113.651 96.1442)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15293,8 +15273,8 @@
 		(uuid "ca404487-f8ff-4922-8cd1-d0798de971d5")
 	)
 	(gr_line
-		(start 113.981405 100.055774)
-		(end 113.981405 136.784174)
+		(start 113.981 100.056)
+		(end 113.981 136.784)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15303,8 +15283,8 @@
 		(uuid "2d4239f6-9244-4eee-a060-6ff9f3ddf8c1")
 	)
 	(gr_line
-		(start 113.981405 136.784174)
-		(end 112.711405 136.784174)
+		(start 113.981 136.784)
+		(end 112.711 136.784)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15313,8 +15293,8 @@
 		(uuid "ac452fa6-e879-458c-9708-2445c7f2b13c")
 	)
 	(gr_line
-		(start 115.099005 96.144174)
-		(end 115.099005 99.319174)
+		(start 115.099 96.1442)
+		(end 115.099 99.3192)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15323,8 +15303,8 @@
 		(uuid "8d9a1569-4b95-468a-b465-ddef2d3dc504")
 	)
 	(gr_line
-		(start 115.099005 99.319174)
-		(end 113.651205 99.319174)
+		(start 115.099 99.3192)
+		(end 113.651 99.3192)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15333,8 +15313,8 @@
 		(uuid "4502cf1c-cc44-4a7a-9931-8122e02d7311")
 	)
 	(gr_line
-		(start 116.390005 149.871974)
-		(end 133.390005 149.871974)
+		(start 116.39 149.872)
+		(end 133.39 149.872)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15343,8 +15323,8 @@
 		(uuid "dc00c55e-8ab6-4335-91e0-e45d8a0e487c")
 	)
 	(gr_line
-		(start 117.390005 144.871974)
-		(end 116.390005 149.871974)
+		(start 117.39 144.872)
+		(end 116.39 149.872)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15353,8 +15333,8 @@
 		(uuid "9996bcf9-bdbd-48a2-b966-be474b884b20")
 	)
 	(gr_line
-		(start 132.390005 144.871974)
-		(end 143.120005 144.871974)
+		(start 132.39 144.872)
+		(end 143.12 144.872)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15363,8 +15343,8 @@
 		(uuid "b57b441f-09ea-494d-af05-639c80e93060")
 	)
 	(gr_line
-		(start 133.390005 149.871974)
-		(end 132.390005 144.871974)
+		(start 133.39 149.872)
+		(end 132.39 144.872)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15373,8 +15353,8 @@
 		(uuid "0f43c6a4-7589-48b7-8026-dda385d7700e")
 	)
 	(gr_line
-		(start 134.047405 96.372774)
-		(end 134.047405 99.319174)
+		(start 134.047 96.3728)
+		(end 134.047 99.3192)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15383,8 +15363,8 @@
 		(uuid "c33dd730-506a-47c2-a390-cf362b42c696")
 	)
 	(gr_line
-		(start 134.047405 99.319174)
-		(end 135.469805 99.319174)
+		(start 134.047 99.3192)
+		(end 135.47 99.3192)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15393,8 +15373,8 @@
 		(uuid "6f16952e-8f47-4f32-811d-714a7044124b")
 	)
 	(gr_line
-		(start 135.165005 100.055774)
-		(end 135.165005 136.809574)
+		(start 135.165 100.056)
+		(end 135.165 136.81)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15403,8 +15383,8 @@
 		(uuid "58910ada-dd17-46f2-8827-4c4edf575581")
 	)
 	(gr_line
-		(start 135.165005 136.809574)
-		(end 136.435005 136.809574)
+		(start 135.165 136.81)
+		(end 136.435 136.81)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15413,8 +15393,8 @@
 		(uuid "0a907952-cb3f-4107-a4bb-5420eac8a235")
 	)
 	(gr_line
-		(start 135.469805 96.372774)
-		(end 134.047405 96.372774)
+		(start 135.47 96.3728)
+		(end 134.047 96.3728)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15423,8 +15403,8 @@
 		(uuid "b39d8d4b-11b0-4b4e-822f-876f0f9460ed")
 	)
 	(gr_line
-		(start 135.469805 99.319174)
-		(end 135.469805 96.372774)
+		(start 135.47 99.3192)
+		(end 135.47 96.3728)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15433,8 +15413,8 @@
 		(uuid "37cf84dc-8b4e-4ee7-807b-33774c1d7441")
 	)
 	(gr_line
-		(start 136.435005 100.055774)
-		(end 135.165005 100.055774)
+		(start 136.435 100.056)
+		(end 135.165 100.056)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15443,8 +15423,8 @@
 		(uuid "5ac044b4-b0a1-4066-91fc-9f5f8ee7fcab")
 	)
 	(gr_line
-		(start 136.435005 136.809574)
-		(end 136.435005 100.055774)
+		(start 136.435 136.81)
+		(end 136.435 100.056)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15453,8 +15433,8 @@
 		(uuid "97aaaf09-572b-4598-be61-4079ce266ae8")
 	)
 	(gr_line
-		(start 143.120005 33.871974)
-		(end 105.660005 33.871974)
+		(start 143.12 19.872)
+		(end 105.66 19.872)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15463,9 +15443,9 @@
 		(uuid "6db040dc-f964-4ca3-8d20-d2755e05bf4b")
 	)
 	(gr_arc
-		(start 143.120005 33.871974)
-		(mid 144.018031 34.243948)
-		(end 144.390005 35.141974)
+		(start 143.12 19.872)
+		(mid 144.018 20.2439)
+		(end 144.39 21.142)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15474,18 +15454,8 @@
 		(uuid "e82f60a5-c5fc-4f64-891f-c2fc16e5828f")
 	)
 	(gr_line
-		(start 144.390005 35.121974)
-		(end 144.390005 35.141974)
-		(stroke
-			(width 0.05)
-			(type solid)
-		)
-		(layer "Edge.Cuts")
-		(uuid "f65d95aa-02b5-4f1a-ac3b-47dc2d178bbd")
-	)
-	(gr_line
-		(start 144.390005 141.871974)
-		(end 144.390005 35.121974)
+		(start 144.39 141.872)
+		(end 144.39 21.122)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15494,9 +15464,9 @@
 		(uuid "513f0c24-c35c-472a-8868-ca3f76536ab5")
 	)
 	(gr_arc
-		(start 144.390005 143.601974)
-		(mid 144.018031 144.5)
-		(end 143.120005 144.871974)
+		(start 144.39 143.602)
+		(mid 144.018 144.5)
+		(end 143.12 144.872)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15505,8 +15475,8 @@
 		(uuid "54d21b7e-d89d-4596-b722-66f3f15d2ea7")
 	)
 	(gr_line
-		(start 144.390005 143.601974)
-		(end 144.390005 141.871974)
+		(start 144.39 143.602)
+		(end 144.39 141.872)
 		(stroke
 			(width 0.05)
 			(type solid)
