@@ -68,19 +68,36 @@ def test_hv_netclass_exists():
     assert 'HV' in classes, f'no HV netclass defined; found {sorted(classes)}'
 
 
-def test_hv_netclass_clearance_matches_validated_board():
-    classes = {c['name']: c for c in _pro()['net_settings']['classes']}
-    actual = classes['HV']['clearance']
-    assert actual >= HV_CLEARANCE_MM, (
-        f'HV clearance {actual} mm is looser than the {HV_CLEARANCE_MM} mm '
-        'derived from the hi-pot-validated board'
+def test_barrier_rule_file_exists():
+    """The 1 mm barrier lives in a custom rule, NOT the netclass clearance.
+
+    A netclass clearance applies between any two differing nets touching the
+    class — including the two pads of a single resistor. At 1 mm that makes
+    0603 (0.70 mm pad gap) and 0805 (0.80 mm) parts illegal on HV nets, which
+    is not what upstream's rule means. Their ">1MM PER 61010-1" governs the
+    isolation barrier: HV side to logic side.
+    """
+    dru = conftest.PRO.with_suffix('.kicad_dru')
+    assert dru.exists(), 'picoemp-rev2026.kicad_dru missing — barrier unenforced'
+
+
+def test_barrier_rule_is_one_mm_and_correctly_scoped():
+    dru = conftest.PRO.with_suffix('.kicad_dru').read_text()
+    assert 'clearance (min 1.0mm)' in dru.replace('  ', ' '), \
+        'barrier rule is not 1.0 mm'
+    assert "A.NetClass == 'HV'" in dru and "B.NetClass != 'HV'" in dru, (
+        'barrier rule must be conditioned on HV-to-non-HV, or it re-creates '
+        'the intra-component false positives it exists to avoid'
     )
 
 
-def test_hv_netclass_is_tighter_than_default():
+def test_hv_netclass_does_not_over_constrain_intra_hv_spacing():
+    """HV-to-HV spacing is bounded by component packages, not by the barrier."""
     classes = {c['name']: c for c in _pro()['net_settings']['classes']}
-    assert classes['HV']['clearance'] > classes['Default']['clearance'], (
-        'HV clearance must exceed the default class, or it buys nothing'
+    hv = classes['HV']['clearance']
+    assert hv < 0.70, (
+        f'HV netclass clearance is {hv} mm; anything >= 0.70 mm makes an 0603 '
+        "resistor's own two pads a violation"
     )
 
 
