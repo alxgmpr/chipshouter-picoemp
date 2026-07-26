@@ -7385,13 +7385,13 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0cbae324-6d03-480d-827e-86ebbeedd03d")
-		(property "Reference" "J1"
+		(property "Reference" "P1"
 			(at 66.675 76.2 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7412,7 +7412,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x07_P1.00mm_Vertical"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical"
 			(at 66.04 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -7469,7 +7469,7 @@
 		(instances
 			(project "ChipShouter-Pico"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "J1")
+					(reference "P1")
 					(unit 1)
 				)
 			)
@@ -7693,7 +7693,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "picoemp:SW_Push_ESwitch_TL3301AJ"
 			(at 347.98 215.9 0)
 			(hide yes)
 			(show_name no)
@@ -7724,6 +7724,30 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "DigiKey" "EG4374CT-ND" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "E-Switch" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "TL3301AF160QJ" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -7879,7 +7903,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_NO_CK_KSC7xxJ"
 			(at 83.82 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -7910,6 +7934,30 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "DigiKey" "CKN10309CT-ND" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "C&K" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "KSC741JLFS" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -8298,7 +8346,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_NO_CK_KSC7xxJ"
 			(at 238.76 127 0)
 			(hide yes)
 			(show_name no)
@@ -8329,6 +8377,30 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "DigiKey" "CKN10309CT-ND" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "C&K" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "KSC741JLFS" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -8570,7 +8642,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "439a0674-2333-4876-980f-5547c7e364fc")
-		(property "Reference" "LED3"
+		(property "Reference" "D9"
 			(at 235.2675 106.68 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8635,6 +8707,30 @@
 				)
 			)
 		)
+		(property "DigiKey" "754-1123-1-ND" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Kingbright" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "APT1608SURCK" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "ca8c65c0-dbe0-4173-a932-d62bcb1b4ffc")
 		)
@@ -8644,7 +8740,7 @@
 		(instances
 			(project "ChipShouter-Pico"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "LED3")
+					(reference "D9")
 					(unit 1)
 				)
 			)
@@ -9817,7 +9913,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "83421708-7a3b-4e16-8b22-1c81dbf5ea6c")
-		(property "Reference" "LED2"
+		(property "Reference" "D8"
 			(at 64.4525 125.73 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9915,7 +10011,7 @@
 		(instances
 			(project "ChipShouter-Pico"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "LED2")
+					(reference "D8")
 					(unit 1)
 				)
 			)
@@ -10170,7 +10266,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8ba3d400-120d-4185-a456-c81d920b000b")
-		(property "Reference" "LED1"
+		(property "Reference" "D6"
 			(at 64.4525 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10235,6 +10331,30 @@
 				)
 			)
 		)
+		(property "DigiKey" "754-1123-1-ND" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Kingbright" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "APT1608SURCK" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a57966ed-b075-4ecf-bf89-48bb8c40a7f4")
 		)
@@ -10244,7 +10364,7 @@
 		(instances
 			(project "ChipShouter-Pico"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "LED1")
+					(reference "D6")
 					(unit 1)
 				)
 			)
@@ -11354,13 +11474,13 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "be82102a-9c83-4d6b-ace8-374575497906")
-		(property "Reference" "J4"
+		(property "Reference" "P2"
 			(at 59.69 208.2801 0)
 			(hide yes)
 			(show_name no)
@@ -11383,7 +11503,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 			(at 58.42 205.74 0)
 			(hide yes)
 			(show_name no)
@@ -11425,7 +11545,7 @@
 		(instances
 			(project "ChipShouter-Pico"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "J4")
+					(reference "P2")
 					(unit 1)
 				)
 			)
@@ -11986,10 +12106,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d346b1b1-2799-46e8-a81b-a793e5d3f450")
 		(property "Reference" "J2"
@@ -12111,7 +12231,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "de2200b7-1f52-404d-bc19-2215b7bdbc8a")
-		(property "Reference" "J6"
+		(property "Reference" "J1"
 			(at 420.624 270.51 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12189,7 +12309,7 @@
 		(instances
 			(project "ChipShouter-Pico"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "J6")
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -12202,10 +12322,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e8267d87-8aee-4058-8dbd-b4738c582f3b")
 		(property "Reference" "J3"
@@ -13180,13 +13300,13 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fcd1cf48-280c-4314-8f21-6c97182fd6f9")
-		(property "Reference" "J5"
+		(property "Reference" "P3"
 			(at 99.06 210.8201 0)
 			(hide yes)
 			(show_name no)
@@ -13209,7 +13329,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x04_P1.00mm_Vertical"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
 			(at 97.79 208.28 0)
 			(hide yes)
 			(show_name no)
@@ -13257,7 +13377,7 @@
 		(instances
 			(project "ChipShouter-Pico"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "J5")
+					(reference "P3")
 					(unit 1)
 				)
 			)
