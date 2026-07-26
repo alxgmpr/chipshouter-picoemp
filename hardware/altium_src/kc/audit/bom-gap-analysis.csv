@@ -1,0 +1,42 @@
+Ref,Sch Value,ALTIUM_VALUE,Upstream Desc,Upstream MPN,Upstream Mfr,Sch MPN,Internal PN,Footprint,FP Status,Symbol lib_id,Sym Status,Issues
+C1,4.7uF/50V,,4.7uF 50V 0805,C2012X5R1H475K125AB,TDK,,,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,OK,Device:C_Small,OK,
+C2,4.7uF/50V,,4.7uF 50V 0805,C2012X5R1H475K125AB,TDK,,,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,OK,Device:C_Small,OK,
+C3,"0.47uF,630V,X7T",,0.47uF 630V X7T 2220,KRM55TR72J474MH01K,Murata,,,CKG57N_2220,UNRESOLVABLE,Device:C_Small,OK,footprint unresolvable ((no lib prefix))
+C5,${ALTIUM_VALUE},,100nF 0603,C0603C104K5RACTU,KEMET,,,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,OK,Device:C_Small,OK,VALUE RENDERS LITERALLY
+D1,SM4005PL-TP,,600V 1A rectifier,SM4005PL-TP,MCC,,,,MISSING,Device:D_Schottky_Small,OK,footprint missing ((none))
+D2,MURA160T3G,,600V 1A fast recovery,MURA160T3G,onsemi,,,SMA,UNRESOLVABLE,Device:D_Small,OK,footprint unresolvable ((no lib prefix))
+D3,SM4005PL-TP,,600V 1A rectifier,SM4005PL-TP,MCC,,,DSS13UTR,UNRESOLVABLE,Device:D_Schottky_Small,OK,footprint unresolvable ((no lib prefix))
+D4,SM4005PL-TP,,600V 1A rectifier,SM4005PL-TP,MCC,,,DSS13UTR,UNRESOLVABLE,Device:D_Schottky_Small,OK,footprint unresolvable ((no lib prefix))
+D5,SM4005PL-TP,,600V 1A rectifier,SM4005PL-TP,MCC,,,DSS13UTR,UNRESOLVABLE,Device:D_Schottky_Small,OK,footprint unresolvable ((no lib prefix))
+D7,MM3Z18VB,,18V zener SOD-323,MM3Z18VB,onsemi,,,SOD323,UNRESOLVABLE,Device:D_Zener_Small,OK,footprint unresolvable ((no lib prefix))
+J1,Header 7,,1x7 hdr 2.54mm,-,-,,,Connector_PinHeader_1.00mm:PinHeader_1x07_P1.00mm_Vertical,OK,Connector:Conn_01x07_Pin,OK,DNP; excluded from BOM
+J2,1x2_Pin_Header,,JST XH 2-pin THT,S2B-XH-A(LF)(SN),JST,22-23-2021n22-23-2021,Molex_2_Pin,Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical,OK,Connector:Conn_01x02_Pin,OK,MPN MISMATCH vs upstream (22-23-2021n22-23-2021 vs S2B-XH-A(LF)(SN)); DNP; excluded from BOM
+J3,BG306-02-A-2-0400-L-G,,2-pin SMD hdr (HV cal),BG306-02-A-2-0400-L-G,GCT,,,,MISSING,Connector:Conn_01x02_Pin,OK,footprint missing ((none)); DNP; excluded from BOM
+J4,Header 2,,1x2 hdr 2.54mm,-,-,,,Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical,OK,Connector:Conn_01x02_Pin,OK,DNP; excluded from BOM
+J5,Header 4,,1x4 hdr 2.54mm,-,-,,,Connector_PinHeader_1.00mm:PinHeader_1x04_P1.00mm_Vertical,OK,Connector:Conn_01x04_Pin,OK,DNP; excluded from BOM
+J6,EDGE-SMA,,Edge-mount SMA,0732511150 / 142-0701-801,Molex / Cinch,,,Connector_Coaxial:SMA_Amphenol_132289_EdgeMount,OK,Connector:Conn_Coaxial_Power,OK,
+LED1,"LED, 0603, Red",,Red 0603 LED,APT1608SRCPRV,Kingbright,,,LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder,OK,Device:LED,OK,
+LED2,"LED, 0603, Green",,Green 0603 LED,APT1608CGCK,Kingbright,,,LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder,OK,Device:LED,OK,
+LED3,"LED, 0603, Red",,Red 0603 LED,APT1608SRCPRV,Kingbright,,,LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder,OK,Device:LED,OK,
+Q1,LDA111STR,,Low-current opto,LDA111STR,IXYS,LDA111STR,,C__Users_colin_Documents_AltiumLL_SamacSys.PcbLib:SOP254P952X470-6N,UNRESOLVABLE,*:root_0_mirrored_LDA111STR_*,UNRESOLVABLE,footprint unresolvable (C__Users_colin_Documents_AltiumLL_SamacSys.PcbLib); symbol lib unresolvable (*:root_0_mirrored_LDA111STR_*)
+Q2,RGT16BM65DTL,,IGBT 650V DPAK,RGT16BM65DTL,Rohm,,,,MISSING,Device:Q_NMOS_Depletion,OK,footprint missing ((none))
+Q3,AO3422,,NMOS 30V SOT-23,AO3422,AOS,,,,MISSING,Device:Q_NMOS_Depletion,OK,footprint missing ((none))
+Q4,AO3422,,NMOS 30V SOT-23,AO3422,AOS,,,,MISSING,Device:Q_NMOS_Depletion,OK,footprint missing ((none))
+R1,${ALTIUM_VALUE},20M,20M 2010 1%,CRMA2010AF20M0FKEF,Vishay,CRMA2010AF20M0FKEF,RCHIP-20M-2010,Resistor_SMD:R_2010_5025Metric_Pad1.40x2.65mm_HandSolder,OK,Device:R_Small,OK,"value is a variable ref, not flattened"
+R2,${ALTIUM_VALUE},300K,300K 2512 3W,3522300KFT,TE/CGS,3522300KFT,RCHIP-300K-2512,Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder,OK,Device:R_Small,OK,"value is a variable ref, not flattened"
+R3,${ALTIUM_VALUE},10R,10R 0603,RC0603FR-0710RL,Yageo,RC0603FR-0710RL,RCHIP-10R-0603,Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,OK,Device:R_Small,OK,"value is a variable ref, not flattened"
+R4,75R,75R,75R 0805,RC0805FR-0775RL,Yageo,RC0805FR-0775RL,RCHIP-75R-0805,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,OK,Device:R_Small,OK,
+R5,${ALTIUM_VALUE},1k,1k 0603,RC0603FR-071KL,Yageo,RC0603FR-071KL,RCHIP-1K-0603,Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,OK,Device:R_Small,OK,"value is a variable ref, not flattened"
+R6,${ALTIUM_VALUE},22k,22k 0603,RC0603FR-0722KL,Yageo,RC0603FR-0722KL,RCHIP-22K-0603,Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,OK,Device:R_Small,OK,"value is a variable ref, not flattened"
+R7,${ALTIUM_VALUE},10R,10R 0603,RC0603FR-0710RL,Yageo,RC0603FR-0710RL,RCHIP-10R-0603,Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,OK,Device:R_Small,OK,"value is a variable ref, not flattened"
+R9,2k,75R,2k 0805,RC0805FR-072KL,Yageo,RC0805FR-0775RL,RCHIP-75R-0805,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,OK,Device:R_Small,OK,MPN MISMATCH vs upstream (RC0805FR-0775RL vs RC0805FR-072KL)
+R10,${ALTIUM_VALUE},1k,1k 0603,RC0603FR-071KL,Yageo,RC0603FR-071KL,RCHIP-1K-0603,Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,OK,Device:R_Small,OK,"value is a variable ref, not flattened"
+R11,${ALTIUM_VALUE},1k,1k 0603,RC0603FR-071KL,Yageo,RC0603FR-071KL,RCHIP-1K-0603,Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,OK,Device:R_Small,OK,"value is a variable ref, not flattened"
+R12,${ALTIUM_VALUE},1k,1k 0603,RC0603FR-071KL,Yageo,RC0603FR-071KL,RCHIP-1K-0603,Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,OK,Device:R_Small,OK,"value is a variable ref, not flattened"
+R13,${ALTIUM_VALUE},1k,1k 0603,RC0603FR-071KL,Yageo,RC0603FR-071KL,RCHIP-1K-0603,Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,OK,Device:R_Small,OK,"value is a variable ref, not flattened"
+SW1,KSC741J LFS,,Tactile SPST,KSC741JLFS,ITT C&K,,,,MISSING,Switch:SW_Push,OK,footprint missing ((none))
+SW2,KSC741J LFS,,Tactile SPST,KSC741JLFS,ITT C&K,,,,MISSING,Switch:SW_Push,OK,footprint missing ((none))
+SW3,TL3301AF160QJ,,Tactile SPST (discharge),TL3301AF160QJ,E-Switch,,,,MISSING,Switch:SW_Push,OK,footprint missing ((none))
+T1,ATB322524,,1:10 HV pulse xfmr,ATB322524-0110-T000,TDK,ATB322524,ATB322524_PROTO,ATB322524,UNRESOLVABLE,NewAE_AltiumLib:root_0_xformer_2_2_hv_NewAE_AltiumLib.DBLib,UNRESOLVABLE,footprint unresolvable ((no lib prefix)); symbol lib unresolvable (NewAE_AltiumLib:root_0_xformer_2_2_hv_NewAE_AltiumLib.DBLib)
+T2,ATB322524,,1:10 HV pulse xfmr,ATB322524-0110-T000,TDK,ATB322524,ATB322524_PROTO,ATB322524,UNRESOLVABLE,NewAE_AltiumLib:root_0_xformer_2_2_hv_NewAE_AltiumLib.DBLib,UNRESOLVABLE,footprint unresolvable ((no lib prefix)); symbol lib unresolvable (NewAE_AltiumLib:root_0_xformer_2_2_hv_NewAE_AltiumLib.DBLib)
+U1,SC0915,*,RPi Pico module,SC0915,Raspberry Pi,,SC0915,Module:RaspberryPi_Pico_SMD,OK,MCU_Module:RaspberryPi_Pico_Extensive,OK,

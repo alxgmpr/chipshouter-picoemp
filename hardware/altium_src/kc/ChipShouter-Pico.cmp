@@ -1,0 +1,107 @@
+Cmp-Mod V01 Created by PcbNew   date = 2026-07-23T21:36:05
+
+BeginCmp
+TimeStamp = e7223932-2152-4ef0-8b76-1d8d2ab92577
+Path = /a3743090-3978-409c-976a-d5995285fc87/1dbf2424-98aa-5333-bd59-28d4021b7b29
+Reference = UNK;
+ValeurCmp = [NoVal];
+IdModule  = PCBSnaps:SNGSIDED_6MMGAP_3MMROUTE;
+EndCmp
+
+BeginCmp
+TimeStamp = d9f81216-1349-49e2-ac55-2a66f496d8c9
+Path = /340709f6-87a7-4d82-a118-691b7f1a49df/1dbf2424-98aa-5333-bd59-28d4021b7b29
+Reference = UNK;
+ValeurCmp = [NoVal];
+IdModule  = PCBSnaps:SNGSIDED_6MMGAP_3MMROUTE;
+EndCmp
+
+BeginCmp
+TimeStamp = c8f7c407-878c-48e6-bfd2-2b900561b7bc
+Path = /6df69799-03bd-46ec-a744-6b494c1b293d/1dbf2424-98aa-5333-bd59-28d4021b7b29
+Reference = UNK;
+ValeurCmp = [NoVal];
+IdModule  = PCBSnaps:SNGSIDED_6MMGAP_3MMROUTE;
+EndCmp
+
+BeginCmp
+TimeStamp = 3590a0e6-03ee-490a-925d-1d51883ce923
+Path = /69501de9-7497-40da-936c-c77b4ac24dd6/1dbf2424-98aa-5333-bd59-28d4021b7b29
+Reference = UNK;
+ValeurCmp = [NoVal];
+IdModule  = PCBSnaps:SNGSIDED_6MMGAP_3MMROUTE;
+EndCmp
+
+BeginCmp
+TimeStamp = fdce8d6b-00ea-4214-87f1-b25f242b3e0a
+Path = /b504807d-f1e6-4715-93ba-34ee84306796/1dbf2424-98aa-5333-bd59-28d4021b7b29
+Reference = UNK;
+ValeurCmp = [NoVal];
+IdModule  = PCBSnaps:SNGSIDED_6MMGAP_3MMROUTE;
+EndCmp
+
+BeginCmp
+TimeStamp = d3a82192-b12f-4659-9009-4b2adcb87e66
+Path = /60834106-b520-4bf2-bbbe-121bdd9c6bdc/1dbf2424-98aa-5333-bd59-28d4021b7b29
+Reference = UNK;
+ValeurCmp = [NoVal];
+IdModule  = PCBSnaps:SNGSIDED_6MMGAP_3MMROUTE;
+EndCmp
+
+BeginCmp
+TimeStamp = 675c2b7a-eb7e-42a5-8925-ce10998b132f
+Path = /05befa54-654e-4004-9d77-f8c93f3c3513/1dbf2424-98aa-5333-bd59-28d4021b7b29
+Reference = UNK;
+ValeurCmp = [NoVal];
+IdModule  = PCBSnaps:DBLSIDED_6MMGAP_3MMROUTE;
+EndCmp
+
+BeginCmp
+TimeStamp = c7bf19e7-f69a-48ef-addf-0f4880a6c10d
+Path = /19546a72-c635-4d6e-b78d-f4206ac0d719/1dbf2424-98aa-5333-bd59-28d4021b7b29
+Reference = UNK;
+ValeurCmp = [NoVal];
+IdModule  = PCBSnaps:DBLSIDED_6MMGAP_3MMROUTE;
+EndCmp
+
+BeginCmp
+TimeStamp = 1af77fe9-dbed-430f-a976-78191c83da47
+Path = /fa743abc-2e4f-452b-bcf3-1f1a9c0bdcde/1dbf2424-98aa-5333-bd59-28d4021b7b29
+Reference = UNK;
+ValeurCmp = [NoVal];
+IdModule  = PCBSnaps:DBLSIDED_6MMGAP_3MMROUTE;
+EndCmp
+
+BeginCmp
+TimeStamp = f167bca4-ed37-4972-beea-82ea0d6b3422
+Path = 
+Reference = [NoRef];
+ValeurCmp = [NoVal];
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = 16228f49-a3ee-47f5-9782-8ac985697a92
+Path = 
+Reference = [NoRef];
+ValeurCmp = [NoVal];
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = ea3a103d-248f-4d90-9e25-844887d5314c
+Path = 
+Reference = [NoRef];
+ValeurCmp = [NoVal];
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = 791bddb9-2ce6-43d7-8e12-b5cd6d2294a0
+Path = 
+Reference = [NoRef];
+ValeurCmp = [NoVal];
+IdModule  = ;
+EndCmp
+
+EndListe
