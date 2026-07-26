@@ -85,10 +85,70 @@ def test_barrier_rule_is_one_mm_and_correctly_scoped():
     dru = conftest.PRO.with_suffix('.kicad_dru').read_text()
     assert 'clearance (min 1.0mm)' in dru.replace('  ', ' '), \
         'barrier rule is not 1.0 mm'
-    assert "A.NetClass == 'HV'" in dru and "B.NetClass != 'HV'" in dru, (
+    assert "A.hasNetclass('HV')" in dru and "!B.hasNetclass('HV')" in dru, (
         'barrier rule must be conditioned on HV-to-non-HV, or it re-creates '
         'the intra-component false positives it exists to avoid'
     )
+
+
+def test_dru_uses_no_silently_dead_condition_functions():
+    """An unknown function in a DRU condition is not an error -- it never matches.
+
+    KiCad parses the rule, reports nothing, and the constraint silently enforces
+    nothing. ``memberOf()`` is the pre-v7 spelling of ``memberOfFootprint()`` and
+    is exactly this trap: it looks correct and does nothing. Verified against
+    this board -- ``memberOfFootprint('J1')`` fires, ``memberOf('J4')`` does not.
+    """
+    import re
+    dru = conftest.PRO.with_suffix('.kicad_dru').read_text()
+    # Comments document the trap by name, so scan rule text only.
+    rules = '\n'.join(l for l in dru.splitlines() if not l.lstrip().startswith('#'))
+    dead = re.findall(r'\.(memberOf|insideArea)\(', rules)
+    assert not dead, (
+        f'DRU uses condition function(s) {sorted(set(dead))} which KiCad accepts '
+        'and silently never matches. Use memberOfFootprint()/intersectsArea() and '
+        'confirm the rule fires before committing it.'
+    )
+
+
+def test_package_exceptions_come_after_the_broad_rules():
+    """KiCad applies the LAST matching rule, so exceptions must be at the bottom.
+
+    Verified empirically: the same narrow rule placed before the barrier is
+    overridden by it and placed after it wins. Getting this backwards leaves the
+    exceptions inert and the false positives standing.
+    """
+    dru = conftest.PRO.with_suffix('.kicad_dru').read_text()
+    barrier = dru.index('"HV isolation barrier"')
+    for exc in ('"Edge-mount SMA pads may reach the board edge"',
+                '"ATB3225 intra-package pad spacing - T1"',
+                '"ATB3225 intra-package pad spacing - T2"',
+                '"TO-252 intra-package pad spacing - Q2"'):
+        assert exc in dru, f'missing documented exception {exc}'
+        assert dru.index(exc) > barrier, (
+            f'{exc} is defined before the broad barrier rule, so the barrier '
+            'overrides it and the exception does nothing'
+        )
+
+
+def test_edge_mount_sma_exception_covers_both_connectors():
+    """J1 and J4 are both edge-launch SMAs whose pads must reach the board edge."""
+    dru = conftest.PRO.with_suffix('.kicad_dru').read_text()
+    for ref in ('J1', 'J4'):
+        assert f"memberOfFootprint('{ref}')" in dru, (
+            f'{ref} is an edge-mount SMA but has no copper-to-edge exception; '
+            'its pads will flag against the 0.5 mm board constraint'
+        )
+
+
+def test_hv_netclass_carries_wider_default_copper():
+    """HV runs a 250 V rail and the discharge loop; 0.2 mm signal track is thin."""
+    classes = {c['name']: c for c in _pro()['net_settings']['classes']}
+    hv = classes['HV']
+    assert hv['track_width'] >= 0.4, \
+        f"HV default track width is {hv['track_width']} mm"
+    assert hv['via_drill'] >= 0.4, \
+        f"HV default via drill is {hv['via_drill']} mm"
 
 
 def test_hv_netclass_does_not_over_constrain_intra_hv_spacing():

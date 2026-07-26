@@ -2,10 +2,22 @@
 
 # PicoEMP Rev-2026 custom design rules
 #
+# ORDER MATTERS: KiCad applies the LAST matching rule, not the first. Verified
+# empirically -- a narrow exception placed before a broad rule is overridden by
+# it, and the same exception placed after wins. So broad rules first, then the
+# documented exceptions at the bottom of this file.
+#
+# ALSO: an unknown function in a condition is NOT an error. `A.memberOf('J1')`
+# (the pre-v7 spelling) parses, reports nothing, and silently never matches, so
+# the rule looks present while enforcing nothing. Every rule here was confirmed
+# to actually fire against this board before being committed. If you add one,
+# confirm the same way -- temporarily set an absurd constraint and check that
+# violations naming your rule appear.
+#
 # Upstream annotates SCH-PICOEMP-REV04.PDF with:
 #     ISOLATION BARRIER, 400V MIN.  >1MM CLEARANCE PER 61010-1.
 #
-# That rule governs the ISOLATION BARRIER — HV side to logic side. It does not
+# That rule governs the ISOLATION BARRIER -- HV side to logic side. It does not
 # govern spacing *within* the HV section between two HV nets, which is bounded
 # by component packages: an 0603 resistor has ~0.70 mm between its own pads, an
 # 0805 ~0.80 mm, and the ATB3225 transformer 0.77 mm primary-to-secondary.
@@ -15,23 +27,72 @@
 # parts illegal on HV nets. This rule scopes it correctly.
 #
 # Voltages, from primary sources (component ratings are headroom, not operating
-# points — C3 is 630 V rated, Q2 650 V):
+# points -- C3 is 630 V rated, Q2 650 V):
 #   HV capacitor charge      ~250 V   (firmware/micropython/cspico_simple.py)
 #   Barrier design rating     400 V   (upstream schematic annotation)
 #   Hi-pot proof test           1 kV  ("well beyond the voltages the device can
-#                                      generate" — hardware/design_notes)
+#                                      generate" -- hardware/design_notes)
 
+# ---------------------------------------------------------------------------
+# Broad rules
+# ---------------------------------------------------------------------------
+
+# hasNetclass() rather than `A.NetClass == 'HV'` so the barrier cannot develop a
+# hole if a net ever picks up an additional class.
 (rule "HV isolation barrier"
 	(constraint clearance (min 1.0mm))
-	(condition "A.NetClass == 'HV' && B.NetClass != 'HV'"))
+	(condition "A.hasNetclass('HV') && !B.hasNetclass('HV')"))
 
 # HV copper should also keep away from the exposed cut edge. Scoped to TRACKS
-# and VIAS only — i.e. to routed copper, where the designer has a choice.
+# and VIAS only -- i.e. to routed copper, where the designer has a choice.
 #
-# Pads are excluded deliberately: J1 is an edge-mount SMA and its pads are
-# *required* to reach the board edge; that is what an edge-launch connector is.
-# An earlier version of this rule applied to all HV items and flagged J1 as a
-# violation, which was the rule being wrong rather than the layout.
+# Pads are excluded deliberately: J1 and J4 are edge-mount SMAs and their pads
+# are *required* to reach the board edge; that is what an edge-launch connector
+# is. An earlier version of this rule applied to all HV items and flagged J1 as
+# a violation, which was the rule being wrong rather than the layout.
 (rule "HV routed copper to board edge"
 	(constraint edge_clearance (min 1.0mm))
-	(condition "A.NetClass == 'HV' && (A.Type == 'Track' || A.Type == 'Via')"))
+	(condition "A.hasNetclass('HV') && (A.Type == 'Track' || A.Type == 'Via')"))
+
+# Advisory, not blocking. HV copper carries a 250 V rail and, on the discharge
+# loop, a very high dI/dt pulse; 0.2 mm signal track is thin for both. Necking
+# below this at a pad is legitimate and KiCad has no auto-neck, so this is a
+# warning you can leave standing rather than an error that stops a route.
+(rule "HV track width advisory"
+	(severity warning)
+	(constraint track_width (min 0.4mm))
+	(condition "A.hasNetclass('HV') && A.Type == 'Track'"))
+
+# ---------------------------------------------------------------------------
+# Documented exceptions -- must stay BELOW the broad rules to take effect
+# ---------------------------------------------------------------------------
+
+# J1 and J4 are Amphenol 132289 edge-mount SMAs. Their pads straddle the board
+# edge by design: the connector clamps the 1.6 mm edge and the pads must run out
+# to it. The global 0.5 mm copper-to-edge constraint is meaningless for them.
+(rule "Edge-mount SMA pads may reach the board edge"
+	(constraint edge_clearance (min 0mm))
+	(condition "A.memberOfFootprint('J1') || A.memberOfFootprint('J4')"))
+
+# T1/T2 are ATB322524-0110 transformers. Primary-to-secondary spacing inside the
+# package is 0.770 mm, below the 1 mm barrier. That is the part's own geometry,
+# not a routing choice, and upstream shipped and hi-pot tested it. Scoped to pad
+# pairs within one package so it cannot relax anything the designer controls.
+(rule "ATB3225 intra-package pad spacing - T1"
+	(constraint clearance (min 0.75mm))
+	(condition "A.memberOfFootprint('T1') && B.memberOfFootprint('T1')"))
+
+(rule "ATB3225 intra-package pad spacing - T2"
+	(constraint clearance (min 0.75mm))
+	(condition "A.memberOfFootprint('T2') && B.memberOfFootprint('T2')"))
+
+# Q2 is a TO-252 (DPAK) on KiCad's stock TO-252-3_TabPin2. The tab pad sits
+# 0.080 mm from the outer lead pads -- that is the JEDEC package, reproduced by
+# a stock library footprint, and it is what the leads physically do where they
+# emerge from the body. Same category as T1/T2: package geometry, not layout.
+#
+# NOTE for fab: 0.080 mm is below JLCPCB's 0.127 mm minimum pad-to-pad. Confirm
+# they will accept it before ordering, or the mask/copper may be adjusted.
+(rule "TO-252 intra-package pad spacing - Q2"
+	(constraint clearance (min 0.07mm))
+	(condition "A.memberOfFootprint('Q2') && B.memberOfFootprint('Q2')"))

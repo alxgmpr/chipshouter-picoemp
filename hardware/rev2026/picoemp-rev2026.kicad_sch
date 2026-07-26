@@ -5456,12 +5456,6 @@
 		(uuid "4dd2e37f-95e6-41d4-b913-d5f386740a4d")
 	)
 	(junction
-		(at 335.28 228.6)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5f0ebba6-0695-4246-b236-a067121501d1")
-	)
-	(junction
 		(at 345.44 276.86)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5600,10 +5594,6 @@
 		(uuid "2cfd9f00-e9a4-4529-9171-38397b6da8c8")
 	)
 	(no_connect
-		(at 123.19 198.12)
-		(uuid "321607ab-67dd-4de5-a0cf-df8bdd4274c3")
-	)
-	(no_connect
 		(at 165.1 88.9)
 		(uuid "4efa9c2a-7cf1-4a79-b298-7d54bef7c69f")
 	)
@@ -5626,10 +5616,6 @@
 	(no_connect
 		(at 119.38 88.9)
 		(uuid "6a316621-f24d-4bde-8da0-b660758442f5")
-	)
-	(no_connect
-		(at 123.19 228.6)
-		(uuid "71d9b7c7-7429-4227-b7f9-6962adcb6d75")
 	)
 	(no_connect
 		(at 165.1 116.84)
@@ -5668,8 +5654,8 @@
 		(uuid "b298ab2d-0801-4f5a-bc4c-ed8f4234a416")
 	)
 	(no_connect
-		(at 123.19 213.36)
-		(uuid "d61572be-1da8-4464-8e07-a198e80aab85")
+		(at 317.5 241.3)
+		(uuid "c1007e18-2172-414f-81fe-dfcf2ae61d16")
 	)
 	(no_connect
 		(at 119.38 132.08)
@@ -5678,10 +5664,6 @@
 	(no_connect
 		(at 165.1 99.06)
 		(uuid "f86179a3-cf56-424d-9ba8-ddf3b05abadd")
-	)
-	(no_connect
-		(at 317.5 241.3)
-		(uuid "c1007e18-2172-414f-81fe-dfcf2ae61d16")
 	)
 	(wire
 		(pts
@@ -6023,16 +6005,6 @@
 			(type default)
 		)
 		(uuid "2b329e70-0693-4de7-84ae-009ffb0660fd")
-	)
-	(wire
-		(pts
-			(xy 335.28 220.98) (xy 335.28 228.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2b970c28-e9de-4f53-ba69-520c2f808711")
 	)
 	(wire
 		(pts
@@ -6386,7 +6358,7 @@
 	)
 	(wire
 		(pts
-			(xy 335.28 228.6) (xy 335.28 238.76)
+			(xy 335.28 220.98) (xy 335.28 238.76)
 		)
 		(stroke
 			(width 0)
@@ -6696,6 +6668,16 @@
 	)
 	(wire
 		(pts
+			(xy 317.5 233.68) (xy 317.5 236.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8ccf4db5-9223-4e2d-8b2c-ec37fb471c14")
+	)
+	(wire
+		(pts
 			(xy 335.28 210.82) (xy 335.28 220.98)
 		)
 		(stroke
@@ -6743,36 +6725,6 @@
 			(type default)
 		)
 		(uuid "92d15dba-4cfa-48a1-9735-f55ab4ff7256")
-	)
-	(wire
-		(pts
-			(xy 350.52 228.6) (xy 350.52 233.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ed796dea-725c-463e-a5fd-0de65878512d")
-	)
-	(wire
-		(pts
-			(xy 317.5 233.68) (xy 350.52 233.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ddcb4982-b4bd-4b24-af7a-4dd347e9159a")
-	)
-	(wire
-		(pts
-			(xy 317.5 233.68) (xy 317.5 236.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8ccf4db5-9223-4e2d-8b2c-ec37fb471c14")
 	)
 	(wire
 		(pts
@@ -7296,6 +7248,16 @@
 	)
 	(wire
 		(pts
+			(xy 317.5 233.68) (xy 350.52 233.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddcb4982-b4bd-4b24-af7a-4dd347e9159a")
+	)
+	(wire
+		(pts
 			(xy 215.9 342.9) (xy 279.4 342.9)
 		)
 		(stroke
@@ -7413,6 +7375,16 @@
 			(type default)
 		)
 		(uuid "ed53930d-2d02-4f88-a960-236845d94823")
+	)
+	(wire
+		(pts
+			(xy 350.52 228.6) (xy 350.52 233.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed796dea-725c-463e-a5fd-0de65878512d")
 	)
 	(wire
 		(pts
@@ -7904,13 +7876,14 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 147.32 73.66 0)
+			(at 149.86 77.4699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -8424,13 +8397,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 55.88 161.29 0)
+			(at 58.42 157.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -8717,7 +8691,7 @@
 		(fields_autoplaced yes)
 		(uuid "224d44c3-11cb-47a9-9cc7-ade35bc81242")
 		(property "Reference" "D3"
-			(at 190.754 303.53 0)
+			(at 190.5 303.53 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8727,7 +8701,7 @@
 			)
 		)
 		(property "Value" "SM4005PL-TP"
-			(at 190.754 306.07 0)
+			(at 190.5 306.07 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9024,7 +8998,7 @@
 		(fields_autoplaced yes)
 		(uuid "2cfaafd4-e4bb-45bd-9d22-ab2df9f2132d")
 		(property "Reference" "D4"
-			(at 231.394 288.29 0)
+			(at 231.14 288.29 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9034,7 +9008,7 @@
 			)
 		)
 		(property "Value" "SM4005PL-TP"
-			(at 231.394 290.83 0)
+			(at 231.14 290.83 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9149,13 +9123,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 271.78 373.38 0)
+			(at 274.32 369.5699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -9227,13 +9202,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 281.94 309.88 0)
+			(at 284.48 306.0699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -9305,13 +9281,14 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 182.88 292.1 0)
+			(at 185.42 295.9099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -9485,7 +9462,7 @@
 		(fields_autoplaced yes)
 		(uuid "410b9a39-8785-4cc1-afe7-532d3cec0312")
 		(property "Reference" "D5"
-			(at 226.314 349.25 0)
+			(at 226.06 349.25 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9495,7 +9472,7 @@
 			)
 		)
 		(property "Value" "SM4005PL-TP"
-			(at 226.314 351.79 0)
+			(at 226.06 351.79 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9976,13 +9953,14 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 256.54 223.52 0)
+			(at 259.08 227.3299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -10043,7 +10021,7 @@
 		(fields_autoplaced yes)
 		(uuid "55f28fa9-a780-48b5-a502-a58c285afadd")
 		(property "Reference" "Q2"
-			(at 387.35 290.8299 0)
+			(at 389.89 290.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10054,7 +10032,7 @@
 			)
 		)
 		(property "Value" "RGT16BM65DTL"
-			(at 387.35 293.3699 0)
+			(at 389.89 293.3699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10161,13 +10139,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 78.74 104.14 0)
+			(at 81.28 100.3299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -11001,13 +10980,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 35.56 223.52 0)
+			(at 38.1 219.7099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -11158,13 +11138,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 165.1 144.78 0)
+			(at 167.64 140.9699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -12060,7 +12041,7 @@
 		(fields_autoplaced yes)
 		(uuid "a003b8dc-0d27-462b-a829-d71204539c9f")
 		(property "Reference" "MH2"
-			(at 125.73 208.2799 0)
+			(at 125.73 209.5499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12071,7 +12052,7 @@
 			)
 		)
 		(property "Value" "M3"
-			(at 125.73 210.8199 0)
+			(at 125.73 212.0899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12081,7 +12062,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
 			(at 128.27 209.153 90)
 			(hide yes)
 			(show_name no)
@@ -12264,13 +12245,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 80.01 223.52 0)
+			(at 82.55 219.7099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -12457,13 +12439,14 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 248.92 124.46 0)
+			(at 251.46 128.2699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -12535,13 +12518,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 289.56 251.46 0)
+			(at 292.1 247.6499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -13536,13 +13520,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 256.54 121.92 0)
+			(at 259.08 118.1099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -13603,7 +13588,7 @@
 		(fields_autoplaced yes)
 		(uuid "d18877b0-4851-4e5b-9c00-15c4656de34c")
 		(property "Reference" "MH1"
-			(at 125.73 193.0399 0)
+			(at 125.73 194.3099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13614,7 +13599,7 @@
 			)
 		)
 		(property "Value" "M3"
-			(at 125.73 195.5799 0)
+			(at 125.73 196.8499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13624,7 +13609,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
 			(at 128.27 193.913 90)
 			(hide yes)
 			(show_name no)
@@ -14403,13 +14388,14 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 80.01 200.66 0)
+			(at 82.55 204.4699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -14599,13 +14585,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 142.24 157.48 0)
+			(at 144.78 153.6699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -14788,7 +14775,7 @@
 		(fields_autoplaced yes)
 		(uuid "fc45bec8-a8ca-4b07-bc5a-e31b37b09899")
 		(property "Reference" "MH3"
-			(at 125.73 223.5199 0)
+			(at 125.73 224.7899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14799,7 +14786,7 @@
 			)
 		)
 		(property "Value" "M3"
-			(at 125.73 226.0599 0)
+			(at 125.73 227.3299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14809,7 +14796,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
 			(at 128.27 224.393 90)
 			(hide yes)
 			(show_name no)
@@ -14876,13 +14863,14 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 167.64 57.15 0)
+			(at 170.18 53.3399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -14943,7 +14931,7 @@
 		(fields_autoplaced yes)
 		(uuid "fcaff39a-6a51-4c75-9a4f-2bfebf7ebd6e")
 		(property "Reference" "D1"
-			(at 144.78 53.5939 90)
+			(at 144.78 53.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14954,7 +14942,7 @@
 			)
 		)
 		(property "Value" "SM4005PL-TP"
-			(at 144.78 56.1339 90)
+			(at 144.78 55.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
