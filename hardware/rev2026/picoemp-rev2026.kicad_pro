@@ -608,31 +608,7 @@
     "netclass_patterns": [
       {
         "netclass": "HV",
-        "pattern": "Net-(D2-A)"
-      },
-      {
-        "netclass": "HV",
-        "pattern": "Net-(D2-K)"
-      },
-      {
-        "netclass": "HV",
-        "pattern": "Net-(D7-A)"
-      },
-      {
-        "netclass": "HV",
-        "pattern": "Net-(D7-K)"
-      },
-      {
-        "netclass": "HV",
-        "pattern": "Net-(J1-Ext)"
-      },
-      {
-        "netclass": "HV",
-        "pattern": "Net-(J3-Pin_2)"
-      },
-      {
-        "netclass": "HV",
-        "pattern": "Net-(R7-Pad2)"
+        "pattern": "HV_*"
       },
       {
         "netclass": "Power",

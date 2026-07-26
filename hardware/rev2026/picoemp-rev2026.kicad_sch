@@ -15128,4 +15128,204 @@
 		)
 	)
 	(embedded_fonts no)
+	(label "T1_PRI_B"
+		(at 274.32 294.64 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b380a3d1-7f7e-423e-9588-077cc5ef4b62")
+	)
+	(label "T2_PRI_B"
+		(at 279.4 353.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a62bd42d-60ce-4ab6-aeec-d0cd89d13812")
+	)
+	(label "VEXT_IN"
+		(at 142.24 52.07 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "818b94de-ee5b-4e10-af76-c62e66b785c0")
+	)
+	(label "VBUS"
+		(at 142.24 57.15 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "24d700ae-a658-42e7-b479-14c935088ba5")
+	)
+	(label "HV_RECT"
+		(at 325.12 276.86 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5fdd4b70-4ddf-4acc-9495-bc26e157f53b")
+	)
+	(label "HV_RAIL"
+		(at 345.44 281.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a4956bd0-c2f0-4b5c-81f6-677b01ce17a8")
+	)
+	(label "PRI_CLAMP"
+		(at 193.04 309.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "79056f78-95a8-4f27-9ec5-8d8c0e8c9ea2")
+	)
+	(label "Q3_GATE"
+		(at 233.68 294.64 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b1945cfd-e217-403e-b633-ab173b7ea182")
+	)
+	(label "Q4_GATE"
+		(at 228.6 355.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c6bf0a90-bd85-4539-b853-5b437c91afe3")
+	)
+	(label "LED_HV_DET_A"
+		(at 69.85 116.84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4078b3b6-9bc2-41fd-920a-0661404d8c89")
+	)
+	(label "HV_RTN"
+		(at 345.44 287.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "72706b97-e732-4231-b7eb-657ecc06dccf")
+	)
+	(label "HV_GATE"
+		(at 365.76 337.82 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ecfad3d3-292b-4101-a210-cebd45a14f2b")
+	)
+	(label "LED_STATUS_A"
+		(at 69.85 132.08 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "409b970a-e72a-41e8-9940-63f042dede4d")
+	)
+	(label "LED_CHARGE_A"
+		(at 229.87 114.3 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2d874c50-39a7-456e-84ac-dca9e9d3ec41")
+	)
+	(label "HV_OUT"
+		(at 424.18 276.86 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "fbab185a-dd79-422c-9a1c-9d8c1ab9343d")
+	)
+	(label "HV_SENSE"
+		(at 381 218.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5a320b74-ea12-4866-ab33-dbfb0528a042")
+	)
+	(label "HV_SENSE_LED"
+		(at 317.5 236.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4887ae6d-2f27-4252-a094-298d96f89bcc")
+	)
+	(label "T1_PRI_A"
+		(at 261.62 287.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "833773c1-1fe0-49ef-9a5a-36fd17f4a618")
+	)
+	(label "T2_PRI_A"
+		(at 261.62 350.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "becee9df-b82f-4f6e-9373-c9f9f538b1bc")
+	)
+	(label "HV_GATE_DRV"
+		(at 347.98 335.28 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f0ac43e8-1373-4cf7-ad3d-20a9b4ccd1d0")
+	)
 )

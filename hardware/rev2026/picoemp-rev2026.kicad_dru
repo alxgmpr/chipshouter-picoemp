@@ -86,13 +86,23 @@
 	(constraint clearance (min 0.75mm))
 	(condition "A.memberOfFootprint('T2') && B.memberOfFootprint('T2')"))
 
-# Q2 is a TO-252 (DPAK) on KiCad's stock TO-252-3_TabPin2. The tab pad sits
-# 0.080 mm from the outer lead pads -- that is the JEDEC package, reproduced by
-# a stock library footprint, and it is what the leads physically do where they
-# emerge from the body. Same category as T1/T2: package geometry, not layout.
+# Q2 (TO-252 / DPAK) has NO exception here, deliberately. UNRESOLVED - see below.
 #
-# NOTE for fab: 0.080 mm is below JLCPCB's 0.127 mm minimum pad-to-pad. Confirm
-# they will accept it before ordering, or the mask/copper may be adjusted.
-(rule "TO-252 intra-package pad spacing - Q2"
-	(constraint clearance (min 0.07mm))
-	(condition "A.memberOfFootprint('Q2') && B.memberOfFootprint('Q2')"))
+# DRC reports 0.080 mm between Q2 pads 1-2 and 2-3. I could not reconcile that
+# with the footprint geometry, which reads as 1.08 mm: the lead pads are
+# (size 2.2 1.2) on a 2.28 mm pitch, so along the pitch axis 2.28 - 1.2 = 1.08.
+# The board's footprint is byte-identical to KiCad's stock library copy, so
+# nothing here is corrupted, and 2.2 mm along the pitch axis would make adjacent
+# DPAK leads nearly touch -- physically wrong for the package.
+#
+# An earlier version of this file carried a 0.07 mm exception for Q2, written on
+# the assumption that 0.080 mm was real package geometry. That was removed. Pads
+# 2 and 3 are the IGBT collector and emitter and stand at ~250 V; quietly
+# relaxing clearance there to 0.07 mm on an unverified number is the one failure
+# mode worth avoiding most. A false positive costs annoyance, a false negative
+# costs a flashover.
+#
+# RESOLVE BEFORE FAB: open Q2 in the footprint editor and measure the lead pads
+# directly. If the spacing really is 1.08 mm, this violation is a DRC artefact
+# and can be excluded in the GUI with that measurement recorded. If it really is
+# 0.080 mm, the footprint is unusable at 250 V and Q2 needs a different one.
