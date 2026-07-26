@@ -4365,7 +4365,7 @@
 	(footprint "Fiducial:Fiducial_0.5mm_Mask1.5mm"
 		(layer "F.Cu")
 		(uuid "4c878428-12fa-49a5-b065-e7fc7fb48883")
-		(at 140.5 132)
+		(at 108.39 88)
 		(descr "Fiducial, circular marking, 0.5mm bare copper, 1.5mm soldermask opening")
 		(tags "fiducial")
 		(property "Reference" "FID3"
@@ -13431,7 +13431,7 @@
 	(footprint "Fiducial:Fiducial_0.5mm_Mask1.5mm"
 		(layer "F.Cu")
 		(uuid "d09dff83-0c4f-44ca-8d2a-f4f6f5f2fbbc")
-		(at 133 24.5)
+		(at 140.39 41)
 		(descr "Fiducial, circular marking, 0.5mm bare copper, 1.5mm soldermask opening")
 		(tags "fiducial")
 		(property "Reference" "FID2"
@@ -14989,7 +14989,7 @@
 	(footprint "Fiducial:Fiducial_0.5mm_Mask1.5mm"
 		(layer "F.Cu")
 		(uuid "fa159923-f77f-45d9-aac6-2251b42b16f6")
-		(at 114 24.5)
+		(at 114.39 23.872)
 		(descr "Fiducial, circular marking, 0.5mm bare copper, 1.5mm soldermask opening")
 		(tags "fiducial")
 		(property "Reference" "FID1"
