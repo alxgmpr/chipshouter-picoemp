@@ -31,12 +31,23 @@ def test_custom_symbols_exist(root):
 
 
 def test_igbt_pin_names(root):
-    """DPAK IGBT: pin 1 Gate, pin 2 Collector, pin 3 Emitter."""
+    """DPAK IGBT: pin 1 Gate, pin 2 Collector, pin 3 Emitter.
+
+    Parses each (name, number) pair from within the same pin block, rather
+    than checking name/number substrings independently, so the test fails
+    if a name and number are ever mismatched (e.g. pin 1 named "C").
+    """
     text = (root / 'lib' / 'picoemp.kicad_sym').read_text()
     body = text.split('(symbol "IGBT_NCH_Diode"')[1].split('\n\t(symbol "')[0]
-    for num, name in (('1', 'G'), ('2', 'C'), ('3', 'E')):
-        assert f'(name "{name}"' in body, f'IGBT missing pin name {name}'
-        assert f'(number "{num}"' in body, f'IGBT missing pin number {num}'
+    pairs = re.findall(
+        r'\(pin \w+ line\s*\(at[^)]*\)\s*\(length[^)]*\)\s*'
+        r'\(name "([^"]+)".*?\(number "(\d+)"',
+        body,
+        re.DOTALL,
+    )
+    mapping = {number: name for name, number in pairs}
+    assert len(pairs) == 3, f'expected exactly 3 pins, found {len(pairs)}: {pairs}'
+    assert mapping == {'1': 'G', '2': 'C', '3': 'E'}, f'unexpected IGBT pin mapping: {mapping}'
 
 
 def test_lda111_pin_numbers(root):
