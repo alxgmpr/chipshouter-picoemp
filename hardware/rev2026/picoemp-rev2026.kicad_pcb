@@ -362,7 +362,7 @@
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "01a290a9-27ab-4a02-855c-264738b8098f")
-		(at 128.275 32.25)
+		(at 114.5 30)
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C6"
@@ -1557,7 +1557,7 @@
 	(footprint "picoemp:D_SOD-123FL"
 		(layer "F.Cu")
 		(uuid "15cb5b8c-4296-47ed-8614-c234b20cfbec")
-		(at 139.25 36.75)
+		(at 115.5 32)
 		(descr "MCC SOD-123FL (flat lead), e.g. SM4005PL-TP. Pad centres at +/-1.55mm (3.10mm span), size 1.15x1.3mm -- copied from the as-fabricated main:DSS13UTR footprint used for D1 on the original board (a SOD-123FL rectifier), and cross-checked against Central Semiconductor's own SOD-123FL mounting-pad drawing (4.1mm overall pad-to-pad envelope minus a 0.95mm pad width = 3.15mm centre span, within 0.05mm). An earlier draft of this footprint used MCC's suggested-pad-layout figure at 2.36mm; that number turned out to be the INNER-EDGE gap between pads, not the centre-to-centre span, so the earlier pads landed short of the body outline entirely. KiCad's stock Diode_SMD:D_SOD-123F uses a 2.8mm pad span (1.1x1.1mm square pads), which is still off this package's real geometry; use this footprint instead for SOD-123FL parts.")
 		(tags "diode SOD-123FL SOD123FL flat lead")
 		(property "Reference" "D1"
@@ -5220,7 +5220,7 @@
 	(footprint "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount"
 		(layer "F.Cu")
 		(uuid "5cdf80ae-2b7e-4d9f-8061-5f1ecbde7e82")
-		(at 124.39 22.499 90)
+		(at 136.755 22.499 90)
 		(descr "https://www.amphenolrf.com/library/download/link/link_id/595984/parent/132289/")
 		(tags "SMA")
 		(property "Reference" "J4"
@@ -6486,7 +6486,7 @@
 	(footprint "Connector_JST:JST_XH_S2B-XH-A_1x02_P2.50mm_Horizontal"
 		(layer "F.Cu")
 		(uuid "6c844c04-3631-4772-89e8-2b8490dc73d5")
-		(at 140 30.195 180)
+		(at 133.945 31.2 90)
 		(descr "JST XH series connector, S2B-XH-A (http://www.jst-mfg.com/product/pdf/eng/eXH.pdf)")
 		(tags "connector JST XH horizontal")
 		(property "Reference" "J2"
@@ -13245,7 +13245,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23-5"
 		(layer "F.Cu")
 		(uuid "e7f5468b-6e5e-49f8-a90f-e742a3780673")
-		(at 124.3025 31 -90)
+		(at 110.5 30 -90)
 		(descr "SOT, 5 Pin (JEDEC MO-178 Var AA https://www.jedec.org/document_search?search_api_views_fulltext=MO-178)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "U2"
@@ -13881,7 +13881,7 @@
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "ecb78e12-e887-49de-a840-92760ad33199")
-		(at 124.39 27.25 -90)
+		(at 106.5 30 -90)
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R14"
@@ -15222,7 +15222,47 @@
 		(uuid "97aaaf09-572b-4598-be61-4079ce266ae8")
 	)
 	(gr_line
-		(start 140.39 19.872)
+		(start 143.12 19.872)
+		(end 130.39 19.872)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Edge.Cuts")
+		(uuid "6db040dc-f964-4ca3-8d20-d2755e05bf4b")
+	)
+	(gr_line
+		(start 130.39 19.872)
+		(end 130.39 33)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Edge.Cuts")
+		(uuid "6db040dc-f964-4ca3-8d20-d2755e05bf4b")
+	)
+	(gr_line
+		(start 130.39 33)
+		(end 118.39 33)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Edge.Cuts")
+		(uuid "6db040dc-f964-4ca3-8d20-d2755e05bf4b")
+	)
+	(gr_line
+		(start 118.39 33)
+		(end 118.39 19.872)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Edge.Cuts")
+		(uuid "6db040dc-f964-4ca3-8d20-d2755e05bf4b")
+	)
+	(gr_line
+		(start 118.39 19.872)
 		(end 108.39 19.872)
 		(stroke
 			(width 0.05)
@@ -15232,9 +15272,9 @@
 		(uuid "6db040dc-f964-4ca3-8d20-d2755e05bf4b")
 	)
 	(gr_arc
-		(start 140.39 19.872)
-		(mid 143.2184 21.0436)
-		(end 144.39 23.872)
+		(start 143.1200 19.8720)
+		(mid 144.0180 20.2440)
+		(end 144.3900 21.1420)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15255,7 +15295,7 @@
 	)
 	(gr_line
 		(start 144.39 140.872)
-		(end 144.39 23.872)
+		(end 144.39 21.142)
 		(stroke
 			(width 0.05)
 			(type solid)

@@ -298,12 +298,26 @@ def _edge_arcs():
     return out
 
 
-def test_all_four_board_corners_share_one_radius():
+def test_corner_radii_match_at_every_corner_that_has_a_mounting_hole():
+    """Three corners at R=4.000; the north-east one is deliberately smaller.
+
+    R=4.000 is not a style choice -- it equals the mounting-hole inset, which is
+    what makes each arc concentric with its hole. The north-east corner has no
+    hole, so its radius buys nothing there, and it was the one thing cheap enough
+    to give up when the north edge ran out of room: the USB notch plus J4 need
+    more than the 32 mm that two R=4 corners leave. Dropping NE to 1.270 freed
+    2.73 mm and let J4 sit in the east strip with 1.36 mm to spare.
+    """
+    import math
     arcs = _edge_arcs()
     assert len(arcs) == 4, f'expected 4 corner arcs, found {len(arcs)}'
-    radii = sorted(r for _, r in arcs)
-    assert radii[-1] - radii[0] < 0.005, \
-        f'corner radii do not match: {[round(r, 4) for r in radii]}'
+    big = sorted(r for _, r in arcs if r > 2.0)
+    small = sorted(r for _, r in arcs if r <= 2.0)
+    assert len(big) == 3, f'expected 3 large corner radii, found {[round(r,3) for r in big]}'
+    assert big[-1] - big[0] < 0.005, \
+        f'the three hole corners do not share a radius: {[round(r, 4) for r in big]}'
+    assert len(small) == 1 and abs(small[0] - 1.27) < 0.005, \
+        f'expected exactly one 1.270 mm corner (north-east), found {[round(r,4) for r in small]}'
 
 
 def test_every_mounting_hole_is_concentric_with_its_corner_arc():
