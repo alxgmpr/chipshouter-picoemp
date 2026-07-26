@@ -103,8 +103,8 @@ def test_igbt_pin_mapping_not_swapped(netlist_membership):
     prevent."""
     assert _shares_net(netlist_membership, 'Q2.1', 'D7.1'), \
         'Q2 pin 1 (Gate) must share a net with D7 pin 1 (cathode / gate drive)'
-    assert _shares_net(netlist_membership, 'Q2.2', 'J6.2'), \
-        'Q2 pin 2 (Collector) must share a net with J6 pin 2 (HV output connector)'
+    assert _shares_net(netlist_membership, 'Q2.2', 'J1.2'), \
+        'Q2 pin 2 (Collector) must share a net with J1 pin 2 (HV output connector, formerly J6)'
     assert _shares_net(netlist_membership, 'Q2.3', 'D7.2'), \
         'Q2 pin 3 (Emitter) must share a net with D7 pin 2 (anode)'
 

@@ -1,19 +1,25 @@
 import kicad_parse as kp
 
-# Every non-power reference expected in the design, post-rework.
+# Every non-power reference expected in the design, post-Task-8.
+#
+# This set originally also carried C6, J4 (the new trigger-input SMA), R14,
+# R15, R16, and U2 -- all Task 9 additions to the trigger front end that
+# don't exist as symbols yet. Task 8 only renames/re-footprints existing
+# symbols, so those six refs are removed here; Task 9 should add them back
+# (and its own test coverage) once it creates the corresponding parts.
 EXPECTED_REFS = {
-    'C1', 'C2', 'C3', 'C5', 'C6',
+    'C1', 'C2', 'C3', 'C5',
     'D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'D9',
     'FID1', 'FID2', 'FID3',
-    'J1', 'J2', 'J3', 'J4',
+    'J1', 'J2', 'J3',
     'MH1', 'MH2', 'MH3',
     'P1', 'P2', 'P3',
     'Q1', 'Q2', 'Q3', 'Q4',
     'R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R9',
-    'R10', 'R11', 'R12', 'R13', 'R14', 'R15', 'R16',
+    'R10', 'R11', 'R12', 'R13',
     'SW1', 'SW2', 'SW3',
     'T1', 'T2',
-    'U1', 'U2',
+    'U1',
 }
 
 
@@ -116,24 +122,30 @@ def test_mosfets_use_numeric_pin_symbol(syms):
 # Target footprints from the Rev-2026 design spec (docs/superpowers/specs/
 # 2026-07-25-picoemp-rev2026-design.md, section 6.1) plus the custom
 # footprints Task 6 drew into lib/picoemp.pretty/. Keyed by each symbol's
-# CURRENT reference designator, not the upstream one.
+# FINAL (post-Task-8) reference designator -- Task 7's version of this dict
+# was keyed by the pre-rename designators (J6 for the SMA, etc.) because the
+# final names didn't exist as symbols yet at that point; Task 8 renamed the
+# schematic, so this dict is re-keyed to match.
 #
 # D1/D3/D4/D5 use picoemp:D_SOD-123FL rather than the spec's stock
 # Diode_SMD:D_SOD-123F: Task 6 found the stock land is 2.80mm pad-centre
 # span while the correct SOD-123FL land is 3.10mm (confirmed against both
 # Central Semiconductor's drawing and the as-fabricated original board).
 #
-# Three spec-table entries are intentionally absent from this dict:
-#   - The spec's "J1" (SMA) is today's J6 -- already correct below, just
-#     not yet renamed. The spec's "J4" (SMA, DNP optional trigger input)
-#     doesn't exist as a symbol yet. Both resolve when Task 8 renames J6 to
-#     J1 and Task 9 creates the new J4.
-#   - C6 and U2 are new trigger-front-end parts Task 9 adds; they don't
-#     exist as symbols yet.
-# None of this is a test gap: a symbol that does not exist cannot carry a
-# wrong footprint, and test_every_symbol_has_a_footprint only inspects
-# symbols that exist. Tasks 8/9 add their own footprint coverage for the
-# parts they create/rename.
+# SW3 uses a project-local footprint rather than the shared stock
+# Button_Switch_SMD:SW_Push_1P1T_NO_CK_KSC7xxJ used for SW1/SW2: upstream
+# says the TL3301A "shares" the KSC741J footprint, but the two datasheets
+# disagree materially (6.0x6.0mm body vs 6.2x6.2mm, and a 4.50mm pin row
+# pitch vs the KSC7xxJ land's 4.00mm -- a 12.5% mismatch). See the Task 8
+# report for the full comparison.
+#
+# Two spec-table entries are intentionally still absent from this dict:
+# C6 and U2 are new trigger-front-end parts Task 9 adds; they don't exist
+# as symbols yet. The spec's second "J4" (SMA, DNP optional trigger input)
+# likewise doesn't exist yet -- Task 9 creates it. None of this is a test
+# gap: a symbol that does not exist cannot carry a wrong footprint, and
+# test_every_symbol_has_a_footprint only inspects symbols that exist.
+# Task 9 adds its own footprint coverage for the parts it creates.
 FOOTPRINTS = {
     'C1': 'Capacitor_SMD:C_0805_2012Metric',
     'C2': 'Capacitor_SMD:C_0805_2012Metric',
@@ -152,8 +164,14 @@ FOOTPRINTS = {
     'T1': 'picoemp:ATB322524',
     'T2': 'picoemp:ATB322524',
     'U1': 'Module:RaspberryPi_Pico_SMD',
+    'J1': 'Connector_Coaxial:SMA_Amphenol_132289_EdgeMount',
     'J2': 'Connector_JST:JST_XH_S2B-XH-A_1x02_P2.50mm_Horizontal',
-    'J6': 'Connector_Coaxial:SMA_Amphenol_132289_EdgeMount',  # -> J1 in Task 8
+    'P1': 'Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical',
+    'P2': 'Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical',
+    'P3': 'Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical',
+    'SW1': 'Button_Switch_SMD:SW_Push_1P1T_NO_CK_KSC7xxJ',
+    'SW2': 'Button_Switch_SMD:SW_Push_1P1T_NO_CK_KSC7xxJ',
+    'SW3': 'picoemp:SW_Push_ESwitch_TL3301AJ',
 }
 
 
@@ -165,9 +183,9 @@ def test_every_symbol_has_a_footprint(syms):
 def test_every_footprint_has_a_library_prefix(syms):
     """Format check on whatever footprint IS assigned.
 
-    Deliberately skips symbols with no footprint at all (SW1-3, J3 at this
-    stage) -- that gap is test_every_symbol_has_a_footprint's job, and
-    those refs sit out of Task 7's scope (Tasks 8/11 own them).
+    Deliberately skips symbols with no footprint at all (just J3 as of
+    Task 8) -- that gap is test_every_symbol_has_a_footprint's job, and J3
+    sits out of scope here (Task 9 owns it).
     """
     bad = [(s.ref, s.footprint) for s in syms if s.footprint and ':' not in s.footprint]
     assert not bad, f'footprints with no library prefix: {bad}'
@@ -184,3 +202,38 @@ def test_expected_footprint_assignments(syms):
     wrong = {r: (by_ref.get(r), want) for r, want in FOOTPRINTS.items()
              if by_ref.get(r) != want}
     assert not wrong, f'footprint mismatches (got, want): {wrong}'
+
+
+def test_upstream_designators_restored(syms):
+    """NOTE: the design spec's second SMA (also called "J4", the DNP
+    optional trigger input) is a Task 9 addition and deliberately not
+    asserted here -- it doesn't exist as a symbol until Task 9 creates it.
+    """
+    refs = {s.ref for s in syms}
+    assert {'D6', 'D8', 'D9'} <= refs, 'LEDs must be D6/D8/D9, not LED1-3'
+    assert not (refs & {'LED1', 'LED2', 'LED3'}), 'LED1-3 designators still present'
+    assert {'P1', 'P2', 'P3'} <= refs, 'headers must be P1/P2/P3'
+    assert {'J1', 'J2', 'J3'} <= refs
+    assert 'J5' not in refs and 'J6' not in refs, 'stale J5/J6 designators remain'
+
+
+def test_sma_is_j1(syms):
+    j1 = next(s for s in syms if s.ref == 'J1')
+    assert 'SMA' in j1.footprint
+
+
+def test_headers_are_2540um_pitch(syms):
+    """All original headers are 2.54 mm; the port had them at 1.00/1.27 mm."""
+    for ref in ('P1', 'P2', 'P3'):
+        s = next(x for x in syms if x.ref == ref)
+        assert 'P2.54mm' in s.footprint, f'{ref} footprint {s.footprint!r} is not 2.54 mm pitch'
+
+
+def test_switches_have_footprints(syms):
+    for ref in ('SW1', 'SW2', 'SW3'):
+        s = next(x for x in syms if x.ref == ref)
+        assert s.footprint, f'{ref} has no footprint'
+
+
+def test_all_expected_refs_present(syms):
+    assert {s.ref for s in syms} == EXPECTED_REFS
