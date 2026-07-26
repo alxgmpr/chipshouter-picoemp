@@ -140,7 +140,7 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.0,
+        "min_clearance": 0.2,
         "min_connection": 0.0,
         "min_copper_edge_clearance": 0.5,
         "min_groove_width": 0.0,
@@ -493,7 +493,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "ChipShouter-Pico.kicad_pro",
+    "filename": "picoemp-rev2026.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -535,6 +535,25 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.75,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "HV",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.2,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
       }
     ],
     "meta": {
@@ -542,7 +561,36 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "HV",
+        "pattern": "Net-(D2-A)"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "Net-(D2-K)"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "Net-(D7-A)"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "Net-(D7-K)"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "Net-(J1-Ext)"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "Net-(J3-Pin_2)"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "Net-(R7-Pad2)"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
@@ -668,8 +716,8 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "ChipShouter-Pico.kicad_sch",
-        "name": "",
+        "filename": "picoemp-rev2026.kicad_sch",
+        "name": "picoemp-rev2026",
         "uuid": "2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
       }
     ],
@@ -679,7 +727,7 @@
   "sheets": [
     [
       "2587a454-e9b8-4dd2-940e-91a5ec62d2c9",
-      ""
+      "picoemp-rev2026"
     ]
   ],
   "text_variables": {
