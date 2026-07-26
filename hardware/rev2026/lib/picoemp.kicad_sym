@@ -394,189 +394,21 @@
 		)
 		(symbol "LDA111_0_1"
 			(rectangle
-				(start -5.08 3.81)
-				(end 5.08 -3.81)
+				(start 2.54 -5.08)
+				(end -7.62 -17.78)
 				(stroke
-					(width 0.254)
+					(width 0)
 					(type default)
 				)
 				(fill
 					(type background)
 				)
 			)
-			(polyline
-				(pts
-					(xy -5.08 -2.54) (xy -3.175 -2.54) (xy -3.175 2.54) (xy -5.08 2.54)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy -3.81 -0.635) (xy -2.54 -0.635)
-				)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy -3.175 -0.635) (xy -3.81 0.635) (xy -2.54 0.635) (xy -3.175 -0.635)
-				)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy -0.635 0.508) (xy 0.635 0.508) (xy 0.254 0.381) (xy 0.254 0.635) (xy 0.635 0.508)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy -0.635 -0.508) (xy 0.635 -0.508) (xy 0.254 -0.635) (xy 0.254 -0.381) (xy 0.635 -0.508)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 1.27 2.0) (xy 1.27 0.6)
-				)
-				(stroke
-					(width 0.3556)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 1.27 2.0) (xy 5.08 2.54)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 1.27 1.6) (xy 3.0 1.6) (xy 3.0 0) (xy 5.08 0)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 1.27 1.0) (xy 3.6 -0.6)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 2.75 0.25) (xy 2.45 0.25) (xy 2.6 -0.15) (xy 2.75 0.25)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type outline)
-				)
-			)
-			(polyline
-				(pts
-					(xy 3.6 -0.2) (xy 3.6 -1.6)
-				)
-				(stroke
-					(width 0.3556)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 3.6 -0.3) (xy 5.08 0)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 3.6 -1.5) (xy 5.08 -2.54)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 4.5 -1.85) (xy 4.15 -1.75) (xy 4.35 -2.1) (xy 4.5 -1.85)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type outline)
-				)
-			)
 		)
 		(symbol "LDA111_1_1"
 			(pin passive line
-				(at -7.62 2.54 0)
-				(length 2.54)
+				(at 0 0 270)
+				(length 5.08)
 				(name "A"
 					(effects
 						(font
@@ -593,8 +425,8 @@
 				)
 			)
 			(pin passive line
-				(at -7.62 -2.54 0)
-				(length 2.54)
+				(at -2.54 0 270)
+				(length 5.08)
 				(name "K"
 					(effects
 						(font
@@ -611,8 +443,8 @@
 				)
 			)
 			(pin passive line
-				(at 7.62 -2.54 180)
-				(length 2.54)
+				(at -5.08 -22.86 90)
+				(length 5.08)
 				(name "E"
 					(effects
 						(font
@@ -629,8 +461,8 @@
 				)
 			)
 			(pin passive line
-				(at 7.62 0 180)
-				(length 2.54)
+				(at -2.54 -22.86 90)
+				(length 5.08)
 				(name "C"
 					(effects
 						(font
@@ -647,8 +479,8 @@
 				)
 			)
 			(pin passive line
-				(at 7.62 2.54 180)
-				(length 2.54)
+				(at 0 -22.86 90)
+				(length 5.08)
 				(name "B"
 					(effects
 						(font
@@ -657,6 +489,265 @@
 					)
 				)
 				(number "6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "ATB322524"
+		(pin_names
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "T"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ATB322524-0110-T000"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "HV Transformer 1:10, Small. Primary winding on pins 1/4, secondary winding on pins 2/3 (verified from netlist: pin 1 to switching FET drain, pin 4 to reservoir cap; pin 2/3 to secondary rectifiers)."
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "*ATB322524_CHUNKY*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "ATB322524_0_1"
+			(arc
+				(start -5.2293 -5.1148)
+				(mid -4.3089 -4.1681)
+				(end -3.4075 -5.1329)
+				(stroke
+					(width 0)
+					(type solid)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start -3.4513 -5.1148)
+				(mid -2.5309 -4.1681)
+				(end -1.6295 -5.1329)
+				(stroke
+					(width 0)
+					(type solid)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start -0.8667 0.0348)
+				(mid -1.7871 -0.9119)
+				(end -2.6885 0.0529)
+				(stroke
+					(width 0)
+					(type solid)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start -1.6733 -5.1148)
+				(mid -0.7529 -4.1681)
+				(end 0.1485 -5.1329)
+				(stroke
+					(width 0)
+					(type solid)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 0.9113 0.0348)
+				(mid -0.0091 -0.9119)
+				(end -0.9105 0.0529)
+				(stroke
+					(width 0)
+					(type solid)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 0.1047 -5.1148)
+				(mid 1.0251 -4.1681)
+				(end 1.9265 -5.1329)
+				(stroke
+					(width 0)
+					(type solid)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 2.6893 0.0348)
+				(mid 1.7689 -0.9119)
+				(end 0.8675 0.0529)
+				(stroke
+					(width 0)
+					(type solid)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 1.8827 -5.1148)
+				(mid 2.8031 -4.1681)
+				(end 3.7045 -5.1329)
+				(stroke
+					(width 0)
+					(type solid)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 3.4067 -5.1148)
+				(mid 4.3271 -4.1681)
+				(end 5.2285 -5.1329)
+				(stroke
+					(width 0)
+					(type solid)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "ATB322524_1_1"
+			(pin passive line
+				(at 2.54 7.62 270)
+				(length 7.62)
+				(name "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 5.08 -12.7 90)
+				(length 7.62)
+				(name "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -12.7 90)
+				(length 7.62)
+				(name "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -2.54 7.62 270)
+				(length 7.62)
+				(name "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
 					(effects
 						(font
 							(size 1.27 1.27)
