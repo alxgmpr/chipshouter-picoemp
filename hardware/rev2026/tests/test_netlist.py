@@ -130,3 +130,61 @@ def test_trigger_front_end_connectivity(tmp_path):
     assert not same_net('P1.1', 'U1.1'), \
         'P1.1 and U1.1 (GP0) are on the same net -- the direct trigger-to-GPIO ' \
         'path has been reconnected, bypassing the buffer'
+
+
+def test_hv_charge_feedback_led_path_intact(tmp_path):
+    """Regression cover for the Q1 optocoupler LED feedback path.
+
+    Q1 is an LDA111 optocoupler that provides HV charge feedback: its LED
+    (pins 1/2, anode/cathode) must sit in series between the HV+ tap
+    (through R2 and R1) and the HV return, so that LED current flows and
+    the phototransistor half (pins 4/5/6) can pull /CHARGED. The
+    as-received Altium->KiCad import left Q1 pin 1 (the LED anode)
+    unconnected while R1's free end ran straight to the HV return instead
+    -- silently shorting the LED out of the circuit. With no LED current,
+    the phototransistor never conducts, /CHARGED never asserts, and the
+    firmware's charge feedback is dead, even though the schematic renders
+    with no obviously missing wires. Every check here is by pin
+    co-membership, never by net name string, since auto-generated net
+    names drift across re-exports (see other tests in this file).
+    """
+    out = tmp_path / 'net.net'
+    subprocess.run([KC, 'sch', 'export', 'netlist', '--format', 'kicadsexpr',
+                    '-o', str(out), str(conftest.SCH)], check=True,
+                   capture_output=True)
+    nets = _nets(out.read_text())
+    node_to_net = {n: name for name, nodes in nets.items() for n in nodes}
+
+    def same_net(a, b):
+        assert a in node_to_net, f'{a} not connected'
+        assert b in node_to_net, f'{b} not connected'
+        return node_to_net[a] == node_to_net[b]
+
+    # R1 is a resistor -- which physical pin faces the tap vs. Q1 is
+    # electrically irrelevant, so find whichever one Q1.1 actually landed
+    # on rather than hard-coding an orientation.
+    r1_pins = ['R1.1', 'R1.2']
+    q1_pin_for_r1 = [p for p in r1_pins if same_net('Q1.1', p)]
+    assert len(q1_pin_for_r1) == 1, \
+        f'Q1.1 (LED anode) must share a net with exactly one R1 pin, found {q1_pin_for_r1}'
+    other_r1_pin = [p for p in r1_pins if p not in q1_pin_for_r1][0]
+
+    # Q1.2 (LED cathode) is the HV return, shared with Q2.3.
+    assert same_net('Q1.2', 'Q2.3'), \
+        'Q1.2 (LED cathode) is not on the same net as Q2.3 (HV return) -- ' \
+        'feedback LED cathode has come adrift from the HV return'
+
+    # R2 (300k, HV rail dropper) bridges the HV rail down to the same node
+    # R1's other pin sits on -- i.e. HV+ -> R2 -> [tap] -> R1 -> Q1.1.
+    r2_pins = ['R2.1', 'R2.2']
+    assert any(same_net(other_r1_pin, p) for p in r2_pins), \
+        f'Neither R2 pin shares a net with {other_r1_pin} -- the HV+ -> R2 -> ' \
+        'R1 -> Q1.1 feedback divider is broken'
+
+    # THE regression this test exists to catch: Q1 pin 1 (LED anode) must
+    # not be left floating. A floating anode silently kills HV charge
+    # feedback -- no LED current, no phototransistor conduction, /CHARGED
+    # never asserts -- with no visual difference in the schematic render.
+    assert not node_to_net['Q1.1'].startswith('unconnected-'), \
+        'Q1.1 (LED anode) is on an unconnected-* net -- the feedback LED ' \
+        'anode is floating again'
