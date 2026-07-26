@@ -30,3 +30,43 @@ def test_no_duplicate_references(syms):
     refs = [s.ref for s in syms]
     dupes = {r for r in refs if refs.count(r) > 1}
     assert not dupes, f'duplicate refs: {sorted(dupes)}'
+
+
+ALTIUM_CRUFT = {
+    'PART NUMBER', 'ALTIUM_VALUE', 'COMPONENT GROUP', 'COMPONENT KIND',
+    'COMPONENT TYPE', 'PIN COUNT', 'PP MATERIAL STACK', 'PP ROTATION',
+    'PP ROTATION1', 'MOUNTING TECHNOLOGY', 'LATESTREVISIONDATE',
+    'LATESTREVISIONNOTE', 'PUBLISHER', 'SNAPEDA_LINK', 'CHECK_PRICES',
+    'AVAILABILITY', 'PRICE', 'MANUFACTURE 1', 'MANUFACTURE PART NUMBER 1',
+    'SUPPLIER 1', 'SUPPLIER PART NUMBER 1', 'MANUFACTURER_NAME',
+    'MANUFACTURER_PART_NUMBER', 'MOUSER PART NUMBER', 'MOUSER PRICE/STOCK',
+    'ARROW PART NUMBER', 'ARROW PRICE/STOCK', 'DATASHEET LINK', 'ROHS',
+    'CASE-EIA', 'CASE-METRIC', 'RATED POWER', 'RATED VOLTAGE', 'TOLERANCE',
+    'TEMPERATURE RANGE', 'HEIGHT', 'PACKAGE', 'PURCHASE-URL', 'MP', 'MF',
+}
+
+
+def test_no_unresolved_value_variables(syms):
+    bad = [s.ref for s in syms if '${' in s.value]
+    assert not bad, f'symbols with unresolved value variables: {bad}'
+
+
+def test_c5_has_its_value(syms):
+    c5 = next(s for s in syms if s.ref == 'C5')
+    assert c5.value == '100n'
+
+
+def test_no_altium_cruft_fields(syms):
+    offenders = {s.ref: sorted(set(s.props) & ALTIUM_CRUFT)
+                 for s in syms if set(s.props) & ALTIUM_CRUFT}
+    assert not offenders, f'Altium metadata remains: {offenders}'
+
+
+def test_r9_part_data_is_2k_not_75r():
+    """Upstream bug: R9 carried R4's part data throughout."""
+    import conftest
+    syms = kp.symbols(kp.parse_file(conftest.SCH))
+    r9 = next(s for s in syms if s.ref == 'R9')
+    assert r9.value == '2k'
+    assert r9.props.get('MPN') == 'RC0805FR-072KL'
+    assert r9.props.get('DigiKey') == '311-2.00KCRCT-ND'

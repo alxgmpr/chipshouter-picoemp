@@ -6937,7 +6937,7 @@
 				)
 			)
 		)
-		(property "Value" "${ALTIUM_VALUE}"
+		(property "Value" "1k"
 			(at 83.82 129.54 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6980,7 +6980,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "RCHIP-1K-0603"
+		(property "Manufacturer" "Yageo"
 			(at 82.804 137.668 0)
 			(hide yes)
 			(show_name no)
@@ -6992,7 +6992,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "COMPONENT GROUP" "Resistor"
+		(property "MPN" "RC0603FR-071KL"
 			(at 82.804 137.668 0)
 			(hide yes)
 			(show_name no)
@@ -7004,175 +7004,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "MANUFACTURE 1" "Yageo"
-			(at 82.804 137.668 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MANUFACTURE PART NUMBER 1" "RC0603FR-071KL"
-			(at 82.804 137.668 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PIN COUNT" "2"
-			(at 82.804 137.668 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER 1" "Digi-Key"
-			(at 82.804 137.668 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER PART NUMBER 1" "311-1.00KHRCT-ND"
-			(at 82.804 137.668 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "ALTIUM_VALUE" "1k"
-			(at 82.804 137.668 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-EIA" "0603"
-			(at 82.804 137.668 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-METRIC" "1608"
-			(at 82.804 137.668 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED POWER" "0.1W"
-			(at 82.804 137.668 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED VOLTAGE" "75VDC"
-			(at 82.804 137.668 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TOLERANCE" "1%"
-			(at 82.804 137.668 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MOUNTING TECHNOLOGY" "SMT"
-			(at 82.804 137.668 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TEMPERATURE RANGE" "-55C to 155C"
-			(at 82.804 137.668 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Standard"
-			(at 82.804 137.668 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Standard"
+		(property "DigiKey" "311-1.00KHRCT-ND"
 			(at 82.804 137.668 0)
 			(hide yes)
 			(show_name no)
@@ -7299,7 +7131,7 @@
 				)
 			)
 		)
-		(property "Value" "${ALTIUM_VALUE}"
+		(property "Value" "1k"
 			(at 223.52 111.76 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7342,7 +7174,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "RCHIP-1K-0603"
+		(property "Manufacturer" "Yageo"
 			(at 222.504 119.888 0)
 			(hide yes)
 			(show_name no)
@@ -7354,7 +7186,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "COMPONENT GROUP" "Resistor"
+		(property "MPN" "RC0603FR-071KL"
 			(at 222.504 119.888 0)
 			(hide yes)
 			(show_name no)
@@ -7366,175 +7198,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "MANUFACTURE 1" "Yageo"
-			(at 222.504 119.888 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "MANUFACTURE PART NUMBER 1" "RC0603FR-071KL"
-			(at 222.504 119.888 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "PIN COUNT" "2"
-			(at 222.504 119.888 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "SUPPLIER 1" "Digi-Key"
-			(at 222.504 119.888 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "SUPPLIER PART NUMBER 1" "311-1.00KHRCT-ND"
-			(at 222.504 119.888 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "ALTIUM_VALUE" "1k"
-			(at 222.504 119.888 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "CASE-EIA" "0603"
-			(at 222.504 119.888 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "CASE-METRIC" "1608"
-			(at 222.504 119.888 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "RATED POWER" "0.1W"
-			(at 222.504 119.888 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "RATED VOLTAGE" "75VDC"
-			(at 222.504 119.888 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "TOLERANCE" "1%"
-			(at 222.504 119.888 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "MOUNTING TECHNOLOGY" "SMT"
-			(at 222.504 119.888 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "TEMPERATURE RANGE" "-55C to 155C"
-			(at 222.504 119.888 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Standard"
-			(at 222.504 119.888 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Standard"
+		(property "DigiKey" "311-1.00KHRCT-ND"
 			(at 222.504 119.888 0)
 			(hide yes)
 			(show_name no)
@@ -7627,42 +7291,6 @@
 				)
 			)
 		)
-		(property "LATESTREVISIONDATE" "17-Jul-2002"
-			(at 66.04 93.98 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "LATESTREVISIONNOTE" "Re-released for DXP Platform."
-			(at 66.04 93.98 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "PUBLISHER" "Altium Limited"
-			(at 66.04 93.98 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
 		(pin "7"
 			(uuid "80b3adbb-caba-4417-bdb3-eae8e47549fd")
 		)
@@ -7716,7 +7344,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "${ALTIUM_VALUE}"
+		(property "Value" "100n"
 			(at 281.94 356.8635 0)
 			(hide yes)
 			(show_name no)
@@ -7760,6 +7388,30 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "DigiKey" "399-5089-2-ND" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "KEMET" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "C0603C104K5RACTU" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -8001,6 +7653,30 @@
 				)
 			)
 		)
+		(property "DigiKey" "SM4005PL-TPMSCT-ND" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "MCC" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "SM4005PL-TP" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c87a77d3-1aa8-457b-96a7-557a764d6387")
 		)
@@ -8161,6 +7837,30 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "DigiKey" "SM4005PL-TPMSCT-ND" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "MCC" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "SM4005PL-TP" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -8558,6 +8258,30 @@
 				)
 			)
 		)
+		(property "DigiKey" "SM4005PL-TPMSCT-ND" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "MCC" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "SM4005PL-TP" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "949a9b9d-547b-4f8b-af75-082c5eae1806")
 		)
@@ -8639,6 +8363,30 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "DigiKey" "445-5980-1-ND" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "TDK" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "C2012X5R1H475K125AB" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -8836,6 +8584,22 @@
 				)
 			)
 		)
+		(property "Manufacturer" "onsemi" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "MURA160T3G" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "e5006577-8264-4a9d-a775-acaeca5d4bc5")
 		)
@@ -8994,6 +8758,22 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Manufacturer" "ROHM" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RGT16BM65DTL" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "G"
@@ -9159,6 +8939,14 @@
 				)
 			)
 		)
+		(property "MPN" "AO3422" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "D"
 			(uuid "cefcf933-e580-4343-9d4c-9d1dcda06f83")
 		)
@@ -9199,7 +8987,7 @@
 				)
 			)
 		)
-		(property "Value" "${ALTIUM_VALUE}"
+		(property "Value" "10R"
 			(at 350.52 332.74 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9242,7 +9030,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "RCHIP-10R-0603"
+		(property "Manufacturer" "Yageo"
 			(at 349.504 340.868 0)
 			(hide yes)
 			(show_name no)
@@ -9254,7 +9042,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "COMPONENT GROUP" "Resistor"
+		(property "MPN" "RC0603FR-0710RL"
 			(at 349.504 340.868 0)
 			(hide yes)
 			(show_name no)
@@ -9266,175 +9054,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "MANUFACTURE 1" "Yageo"
-			(at 349.504 340.868 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MANUFACTURE PART NUMBER 1" "RC0603FR-0710RL"
-			(at 349.504 340.868 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PIN COUNT" "2"
-			(at 349.504 340.868 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER 1" "Digi-Key"
-			(at 349.504 340.868 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER PART NUMBER 1" "311-10.0HRCT-ND"
-			(at 349.504 340.868 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "ALTIUM_VALUE" "10R"
-			(at 349.504 340.868 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-EIA" "0603"
-			(at 349.504 340.868 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-METRIC" "1608"
-			(at 349.504 340.868 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED POWER" "0.1W"
-			(at 349.504 340.868 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED VOLTAGE" "75VDC"
-			(at 349.504 340.868 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TOLERANCE" "1%"
-			(at 349.504 340.868 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MOUNTING TECHNOLOGY" "SMT"
-			(at 349.504 340.868 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TEMPERATURE RANGE" "-55C to 155C"
-			(at 349.504 340.868 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Standard"
-			(at 349.504 340.868 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Standard"
+		(property "DigiKey" "311-10.0HRCT-ND"
 			(at 349.504 340.868 0)
 			(hide yes)
 			(show_name no)
@@ -9529,6 +9149,30 @@
 				)
 			)
 		)
+		(property "DigiKey" "490-16845-1-ND" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "KRM55TR72J474MH01K" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "82a7efbb-d455-4afb-865c-4d38bc2b0e53")
 		)
@@ -9566,7 +9210,7 @@
 				)
 			)
 		)
-		(property "Value" "${ALTIUM_VALUE}"
+		(property "Value" "1k"
 			(at 83.82 114.3 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9609,7 +9253,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "RCHIP-1K-0603"
+		(property "Manufacturer" "Yageo"
 			(at 82.804 122.428 0)
 			(hide yes)
 			(show_name no)
@@ -9621,7 +9265,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "COMPONENT GROUP" "Resistor"
+		(property "MPN" "RC0603FR-071KL"
 			(at 82.804 122.428 0)
 			(hide yes)
 			(show_name no)
@@ -9633,175 +9277,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "MANUFACTURE 1" "Yageo"
-			(at 82.804 122.428 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MANUFACTURE PART NUMBER 1" "RC0603FR-071KL"
-			(at 82.804 122.428 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PIN COUNT" "2"
-			(at 82.804 122.428 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER 1" "Digi-Key"
-			(at 82.804 122.428 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER PART NUMBER 1" "311-1.00KHRCT-ND"
-			(at 82.804 122.428 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "ALTIUM_VALUE" "1k"
-			(at 82.804 122.428 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-EIA" "0603"
-			(at 82.804 122.428 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-METRIC" "1608"
-			(at 82.804 122.428 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED POWER" "0.1W"
-			(at 82.804 122.428 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED VOLTAGE" "75VDC"
-			(at 82.804 122.428 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TOLERANCE" "1%"
-			(at 82.804 122.428 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MOUNTING TECHNOLOGY" "SMT"
-			(at 82.804 122.428 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TEMPERATURE RANGE" "-55C to 155C"
-			(at 82.804 122.428 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Standard"
-			(at 82.804 122.428 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Standard"
+		(property "DigiKey" "311-1.00KHRCT-ND"
 			(at 82.804 122.428 0)
 			(hide yes)
 			(show_name no)
@@ -9894,6 +9370,30 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "DigiKey" "445-5980-1-ND" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "TDK" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "C2012X5R1H475K125AB" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -10220,6 +9720,30 @@
 				)
 			)
 		)
+		(property "DigiKey" "754-1116-1-ND" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Kingbright" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "APT1608CGCK" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4768fec4-12c0-4223-8f25-7d599bf42846")
 		)
@@ -10258,7 +9782,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "${ALTIUM_VALUE}"
+		(property "Value" "22k"
 			(at 259.08 234.9499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10302,7 +9826,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "RCHIP-22K-0603"
+		(property "Manufacturer" "Yageo"
 			(at 250.952 234.696 90)
 			(hide yes)
 			(show_name no)
@@ -10314,7 +9838,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "COMPONENT GROUP" "Resistor"
+		(property "MPN" "RC0603FR-0722KL"
 			(at 250.952 234.696 90)
 			(hide yes)
 			(show_name no)
@@ -10326,175 +9850,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "MANUFACTURE 1" "Yageo"
-			(at 250.952 234.696 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MANUFACTURE PART NUMBER 1" "RC0603FR-0722KL"
-			(at 250.952 234.696 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PIN COUNT" "2"
-			(at 250.952 234.696 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER 1" "Digi-Key"
-			(at 250.952 234.696 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER PART NUMBER 1" "311-22.0KHRCT-ND"
-			(at 250.952 234.696 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "ALTIUM_VALUE" "22k"
-			(at 250.952 234.696 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-EIA" "0603"
-			(at 250.952 234.696 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-METRIC" "1608"
-			(at 250.952 234.696 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED POWER" "0.1W"
-			(at 250.952 234.696 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED VOLTAGE" "75VDC"
-			(at 250.952 234.696 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TOLERANCE" "1%"
-			(at 250.952 234.696 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MOUNTING TECHNOLOGY" "SMT"
-			(at 250.952 234.696 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TEMPERATURE RANGE" "-55C to 155C"
-			(at 250.952 234.696 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Standard"
-			(at 250.952 234.696 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Standard"
+		(property "DigiKey" "311-22.0KHRCT-ND"
 			(at 250.952 234.696 90)
 			(hide yes)
 			(show_name no)
@@ -10587,7 +9943,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "ATB322524_PROTO"
+		(property "Manufacturer" "TDK"
 			(at 296.672 334.518 90)
 			(hide yes)
 			(show_name no)
@@ -10599,7 +9955,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "COMPONENT GROUP" "Inductor"
+		(property "MPN" "ATB322524-0110-T000"
 			(at 296.672 334.518 90)
 			(hide yes)
 			(show_name no)
@@ -10611,100 +9967,12 @@
 				(justify right bottom)
 			)
 		)
-		(property "MANUFACTURE 1" "TDK"
-			(at 296.672 334.518 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
+		(property "DigiKey" "445-8636-1-ND" (at 0 0 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right bottom)
-			)
-		)
-		(property "MANUFACTURE PART NUMBER 1" "ATB322524"
-			(at 296.672 334.518 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PIN COUNT" "4"
-			(at 296.672 334.518 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER 1" "Mouser"
-			(at 296.672 334.518 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MOUNTING TECHNOLOGY" "SMT"
-			(at 296.672 334.518 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "ROHS" "Yes"
-			(at 296.672 334.518 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Standard"
-			(at 296.672 334.518 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Standard"
-			(at 296.672 334.518 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
+				(hide yes)
 			)
 		)
 		(pin "3"
@@ -10886,7 +10154,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "ATB322524_PROTO"
+		(property "Manufacturer" "TDK"
 			(at 296.672 276.098 90)
 			(hide yes)
 			(show_name no)
@@ -10898,7 +10166,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "COMPONENT GROUP" "Inductor"
+		(property "MPN" "ATB322524-0110-T000"
 			(at 296.672 276.098 90)
 			(hide yes)
 			(show_name no)
@@ -10910,100 +10178,12 @@
 				(justify right bottom)
 			)
 		)
-		(property "MANUFACTURE 1" "TDK"
-			(at 296.672 276.098 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
+		(property "DigiKey" "445-8636-1-ND" (at 0 0 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right bottom)
-			)
-		)
-		(property "MANUFACTURE PART NUMBER 1" "ATB322524"
-			(at 296.672 276.098 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PIN COUNT" "4"
-			(at 296.672 276.098 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER 1" "Mouser"
-			(at 296.672 276.098 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MOUNTING TECHNOLOGY" "SMT"
-			(at 296.672 276.098 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "ROHS" "Yes"
-			(at 296.672 276.098 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Standard"
-			(at 296.672 276.098 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Standard"
-			(at 296.672 276.098 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
+				(hide yes)
 			)
 		)
 		(pin "4"
@@ -11095,6 +10275,30 @@
 				)
 			)
 		)
+		(property "DigiKey" "MM3Z18VBCT-ND" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "onsemi" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "MM3Z18VB" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c2bc3524-48d6-4595-9953-ba45310654c1")
 		)
@@ -11175,6 +10379,14 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "AO3422" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "G"
@@ -11263,90 +10475,6 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "MOUNT_M3_TIGHT"
-			(at 128.27 209.153 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT GROUP" "Mechanical"
-			(at 128.27 209.153 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PIN COUNT" "1"
-			(at 128.27 209.153 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Mechanical"
-			(at 128.27 209.153 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Mechanical"
-			(at 128.27 209.153 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PP MATERIAL STACK" "0"
-			(at 128.27 209.153 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PP ROTATION" "0"
-			(at 128.27 209.153 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
 		(pin "MP"
 			(uuid "29fe0d54-87b8-4a13-b05a-65f31f25c4ee")
 		)
@@ -11381,7 +10509,7 @@
 				)
 			)
 		)
-		(property "Value" "${ALTIUM_VALUE}"
+		(property "Value" "10R"
 			(at 213.36 340.36 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11424,7 +10552,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "RCHIP-10R-0603"
+		(property "Manufacturer" "Yageo"
 			(at 212.344 348.488 0)
 			(hide yes)
 			(show_name no)
@@ -11436,7 +10564,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "COMPONENT GROUP" "Resistor"
+		(property "MPN" "RC0603FR-0710RL"
 			(at 212.344 348.488 0)
 			(hide yes)
 			(show_name no)
@@ -11448,175 +10576,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "MANUFACTURE 1" "Yageo"
-			(at 212.344 348.488 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MANUFACTURE PART NUMBER 1" "RC0603FR-0710RL"
-			(at 212.344 348.488 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PIN COUNT" "2"
-			(at 212.344 348.488 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER 1" "Digi-Key"
-			(at 212.344 348.488 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER PART NUMBER 1" "311-10.0HRCT-ND"
-			(at 212.344 348.488 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "ALTIUM_VALUE" "10R"
-			(at 212.344 348.488 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-EIA" "0603"
-			(at 212.344 348.488 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-METRIC" "1608"
-			(at 212.344 348.488 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED POWER" "0.1W"
-			(at 212.344 348.488 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED VOLTAGE" "75VDC"
-			(at 212.344 348.488 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TOLERANCE" "1%"
-			(at 212.344 348.488 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MOUNTING TECHNOLOGY" "SMT"
-			(at 212.344 348.488 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TEMPERATURE RANGE" "-55C to 155C"
-			(at 212.344 348.488 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Standard"
-			(at 212.344 348.488 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Standard"
+		(property "DigiKey" "311-10.0HRCT-ND"
 			(at 212.344 348.488 0)
 			(hide yes)
 			(show_name no)
@@ -11900,7 +10860,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "${ALTIUM_VALUE}"
+		(property "Value" "300K"
 			(at 370.84 247.6499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11944,7 +10904,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "RCHIP-300K-2512"
+		(property "Manufacturer" "TE Connectivity"
 			(at 362.712 247.396 90)
 			(hide yes)
 			(show_name no)
@@ -11956,7 +10916,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "COMPONENT GROUP" "Resistor"
+		(property "MPN" "3522300KFT"
 			(at 362.712 247.396 90)
 			(hide yes)
 			(show_name no)
@@ -11968,187 +10928,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "MANUFACTURE 1" "TE Connectivity"
-			(at 362.712 247.396 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MANUFACTURE PART NUMBER 1" "3522300KFT"
-			(at 362.712 247.396 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PIN COUNT" "2"
-			(at 362.712 247.396 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER 1" "Digi-Key"
-			(at 362.712 247.396 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER PART NUMBER 1" "A121215CT-ND"
-			(at 362.712 247.396 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "ALTIUM_VALUE" "300K"
-			(at 362.712 247.396 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-EIA" "2512"
-			(at 362.712 247.396 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-METRIC" "6432"
-			(at 362.712 247.396 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED POWER" "3W"
-			(at 362.712 247.396 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED VOLTAGE" "250V"
-			(at 362.712 247.396 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TOLERANCE" "1%"
-			(at 362.712 247.396 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MOUNTING TECHNOLOGY" "SMT"
-			(at 362.712 247.396 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "ROHS" "Yes"
-			(at 362.712 247.396 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TEMPERATURE RANGE" "-55C to 155C"
-			(at 362.712 247.396 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Standard"
-			(at 362.712 247.396 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Standard"
+		(property "DigiKey" "A121215CT-ND"
 			(at 362.712 247.396 90)
 			(hide yes)
 			(show_name no)
@@ -12198,7 +10978,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "${ALTIUM_VALUE}"
+		(property "Value" "1k"
 			(at 246.38 364.4899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12242,7 +11022,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "RCHIP-1K-0603"
+		(property "Manufacturer" "Yageo"
 			(at 238.252 364.236 90)
 			(hide yes)
 			(show_name no)
@@ -12254,7 +11034,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "COMPONENT GROUP" "Resistor"
+		(property "MPN" "RC0603FR-071KL"
 			(at 238.252 364.236 90)
 			(hide yes)
 			(show_name no)
@@ -12266,175 +11046,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "MANUFACTURE 1" "Yageo"
-			(at 238.252 364.236 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MANUFACTURE PART NUMBER 1" "RC0603FR-071KL"
-			(at 238.252 364.236 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PIN COUNT" "2"
-			(at 238.252 364.236 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER 1" "Digi-Key"
-			(at 238.252 364.236 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER PART NUMBER 1" "311-1.00KHRCT-ND"
-			(at 238.252 364.236 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "ALTIUM_VALUE" "1k"
-			(at 238.252 364.236 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-EIA" "0603"
-			(at 238.252 364.236 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-METRIC" "1608"
-			(at 238.252 364.236 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED POWER" "0.1W"
-			(at 238.252 364.236 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED VOLTAGE" "75VDC"
-			(at 238.252 364.236 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TOLERANCE" "1%"
-			(at 238.252 364.236 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MOUNTING TECHNOLOGY" "SMT"
-			(at 238.252 364.236 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TEMPERATURE RANGE" "-55C to 155C"
-			(at 238.252 364.236 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Standard"
-			(at 238.252 364.236 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Standard"
+		(property "DigiKey" "311-1.00KHRCT-ND"
 			(at 238.252 364.236 90)
 			(hide yes)
 			(show_name no)
@@ -12483,7 +11095,7 @@
 				)
 			)
 		)
-		(property "Value" "${ALTIUM_VALUE}"
+		(property "Value" "20M"
 			(at 353.06 226.06 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12526,7 +11138,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "RCHIP-20M-2010"
+		(property "Manufacturer" "Vishay"
 			(at 352.044 234.188 0)
 			(hide yes)
 			(show_name no)
@@ -12538,175 +11150,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "COMPONENT GROUP" "Resistor"
-			(at 352.044 234.188 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MANUFACTURE 1" "Vishay"
-			(at 352.044 234.188 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MANUFACTURE PART NUMBER 1" "CRMA2010AF20M0FKEF"
-			(at 352.044 234.188 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PIN COUNT" "2"
-			(at 352.044 234.188 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER 1" "Digi-Key"
-			(at 352.044 234.188 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "ALTIUM_VALUE" "20M"
-			(at 352.044 234.188 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-EIA" "2010"
-			(at 352.044 234.188 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-METRIC" "5025"
-			(at 352.044 234.188 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED POWER" "0.5W"
-			(at 352.044 234.188 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED VOLTAGE" "400VDC"
-			(at 352.044 234.188 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TOLERANCE" "1%"
-			(at 352.044 234.188 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MOUNTING TECHNOLOGY" "SMT"
-			(at 352.044 234.188 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TEMPERATURE RANGE" "-55C to 155C"
-			(at 352.044 234.188 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Standard"
-			(at 352.044 234.188 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Standard"
+		(property "MPN" "CRMA2010AF20M0FKEF"
 			(at 352.044 234.188 0)
 			(hide yes)
 			(show_name no)
@@ -13034,7 +11478,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "RCHIP-75R-0805"
+		(property "Manufacturer" "Yageo"
 			(at 212.344 290.068 0)
 			(hide yes)
 			(show_name no)
@@ -13046,7 +11490,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "COMPONENT GROUP" "Resistor"
+		(property "MPN" "RC0805FR-0775RL"
 			(at 212.344 290.068 0)
 			(hide yes)
 			(show_name no)
@@ -13058,163 +11502,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "MANUFACTURE 1" "Yageo"
-			(at 212.344 290.068 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MANUFACTURE PART NUMBER 1" "RC0805FR-0775RL"
-			(at 212.344 290.068 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PIN COUNT" "2"
-			(at 212.344 290.068 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER 1" "Digi-Key"
-			(at 212.344 290.068 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER PART NUMBER 1" "311-75.0CRCT-ND"
-			(at 212.344 290.068 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "ALTIUM_VALUE" "75R"
-			(at 212.344 290.068 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-EIA" "0805"
-			(at 212.344 290.068 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED POWER" "0.125W"
-			(at 212.344 290.068 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED VOLTAGE" "75VDC"
-			(at 212.344 290.068 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TOLERANCE" "1%"
-			(at 212.344 290.068 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MOUNTING TECHNOLOGY" "SMT"
-			(at 212.344 290.068 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TEMPERATURE RANGE" "-55C to 155C"
-			(at 212.344 290.068 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Standard"
-			(at 212.344 290.068 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Standard"
+		(property "DigiKey" "311-75.0CRCT-ND"
 			(at 212.344 290.068 0)
 			(hide yes)
 			(show_name no)
@@ -13307,7 +11595,7 @@
 				)
 			)
 		)
-		(property "DATASHEET LINK" "https://datasheet.datasheetarchive.com/originals/dk/DKDS-13/255385.pdf"
+		(property "Manufacturer" "IXYS SEMICONDUCTOR"
 			(at 294.132 233.68 90)
 			(hide yes)
 			(show_name no)
@@ -13319,7 +11607,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "HEIGHT" "4.699mm"
+		(property "MPN" "LDA111STR"
 			(at 294.132 233.68 90)
 			(hide yes)
 			(show_name no)
@@ -13331,76 +11619,12 @@
 				(justify left bottom)
 			)
 		)
-		(property "MANUFACTURER_NAME" "IXYS SEMICONDUCTOR"
-			(at 294.132 233.68 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
+		(property "DigiKey" "212-LDA111SCT-ND" (at 0 0 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left bottom)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" "LDA111STR"
-			(at 294.132 233.68 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "MOUSER PART NUMBER" "849-LDA111STR"
-			(at 294.132 233.68 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "MOUSER PRICE/STOCK" "https://www.mouser.co.uk/ProductDetail/IXYS-Integrated-Circuits/LDA111STR?qs=lQlU%252BwB40guZJ8WaenQLCg%3D%3D"
-			(at 294.132 233.68 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "ARROW PART NUMBER" "LDA111STR"
-			(at 294.132 233.68 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "ARROW PRICE/STOCK" "https://www.arrow.com/en/products/lda111str/ixys"
-			(at 294.132 233.68 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
+				(hide yes)
 			)
 		)
 		(pin "6"
@@ -13576,90 +11800,6 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "MOUNT_M3_TIGHT"
-			(at 128.27 193.913 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT GROUP" "Mechanical"
-			(at 128.27 193.913 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PIN COUNT" "1"
-			(at 128.27 193.913 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Mechanical"
-			(at 128.27 193.913 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Mechanical"
-			(at 128.27 193.913 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PP MATERIAL STACK" "0"
-			(at 128.27 193.913 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PP ROTATION" "0"
-			(at 128.27 193.913 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
 		(pin "MP"
 			(uuid "1512924f-8d95-495d-8849-1080bad3d67f")
 		)
@@ -13741,7 +11881,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "Molex_2_Pin"
+		(property "Manufacturer" "JST"
 			(at 139.7 43.18 90)
 			(hide yes)
 			(show_name no)
@@ -13753,7 +11893,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "COMPONENT GROUP" "Connector"
+		(property "MPN" "S2B-XH-A(LF)(SN)"
 			(at 139.7 43.18 90)
 			(hide yes)
 			(show_name no)
@@ -13765,127 +11905,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "MANUFACTURE 1" "Molex"
-			(at 139.7 43.18 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MANUFACTURE PART NUMBER 1" "22-23-2021\n22-23-2021"
-			(at 139.7 43.18 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PIN COUNT" "2"
-			(at 139.7 43.18 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER 1" "Digi-Key"
-			(at 139.7 43.18 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER PART NUMBER 1" "WM4200-ND"
-			(at 139.7 43.18 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MOUNTING TECHNOLOGY" "Through-hole"
-			(at 139.7 43.18 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "ROHS" "Yes"
-			(at 139.7 43.18 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Standard"
-			(at 139.7 43.18 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Standard"
-			(at 139.7 43.18 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PP MATERIAL STACK" "0"
-			(at 139.7 43.18 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PP ROTATION" "0"
+		(property "DigiKey" "455-2257-ND"
 			(at 139.7 43.18 90)
 			(hide yes)
 			(show_name no)
@@ -13975,6 +11995,22 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Manufacturer" "Amphenol" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "132289" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -14142,196 +12178,20 @@
 				)
 			)
 		)
-		(property "SNAPEDA_LINK" "https://www.snapeda.com/parts/SC0915/Raspberry%20Pi/view-part/6331605/?ref=snap"
-			(at 142.24 116.84 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
+		(property "Manufacturer" "Raspberry Pi" (at 0 0 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right bottom)
+				(hide yes)
 			)
 		)
-		(property "PACKAGE" "None"
-			(at 142.24 116.84 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
+		(property "MPN" "SC0915" (at 0 0 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right bottom)
-			)
-		)
-		(property "PURCHASE-URL" "https://pricing.snapeda.com/search/part/SC0915/?ref=eda"
-			(at 142.24 116.84 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "AVAILABILITY" "In Stock"
-			(at 142.24 116.84 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PRICE" "None"
-			(at 142.24 116.84 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MP" "SC0915"
-			(at 142.24 116.84 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CHECK_PRICES" "https://www.snapeda.com/parts/SC0915/Raspberry%20Pi/view-part/6331605/?ref=eda"
-			(at 142.24 116.84 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MF" "Raspberry Pi"
-			(at 142.24 116.84 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "ALTIUM_VALUE" "*"
-			(at 142.24 116.84 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PART NUMBER" "SC0915"
-			(at 185.42 90.932 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT GROUP" "PCB Feature"
-			(at 185.42 90.932 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Standard"
-			(at 185.42 90.932 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Standard"
-			(at 185.42 90.932 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PP MATERIAL STACK" "0"
-			(at 185.42 90.932 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PP ROTATION" "0"
-			(at 185.42 90.932 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PP ROTATION1" "0"
-			(at 185.42 90.932 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
+				(hide yes)
 			)
 		)
 		(pin "18"
@@ -14513,7 +12373,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "${ALTIUM_VALUE}"
+		(property "Value" "1k"
 			(at 243.84 300.9899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14557,7 +12417,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "RCHIP-1K-0603"
+		(property "Manufacturer" "Yageo"
 			(at 235.712 300.736 90)
 			(hide yes)
 			(show_name no)
@@ -14569,7 +12429,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "COMPONENT GROUP" "Resistor"
+		(property "MPN" "RC0603FR-071KL"
 			(at 235.712 300.736 90)
 			(hide yes)
 			(show_name no)
@@ -14581,175 +12441,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "MANUFACTURE 1" "Yageo"
-			(at 235.712 300.736 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MANUFACTURE PART NUMBER 1" "RC0603FR-071KL"
-			(at 235.712 300.736 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PIN COUNT" "2"
-			(at 235.712 300.736 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER 1" "Digi-Key"
-			(at 235.712 300.736 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER PART NUMBER 1" "311-1.00KHRCT-ND"
-			(at 235.712 300.736 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "ALTIUM_VALUE" "1k"
-			(at 235.712 300.736 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-EIA" "0603"
-			(at 235.712 300.736 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-METRIC" "1608"
-			(at 235.712 300.736 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED POWER" "0.1W"
-			(at 235.712 300.736 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED VOLTAGE" "75VDC"
-			(at 235.712 300.736 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TOLERANCE" "1%"
-			(at 235.712 300.736 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MOUNTING TECHNOLOGY" "SMT"
-			(at 235.712 300.736 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TEMPERATURE RANGE" "-55C to 155C"
-			(at 235.712 300.736 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Standard"
-			(at 235.712 300.736 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Standard"
+		(property "DigiKey" "311-1.00KHRCT-ND"
 			(at 235.712 300.736 90)
 			(hide yes)
 			(show_name no)
@@ -14921,7 +12613,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "RCHIP-75R-0805"
+		(property "Manufacturer" "Yageo"
 			(at 324.612 341.376 90)
 			(hide yes)
 			(show_name no)
@@ -14933,7 +12625,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "COMPONENT GROUP" "Resistor"
+		(property "MPN" "RC0805FR-072KL"
 			(at 324.612 341.376 90)
 			(hide yes)
 			(show_name no)
@@ -14945,163 +12637,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "MANUFACTURE 1" "Yageo"
-			(at 324.612 341.376 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MANUFACTURE PART NUMBER 1" "RC0805FR-0775RL"
-			(at 324.612 341.376 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PIN COUNT" "2"
-			(at 324.612 341.376 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER 1" "Digi-Key"
-			(at 324.612 341.376 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "SUPPLIER PART NUMBER 1" "311-75.0CRCT-ND"
-			(at 324.612 341.376 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "ALTIUM_VALUE" "75R"
-			(at 324.612 341.376 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "CASE-EIA" "0805"
-			(at 324.612 341.376 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED POWER" "0.125W"
-			(at 324.612 341.376 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "RATED VOLTAGE" "75VDC"
-			(at 324.612 341.376 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TOLERANCE" "1%"
-			(at 324.612 341.376 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "MOUNTING TECHNOLOGY" "SMT"
-			(at 324.612 341.376 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "TEMPERATURE RANGE" "-55C to 155C"
-			(at 324.612 341.376 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Standard"
-			(at 324.612 341.376 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Standard"
+		(property "DigiKey" "311-2.00KCRCT-ND"
 			(at 324.612 341.376 90)
 			(hide yes)
 			(show_name no)
@@ -15274,90 +12810,6 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "MOUNT_M3_TIGHT"
-			(at 128.27 224.393 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT GROUP" "Mechanical"
-			(at 128.27 224.393 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PIN COUNT" "1"
-			(at 128.27 224.393 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT KIND" "Mechanical"
-			(at 128.27 224.393 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "COMPONENT TYPE" "Mechanical"
-			(at 128.27 224.393 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PP MATERIAL STACK" "0"
-			(at 128.27 224.393 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
-		(property "PP ROTATION" "0"
-			(at 128.27 224.393 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right bottom)
-			)
-		)
 		(pin "MP"
 			(uuid "ab791bfb-378f-47c7-a92f-1fdf128b4c6d")
 		)
@@ -15513,6 +12965,30 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "DigiKey" "SM4005PL-TPMSCT-ND" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "MCC" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "SM4005PL-TP" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
