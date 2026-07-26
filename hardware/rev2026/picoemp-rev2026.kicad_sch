@@ -7101,7 +7101,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 83.82 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -7295,7 +7295,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 223.52 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -7510,7 +7510,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 273.812 357.886 90)
 			(hide yes)
 			(show_name no)
@@ -7773,7 +7773,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DSS13UTR"
+		(property "Footprint" "picoemp:D_SOD-123FL"
 			(at 185.42 315.468 90)
 			(hide yes)
 			(show_name no)
@@ -7959,7 +7959,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DSS13UTR"
+		(property "Footprint" "picoemp:D_SOD-123FL"
 			(at 226.06 300.228 90)
 			(hide yes)
 			(show_name no)
@@ -8378,7 +8378,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DSS13UTR"
+		(property "Footprint" "picoemp:D_SOD-123FL"
 			(at 220.98 361.188 90)
 			(hide yes)
 			(show_name no)
@@ -8485,7 +8485,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 268.732 299.466 90)
 			(hide yes)
 			(show_name no)
@@ -8590,7 +8590,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
 			(at 228.854 119.888 90)
 			(hide yes)
 			(show_name no)
@@ -8682,7 +8682,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SMA"
+		(property "Footprint" "Diode_SMD:D_SMA"
 			(at 322.58 282.448 90)
 			(hide yes)
 			(show_name no)
@@ -8881,7 +8881,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:TO-252-3_TabPin2"
 			(at 381 292.1 0)
 			(hide yes)
 			(show_name no)
@@ -9060,7 +9060,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 259.08 292.1 0)
 			(hide yes)
 			(show_name no)
@@ -9159,7 +9159,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 350.52 335.28 0)
 			(hide yes)
 			(show_name no)
@@ -9277,7 +9277,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "CKG57N_2220"
+		(property "Footprint" "Capacitor_SMD:C_2220_5750Metric"
 			(at 339.852 286.766 90)
 			(hide yes)
 			(show_name no)
@@ -9382,7 +9382,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 83.82 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -9500,7 +9500,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 281.432 299.466 90)
 			(hide yes)
 			(show_name no)
@@ -9837,7 +9837,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
 			(at 63.5 137.668 90)
 			(hide yes)
 			(show_name no)
@@ -9955,7 +9955,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 256.54 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -10071,7 +10071,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ATB322524"
+		(property "Footprint" "picoemp:ATB322524"
 			(at 296.672 334.518 90)
 			(hide yes)
 			(show_name no)
@@ -10190,7 +10190,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
 			(at 63.5 122.428 90)
 			(hide yes)
 			(show_name no)
@@ -10282,7 +10282,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ATB322524"
+		(property "Footprint" "picoemp:ATB322524"
 			(at 296.672 276.098 90)
 			(hide yes)
 			(show_name no)
@@ -10403,7 +10403,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "SOD323"
+		(property "Footprint" "Diode_SMD:D_SOD-323F"
 			(at 360.172 343.154 0)
 			(hide yes)
 			(show_name no)
@@ -10510,7 +10510,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 259.08 355.6 0)
 			(hide yes)
 			(show_name no)
@@ -10689,7 +10689,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 213.36 342.9 0)
 			(hide yes)
 			(show_name no)
@@ -11041,7 +11041,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
 			(at 368.3 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -11159,7 +11159,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 243.84 363.22 0)
 			(hide yes)
 			(show_name no)
@@ -11275,7 +11275,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_2010_5025Metric_Pad1.40x2.65mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_2010_5025Metric"
 			(at 353.06 228.6 0)
 			(hide yes)
 			(show_name no)
@@ -11615,7 +11615,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 213.36 284.48 0)
 			(hide yes)
 			(show_name no)
@@ -11732,7 +11732,7 @@
 				)
 			)
 		)
-		(property "Footprint" "C__Users_colin_Documents_AltiumLL_SamacSys.PcbLib:SOP254P952X470-6N"
+		(property "Footprint" "picoemp:SOP-6_LDA111"
 			(at 317.5 236.22 0)
 			(hide yes)
 			(show_name no)
@@ -12015,7 +12015,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_XH_S2B-XH-A_1x02_P2.50mm_Horizontal"
 			(at 142.24 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -12551,7 +12551,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 241.3 299.72 0)
 			(hide yes)
 			(show_name no)
@@ -12747,7 +12747,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 330.2 340.36 0)
 			(hide yes)
 			(show_name no)
@@ -13101,7 +13101,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "picoemp:D_SOD-123FL"
 			(at 142.24 54.61 90)
 			(hide yes)
 			(show_name no)
