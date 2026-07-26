@@ -1,25 +1,23 @@
 import kicad_parse as kp
 
-# Every non-power reference expected in the design, post-Task-8.
+# Every non-power reference expected in the design, post-Task-9.
 #
-# This set originally also carried C6, J4 (the new trigger-input SMA), R14,
-# R15, R16, and U2 -- all Task 9 additions to the trigger front end that
-# don't exist as symbols yet. Task 8 only renames/re-footprints existing
-# symbols, so those six refs are removed here; Task 9 should add them back
-# (and its own test coverage) once it creates the corresponding parts.
+# C6, J4 (the new trigger-input SMA), R14, R15, R16, and U2 are Task 9's
+# trigger front-end additions (see docs/superpowers/specs/
+# 2026-07-25-picoemp-rev2026-design.md section 6.4). J4 and R16 are DNP.
 EXPECTED_REFS = {
-    'C1', 'C2', 'C3', 'C5',
+    'C1', 'C2', 'C3', 'C5', 'C6',
     'D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'D9',
     'FID1', 'FID2', 'FID3',
-    'J1', 'J2', 'J3',
+    'J1', 'J2', 'J3', 'J4',
     'MH1', 'MH2', 'MH3',
     'P1', 'P2', 'P3',
     'Q1', 'Q2', 'Q3', 'Q4',
     'R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R9',
-    'R10', 'R11', 'R12', 'R13',
+    'R10', 'R11', 'R12', 'R13', 'R14', 'R15', 'R16',
     'SW1', 'SW2', 'SW3',
     'T1', 'T2',
-    'U1',
+    'U1', 'U2',
 }
 
 
@@ -139,18 +137,20 @@ def test_mosfets_use_numeric_pin_symbol(syms):
 # pitch vs the KSC7xxJ land's 4.00mm -- a 12.5% mismatch). See the Task 8
 # report for the full comparison.
 #
-# Two spec-table entries are intentionally still absent from this dict:
-# C6 and U2 are new trigger-front-end parts Task 9 adds; they don't exist
-# as symbols yet. The spec's second "J4" (SMA, DNP optional trigger input)
-# likewise doesn't exist yet -- Task 9 creates it. None of this is a test
-# gap: a symbol that does not exist cannot carry a wrong footprint, and
-# test_every_symbol_has_a_footprint only inspects symbols that exist.
-# Task 9 adds its own footprint coverage for the parts it creates.
+# Task 9 additions: U2 is the 74LVC1G17 Schmitt buffer in SOT-23-5 (verified
+# against the Nexperia 74LVC1G17GV,125 datasheet -- NOT the stock symbol's
+# TI-only assumption, since SOT-23-5 single-gate logic pinouts are
+# vendor-specific). J4 reuses J1's SMA footprint (DNP optional trigger
+# input). R14/R15/R16 are 0603 resistors. J3 is deliberately absent from
+# this dict -- test_j3_is_wide_pitch below covers it with a substring check
+# instead of an exact-match, since the point of that test is "not 2.54mm /
+# is a wide pitch", not one specific part.
 FOOTPRINTS = {
     'C1': 'Capacitor_SMD:C_0805_2012Metric',
     'C2': 'Capacitor_SMD:C_0805_2012Metric',
     'C3': 'Capacitor_SMD:C_2220_5750Metric',
     'C5': 'Capacitor_SMD:C_0603_1608Metric',
+    'C6': 'Capacitor_SMD:C_0603_1608Metric',
     'D1': 'picoemp:D_SOD-123FL',
     'D2': 'Diode_SMD:D_SMA',
     'D3': 'picoemp:D_SOD-123FL',
@@ -164,11 +164,16 @@ FOOTPRINTS = {
     'T1': 'picoemp:ATB322524',
     'T2': 'picoemp:ATB322524',
     'U1': 'Module:RaspberryPi_Pico_SMD',
+    'U2': 'Package_TO_SOT_SMD:SOT-23-5',
     'J1': 'Connector_Coaxial:SMA_Amphenol_132289_EdgeMount',
     'J2': 'Connector_JST:JST_XH_S2B-XH-A_1x02_P2.50mm_Horizontal',
+    'J4': 'Connector_Coaxial:SMA_Amphenol_132289_EdgeMount',
     'P1': 'Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical',
     'P2': 'Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical',
     'P3': 'Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical',
+    'R14': 'Resistor_SMD:R_0603_1608Metric',
+    'R15': 'Resistor_SMD:R_0603_1608Metric',
+    'R16': 'Resistor_SMD:R_0603_1608Metric',
     'SW1': 'Button_Switch_SMD:SW_Push_1P1T_NO_CK_KSC7xxJ',
     'SW2': 'Button_Switch_SMD:SW_Push_1P1T_NO_CK_KSC7xxJ',
     'SW3': 'picoemp:SW_Push_ESwitch_TL3301AJ',
@@ -183,9 +188,9 @@ def test_every_symbol_has_a_footprint(syms):
 def test_every_footprint_has_a_library_prefix(syms):
     """Format check on whatever footprint IS assigned.
 
-    Deliberately skips symbols with no footprint at all (just J3 as of
-    Task 8) -- that gap is test_every_symbol_has_a_footprint's job, and J3
-    sits out of scope here (Task 9 owns it).
+    Deliberately skips symbols with no footprint at all -- that gap is
+    test_every_symbol_has_a_footprint's job. As of Task 9 every symbol has
+    a footprint (J3, the last holdout, was assigned its terminal block).
     """
     bad = [(s.ref, s.footprint) for s in syms if s.footprint and ':' not in s.footprint]
     assert not bad, f'footprints with no library prefix: {bad}'
@@ -205,15 +210,11 @@ def test_expected_footprint_assignments(syms):
 
 
 def test_upstream_designators_restored(syms):
-    """NOTE: the design spec's second SMA (also called "J4", the DNP
-    optional trigger input) is a Task 9 addition and deliberately not
-    asserted here -- it doesn't exist as a symbol until Task 9 creates it.
-    """
     refs = {s.ref for s in syms}
     assert {'D6', 'D8', 'D9'} <= refs, 'LEDs must be D6/D8/D9, not LED1-3'
     assert not (refs & {'LED1', 'LED2', 'LED3'}), 'LED1-3 designators still present'
     assert {'P1', 'P2', 'P3'} <= refs, 'headers must be P1/P2/P3'
-    assert {'J1', 'J2', 'J3'} <= refs
+    assert {'J1', 'J2', 'J3', 'J4'} <= refs
     assert 'J5' not in refs and 'J6' not in refs, 'stale J5/J6 designators remain'
 
 
@@ -237,3 +238,32 @@ def test_switches_have_footprints(syms):
 
 def test_all_expected_refs_present(syms):
     assert {s.ref for s in syms} == EXPECTED_REFS
+
+
+def test_trigger_front_end_present(syms):
+    by_ref = {s.ref: s for s in syms}
+    assert by_ref['U2'].value == '74LVC1G17'
+    assert by_ref['R14'].value == '100R'
+    assert by_ref['R15'].value == '10k'
+    assert by_ref['C6'].value == '100n'
+
+
+def test_bypass_resistor_is_dnp(syms):
+    """R16 bypasses the buffer. Never fitted alongside U2."""
+    r16 = next(s for s in syms if s.ref == 'R16')
+    assert r16.value == '0R'
+    assert r16.dnp, 'R16 must be DNP - fitting it with U2 causes output contention'
+
+
+def test_optional_trigger_sma_is_dnp(syms):
+    j4 = next(s for s in syms if s.ref == 'J4')
+    assert j4.dnp, 'J4 is the optional trigger SMA and must be DNP'
+
+
+def test_j3_is_wide_pitch(syms):
+    """J3 carries ~500V. 2.54mm fails IEC 60664-1 creepage."""
+    j3 = next(s for s in syms if s.ref == 'J3')
+    assert j3.footprint, 'J3 has no footprint'
+    assert '2.54mm' not in j3.footprint, 'J3 must not be 2.54mm pitch'
+    assert any(p in j3.footprint for p in ('5.08mm', '5.0mm', '3.96mm')), \
+        f'J3 footprint {j3.footprint!r} does not look like a wide-pitch connector'
