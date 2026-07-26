@@ -93,3 +93,135 @@ def test_lda111_footprint_geometry(root):
     assert len(xs) == 2, f'pads should form two rows, got x positions {xs}'
     span = xs[1] - xs[0]
     assert 8.6 <= span <= 9.1, f'pad-centre span {span} mm, expected ~8.85'
+
+
+# --- Pad-size / containment coverage -----------------------------------
+#
+# kicad_parse.footprints() only exposes pad (number, x, y): enough for the
+# position/pitch tests above, but not enough to catch a pad *size* bug --
+# which is exactly where two real defects were found in review: (1) the
+# LDA111's pads were sized so adjacent same-column pads touched with zero
+# gap (a dead short), and (2) an earlier D_SOD-123FL draft had pads sized
+# and centred so they never reached the body/leads at all. Both would have
+# sailed through the position-only tests above unchanged. _pads_with_size
+# and _fab_body_half_extents below reuse kicad_parse's own primitives
+# (parse_file, _walk, sval) to pull the extra fields, without changing
+# kicad_parse.py's public Footprint/pads shape that other tasks rely on.
+
+def _pads_with_size(root, name):
+    """(number, x, y, size_x, size_y) for every pad in a .kicad_mod file.
+
+    size_x/size_y are the EFFECTIVE footprint-local-frame extents, i.e.
+    with the pad's own rotation (the 3rd `at` value) already applied --
+    swapped when rotation is an odd multiple of 90 degrees. Reading the
+    raw `(size ...)` tuple without this would silently ignore exactly the
+    bug found in review (a 90-degree pad rotation that swapped which axis
+    the 2.54mm dimension fell on), since the raw tuple is identical
+    regardless of rotation.
+    """
+    tree = kp.parse_file(root / 'lib' / 'picoemp.pretty' / f'{name}.kicad_mod')
+    out = []
+    for pad in kp._walk(tree, 'pad'):
+        num = kp.sval(pad[1]) or ''
+        at = next(c for c in pad if isinstance(c, list) and c and c[0] == 'at')
+        size = next(c for c in pad if isinstance(c, list) and c and c[0] == 'size')
+        x, y = float(at[1]), float(at[2])
+        angle = float(at[3]) if len(at) > 3 else 0.0
+        sx, sy = float(size[1]), float(size[2])
+        if round(angle) % 180 == 90:
+            sx, sy = sy, sx
+        out.append((num, x, y, sx, sy))
+    return out
+
+
+def _fab_body_half_extents(root, name):
+    """(half_x, half_y) of the F.Fab fp_rect body outline in a .kicad_mod."""
+    tree = kp.parse_file(root / 'lib' / 'picoemp.pretty' / f'{name}.kicad_mod')
+    for rect in kp._walk(tree, 'fp_rect'):
+        layer = next(
+            (kp.sval(c[1]) for c in rect if isinstance(c, list) and c and c[0] == 'layer'),
+            None,
+        )
+        if layer == 'F.Fab':
+            start = next(c for c in rect if isinstance(c, list) and c and c[0] == 'start')
+            end = next(c for c in rect if isinstance(c, list) and c and c[0] == 'end')
+            xs = sorted([float(start[1]), float(end[1])])
+            ys = sorted([float(start[2]), float(end[2])])
+            return xs[1], ys[1]
+    raise AssertionError(f'no F.Fab fp_rect body outline found in {name}.kicad_mod')
+
+
+def test_atb322524_pad_size(root):
+    """Pads must be a plausible physical size (matching the as-fabricated
+    reference's 0.55 x 1.0mm pads) and must not be wide enough to touch
+    across the 3.0mm column pitch."""
+    pads = _pads_with_size(root, 'ATB322524')
+    for num, _, _, sx, sy in pads:
+        assert 0.3 <= sx <= 1.0, f'pad {num} width {sx}mm implausible for a 3.2x2.5mm part'
+        assert 0.6 <= sy <= 1.6, f'pad {num} height {sy}mm implausible for a 3.2x2.5mm part'
+    xs = sorted({round(x, 2) for _, x, _, _, _ in pads})
+    pitch = xs[1] - xs[0]
+    assert max(sx for _, _, _, sx, _ in pads) < pitch, (
+        'pad width reaches across the column pitch -- pads would touch/overlap'
+    )
+
+
+def test_lda111_pad_size_and_gap(root):
+    """Regression test for the fused-pad defect found in review: the pads
+    were `(size 2.54 1.27)` rotated 90 degrees, which puts the 2.54mm
+    dimension along Y -- the 2.54mm pitch axis -- so adjacent same-column
+    pads touched with zero gap (pins 1-2-3 and 4-5-6 shorted together on
+    the optocoupler). The fix removes the rotation so 2.54mm runs along X
+    (toe-to-heel, away from the body) and 1.27mm along Y, leaving a real
+    gap. This test pins both the individual pad size and a strictly
+    positive inter-pad gap within each column, so a reintroduced rotation
+    (or any other zero/negative-gap regression) fails here instead of only
+    being visible in a rendered SVG."""
+    pads = _pads_with_size(root, 'SOP-6_LDA111')
+    for num, _, _, sx, sy in pads:
+        assert 2.3 <= sx <= 2.8, f'pad {num} width (toe-to-heel, X) {sx}mm, expected ~2.54mm'
+        assert 1.0 <= sy <= 1.5, f'pad {num} height (pitch axis, Y) {sy}mm, expected ~1.27mm'
+        assert sx > sy, (
+            f'pad {num} size {sx}x{sy}mm: X (toe-to-heel) must exceed Y (pitch axis), '
+            'or adjacent pads in the same column will touch'
+        )
+    by_column = {}
+    for num, x, y, sx, sy in pads:
+        by_column.setdefault(round(x, 2), []).append((y, sy))
+    for col_x, entries in by_column.items():
+        entries.sort()
+        for (y1, sy1), (y2, sy2) in zip(entries, entries[1:]):
+            gap = (y2 - sy2 / 2) - (y1 + sy1 / 2)
+            assert gap > 0, (
+                f'pads at x={col_x} touch or overlap (y={y1} and y={y2}, gap={gap}mm) -- '
+                'this shorts adjacent pins together'
+            )
+
+
+def test_d_sod_123fl_footprint_geometry(root):
+    """SOD-123FL land for SM4005PL-TP (D1/D3/D4/D5), per Central
+    Semiconductor's mounting-pad drawing (4.1mm overall pad-to-pad envelope
+    minus a 0.95mm pad width = 3.15mm centre span) and the as-fabricated
+    main:DSS13UTR footprint on the original board (+/-1.55mm centres,
+    3.10mm span, 1.15x1.30mm pads). An earlier draft misread MCC's
+    suggested-pad-layout figure: its "2.36mm" turned out to be the
+    inner-edge gap between pads, not the centre-to-centre span, so the
+    pads landed entirely inside the body outline, nowhere near the leads.
+    This test pins the corrected span, sane pad sizes, and -- the check
+    that would have caught the original mistake -- that each pad's outer
+    edge actually reaches past the body outline."""
+    pads = _pads_with_size(root, 'D_SOD-123FL')
+    assert len(pads) == 2, f'expected 2 pads, got {len(pads)}'
+    xs = sorted(x for _, x, _, _, _ in pads)
+    span = xs[1] - xs[0]
+    assert 3.0 <= span <= 3.3, f'pad-centre span {span}mm, expected ~3.10-3.15mm'
+    for num, _, _, sx, sy in pads:
+        assert 0.8 <= sx <= 1.5, f'pad {num} width {sx}mm implausible'
+        assert 1.0 <= sy <= 1.6, f'pad {num} height {sy}mm implausible'
+    half_x, _ = _fab_body_half_extents(root, 'D_SOD-123FL')
+    for num, x, _, sx, _ in pads:
+        outer_edge = abs(x) + sx / 2
+        assert outer_edge > half_x, (
+            f'pad {num} outer edge at {outer_edge}mm does not reach the body half-length '
+            f'{half_x}mm -- the land does not reach the leads'
+        )
