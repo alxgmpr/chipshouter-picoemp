@@ -1,0 +1,32 @@
+(version 1)
+
+# PicoEMP Rev-2026 custom design rules
+#
+# Upstream annotates SCH-PICOEMP-REV04.PDF with:
+#     ISOLATION BARRIER, 400V MIN.  >1MM CLEARANCE PER 61010-1.
+#
+# That rule governs the ISOLATION BARRIER — HV side to logic side. It does not
+# govern spacing *within* the HV section between two HV nets, which is bounded
+# by component packages: an 0603 resistor has ~0.70 mm between its own pads, an
+# 0805 ~0.80 mm, and the ATB3225 transformer 0.77 mm primary-to-secondary.
+#
+# Encoding the 1 mm figure as a plain netclass clearance is therefore wrong: it
+# applies between any two differing nets touching the class, making 0603/0805
+# parts illegal on HV nets. This rule scopes it correctly.
+#
+# Voltages, from primary sources (component ratings are headroom, not operating
+# points — C3 is 630 V rated, Q2 650 V):
+#   HV capacitor charge      ~250 V   (firmware/micropython/cspico_simple.py)
+#   Barrier design rating     400 V   (upstream schematic annotation)
+#   Hi-pot proof test           1 kV  ("well beyond the voltages the device can
+#                                      generate" — hardware/design_notes)
+
+(rule "HV isolation barrier"
+	(constraint clearance (min 1.0mm))
+	(condition "A.NetClass == 'HV' && B.NetClass != 'HV'"))
+
+# The barrier also applies to the board edge, where a HV net could otherwise
+# creep to an exposed cut edge.
+(rule "HV to board edge"
+	(constraint edge_clearance (min 1.0mm))
+	(condition "A.NetClass == 'HV'"))
