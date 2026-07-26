@@ -358,3 +358,33 @@ def test_mounting_hole_x_spacing_is_preserved():
             xs[ref] = float(at[1])
     assert abs(abs(xs['MH2'] - xs['MH1']) - 32.0) < 0.005, \
         f"MH1/MH2 X spacing is {abs(xs['MH2'] - xs['MH1']):.4f} mm, must stay 32.000"
+
+
+def test_sma_tab_is_centred_on_the_board_axis():
+    """The HV SMA outcropping must sit on the board's centreline.
+
+    It was drawn 0.500 mm east of it -- tab centred on x=124.890 against a board
+    centre of x=124.390 -- while J1 itself sat at x=124.390. So the connector was
+    centred on the board but off-centre in its own tab, and the whole outline was
+    visibly asymmetric.
+    """
+    import kicad_parse as kp
+    d = kp.parse_file(str(conftest.PRO.with_suffix('.kicad_pcb')))
+    xs = []
+    for n in kp._walk(d, 'gr_line'):
+        lay = next((c for c in n if isinstance(c, list) and c and c[0] == 'layer'), None)
+        if not lay or kp.sval(lay[1]) != 'Edge.Cuts':
+            continue
+        pts = [next(c for c in n if isinstance(c, list) and c and c[0] == t)
+               for t in ('start', 'end')]
+        for c in pts:
+            if abs(float(c[2]) - 149.872) < 0.001:      # the tab's south edge
+                xs.append(float(c[1]))
+    assert len(xs) >= 2, 'tab south edge not found on Edge.Cuts'
+    board_centre = (104.39 + 144.39) / 2
+    tab_centre = (min(xs) + max(xs)) / 2
+    assert abs(tab_centre - board_centre) < 0.005, (
+        f'SMA tab is centred on x={tab_centre:.3f} but the board centre is '
+        f'x={board_centre:.3f}; the outline is asymmetric by '
+        f'{tab_centre - board_centre:+.3f} mm'
+    )
