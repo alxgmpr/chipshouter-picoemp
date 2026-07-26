@@ -192,9 +192,58 @@ def test_every_hv_net_is_assigned_to_the_hv_class():
     import fnmatch
     pats = [p['pattern'] for p in _pro()['net_settings'].get('netclass_patterns', [])
             if p.get('netclass') == 'HV']
-    missing = {n for n in HV_NETS if not any(fnmatch.fnmatch(n, p) for p in pats)}
+    # HV_NETS holds bare names; KiCad's canonical form for a root-sheet local
+    # label carries a leading '/'. Accept either so this test is about coverage,
+    # not about which spelling happens to be in use -- the prefix itself is what
+    # test_hv_patterns_match_the_names_actually_on_the_board pins down.
+    missing = {n for n in HV_NETS
+               if not any(fnmatch.fnmatch(n, p) or fnmatch.fnmatch('/' + n, p)
+                          for p in pats)}
     assert not missing, (
         f'HV nets not covered by any HV pattern {pats}: {sorted(missing)}'
+    )
+
+
+def test_hv_patterns_match_the_names_actually_on_the_board():
+    """The patterns must match the BOARD's net names, not an idea of them.
+
+    This failed silently once. The nets were renamed in the .kicad_pcb directly,
+    as bare 'HV_RAIL', and a wildcard 'HV_*' pattern was written to match. Then
+    'Update PCB from Schematic' rewrote them to KiCad's canonical root-sheet form
+    '/HV_RAIL' -- and the pattern stopped matching anything at all. The HV class
+    covered zero nets, the 1 mm isolation barrier enforced nothing, and no error
+    appeared anywhere: DRC simply reported the offending pads as netclass
+    'Default'. Checking patterns against a hardcoded list cannot catch that,
+    because the hardcoded list drifts with the pattern.
+    """
+    import fnmatch
+    import re
+    pcb = conftest.PRO.with_suffix('.kicad_pcb').read_text()
+    on_board = set(re.findall(r'\(net "([^"]+)"\)', pcb))
+    pats = [p['pattern'] for p in _pro()['net_settings'].get('netclass_patterns', [])
+            if p.get('netclass') == 'HV']
+
+    # Every HV-domain net present on the board must resolve into the class.
+    hv_on_board = {n for n in on_board if n.lstrip('/') in HV_NETS}
+    assert hv_on_board, (
+        f'no HV-domain net found on the board at all; names present: '
+        f'{sorted(n for n in on_board if "HV" in n)}'
+    )
+    missed = {n for n in hv_on_board
+              if not any(fnmatch.fnmatch(n, p) for p in pats)}
+    assert not missed, (
+        f'HV nets on the board that NO pattern in {pats} matches: {sorted(missed)}. '
+        'The HV netclass is not being applied to them and the isolation barrier '
+        'is inert for that copper.'
+    )
+
+    # ...and nothing else may be dragged in. '/HV_DET_LED' is a logic GPIO net
+    # driving the indicator LED; a '/HV_*' wildcard would capture it.
+    extra = {n for n in on_board
+             if any(fnmatch.fnmatch(n, p) for p in pats) and n.lstrip('/') not in HV_NETS}
+    assert not extra, (
+        f'non-HV nets captured by the HV patterns {pats}: {sorted(extra)}. These '
+        'would wrongly demand 1 mm from all surrounding logic copper.'
     )
 
 
