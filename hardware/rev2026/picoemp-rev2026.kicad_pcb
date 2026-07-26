@@ -15283,8 +15283,8 @@
 		(embedded_fonts no)
 	)
 	(gr_line
-		(start 104.39 21.142)
-		(end 104.39 143.602)
+		(start 104.39 23.872)
+		(end 104.39 140.872)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15293,9 +15293,9 @@
 		(uuid "c76cc479-ea48-4ae4-a3df-1e7eb9f30b5c")
 	)
 	(gr_arc
-		(start 104.39 21.142)
-		(mid 104.762 20.2439)
-		(end 105.66 19.872)
+		(start 104.3900 23.8720)
+		(mid 105.5616 21.0436)
+		(end 108.3900 19.8720)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15304,9 +15304,9 @@
 		(uuid "8ab02069-1671-4f32-a879-c0aad674264c")
 	)
 	(gr_arc
-		(start 105.66 144.872)
-		(mid 104.762 144.5)
-		(end 104.39 143.602)
+		(start 108.3900 144.8720)
+		(mid 105.5616 143.7004)
+		(end 104.3900 140.8720)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15315,7 +15315,7 @@
 		(uuid "4fbed2e1-d991-4014-9e27-b66a6b429f5a")
 	)
 	(gr_line
-		(start 105.66 144.872)
+		(start 108.39 144.872)
 		(end 117.39 144.872)
 		(stroke
 			(width 0.05)
@@ -15426,7 +15426,7 @@
 	)
 	(gr_line
 		(start 132.39 144.872)
-		(end 143.12 144.872)
+		(end 140.39 144.872)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15525,8 +15525,8 @@
 		(uuid "97aaaf09-572b-4598-be61-4079ce266ae8")
 	)
 	(gr_line
-		(start 143.12 19.872)
-		(end 105.66 19.872)
+		(start 140.39 19.872)
+		(end 108.39 19.872)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15535,9 +15535,9 @@
 		(uuid "6db040dc-f964-4ca3-8d20-d2755e05bf4b")
 	)
 	(gr_arc
-		(start 143.12 19.872)
-		(mid 144.018 20.2439)
-		(end 144.39 21.142)
+		(start 140.3900 19.8720)
+		(mid 143.2184 21.0436)
+		(end 144.3900 23.8720)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15546,8 +15546,8 @@
 		(uuid "e82f60a5-c5fc-4f64-891f-c2fc16e5828f")
 	)
 	(gr_line
-		(start 144.39 143.602)
-		(end 144.39 21.142)
+		(start 144.39 140.872)
+		(end 144.39 23.872)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15556,9 +15556,9 @@
 		(uuid "513f0c24-c35c-472a-8868-ca3f76536ab5")
 	)
 	(gr_arc
-		(start 144.39 143.602)
-		(mid 144.018 144.5)
-		(end 143.12 144.872)
+		(start 144.3900 140.8720)
+		(mid 143.2184 143.7004)
+		(end 140.3900 144.8720)
 		(stroke
 			(width 0.05)
 			(type solid)
