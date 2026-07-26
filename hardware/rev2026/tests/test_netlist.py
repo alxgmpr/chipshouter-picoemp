@@ -188,3 +188,41 @@ def test_hv_charge_feedback_led_path_intact(tmp_path):
     assert not node_to_net['Q1.1'].startswith('unconnected-'), \
         'Q1.1 (LED anode) is on an unconnected-* net -- the feedback LED ' \
         'anode is floating again'
+
+
+def test_mounting_holes_and_lda111_pin3_no_connect(tmp_path):
+    """Regression cover for the MH1-3 symbol/footprint mismatch fix and the
+    LDA111 pin 3 no-connect restoration.
+
+    MH1-3 previously used Mechanical:MountingHole_Pad_MP (pin "MP") paired
+    with footprint MountingHole:MountingHole_3.2mm_M3_Pad_Via (pad "1") --
+    a numbering mismatch in both directions that produced per-hole ERC
+    warnings/errors, and left plated copper floating at no defined
+    potential right in the HV region. They were switched to
+    Mechanical:MountingHole / MountingHole:MountingHole_3.2mm_M3, which
+    have no pins and no pads at all, so MH1-3 must contribute zero pins
+    to the netlist.
+
+    Separately, LDA111 (Q1) pin 3 is electrically NC but its lead
+    physically exists on the SOP-6 package. It must appear in the netlist
+    as its own no-connect node -- omitting it entirely (as the buggy
+    symbol did) or accidentally tying it to another net would both be
+    wrong.
+    """
+    out = tmp_path / 'net.net'
+    subprocess.run([KC, 'sch', 'export', 'netlist', '--format', 'kicadsexpr',
+                    '-o', str(out), str(conftest.SCH)], check=True,
+                   capture_output=True)
+    nets = _nets(out.read_text())
+    node_to_net = {n: name for name, nodes in nets.items() for n in nodes}
+
+    # MH1-3 must contribute no pins at all -- no MHn.* node of any kind.
+    mh_nodes = [n for n in node_to_net if n.split('.')[0] in ('MH1', 'MH2', 'MH3')]
+    assert mh_nodes == [], \
+        f'MH1-3 must have no pins/pads in the netlist, found: {mh_nodes}'
+
+    # Q1.3 must exist, and sit on its own unconnected/no-connect net rather
+    # than being silently tied to some other signal.
+    assert 'Q1.3' in node_to_net, 'Q1.3 (LDA111 pin 3, NC) is missing from the netlist'
+    assert node_to_net['Q1.3'].startswith('unconnected-'), \
+        f'Q1.3 expected on an unconnected-* net, found {node_to_net["Q1.3"]!r}'

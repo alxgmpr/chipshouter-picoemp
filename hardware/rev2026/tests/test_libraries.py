@@ -51,11 +51,36 @@ def test_igbt_pin_names(root):
 
 
 def test_lda111_pin_numbers(root):
-    """6-pin opto, pin 3 is absent (NC)."""
+    """6-pin opto; the package has 6 leads, pin 3 is electrically NC."""
     text = (root / 'lib' / 'picoemp.kicad_sym').read_text()
     body = text.split('(symbol "LDA111"')[1].split('\n\t(symbol "')[0]
     nums = set(re.findall(r'\(number "(\d)"', body))
-    assert nums == {'1', '2', '4', '5', '6'}, f'unexpected LDA111 pins: {sorted(nums)}'
+    assert nums == {'1', '2', '3', '4', '5', '6'}, f'unexpected LDA111 pins: {sorted(nums)}'
+
+
+def test_lda111_pin3_is_no_connect(root):
+    """Pin 3's lead physically exists on the SOP-6 package (the footprint has
+    six pads) even though it is electrically NC, so the symbol must expose it
+    as an explicit no_connect pin rather than omitting it."""
+    text = (root / 'lib' / 'picoemp.kicad_sym').read_text()
+    body = text.split('(symbol "LDA111"')[1].split('\n\t(symbol "')[0]
+    # Matching a generic \d+ (rather than a literal "3") keeps each match
+    # anchored to its own pin block: non-greedy .*? stops at the nearest
+    # (number ...), which is always that same pin's own number, not some
+    # later pin's. Searching for a literal "3" instead let the match start
+    # at an earlier, unrelated pin and skip forward across pin boundaries
+    # to reach pin 3's number, misreporting that pin's own type/name.
+    triples = re.findall(
+        r'\(pin (\w+) line\s*\(at[^)]*\)\s*\(length[^)]*\)\s*'
+        r'\(name "([^"]+)".*?\(number "(\d+)"',
+        body,
+        re.DOTALL,
+    )
+    by_number = {number: (pin_type, name) for pin_type, name, number in triples}
+    assert '3' in by_number, f'pin 3 not found in LDA111 symbol pins: {sorted(by_number)}'
+    pin_type, pin_name = by_number['3']
+    assert pin_type == 'no_connect', f'expected pin 3 electrical type no_connect, got {pin_type}'
+    assert pin_name == 'NC', f'expected pin 3 named NC, got {pin_name}'
 
 
 def _fp(root, name):

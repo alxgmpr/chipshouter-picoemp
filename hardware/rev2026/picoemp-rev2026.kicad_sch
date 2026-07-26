@@ -3405,13 +3405,9 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Mechanical:MountingHole_Pad_MP"
-			(pin_numbers
-				(hide yes)
-			)
+		(symbol "Mechanical:MountingHole"
 			(pin_names
 				(offset 1.016)
-				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom no)
@@ -3419,7 +3415,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "H"
-				(at 0 6.35 0)
+				(at 0 5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -3428,8 +3424,8 @@
 					)
 				)
 			)
-			(property "Value" "MountingHole_Pad_MP"
-				(at 0 4.445 0)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -3460,7 +3456,7 @@
 					)
 				)
 			)
-			(property "Description" "Mounting Hole with connection as pad named MP"
+			(property "Description" "Mounting Hole without connection"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3482,7 +3478,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "MountingHole*Pad*"
+			(property "ki_fp_filters" "MountingHole*"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3493,9 +3489,9 @@
 					)
 				)
 			)
-			(symbol "MountingHole_Pad_MP_0_1"
+			(symbol "MountingHole_0_1"
 				(circle
-					(center 0 1.27)
+					(center 0 0)
 					(radius 1.27)
 					(stroke
 						(width 1.27)
@@ -3503,26 +3499,6 @@
 					)
 					(fill
 						(type none)
-					)
-				)
-			)
-			(symbol "MountingHole_Pad_MP_1_1"
-				(pin input line
-					(at 0 -2.54 90)
-					(length 2.54)
-					(name "MP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "MP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
 					)
 				)
 			)
@@ -4620,7 +4596,7 @@
 					)
 				)
 			)
-			(property "Description" "Unidirectional optocoupler, Darlington-transistor output, base brought out (pin 3 absent)"
+			(property "Description" "Unidirectional optocoupler, Darlington-transistor output, base brought out (pin 3 no-connect)"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4685,6 +4661,24 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -5.08 0 270)
+					(length 5.08)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5684,6 +5678,10 @@
 	(no_connect
 		(at 165.1 99.06)
 		(uuid "f86179a3-cf56-424d-9ba8-ddf3b05abadd")
+	)
+	(no_connect
+		(at 317.5 241.3)
+		(uuid "c1007e18-2172-414f-81fe-dfcf2ae61d16")
 	)
 	(wire
 		(pts
@@ -12050,7 +12048,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad_MP")
+		(lib_id "Mechanical:MountingHole")
 		(at 123.19 210.82 0)
 		(unit 1)
 		(body_style 1)
@@ -12083,7 +12081,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
 			(at 128.27 209.153 90)
 			(hide yes)
 			(show_name no)
@@ -12106,7 +12104,7 @@
 				)
 			)
 		)
-		(property "Description" "Mounting Hole with connection as pad named MP"
+		(property "Description" "Mounting Hole without connection"
 			(at 123.19 210.82 0)
 			(hide yes)
 			(show_name no)
@@ -12116,9 +12114,6 @@
 					(size 1.27 1.27)
 				)
 			)
-		)
-		(pin "MP"
-			(uuid "29fe0d54-87b8-4a13-b05a-65f31f25c4ee")
 		)
 		(instances
 			(project "picoemp-rev2026"
@@ -13505,6 +13500,9 @@
 		(pin "4"
 			(uuid "853d55a4-e5b7-4d02-b09c-3c73c1c38fea")
 		)
+		(pin "3"
+			(uuid "cdfb2154-2db8-4eeb-ba64-f1933aef07ec")
+		)
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
@@ -13593,7 +13591,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad_MP")
+		(lib_id "Mechanical:MountingHole")
 		(at 123.19 195.58 0)
 		(unit 1)
 		(body_style 1)
@@ -13626,7 +13624,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
 			(at 128.27 193.913 90)
 			(hide yes)
 			(show_name no)
@@ -13649,7 +13647,7 @@
 				)
 			)
 		)
-		(property "Description" "Mounting Hole with connection as pad named MP"
+		(property "Description" "Mounting Hole without connection"
 			(at 123.19 195.58 0)
 			(hide yes)
 			(show_name no)
@@ -13659,9 +13657,6 @@
 					(size 1.27 1.27)
 				)
 			)
-		)
-		(pin "MP"
-			(uuid "1512924f-8d95-495d-8849-1080bad3d67f")
 		)
 		(instances
 			(project "picoemp-rev2026"
@@ -14781,7 +14776,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad_MP")
+		(lib_id "Mechanical:MountingHole")
 		(at 123.19 226.06 0)
 		(unit 1)
 		(body_style 1)
@@ -14814,7 +14809,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
 			(at 128.27 224.393 90)
 			(hide yes)
 			(show_name no)
@@ -14837,7 +14832,7 @@
 				)
 			)
 		)
-		(property "Description" "Mounting Hole with connection as pad named MP"
+		(property "Description" "Mounting Hole without connection"
 			(at 123.19 226.06 0)
 			(hide yes)
 			(show_name no)
@@ -14847,9 +14842,6 @@
 					(size 1.27 1.27)
 				)
 			)
-		)
-		(pin "MP"
-			(uuid "ab791bfb-378f-47c7-a92f-1fdf128b4c6d")
 		)
 		(instances
 			(project "picoemp-rev2026"

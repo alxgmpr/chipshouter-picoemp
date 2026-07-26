@@ -370,7 +370,7 @@
 				)
 			)
 		)
-		(property "Description" "Unidirectional optocoupler, Darlington-transistor output, base brought out (pin 3 absent)"
+		(property "Description" "Unidirectional optocoupler, Darlington-transistor output, base brought out (pin 3 no-connect)"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -435,6 +435,24 @@
 					)
 				)
 				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin no_connect line
+				(at -5.08 0 270)
+				(length 5.08)
+				(name "NC"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
 					(effects
 						(font
 							(size 1.27 1.27)
