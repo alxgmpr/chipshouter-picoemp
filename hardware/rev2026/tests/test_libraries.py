@@ -56,3 +56,40 @@ def test_lda111_pin_numbers(root):
     body = text.split('(symbol "LDA111"')[1].split('\n\t(symbol "')[0]
     nums = set(re.findall(r'\(number "(\d)"', body))
     assert nums == {'1', '2', '4', '5', '6'}, f'unexpected LDA111 pins: {sorted(nums)}'
+
+
+def _fp(root, name):
+    return kp.footprints(kp.parse_file(root / 'lib' / 'picoemp.pretty' / f'{name}.kicad_mod'))[0]
+
+
+def test_atb322524_footprint_geometry(root):
+    """TDK ATB3225: 3.2 x 2.5 mm body, 4 pads, two per side."""
+    fp = _fp(root, 'ATB322524')
+    assert len(fp.pads) == 4, f'expected 4 pads, got {len(fp.pads)}'
+    xs = sorted({round(x, 2) for _, x, _ in fp.pads})
+    assert len(xs) == 2, f'pads should form two columns, got x positions {xs}'
+    assert 2.0 <= (xs[1] - xs[0]) <= 3.2, f'pad column spacing {xs[1]-xs[0]} mm out of range'
+
+
+def test_lda111_footprint_has_all_six_pads(root):
+    """Pin 3 is electrically NC but the lead physically exists, so it needs a
+    pad. Verified against the original SamacSys footprint in
+    hardware/altium_src/kc/ChipShouter-Pico.kicad_pcb, which has 6 pads with
+    pad 3 at (-4.425, 2.54). Omitting it would leave a lead unsoldered."""
+    fp = _fp(root, 'SOP-6_LDA111')
+    nums = {n for n, _, _ in fp.pads}
+    assert nums == {'1', '2', '3', '4', '5', '6'}, f'unexpected pads: {sorted(nums)}'
+
+
+def test_lda111_footprint_geometry(root):
+    """SOP254P952X470-6N: 2.54 mm pitch, pad centres at x = +/-4.425
+    (8.85 mm span). The 9.52 mm in the package name is lead-tip to lead-tip,
+    not pad centre to pad centre."""
+    fp = _fp(root, 'SOP-6_LDA111')
+    ys = sorted({round(y, 2) for _, _, y in fp.pads})
+    pitches = {round(b - a, 2) for a, b in zip(ys, ys[1:])}
+    assert pitches == {2.54}, f'expected uniform 2.54 mm pitch, got y positions {ys}'
+    xs = sorted({round(x, 2) for _, x, _ in fp.pads})
+    assert len(xs) == 2, f'pads should form two rows, got x positions {xs}'
+    span = xs[1] - xs[0]
+    assert 8.6 <= span <= 9.1, f'pad-centre span {span} mm, expected ~8.85'
