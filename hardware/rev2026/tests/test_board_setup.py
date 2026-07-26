@@ -306,34 +306,55 @@ def test_all_four_board_corners_share_one_radius():
         f'corner radii do not match: {[round(r, 4) for r in radii]}'
 
 
-def test_nw_corner_arc_is_concentric_with_mh3():
-    """The corner curve and the mounting hole must share a centre.
+def test_every_mounting_hole_is_concentric_with_its_corner_arc():
+    """Each hole must share a centre with the corner arc that curves around it.
 
-    Only then is the FR4 web around the hole constant. With a 1.27 mm corner the
-    straight edges sat 4.000 mm from MH3's centre but the corner cut in to
-    2.591 mm, so the web visibly pinched at the diagonal.
+    Only a shared centre gives a constant FR4 web. With the original 1.27 mm
+    corners the straight edges sat 4.000 mm from MH3's centre while the arc cut
+    in to 2.591 mm, so the web visibly pinched at the diagonal.
 
-    This works for MH3 because it sits at an equal 4.000 mm inset from both the
-    north and west edges. MH1/MH2 cannot be treated the same way: they are the
-    Hammond 1551B shield bosses, 4.000 mm from the side edges but 5.855 mm from
-    the south edge, and one radius cannot be tangent to both. Their corners match
-    in radius only.
+    This holds for all three holes because each sits at an equal 4.000 mm inset
+    from both of its nearest edges, which is also the corner radius -- so the arc
+    centred on the hole is automatically tangent to both straight edges.
+
+    MH1/MH2 were originally 5.855 mm from the south edge, inherited from
+    upstream. Moving them to 4.000 mm changed only their Y; their 32.000 mm X
+    spacing, which is what any shield or bracket actually keys off, is untouched.
     """
     import math
     import kicad_parse as kp
     d = kp.parse_file(str(conftest.PRO.with_suffix('.kicad_pcb')))
-    mh3 = None
+    holes = {}
     for fp in kp._walk(d, 'footprint'):
         ref = next((kp.sval(p[2]) for p in fp if isinstance(p, list) and p
                     and p[0] == 'property' and kp.sval(p[1]) == 'Reference'), None)
-        if ref == 'MH3':
+        if ref and ref.startswith('MH'):
             at = next(c for c in fp if isinstance(c, list) and c and c[0] == 'at')
-            mh3 = (float(at[1]), float(at[2]))
-    assert mh3, 'MH3 not found on the board'
+            holes[ref] = (float(at[1]), float(at[2]))
+    assert len(holes) == 3, f'expected MH1-3, found {sorted(holes)}'
 
-    best = min(_edge_arcs(), key=lambda a: math.dist(a[0], mh3))
-    off = math.dist(best[0], mh3)
-    assert off < 0.005, (
-        f'nearest corner arc centre {tuple(round(v, 4) for v in best[0])} is '
-        f'{off:.4f} mm from MH3 at {mh3}; the web around the hole is not constant'
-    )
+    arcs = _edge_arcs()
+    for ref, pos in sorted(holes.items()):
+        centre, _ = min(arcs, key=lambda a: math.dist(a[0], pos))
+        off = math.dist(centre, pos)
+        assert off < 0.005, (
+            f'{ref} at {pos} is {off:.4f} mm from the nearest corner-arc centre '
+            f'{tuple(round(v, 4) for v in centre)}; the web around it is not constant'
+        )
+
+
+def test_mounting_hole_x_spacing_is_preserved():
+    """32.000 mm between MH1 and MH2 -- inherited from upstream's layout and the
+    dimension a shield or bracket keys off. Y may be tuned for the corners; this
+    must not move with it."""
+    import kicad_parse as kp
+    d = kp.parse_file(str(conftest.PRO.with_suffix('.kicad_pcb')))
+    xs = {}
+    for fp in kp._walk(d, 'footprint'):
+        ref = next((kp.sval(p[2]) for p in fp if isinstance(p, list) and p
+                    and p[0] == 'property' and kp.sval(p[1]) == 'Reference'), None)
+        if ref in ('MH1', 'MH2'):
+            at = next(c for c in fp if isinstance(c, list) and c and c[0] == 'at')
+            xs[ref] = float(at[1])
+    assert abs(abs(xs['MH2'] - xs['MH1']) - 32.0) < 0.005, \
+        f"MH1/MH2 X spacing is {abs(xs['MH2'] - xs['MH1']):.4f} mm, must stay 32.000"
