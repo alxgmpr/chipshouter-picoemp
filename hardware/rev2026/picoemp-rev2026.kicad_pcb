@@ -105,7 +105,7 @@
 		(descr "LED SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf)")
 		(tags "LED")
 		(property "Reference" "D9"
-			(at -0.75 -1.75 180)
+			(at 0 -1.43 180)
 			(layer "F.SilkS")
 			(uuid "1af07521-094d-42f7-b01a-e3e655cf8b53")
 			(effects
@@ -116,7 +116,7 @@
 			)
 		)
 		(property "Value" "LED, 0603, Red"
-			(at 0 1.43 90)
+			(at 0 1.43 180)
 			(layer "F.Fab")
 			(uuid "836e8aea-f238-4d16-af51-7769de2af401")
 			(effects
@@ -127,7 +127,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 90)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d8ad0e0f-04b0-42c6-a46a-e6c7fbbb918a")
@@ -137,8 +137,8 @@
 				)
 			)
 		)
-		(property "Description" "Light emitting diode"
-			(at 0 0 90)
+		(property "Description" ""
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d7260f6c-573b-470e-8f84-db28951e907d")
@@ -149,62 +149,10 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 90)
+			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "0539f956-9cbc-4f61-9da3-6a382004dce3")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "b30f13b6-3038-4cba-8d29-413ba8a0b04a")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "754-1123-1-ND"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "384101d7-1d95-4164-a4ba-68929e6e016c")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Kingbright"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "33facd6f-0c26-4e2a-9c5e-e9108d13a66c")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "APT1608SURCK"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "954d5bfb-7103-44d2-889e-1472b4deb3fd")
 			(effects
 				(font
 					(size 1 1)
@@ -216,12 +164,6 @@
 		(path "/439a0674-2333-4876-980f-5547c7e364fc")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -316,7 +258,7 @@
 			(uuid "8ddc0237-9e85-430f-a466-31632b711e01")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 90)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(uuid "2b64dfa3-0ab5-409f-9d11-79b3c473a474")
 			(effects
@@ -327,7 +269,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.7875 0 270)
+			(at -0.7875 0 180)
 			(size 0.875 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -337,7 +279,7 @@
 			(uuid "7bb9df4b-4652-4153-9457-f966c81e72c1")
 		)
 		(pad "2" smd roundrect
-			(at 0.7875 0 270)
+			(at 0.7875 0 180)
 			(size 0.875 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -366,7 +308,7 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C6"
-			(at 0 -1.43 0)
+			(at 0 -1.43 270)
 			(layer "F.SilkS")
 			(uuid "1c2670c0-a4e6-49ad-b132-1b9f71f1e255")
 			(effects
@@ -377,7 +319,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at 0 1.43 0)
+			(at 0 1.43 270)
 			(layer "F.Fab")
 			(uuid "fa512a9c-f5ad-4c5e-ae2a-622bd39061ab")
 			(effects
@@ -388,7 +330,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "10fd7f50-3868-4756-a0a1-c59a83c65c64")
@@ -398,8 +340,8 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol - U2 decoupling"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e747b6b6-98e1-4e8e-9249-13a9e20d4b0e")
@@ -410,49 +352,10 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
+			(at 0 0 270)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "06f7e295-3a85-45ea-b797-ec0a5461b6be")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "KEMET"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "6263a94f-348d-4aeb-9020-2d8ceb72cf30")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "C0603C104K5RACTU"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "f8f15062-b606-46be-aecf-bdefc01451dd")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "399-5089-2-ND"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "d8aff0ec-805e-4d59-a21b-ad746ea40258")
 			(effects
 				(font
 					(size 1 1)
@@ -464,12 +367,6 @@
 		(path "/0d92a3be-0977-4910-a249-6bd7edc67ac8")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -515,7 +412,7 @@
 			(uuid "34bdc034-fa60-4da6-b752-1651c146af93")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 270)
 			(layer "F.Fab")
 			(uuid "b135f7e1-2ec6-4a9e-8d6b-8f8ae571d735")
 			(effects
@@ -526,7 +423,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.775 0 180)
+			(at -0.775 0 270)
 			(size 0.9 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -535,7 +432,7 @@
 			(uuid "8235b985-b763-4696-b89d-70ca6d606c8d")
 		)
 		(pad "2" smd roundrect
-			(at 0.775 0 180)
+			(at 0.775 0 270)
 			(size 0.9 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -563,7 +460,7 @@
 		(descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R9"
-			(at 0 -1.65 0)
+			(at 0 -1.65 180)
 			(layer "F.SilkS")
 			(uuid "a8c42d48-f945-412d-bcb0-8c81492993b3")
 			(effects
@@ -574,7 +471,7 @@
 			)
 		)
 		(property "Value" "2k"
-			(at 0 1.65 0)
+			(at 0 1.65 180)
 			(layer "F.Fab")
 			(uuid "576b6bd3-3a70-4c4b-93a2-9e4c8c718347")
 			(effects
@@ -585,7 +482,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5c01f39e-1603-4a20-be5f-1c4d89a04a4c")
@@ -595,8 +492,8 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c4254fe7-5b15-488c-a385-bf01f5158820")
@@ -607,49 +504,10 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "eecb6eb4-fe04-4a0a-9a87-f7367e6a9df9")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "7446c095-f633-46f9-80e2-b28cb4322851")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "RC0805FR-072KL"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "96977334-0d7e-4362-beae-3e948150b384")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "311-2.00KCRCT-ND"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "cc2962df-df98-438f-b616-2e16021b8999")
 			(effects
 				(font
 					(size 1 1)
@@ -661,12 +519,6 @@
 		(path "/f2cf9766-1f90-48ed-a02e-533f73f97b8b")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -712,7 +564,7 @@
 			(uuid "a8d65bc9-45d3-4ab7-aad3-800dff559dd0")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(uuid "7193ee63-4925-4794-a2a8-b5df7c342a06")
 			(effects
@@ -760,7 +612,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R5"
-			(at 0 -1.43 0)
+			(at 0 -1.43 180)
 			(layer "F.SilkS")
 			(uuid "fbd26e8c-7e62-4d50-a7f5-a15a29b0ddb8")
 			(effects
@@ -771,7 +623,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 0 1.43 0)
+			(at 0 1.43 180)
 			(layer "F.Fab")
 			(uuid "47a2aabf-4bdd-4f84-984d-f8812599caa1")
 			(effects
@@ -782,7 +634,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b0067242-a0dc-4657-b2cb-4959af554915")
@@ -792,8 +644,8 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "aec1ecd5-4fa6-487a-9337-596f0ca536bc")
@@ -804,49 +656,10 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "ddd3645a-987c-4376-abf6-406e12e1d3a0")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "5f2455ff-28dc-4600-b1e3-ae218711413a")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "RC0603FR-071KL"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "bc338918-a91c-46cd-bd72-268bebecd4f8")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "311-1.00KHRCT-ND"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "3383a85d-2fd1-4503-b413-a04e36edf29f")
 			(effects
 				(font
 					(size 1 1)
@@ -858,12 +671,6 @@
 		(path "/ece07ad6-0b7f-40b5-adb9-08fdb8e56823")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -909,7 +716,7 @@
 			(uuid "a6c1e393-a96a-4a4e-b8cb-190aad84d683")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(uuid "9ddfb4e1-6c70-436e-b28e-0c34e8c58ca9")
 			(effects
@@ -920,7 +727,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.825 0)
+			(at -0.825 0 180)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -929,7 +736,7 @@
 			(uuid "fe8af963-6e2c-4b46-bc31-a7ffdd1076bf")
 		)
 		(pad "2" smd roundrect
-			(at 0.825 0)
+			(at 0.825 0 180)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -957,7 +764,7 @@
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "Q3"
-			(at 0 -2.4 0)
+			(at 0 -2.4 270)
 			(layer "F.SilkS")
 			(uuid "9bdd16d2-ea2b-4d23-a95b-dd3e3e8dda5c")
 			(effects
@@ -968,7 +775,7 @@
 			)
 		)
 		(property "Value" "AO3422"
-			(at 0 2.4 0)
+			(at 0 2.4 270)
 			(layer "F.Fab")
 			(uuid "30f03f73-bef6-4890-abbc-fd14786dbd19")
 			(effects
@@ -979,7 +786,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3846bc99-5fab-444c-82b3-6f3525b1294f")
@@ -989,8 +796,8 @@
 				)
 			)
 		)
-		(property "Description" "N-channel MOSFET, SOT-23, GSD pinout"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "510a915e-90a0-48c9-9b24-989b2325da08")
@@ -1001,7 +808,7 @@
 			)
 		)
 		(property "KiLib_Generator" "package/gullwing"
-			(at 0 0 0)
+			(at 0 0 270)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "acdbafd3-8793-4467-8203-4be5793b4872")
@@ -1012,41 +819,9 @@
 				)
 			)
 		)
-		(property "MPN" "AO3422"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "a8581cd1-d7f6-4f0c-89ae-3de2a310bd81")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Alpha & Omega Semiconductor"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "2e5744fb-0843-4b5e-a081-1da7d94a2432")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(path "/5862d29a-30bb-498e-8d80-f43f590a7a88")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "3" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1304,7 +1079,7 @@
 			(uuid "7df4b25b-2190-4007-b63f-f89b4b5feeed")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 90)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "f02b9d1e-0fc1-4561-bf16-e88b1b51d756")
 			(effects
@@ -1315,7 +1090,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.9375 -0.95)
+			(at -0.9375 -0.95 270)
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -1325,7 +1100,7 @@
 			(uuid "02eeb117-d9c0-4dc1-8549-3751d7e539bf")
 		)
 		(pad "2" smd roundrect
-			(at -0.9375 0.95)
+			(at -0.9375 0.95 270)
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -1335,7 +1110,7 @@
 			(uuid "0d8b4056-f41e-49ce-aecd-24b8ea57c3e7")
 		)
 		(pad "3" smd roundrect
-			(at 0.9375 0)
+			(at 0.9375 0 270)
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -1364,7 +1139,7 @@
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor")
 		(property "Reference" "C2"
-			(at 6.4554 -0.0171 0)
+			(at 0 -1.68 0)
 			(layer "F.SilkS")
 			(uuid "d2ecc164-7fde-439d-bc3e-a34e1dbbf8f6")
 			(effects
@@ -1396,7 +1171,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -1419,55 +1194,10 @@
 				)
 			)
 		)
-		(property "DigiKey" "445-5980-1-ND"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "5a168649-3408-4223-a15c-2886ae68724c")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "TDK"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "d6a914c0-a15d-4cc5-8f6d-3eefc471a37d")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "C2012X5R1H475K125AB"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "c4ef031e-a75f-4b33-b637-873059be0521")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "C_*")
 		(path "/68aed13c-e9ec-4367-bcb8-df345442df37")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1561,7 +1291,7 @@
 		(descr "MCC SOD-123FL (flat lead), e.g. SM4005PL-TP. Pad centres at +/-1.55mm (3.10mm span), size 1.15x1.3mm -- copied from the as-fabricated main:DSS13UTR footprint used for D1 on the original board (a SOD-123FL rectifier), and cross-checked against Central Semiconductor's own SOD-123FL mounting-pad drawing (4.1mm overall pad-to-pad envelope minus a 0.95mm pad width = 3.15mm centre span, within 0.05mm). An earlier draft of this footprint used MCC's suggested-pad-layout figure at 2.36mm; that number turned out to be the INNER-EDGE gap between pads, not the centre-to-centre span, so the earlier pads landed short of the body outline entirely. KiCad's stock Diode_SMD:D_SOD-123F uses a 2.8mm pad span (1.1x1.1mm square pads), which is still off this package's real geometry; use this footprint instead for SOD-123FL parts.")
 		(tags "diode SOD-123FL SOD123FL flat lead")
 		(property "Reference" "D1"
-			(at 3.75 0 0)
+			(at 0 -1.3 0)
 			(layer "F.SilkS")
 			(uuid "9f2161b4-d9ce-4f3a-a30c-8d13da8ef4b4")
 			(effects
@@ -1595,7 +1325,7 @@
 				)
 			)
 		)
-		(property "Description" "Diode, small symbol"
+		(property "Description" "SOD-123FL flat-lead diode land, per MCC's own suggested pad layout. Pin 1 = cathode by SOD convention, marked with a silkscreen band."
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1608,55 +1338,10 @@
 				)
 			)
 		)
-		(property "DigiKey" "SM4005PL-TPMSCT-ND"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "94135874-1bde-4b80-a797-675547452938")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "MCC"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "721868fd-be80-4d27-b3e4-7c9b95d90eeb")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "SM4005PL-TP"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "0b3a1b72-c323-4fec-8046-597d6475b656")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "TO-???* *_Diode_* *SingleDiode* D_*")
 		(path "/fcaff39a-6a51-4c75-9a4f-2bfebf7ebd6e")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1740,7 +1425,7 @@
 		(descr "TDK ATB322524-0110-T000 HV step-up transformer, 1:10.2, 3.2x2.5x2.4mm max. Pins 1/4 = primary, pins 2/3 = secondary (verified from netlist on the original board). https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/644/ATB322515-(15,24)_DS.pdf")
 		(tags "transformer ATB3225 ATB322524")
 		(property "Reference" "T2"
-			(at -3.2144 -1.2849 0)
+			(at 0 -1.9 180)
 			(layer "F.SilkS")
 			(uuid "a082d87c-0318-41d8-b42f-9aa5781a8f4e")
 			(effects
@@ -1751,7 +1436,7 @@
 			)
 		)
 		(property "Value" "ATB322524"
-			(at 0 1.9 0)
+			(at 0 1.9 180)
 			(layer "F.Fab")
 			(uuid "da338f14-7e0e-4cf1-a916-d6223a5e0bb9")
 			(effects
@@ -1761,8 +1446,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 0 0 0)
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/644/ATB322515-(15,24)_DS.pdf"
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -1774,8 +1459,8 @@
 				)
 			)
 		)
-		(property "Description" "HV Transformer 1:10, Small"
-			(at 0 0 0)
+		(property "Description" "HV step-up transformer. Pin 1 (primary) marked with a silkscreen dot -- reversing this part produced a wrong-polarity HV spike on the original prototype. Do not place without checking pin 1."
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -1787,55 +1472,10 @@
 				)
 			)
 		)
-		(property "Manufacturer" "TDK"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "9ae2d408-bc8a-4d04-8a38-7f1e1737b16c")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "ATB322524-0110-T000"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "0a943307-042b-4351-bde5-9ab9ee979a04")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "445-8636-1-ND"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "bacad380-4b08-4d21-85bf-f01fef40267f")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "*ATB322524_CHUNKY*")
 		(path "/8a90005b-5f5e-42ed-aac5-53cfe359bfca")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "3" "4" "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1892,7 +1532,7 @@
 			(uuid "4bf5eb41-7cce-462f-bffc-c4f6a9adfb10")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 -1.9 0)
+			(at 0 -1.9 180)
 			(layer "F.Fab")
 			(uuid "56321fe0-996a-4c07-8582-f7acaea45113")
 			(effects
@@ -1903,7 +1543,7 @@
 			)
 		)
 		(pad "1" smd rect
-			(at -1.5 0.885)
+			(at -1.5 0.885 180)
 			(size 0.55 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/T2_PRI_A")
@@ -1912,7 +1552,7 @@
 			(uuid "7f7e20bb-4c3e-46a7-a27b-20485eb5e2a2")
 		)
 		(pad "2" smd rect
-			(at -1.5 -0.885)
+			(at -1.5 -0.885 180)
 			(size 0.55 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/HV_RTN")
@@ -1921,7 +1561,7 @@
 			(uuid "d178ddab-1a09-44e5-b352-2a6a5c94bafd")
 		)
 		(pad "3" smd rect
-			(at 1.5 -0.885)
+			(at 1.5 -0.885 180)
 			(size 0.55 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/HV_GATE_DRV")
@@ -1930,7 +1570,7 @@
 			(uuid "1aac8a5d-db40-4184-b38f-ddcb96f06181")
 		)
 		(pad "4" smd rect
-			(at 1.5 0.885)
+			(at 1.5 0.885 180)
 			(size 0.55 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/T2_PRI_B")
@@ -1979,7 +1619,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -2002,55 +1642,10 @@
 				)
 			)
 		)
-		(property "Manufacturer" "TE Connectivity"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "eed0d0f2-c77c-4296-b9fd-76c910454c6f")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "3522300KFT"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "240279e0-a3fa-4aaa-8bed-baa9deb1ad43")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "A121215CT-ND"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "ae855ade-d402-432d-a391-1e0202a14120")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "R_*")
 		(path "/b8a8c5ba-09b6-4c18-982a-5f575a7d4708")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2144,7 +1739,7 @@
 		(descr "Resistor SMD 2010 (5025 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R1"
-			(at 0 -2.28 0)
+			(at 0 -2.28 90)
 			(layer "F.SilkS")
 			(uuid "71ae87a8-3ecd-43a0-a760-e46186fca5a9")
 			(effects
@@ -2155,7 +1750,7 @@
 			)
 		)
 		(property "Value" "20M"
-			(at 0 2.28 0)
+			(at 0 2.28 90)
 			(layer "F.Fab")
 			(uuid "2a81eeee-9672-4651-ae74-a1ff0aaf88e5")
 			(effects
@@ -2166,7 +1761,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c4d5beed-24d0-4459-b794-169237634c03")
@@ -2176,8 +1771,8 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9049e334-6d16-4e09-be46-09e853b89624")
@@ -2188,36 +1783,10 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "0cd30201-2b24-45a1-84f6-f184786a4795")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Vishay"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "8974961f-5306-404a-b821-1978352ee0fd")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "CRMA2010AF20M0FKEF"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "bea4b88d-0887-49bc-9aca-d967478049a1")
 			(effects
 				(font
 					(size 1 1)
@@ -2229,12 +1798,6 @@
 		(path "/bdeb31c7-9f53-435a-8b1e-441f97e3a02c")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2280,7 +1843,7 @@
 			(uuid "eb8c18d4-ffa4-4dfe-8621-7f7f1dccc459")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "fab99190-9a91-40b2-9fb4-c7113f64ee79")
 			(effects
@@ -2291,7 +1854,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -2.3125 0 180)
+			(at -2.3125 0 90)
 			(size 1.225 2.65)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.204082)
@@ -2300,7 +1863,7 @@
 			(uuid "e702e697-bc36-49fd-9012-e1d68a0b203a")
 		)
 		(pad "2" smd roundrect
-			(at 2.3125 0 180)
+			(at 2.3125 0 90)
 			(size 1.225 2.65)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.204082)
@@ -2328,7 +1891,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R3"
-			(at 1.4423 1.8216 0)
+			(at 0 -1.43 270)
 			(layer "F.SilkS")
 			(uuid "897239eb-c74f-4579-b69c-e8499806230e")
 			(effects
@@ -2339,7 +1902,7 @@
 			)
 		)
 		(property "Value" "10R"
-			(at 0 1.43 0)
+			(at 0 1.43 270)
 			(layer "F.Fab")
 			(uuid "de3b02d3-e11d-4095-88b2-9bd58b2110b3")
 			(effects
@@ -2350,7 +1913,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3224e330-23e4-4715-a6e1-3058e739b1f5")
@@ -2360,8 +1923,8 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e2a7022c-048e-4645-bec0-aab1ef020638")
@@ -2372,49 +1935,10 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
+			(at 0 0 270)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "bf4956d7-16de-4b2a-8747-58898056cf16")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "7abd435c-0a2a-44da-9130-88b22ed81964")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "RC0603FR-0710RL"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "3a17e866-f1ac-4bdb-8e6b-fb076b757061")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "311-10.0HRCT-ND"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "eecec222-cb28-4af5-8e22-548c25418619")
 			(effects
 				(font
 					(size 1 1)
@@ -2426,12 +1950,6 @@
 		(path "/a3902950-88df-4b26-a939-73fca19aa5aa")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2477,7 +1995,7 @@
 			(uuid "febeddb9-e26f-4ed0-a85d-02d2fdbd43e3")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 270)
 			(layer "F.Fab")
 			(uuid "83874f4c-9806-473d-9b25-081fec22077a")
 			(effects
@@ -2488,7 +2006,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.825 0)
+			(at -0.825 0 270)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -2497,7 +2015,7 @@
 			(uuid "4fdc6782-f6ac-40a3-a6e4-1ec8a3ba7ec5")
 		)
 		(pad "2" smd roundrect
-			(at 0.825 0)
+			(at 0.825 0 270)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -2525,7 +2043,7 @@
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "Q4"
-			(at 2.3703 -2.4992 0)
+			(at 0 -2.4 270)
 			(layer "F.SilkS")
 			(uuid "8469b357-e4f4-40c8-866b-db5bb35db026")
 			(effects
@@ -2536,7 +2054,7 @@
 			)
 		)
 		(property "Value" "AO3422"
-			(at 0 2.4 0)
+			(at 0 2.4 270)
 			(layer "F.Fab")
 			(uuid "fb798b9f-62db-4707-ac27-fb77c1e44fbf")
 			(effects
@@ -2547,7 +2065,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "002f69ef-96d7-4c68-8953-17936f0bd989")
@@ -2557,8 +2075,8 @@
 				)
 			)
 		)
-		(property "Description" "N-channel MOSFET, SOT-23, GSD pinout"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d058fa9f-88eb-4350-956c-7b79f467a913")
@@ -2569,7 +2087,7 @@
 			)
 		)
 		(property "KiLib_Generator" "package/gullwing"
-			(at 0 0 0)
+			(at 0 0 270)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "911e2268-1d04-467e-ab60-9b14bcb17b98")
@@ -2580,41 +2098,9 @@
 				)
 			)
 		)
-		(property "MPN" "AO3422"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "c8e209df-5b89-4b1d-95b8-4f4c51c18ed6")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Alpha & Omega Semiconductor"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "94a812f7-0d2d-4962-965a-466504acb67f")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(path "/9e940324-09f9-4d37-8f45-261d5c817f37")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "3" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2872,7 +2358,7 @@
 			(uuid "82e1cf2b-1833-48a8-b160-1b595b87e437")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 90)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "ea7691a6-1a41-401b-b981-de59b50c2b1f")
 			(effects
@@ -2883,7 +2369,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.9375 -0.95)
+			(at -0.9375 -0.95 270)
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -2893,7 +2379,7 @@
 			(uuid "32a89e5e-6c54-4c28-a9d1-36f14ded768c")
 		)
 		(pad "2" smd roundrect
-			(at -0.9375 0.95)
+			(at -0.9375 0.95 270)
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -2903,7 +2389,7 @@
 			(uuid "9b02a7c9-f486-4d37-a5c7-a5bbdb062087")
 		)
 		(pad "3" smd roundrect
-			(at 0.9375 0)
+			(at 0.9375 0 270)
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -2932,7 +2418,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R7"
-			(at 0 -1.43 0)
+			(at 0 -1.43 90)
 			(layer "F.SilkS")
 			(uuid "de983e9a-91ff-4704-9389-156ab5e62a7b")
 			(effects
@@ -2943,7 +2429,7 @@
 			)
 		)
 		(property "Value" "10R"
-			(at 0 1.43 0)
+			(at 0 1.43 90)
 			(layer "F.Fab")
 			(uuid "2769f98b-bcaa-4ddd-8e81-f3d1dbb9fece")
 			(effects
@@ -2954,7 +2440,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "502b2456-1b3d-4ed3-ab5c-6ee5c419df9b")
@@ -2964,8 +2450,8 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "71fefcb2-959c-4cc6-ae58-a2f5ce627ff0")
@@ -2976,49 +2462,10 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "12d8eb32-c5b1-4bdd-b969-460c46fe126c")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "e5a2ece9-2403-4ed0-99fc-c4965c37be6b")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "RC0603FR-0710RL"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "2eb60185-33a3-4626-9218-d5eed3caa463")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "311-10.0HRCT-ND"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "e6d687d7-2578-4ad3-8122-32090de3ee82")
 			(effects
 				(font
 					(size 1 1)
@@ -3030,12 +2477,6 @@
 		(path "/5922e074-33e2-4939-b74c-014863238369")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3081,7 +2522,7 @@
 			(uuid "0c984eb8-f9f0-4511-aefc-d19bc0664018")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "e1ee7a92-f5c9-473d-8d4f-9fdbc336f2e4")
 			(effects
@@ -3092,7 +2533,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.825 0 180)
+			(at -0.825 0 90)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -3101,7 +2542,7 @@
 			(uuid "08f073ab-92c4-45e3-9374-1e4637b8170b")
 		)
 		(pad "2" smd roundrect
-			(at 0.825 0 180)
+			(at 0.825 0 90)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -3161,7 +2602,7 @@
 				)
 			)
 		)
-		(property "Description" "Mounting Hole with connection"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -3188,13 +2629,7 @@
 		(path "/fc45bec8-a8ca-4b07-bc5a-e31b37b09899")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins)
-			)
-		)
-		(attr exclude_from_bom)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -3245,7 +2680,7 @@
 		(descr "LED SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf)")
 		(tags "LED")
 		(property "Reference" "D8"
-			(at 2.5 0.0446 90)
+			(at 0 -1.43 0)
 			(layer "F.SilkS")
 			(uuid "e9e48514-c66b-44c3-ab18-d0d7b86b4e93")
 			(effects
@@ -3256,7 +2691,7 @@
 			)
 		)
 		(property "Value" "LED, 0603, Green"
-			(at 0 1.43 90)
+			(at 0 1.43 0)
 			(layer "F.Fab")
 			(uuid "4ec9c6a2-7aad-4c4b-98e3-47d1be4c75f4")
 			(effects
@@ -3267,7 +2702,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 90)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5d813336-1711-4931-a936-9498384e2b7e")
@@ -3277,8 +2712,8 @@
 				)
 			)
 		)
-		(property "Description" "Light emitting diode"
-			(at 0 0 90)
+		(property "Description" ""
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d3651517-802f-47d0-b48a-a7179ac4ba75")
@@ -3289,62 +2724,10 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 90)
+			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "4f129190-60eb-4018-98e0-8c90ff2c3936")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "42a5007a-459f-42f6-8788-8839b958d77f")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "754-1116-1-ND"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "6ea37d29-92ac-4a9c-92f5-718d5f9f07fc")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Kingbright"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "795e6d01-7198-4b00-949f-bf688815af20")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "APT1608CGCK"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "d9c58504-cbe5-48b0-b6ef-cf7c1a2459d8")
 			(effects
 				(font
 					(size 1 1)
@@ -3356,12 +2739,6 @@
 		(path "/83421708-7a3b-4e16-8b22-1c81dbf5ea6c")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3456,7 +2833,7 @@
 			(uuid "e516113e-5b1b-453c-be67-d52202e44d8c")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 90)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "ebc39401-209e-4150-9b6b-23fe2fbe5d34")
 			(effects
@@ -3467,7 +2844,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.7875 0 90)
+			(at -0.7875 0)
 			(size 0.875 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -3477,7 +2854,7 @@
 			(uuid "bb6d916e-499b-40a5-955f-add945f1971d")
 		)
 		(pad "2" smd roundrect
-			(at 0.7875 0 90)
+			(at 0.7875 0)
 			(size 0.875 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -3506,7 +2883,7 @@
 		(descr "MCC SOD-123FL (flat lead), e.g. SM4005PL-TP. Pad centres at +/-1.55mm (3.10mm span), size 1.15x1.3mm -- copied from the as-fabricated main:DSS13UTR footprint used for D1 on the original board (a SOD-123FL rectifier), and cross-checked against Central Semiconductor's own SOD-123FL mounting-pad drawing (4.1mm overall pad-to-pad envelope minus a 0.95mm pad width = 3.15mm centre span, within 0.05mm). An earlier draft of this footprint used MCC's suggested-pad-layout figure at 2.36mm; that number turned out to be the INNER-EDGE gap between pads, not the centre-to-centre span, so the earlier pads landed short of the body outline entirely. KiCad's stock Diode_SMD:D_SOD-123F uses a 2.8mm pad span (1.1x1.1mm square pads), which is still off this package's real geometry; use this footprint instead for SOD-123FL parts.")
 		(tags "diode SOD-123FL SOD123FL flat lead")
 		(property "Reference" "D5"
-			(at 0 -2.4112 0)
+			(at 0 -1.3 90)
 			(layer "F.SilkS")
 			(uuid "be244d2e-f7ae-4880-a804-ed6585e27a70")
 			(effects
@@ -3517,7 +2894,7 @@
 			)
 		)
 		(property "Value" "SM4005PL-TP"
-			(at 0 1.3 0)
+			(at 0 1.3 90)
 			(layer "F.Fab")
 			(uuid "67ce6af9-277e-46a2-9b22-f060f1598ccf")
 			(effects
@@ -3528,7 +2905,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -3540,8 +2917,8 @@
 				)
 			)
 		)
-		(property "Description" "Diode, small symbol"
-			(at 0 0 0)
+		(property "Description" "SOD-123FL flat-lead diode land, per MCC's own suggested pad layout. Pin 1 = cathode by SOD convention, marked with a silkscreen band."
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -3553,55 +2930,10 @@
 				)
 			)
 		)
-		(property "DigiKey" "SM4005PL-TPMSCT-ND"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "fa1d6736-cac3-4ae5-bcf3-ea3717a96964")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "MCC"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "c24b1018-e8a4-47d3-877d-7056c2f26760")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "SM4005PL-TP"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "9ffbed8e-9fb7-49b5-a3bd-4cc9f355aa84")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "TO-???* *_Diode_* *SingleDiode* D_*")
 		(path "/410b9a39-8785-4cc1-afe7-532d3cec0312")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3657,7 +2989,7 @@
 			(uuid "8452073f-9f81-405b-bac3-5f948fe08d0c")
 		)
 		(pad "1" smd roundrect
-			(at -1.55 0)
+			(at -1.55 0 90)
 			(size 1.15 1.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -3667,7 +2999,7 @@
 			(uuid "da68b5cc-26d5-40b9-ba17-86a011d295f6")
 		)
 		(pad "2" smd roundrect
-			(at 1.55 0)
+			(at 1.55 0 90)
 			(size 1.15 1.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -3685,7 +3017,7 @@
 		(descr "TO-252/DPAK SMD package, http://www.infineon.com/cms/en/product/packages/PG-TO252/PG-TO252-3-1/")
 		(tags "DPAK TO-252 DPAK-3 TO-252-3 SOT-428")
 		(property "Reference" "Q2"
-			(at 0 -4.5 0)
+			(at 0 -4.5 90)
 			(layer "F.SilkS")
 			(uuid "dcaf10a5-cb67-4f24-b0d6-016402bce6a3")
 			(effects
@@ -3696,7 +3028,7 @@
 			)
 		)
 		(property "Value" "RGT16BM65DTL"
-			(at 0 4.5 0)
+			(at 0 4.5 90)
 			(layer "F.Fab")
 			(uuid "d0115d62-b71f-4d6e-9f59-4556ce687af9")
 			(effects
@@ -3707,7 +3039,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3c99c5cf-5a53-402d-ac42-bee8b55994b2")
@@ -3717,8 +3049,8 @@
 				)
 			)
 		)
-		(property "Description" "N-channel IGBT (TO-252/DPAK) with co-packed antiparallel diode, cathode at collector"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5c0a1640-2af2-4a73-949e-715e3e7f1e84")
@@ -3729,7 +3061,7 @@
 			)
 		)
 		(property "KiLib_Generator" "package/TO_SOT/SMD"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "1ca5609a-751a-45c9-b820-10a2326dff1e")
@@ -3740,41 +3072,9 @@
 				)
 			)
 		)
-		(property "Manufacturer" "ROHM"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "95ded3be-6a84-427f-b588-80b72c1eea9a")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "RGT16BM65DTL"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "ec8dbbfc-62de-4ec2-b18c-ee1434915448")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(path "/55f28fa9-a780-48b5-a502-a58c285afadd")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2" "3")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3973,7 +3273,7 @@
 			(uuid "f3256b6c-cd6e-4dc3-ad85-065af8ea67b7")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "ade01d16-7299-4ba6-bba2-af558126c45b")
 			(effects
@@ -4071,7 +3371,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R10"
-			(at -5.5514 -0.1267 0)
+			(at 0 -1.43 0)
 			(layer "F.SilkS")
 			(uuid "19b52104-6f1d-4567-b809-23edea7d4501")
 			(effects
@@ -4103,7 +3403,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -4126,55 +3426,10 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Yageo"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "001df5f2-8bc1-4a61-a415-7c818b720308")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "RC0603FR-071KL"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "89488b08-ec64-4bcd-a050-a952afb8fbf9")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "311-1.00KHRCT-ND"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "fb94e42d-c3c0-4e20-8fac-fee003f0ea5c")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "R_*")
 		(path "/b982650d-f7ca-4767-864f-7befcb9b00f9")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4231,7 +3486,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.825 0 180)
+			(at -0.825 0)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -4240,7 +3495,7 @@
 			(uuid "0d978232-96ae-4e16-86c1-65efd4d67e3e")
 		)
 		(pad "2" smd roundrect
-			(at 0.825 0 180)
+			(at 0.825 0)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -4300,7 +3555,7 @@
 				)
 			)
 		)
-		(property "Description" "Fiducial Marker"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -4327,12 +3582,6 @@
 		(path "/bf187ef9-b922-4cf3-8715-1d4ae9519635")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins)
-			)
-		)
 		(attr smd exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
@@ -4417,7 +3666,7 @@
 				)
 			)
 		)
-		(property "Description" "Mounting Hole with connection"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -4444,13 +3693,7 @@
 		(path "/d18877b0-4851-4e5b-9c00-15c4656de34c")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins)
-			)
-		)
-		(attr exclude_from_bom)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -4501,7 +3744,7 @@
 		(descr "SOD-323F http://www.nxp.com/documents/outline_drawing/SOD323F.pdf")
 		(tags "SOD-323F")
 		(property "Reference" "D7"
-			(at 0 -1.85 0)
+			(at 0 -1.85 270)
 			(layer "F.SilkS")
 			(uuid "8cb238f7-e8a4-4ac5-afbd-820a9006ef43")
 			(effects
@@ -4512,7 +3755,7 @@
 			)
 		)
 		(property "Value" "MM3Z18VB"
-			(at 0.1 1.9 0)
+			(at 0.1 1.9 270)
 			(layer "F.Fab")
 			(uuid "7dccb065-e53b-4ac9-8c48-72af05ac4ce5")
 			(effects
@@ -4523,7 +3766,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 180)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -4535,8 +3778,8 @@
 				)
 			)
 		)
-		(property "Description" "Zener diode, small symbol"
-			(at 0 0 180)
+		(property "Description" ""
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -4548,55 +3791,10 @@
 				)
 			)
 		)
-		(property "DigiKey" "MM3Z18VBCT-ND"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "5b7e85eb-c260-4958-8eba-d1c803ac22a1")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "onsemi"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "9a1520c1-b417-400e-8376-549ba66dc1a6")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "MM3Z18VB"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "65180f01-ffc0-4dea-9732-f764f846146f")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "TO-???* *_Diode_* *SingleDiode* D_*")
 		(path "/9dd56548-b35f-4d31-90a7-d010bed15540")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4770,7 +3968,7 @@
 			(uuid "e42ead0b-31db-4b97-98e6-32749c8005d7")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 -1.85 0)
+			(at 0 -1.85 270)
 			(layer "F.Fab")
 			(uuid "74b17881-3ffc-47c4-aac9-a85466061c29")
 			(effects
@@ -4781,7 +3979,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -1.1 0 180)
+			(at -1.1 0 270)
 			(size 0.5 0.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -4791,7 +3989,7 @@
 			(uuid "a412b5a0-6e14-48ef-a42b-459d5fd7b5d6")
 		)
 		(pad "2" smd roundrect
-			(at 1.1 0 180)
+			(at 1.1 0 270)
 			(size 0.5 0.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -4820,7 +4018,7 @@
 		(descr "TDK ATB322524-0110-T000 HV step-up transformer, 1:10.2, 3.2x2.5x2.4mm max. Pins 1/4 = primary, pins 2/3 = secondary (verified from netlist on the original board). https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/644/ATB322515-(15,24)_DS.pdf")
 		(tags "transformer ATB3225 ATB322524")
 		(property "Reference" "T1"
-			(at 0 -1.9 0)
+			(at 0 -1.9 90)
 			(layer "F.SilkS")
 			(uuid "9c5e87b3-4d3b-4dd1-9eca-aaede9cde117")
 			(effects
@@ -4831,7 +4029,7 @@
 			)
 		)
 		(property "Value" "ATB322524"
-			(at 0 1.9 0)
+			(at 0 1.9 90)
 			(layer "F.Fab")
 			(uuid "48ef3cab-7ddd-469c-8c9b-d9baa85f285d")
 			(effects
@@ -4841,8 +4039,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 0 0 0)
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/644/ATB322515-(15,24)_DS.pdf"
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -4854,8 +4052,8 @@
 				)
 			)
 		)
-		(property "Description" "HV Transformer 1:10, Small"
-			(at 0 0 0)
+		(property "Description" "HV step-up transformer. Pin 1 (primary) marked with a silkscreen dot -- reversing this part produced a wrong-polarity HV spike on the original prototype. Do not place without checking pin 1."
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -4867,55 +4065,10 @@
 				)
 			)
 		)
-		(property "Manufacturer" "TDK"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "49ef6968-6a31-4224-b766-45e930f2e244")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "ATB322524-0110-T000"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "b557c295-7f82-4bf3-a6b2-04a4f4708969")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "445-8636-1-ND"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "eb0dff31-7ef7-49be-92cf-5af752f08b9c")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "*ATB322524_CHUNKY*")
 		(path "/9dca9689-8cb3-445f-bf54-69a637daa04f")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "3" "4" "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4972,7 +4125,7 @@
 			(uuid "c3da08e6-235b-487b-bf61-7973f7ec8e41")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 -1.9 0)
+			(at 0 -1.9 90)
 			(layer "F.Fab")
 			(uuid "f76740b7-510d-4b99-ae42-1e7a828cf41b")
 			(effects
@@ -4983,7 +4136,7 @@
 			)
 		)
 		(pad "1" smd rect
-			(at -1.5 0.885)
+			(at -1.5 0.885 90)
 			(size 0.55 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/T1_PRI_A")
@@ -4992,7 +4145,7 @@
 			(uuid "63f50377-918e-4467-93f3-93082c82afb5")
 		)
 		(pad "2" smd rect
-			(at -1.5 -0.885)
+			(at -1.5 -0.885 90)
 			(size 0.55 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/HV_RECT")
@@ -5001,7 +4154,7 @@
 			(uuid "fb99683d-6116-4457-92e6-397f7a7938cd")
 		)
 		(pad "3" smd rect
-			(at 1.5 -0.885)
+			(at 1.5 -0.885 90)
 			(size 0.55 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/HV_RTN")
@@ -5010,7 +4163,7 @@
 			(uuid "5797a2c5-8552-471e-9809-abcbbfc706a7")
 		)
 		(pad "4" smd rect
-			(at 1.5 0.885)
+			(at 1.5 0.885 90)
 			(size 0.55 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/T1_PRI_B")
@@ -5027,7 +4180,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R16"
-			(at 2.325 0.5 180)
+			(at 0 -1.43 90)
 			(layer "F.SilkS")
 			(uuid "0fbf7578-3d70-412e-8d48-2fd1f4a4b29e")
 			(effects
@@ -5059,7 +4212,7 @@
 				)
 			)
 		)
-		(property "Description" "Buffer bypass - DNP, fit only with U2 removed"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -5082,55 +4235,10 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Yageo"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "1860cda6-a815-468e-8523-f3bb9d7bad66")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "RC0603JR-070RL"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "ccf3ed0b-c74f-4cef-a2cc-5180ad4d67be")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "311-0.0GRCT-ND"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "f07ba735-0871-47ae-bee1-1fec8c872a92")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "R_*")
 		(path "/a8f270c0-0c46-44c2-9c24-4728b4d2f753")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5235,7 +4343,7 @@
 			)
 		)
 		(property "Value" "EDGE-SMA"
-			(at 5 6 0)
+			(at 5 6 90)
 			(layer "F.Fab")
 			(uuid "4a0d1754-3b84-4219-96c3-c36b1e941946")
 			(effects
@@ -5246,7 +4354,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 180)
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -5258,8 +4366,8 @@
 				)
 			)
 		)
-		(property "Description" "Optional DNP trigger input, coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 0 0 180)
+		(property "Description" ""
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -5271,42 +4379,10 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Amphenol"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "bd56fc74-3f98-47b1-9910-8c670a9a271b")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "132289"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "4ad53fa8-4ead-4070-b5cf-70687a995611")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "*BNC* *SMA* *SMB* *SMC* *Cinch* *LEMO*")
 		(path "/b5dc0e9a-592b-4e37-8c21-45cd086226a1")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5560,7 +4636,7 @@
 			(uuid "375f0faf-6121-4ce3-8c83-e027a4db4c3c")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 4.79 0 90)
+			(at 4.79 0 0)
 			(layer "F.Fab")
 			(uuid "51be650b-27f1-4d0b-a48d-87e14462b5a8")
 			(effects
@@ -5571,27 +4647,16 @@
 			)
 		)
 		(pad "1" smd rect
-			(at 0 0)
+			(at 0 0 180)
 			(size 1.5 5.08)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/TRIG_IN")
 			(pinfunction "In_1")
 			(pintype "passive")
-			(teardrops
-				(best_length_ratio 0.5)
-				(max_length 1)
-				(best_width_ratio 1)
-				(max_width 2)
-				(curved_edges yes)
-				(filter_ratio 0.9)
-				(enabled yes)
-				(allow_two_segments yes)
-				(prefer_zone_connections yes)
-			)
 			(uuid "ade44872-15e5-4195-a1c9-394945dc5928")
 		)
 		(pad "2" smd rect
-			(at 0 -4.25)
+			(at 0 -4.25 180)
 			(size 1.5 5.08)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "GND")
@@ -5600,7 +4665,7 @@
 			(uuid "076bfede-96ae-40a8-b0ad-4c24cfca5a64")
 		)
 		(pad "2" smd rect
-			(at 0 -4.25)
+			(at 0 -4.25 180)
 			(size 1.5 5.08)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(net "GND")
@@ -5609,7 +4674,7 @@
 			(uuid "c673c9c5-8796-40d7-84d0-0be29eb4e3d5")
 		)
 		(pad "2" smd rect
-			(at 0 4.25)
+			(at 0 4.25 180)
 			(size 1.5 5.08)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "GND")
@@ -5618,7 +4683,7 @@
 			(uuid "741cafe7-60a5-4b69-abd6-ef790f9aec2a")
 		)
 		(pad "2" smd rect
-			(at 0 4.25)
+			(at 0 4.25 180)
 			(size 1.5 5.08)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(net "GND")
@@ -5646,7 +4711,7 @@
 		(descr "LED SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf)")
 		(tags "LED")
 		(property "Reference" "D6"
-			(at 2.5 0.25 90)
+			(at 0 -1.43 0)
 			(layer "F.SilkS")
 			(uuid "12a157c8-997d-4df7-a5d8-d78726381553")
 			(effects
@@ -5657,7 +4722,7 @@
 			)
 		)
 		(property "Value" "LED, 0603, Red"
-			(at 0 1.43 90)
+			(at 0 1.43 0)
 			(layer "F.Fab")
 			(uuid "ed7d81bc-1b64-4c89-a432-5ddcd185b98c")
 			(effects
@@ -5668,7 +4733,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 90)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e8f9f85e-19f9-42e8-bb55-748f8e0b198e")
@@ -5678,8 +4743,8 @@
 				)
 			)
 		)
-		(property "Description" "Light emitting diode"
-			(at 0 0 90)
+		(property "Description" ""
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "65ec6aff-31fc-4ecd-846c-f3b369816c0e")
@@ -5690,62 +4755,10 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 90)
+			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "e46400f1-159b-4c26-b4bc-1a8e5ce1cd40")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "f6de93e1-5e24-402c-b142-c4c7b7952a60")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "754-1123-1-ND"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "76d5214b-9c84-467d-a80f-7614249023c8")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Kingbright"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "fd2171b7-da8b-420d-8b23-5d7693351e06")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "APT1608SURCK"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "1f1117fa-31b8-447b-8a2e-ea4926d79f14")
 			(effects
 				(font
 					(size 1 1)
@@ -5757,12 +4770,6 @@
 		(path "/8ba3d400-120d-4185-a456-c81d920b000b")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5857,7 +4864,7 @@
 			(uuid "70e47ce2-a5e3-49c0-8182-9854424bf93e")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 90)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "e613e7d5-1161-42d2-9bd7-15343f76f13c")
 			(effects
@@ -5868,7 +4875,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.7875 0 90)
+			(at -0.7875 0)
 			(size 0.875 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -5878,7 +4885,7 @@
 			(uuid "d5cc1f27-0a2c-4843-874a-f4d02499d3d4")
 		)
 		(pad "2" smd roundrect
-			(at 0.7875 0 90)
+			(at 0.7875 0)
 			(size 0.875 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -5907,7 +4914,7 @@
 		(descr "CK components KSC7 tactile switch https://www.ckswitches.com/media/1973/ksc7.pdf")
 		(tags "tactile switch ksc7")
 		(property "Reference" "SW1"
-			(at 5.2671 -2.0446 0)
+			(at 0 4.24 90)
 			(layer "F.SilkS")
 			(uuid "bc01db3a-5290-4b2b-9d0d-a6322c6c455f")
 			(effects
@@ -5918,7 +4925,7 @@
 			)
 		)
 		(property "Value" "KSC741J LFS"
-			(at 0 -4.23 0)
+			(at 0 -4.23 90)
 			(layer "F.Fab")
 			(uuid "6b367d7e-b7e9-400d-a05e-fa6f1e2b5e60")
 			(effects
@@ -5929,7 +4936,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -5941,8 +4948,8 @@
 				)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -5954,54 +4961,9 @@
 				)
 			)
 		)
-		(property "DigiKey" "CKN10309CT-ND"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "246da758-ba4e-47a0-ae61-da11ae25920f")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "C&K"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "5c448b5e-7657-4de2-8537-9e1e6adda549")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "KSC741JLFS"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "44e8aad6-4f2a-4c7d-892c-82d4c10ebb69")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(path "/3d27e9fd-7e7f-4c7e-9fa2-62b63394a8ea")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6176,7 +5138,7 @@
 			(uuid "1a40e649-5f13-4a01-af19-fc68395bb3bb")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "2c9e964b-eabe-4f7c-9726-89dd0f8fea5f")
 			(effects
@@ -6187,7 +5149,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -2.9 -2)
+			(at -2.9 -2 90)
 			(size 2.8 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -6197,7 +5159,7 @@
 			(uuid "4df2093a-2388-444a-96ba-b8a40ca3e38b")
 		)
 		(pad "1" smd roundrect
-			(at 2.9 -2)
+			(at 2.9 -2 90)
 			(size 2.8 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -6207,7 +5169,7 @@
 			(uuid "59b86063-e340-49c5-a24a-342079db3381")
 		)
 		(pad "2" smd roundrect
-			(at -2.9 2)
+			(at -2.9 2 90)
 			(size 2.8 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -6217,7 +5179,7 @@
 			(uuid "68563c9d-da60-413b-a4ff-3b241fb15202")
 		)
 		(pad "2" smd roundrect
-			(at 2.9 2)
+			(at 2.9 2 90)
 			(size 2.8 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -6246,7 +5208,7 @@
 		(descr "Littelfuse LDA111STR, SOP-6 gull-wing (SamacSys SOP254P952X470-6N), 2.54mm pitch, body height 4.70mm max. Pad centres and pitch taken from the original ChipShouter-Pico footprint on the as-received board, but pad rotation was corrected: the source Altium->KiCad import had the 2.54mm pad dimension along the 2.54mm pitch axis, fusing adjacent pads into one solid bar with zero gap. Here the 2.54mm dimension runs along X (toe-to-heel, away from the body) and 1.27mm along Y, leaving a 1.27mm gap between adjacent pads. Pin 3 is electrically NC but its lead physically exists -- pad 3 is included so the lead isn't left unsoldered.")
 		(tags "optocoupler LDA111 SOP-6 SOP254P952X470-6N")
 		(property "Reference" "Q1"
-			(at 6.8131 -3.5366 180)
+			(at 0 -4.9 90)
 			(layer "F.SilkS")
 			(uuid "df6e2149-1c95-47b0-9be0-2f3ed6079314")
 			(effects
@@ -6267,7 +5229,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.littelfuse.com/products/power-semiconductors-control-ics/integrated-circuits/optocouplers/single-optocouplers/lda111"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6280,7 +5242,7 @@
 				)
 			)
 		)
-		(property "Description" "Phototransistor"
+		(property "Description" "6-pin gull-wing optocoupler. Pin 1 marked with a silkscreen dot -- upstream build notes call pin-1 orientation out specifically as easy to get wrong. Pad 3 carries no net (symbol has no pin 3); this is expected, see Task 6 report."
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6293,54 +5255,9 @@
 				)
 			)
 		)
-		(property "Manufacturer" "IXYS SEMICONDUCTOR"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "290d85a9-3df5-413f-ac46-e9966fcb836f")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "LDA111STR"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "7cc3b037-c186-4b45-b3b3-fcbe2b4f8087")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "212-LDA111SCT-ND"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "67f13d21-fd31-49d0-8b01-79106524450d")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(path "/c49e54fb-13bd-4080-8394-2738de67e0c1")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "3" "4" "2" "5" "1" "6")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6490,7 +5407,7 @@
 		(descr "JST XH series connector, S2B-XH-A (http://www.jst-mfg.com/product/pdf/eng/eXH.pdf)")
 		(tags "connector JST XH horizontal")
 		(property "Reference" "J2"
-			(at 1.25 -3.51 180)
+			(at 1.25 -3.51 90)
 			(layer "F.SilkS")
 			(uuid "12ebbc7a-6641-4e58-949c-0af4174c5503")
 			(effects
@@ -6522,7 +5439,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x02, script generated"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -6545,55 +5462,10 @@
 				)
 			)
 		)
-		(property "Manufacturer" "JST"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "dbb26b4c-7d69-4b18-8c56-e940d3a4c832")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "S2B-XH-A(LF)(SN)"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "82791f0e-d012-4931-ba4d-d73933fd8b51")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "455-2257-ND"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "2ae591e3-1696-49ca-9a0c-ff9ce32d21b0")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/d346b1b1-2799-46e8-a81b-a793e5d3f450")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6891,7 +5763,7 @@
 			)
 		)
 		(pad "1" thru_hole roundrect
-			(at 0 0 270)
+			(at 0 0 90)
 			(size 1.7 2)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -6903,7 +5775,7 @@
 			(uuid "e43b6782-cef6-41f2-932f-65eadf8ece4f")
 		)
 		(pad "2" thru_hole oval
-			(at 2.5 0 270)
+			(at 2.5 0 90)
 			(size 1.7 2)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -6933,7 +5805,7 @@
 		(descr "Through hole straight pin header, 1x02, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x02 2.54mm single row")
 		(property "Reference" "P2"
-			(at 2.5 -0.975 180)
+			(at 0 -2.38 90)
 			(layer "F.SilkS")
 			(uuid "f31a0ebd-4c0b-4f14-8353-3ab1b3866461")
 			(effects
@@ -6965,7 +5837,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x02, script generated"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -6992,12 +5864,6 @@
 		(path "/be82102a-9c83-4d6b-ace8-374575497906")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7122,7 +5988,7 @@
 			(uuid "3b88fca8-5e00-4c9b-8e6e-f54854594d32")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 1.27 0)
+			(at 0 1.27 180)
 			(layer "F.Fab")
 			(uuid "df37e17b-b849-420d-8587-2765ec5e9f82")
 			(effects
@@ -7174,7 +6040,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R12"
-			(at 3.0946 0 0)
+			(at 0 -1.43 180)
 			(layer "F.SilkS")
 			(uuid "c977ee6b-e526-4105-96cd-d8656724d0ce")
 			(effects
@@ -7185,7 +6051,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 0 1.43 0)
+			(at 0 1.43 180)
 			(layer "F.Fab")
 			(uuid "adf671b6-b384-4efd-94bb-0a43e12e3fbb")
 			(effects
@@ -7196,7 +6062,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "19e73d2c-929f-4dba-ad25-981442dfa830")
@@ -7206,8 +6072,8 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a796df68-4b15-4ee3-9da4-c61d46b0d46a")
@@ -7218,49 +6084,10 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "ca2bde02-705e-4261-93b2-f2769df973fc")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "60f48082-748c-470c-8aff-45a3f85d10e9")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "RC0603FR-071KL"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "cc2b269a-47eb-4375-8b3f-ddba219d01c5")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "311-1.00KHRCT-ND"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "5000e3f4-6a06-4b59-a5e4-7c179d5300a3")
 			(effects
 				(font
 					(size 1 1)
@@ -7272,12 +6099,6 @@
 		(path "/0056a1da-8e2b-45a8-852b-af0fa375c550")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7323,7 +6144,7 @@
 			(uuid "4947961e-2dc6-4592-b6ae-96b7ea24eea2")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(uuid "17eebfdc-e6dd-43e1-88f8-4931e73cb001")
 			(effects
@@ -7371,7 +6192,7 @@
 		(descr "MCC SOD-123FL (flat lead), e.g. SM4005PL-TP. Pad centres at +/-1.55mm (3.10mm span), size 1.15x1.3mm -- copied from the as-fabricated main:DSS13UTR footprint used for D1 on the original board (a SOD-123FL rectifier), and cross-checked against Central Semiconductor's own SOD-123FL mounting-pad drawing (4.1mm overall pad-to-pad envelope minus a 0.95mm pad width = 3.15mm centre span, within 0.05mm). An earlier draft of this footprint used MCC's suggested-pad-layout figure at 2.36mm; that number turned out to be the INNER-EDGE gap between pads, not the centre-to-centre span, so the earlier pads landed short of the body outline entirely. KiCad's stock Diode_SMD:D_SOD-123F uses a 2.8mm pad span (1.1x1.1mm square pads), which is still off this package's real geometry; use this footprint instead for SOD-123FL parts.")
 		(tags "diode SOD-123FL SOD123FL flat lead")
 		(property "Reference" "D3"
-			(at -1.0859 2.2444 0)
+			(at 0 -1.3 90)
 			(layer "F.SilkS")
 			(uuid "1dbb0702-7bd3-4ad9-a1b4-bbdd303e7b62")
 			(effects
@@ -7382,7 +6203,7 @@
 			)
 		)
 		(property "Value" "SM4005PL-TP"
-			(at 0 1.3 0)
+			(at 0 1.3 90)
 			(layer "F.Fab")
 			(uuid "46c05582-7330-4598-87b3-1db2a09b30a4")
 			(effects
@@ -7393,7 +6214,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -7405,8 +6226,8 @@
 				)
 			)
 		)
-		(property "Description" "Diode, small symbol"
-			(at 0 0 0)
+		(property "Description" "SOD-123FL flat-lead diode land, per MCC's own suggested pad layout. Pin 1 = cathode by SOD convention, marked with a silkscreen band."
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -7418,55 +6239,10 @@
 				)
 			)
 		)
-		(property "DigiKey" "SM4005PL-TPMSCT-ND"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "aa27c49c-b526-4e0c-bf5b-80527ec0dffd")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "MCC"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "d8739b7b-57d3-4949-9502-01f85b3c4aa3")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "SM4005PL-TP"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "7119d2c1-2e81-4db0-acb1-60b2d4ade163")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "TO-???* *_Diode_* *SingleDiode* D_*")
 		(path "/224d44c3-11cb-47a9-9cc7-ade35bc81242")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7522,7 +6298,7 @@
 			(uuid "b928faff-fdfe-41aa-b014-3dfc29f505c4")
 		)
 		(pad "1" smd roundrect
-			(at -1.55 0)
+			(at -1.55 0 90)
 			(size 1.15 1.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -7532,7 +6308,7 @@
 			(uuid "ec1e576a-e93e-46e0-93da-ac0969ac4411")
 		)
 		(pad "2" smd roundrect
-			(at 1.55 0)
+			(at 1.55 0 90)
 			(size 1.15 1.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -7550,7 +6326,7 @@
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor")
 		(property "Reference" "C1"
-			(at 6.4554 -0.0171 0)
+			(at 0 -1.68 0)
 			(layer "F.SilkS")
 			(uuid "05bc188b-aa08-4ac9-8d82-b44b9afe1347")
 			(effects
@@ -7582,7 +6358,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -7605,55 +6381,10 @@
 				)
 			)
 		)
-		(property "DigiKey" "445-5980-1-ND"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "b9bbe838-488a-4c93-9e35-9f81eee6e361")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "TDK"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "52873823-3519-4283-b7a2-31f4c217e88a")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "C2012X5R1H475K125AB"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "7e01b6e0-8276-4400-aa2e-dc35dbe8b9eb")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "C_*")
 		(path "/43128f49-0fac-4a9f-8a55-951709475b05")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7747,7 +6478,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R11"
-			(at 3.0946 0 0)
+			(at 0 -1.43 180)
 			(layer "F.SilkS")
 			(uuid "ea241525-798c-4e86-8e70-062a34b9d451")
 			(effects
@@ -7758,7 +6489,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 0 1.43 0)
+			(at 0 1.43 180)
 			(layer "F.Fab")
 			(uuid "68bf8ab0-813c-411d-ba61-f727d887812b")
 			(effects
@@ -7769,7 +6500,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5de998c7-6d76-4fae-a953-05f648fa1981")
@@ -7779,8 +6510,8 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "58ac5518-8de3-4229-88ec-3603999ec2f4")
@@ -7791,49 +6522,10 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "8acd7983-ec3c-4a65-a8b1-cd02e66f0b1c")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "ca7c7e55-5733-4791-afbf-2d46484d1df8")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "RC0603FR-071KL"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "4edf1a10-0b4c-4e18-b82e-76955ecf9f33")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "311-1.00KHRCT-ND"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "270761a7-e533-404b-9d08-827dcbd175be")
 			(effects
 				(font
 					(size 1 1)
@@ -7845,12 +6537,6 @@
 		(path "/68427123-920b-43dd-ab92-7a66caca0c70")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7896,7 +6582,7 @@
 			(uuid "d40965b0-26f1-4670-9561-92c632434148")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(uuid "cbd9c0a7-1094-4eda-a3c4-c0beef2b2804")
 			(effects
@@ -7944,7 +6630,7 @@
 		(descr "E-Switch TL3301A series 6.0x6.0mm SMT tactile switch, J-lead ('QJ') termination -- per E-Switch's TL3301 Series datasheet (e-switch.com/product-catalog/tl3301-series-smt-tactile-switch), J-Lead Termination PCB Layout drawing. Pad centres at +/-2.785mm X, +/-2.25mm Y (5.57mm x 4.50mm pitch), pad size 2.03x1.40mm, derived from the datasheet's 7.60mm overall pad envelope and 4.50mm row pitch. Deliberately NOT sharing KiCad stock Button_Switch_SMD:SW_Push_1P1T_NO_CK_KSC7xxJ: upstream calls the TL3301A 'same footprint' as the KSC741J, but the two datasheets disagree materially -- 6.0x6.0mm body vs KSC7xxJ's 6.2x6.2mm, and critically a 4.50mm row pitch vs the KSC7xxJ land's 4.00mm, a 12.5% mismatch that would put this part's leads on top of soldermask/copper meant for a different pitch rather than centered on a pad. See Task 8 report for the full comparison.")
 		(tags "tactile switch tl3301 e-switch")
 		(property "Reference" "SW3"
-			(at 0 -4 0)
+			(at 0 -4 90)
 			(layer "F.SilkS")
 			(uuid "9d77b2b2-eb94-4538-be48-22047a657dc2")
 			(effects
@@ -7955,7 +6641,7 @@
 			)
 		)
 		(property "Value" "TL3301AF160QJ"
-			(at 0 4 0)
+			(at 0 4 90)
 			(layer "F.Fab")
 			(uuid "e0c2cf3b-88e3-4c2d-80b0-d05fca77b718")
 			(effects
@@ -7966,7 +6652,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -7978,8 +6664,8 @@
 				)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 0 0 0)
+		(property "Description" "E-Switch TL3301A, 6x6mm SMT tactile switch, J-lead termination. Own land -- do not substitute the KSC7xxJ footprint, see descr."
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -7991,54 +6677,9 @@
 				)
 			)
 		)
-		(property "DigiKey" "EG4374CT-ND"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "03bd8194-547b-469d-9e35-3e7204111431")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "E-Switch"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "6ab62cdc-3e33-4447-99f6-3599c736a0dc")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "TL3301AF160QJ"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "75ac7506-a6d2-4b27-a383-ad6d6713c0d7")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(path "/1486b45d-c0d0-41f6-bfee-6b93c6ca9a8e")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8155,7 +6796,7 @@
 			(uuid "c16a3fcc-4cf6-471a-8303-2ec05624b8d6")
 		)
 		(pad "1" smd roundrect
-			(at -2.785 -2.25)
+			(at -2.785 -2.25 90)
 			(size 2.03 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -8165,7 +6806,7 @@
 			(uuid "85120033-5355-4d94-b12e-9b5f447c7820")
 		)
 		(pad "1" smd roundrect
-			(at 2.785 -2.25)
+			(at 2.785 -2.25 90)
 			(size 2.03 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -8175,7 +6816,7 @@
 			(uuid "64ab9d86-e5c1-44d3-81d9-8735eebb2dfb")
 		)
 		(pad "2" smd roundrect
-			(at -2.785 2.25)
+			(at -2.785 2.25 90)
 			(size 2.03 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -8185,7 +6826,7 @@
 			(uuid "e89561c5-5a77-4f53-a208-2644ff091924")
 		)
 		(pad "2" smd roundrect
-			(at 2.785 2.25)
+			(at 2.785 2.25 90)
 			(size 2.03 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -8203,7 +6844,7 @@
 		(descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R4"
-			(at -1.0171 -1.9554 0)
+			(at 0 -1.65 270)
 			(layer "F.SilkS")
 			(uuid "46c27d1e-7b62-49ed-8b3c-16c127f5a200")
 			(effects
@@ -8214,7 +6855,7 @@
 			)
 		)
 		(property "Value" "75R"
-			(at 0 1.65 0)
+			(at 0 1.65 270)
 			(layer "F.Fab")
 			(uuid "897ddce3-7883-4a95-bf98-3b5faf2223a4")
 			(effects
@@ -8225,7 +6866,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d9aa2c2d-b0c8-4782-a763-fb2a2a453e24")
@@ -8235,8 +6876,8 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "92093d42-c8f1-4cbb-bc73-7a7702ee4ad2")
@@ -8247,49 +6888,10 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
+			(at 0 0 270)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "c1372a53-316a-409e-af09-5dc6cf8285bd")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "43af7be6-bc7d-462b-98b5-8961b5df8482")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "RC0805FR-0775RL"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "de9acff1-1fe8-44f7-a751-7c44152f0647")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "311-75.0CRCT-ND"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "3b43a5b7-5b6c-4f9a-96a7-fc88a1e54cd2")
 			(effects
 				(font
 					(size 1 1)
@@ -8301,12 +6903,6 @@
 		(path "/c277517e-8266-4ebc-bc8a-2848c870676d")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8352,7 +6948,7 @@
 			(uuid "85abc5f8-a632-46d1-b8b3-b948cda0bceb")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 270)
 			(layer "F.Fab")
 			(uuid "6e525963-b85a-4189-8070-43bf8f2e3399")
 			(effects
@@ -8363,7 +6959,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.9125 0)
+			(at -0.9125 0 270)
 			(size 1.025 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.243902)
@@ -8372,7 +6968,7 @@
 			(uuid "6f4a6244-fa7a-41bb-8723-033fe61d4a21")
 		)
 		(pad "2" smd roundrect
-			(at 0.9125 0)
+			(at 0.9125 0 270)
 			(size 1.025 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.243902)
@@ -8400,7 +6996,7 @@
 		(descr "Through hole straight pin header, 1x07, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x07 2.54mm single row")
 		(property "Reference" "P1"
-			(at -2.75 -0.71 180)
+			(at 0 -2.38 0)
 			(layer "F.SilkS")
 			(uuid "71aeb7ef-16f2-4f5d-9ef0-a1f92b884007")
 			(effects
@@ -8411,7 +7007,7 @@
 			)
 		)
 		(property "Value" "Header 7"
-			(at 0 17.62 90)
+			(at 0 17.62 0)
 			(layer "F.Fab")
 			(uuid "f1334278-ba60-4b1e-9afc-c7abd5d6b2d5")
 			(effects
@@ -8422,7 +7018,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 90)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fe107ea2-557f-4a2d-aefa-67c8ab906f58")
@@ -8432,8 +7028,8 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x07, script generated"
-			(at 0 0 90)
+		(property "Description" ""
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1109df10-3254-49bc-a43e-e005ae3f2c60")
@@ -8444,7 +7040,7 @@
 			)
 		)
 		(property "KiLib_Generator" "connector/pin_header_socket"
-			(at 0 0 90)
+			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "7cfed7be-0a1a-43e5-b87a-a34366fb931c")
@@ -8459,12 +7055,6 @@
 		(path "/0cbae324-6d03-480d-827e-86ebbeedd03d")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2" "3" "4" "5" "6" "7")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8589,7 +7179,7 @@
 			(uuid "3fbe83d9-c554-4f13-9710-2c70596bf66c")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 7.62 0)
+			(at 0 7.62 90)
 			(layer "F.Fab")
 			(uuid "b9eeb974-a433-4e68-b154-4e91460203b4")
 			(effects
@@ -8600,7 +7190,7 @@
 			)
 		)
 		(pad "1" thru_hole rect
-			(at 0 0 90)
+			(at 0 0)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -8611,7 +7201,7 @@
 			(uuid "175c0678-9432-4494-a53a-1b1d5de7bac1")
 		)
 		(pad "2" thru_hole circle
-			(at 0 2.54 90)
+			(at 0 2.54)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -8622,7 +7212,7 @@
 			(uuid "302a1115-886c-4a3d-8aeb-fb699ff31f40")
 		)
 		(pad "3" thru_hole circle
-			(at 0 5.08 90)
+			(at 0 5.08)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -8633,7 +7223,7 @@
 			(uuid "11d53dc8-bc16-46ab-9d13-db031f5010c2")
 		)
 		(pad "4" thru_hole circle
-			(at 0 7.62 90)
+			(at 0 7.62)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -8644,7 +7234,7 @@
 			(uuid "76d741da-1b00-43d8-8685-c3bfa015b162")
 		)
 		(pad "5" thru_hole circle
-			(at 0 10.16 90)
+			(at 0 10.16)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -8655,7 +7245,7 @@
 			(uuid "452531ee-b002-49b7-bb39-d8d4a1b6280f")
 		)
 		(pad "6" thru_hole circle
-			(at 0 12.7 90)
+			(at 0 12.7)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -8666,7 +7256,7 @@
 			(uuid "a620af9a-dc79-4e6d-a5c0-a0cec6b0cc17")
 		)
 		(pad "7" thru_hole circle
-			(at 0 15.24 90)
+			(at 0 15.24)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -8696,7 +7286,7 @@
 		(descr "CK components KSC7 tactile switch https://www.ckswitches.com/media/1973/ksc7.pdf")
 		(tags "tactile switch ksc7")
 		(property "Reference" "SW2"
-			(at 5.6329 1.9446 0)
+			(at 0 4.24 90)
 			(layer "F.SilkS")
 			(uuid "2c520ca0-21c0-4a49-9b3f-b4fa4a0129cc")
 			(effects
@@ -8707,7 +7297,7 @@
 			)
 		)
 		(property "Value" "KSC741J LFS"
-			(at 0 -4.23 0)
+			(at 0 -4.23 90)
 			(layer "F.Fab")
 			(uuid "b068b453-1ea0-4ea2-8445-bd6b7a977c1b")
 			(effects
@@ -8718,7 +7308,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -8730,8 +7320,8 @@
 				)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -8743,54 +7333,9 @@
 				)
 			)
 		)
-		(property "DigiKey" "CKN10309CT-ND"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "c890c5e2-405f-47c7-870d-4952fa1bd911")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "C&K"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "836b086c-00c4-469a-84a5-6e15f5b3cfba")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "KSC741JLFS"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "5cad0b40-2fce-4190-9eef-0faae538e327")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(path "/2a5fede7-1dcc-436c-8625-8e6683ff5a6f")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8965,7 +7510,7 @@
 			(uuid "d9232414-1f38-4510-90bc-175cff060ccb")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "a82cea0d-20de-4088-ba4a-4c0cd56d3542")
 			(effects
@@ -8976,7 +7521,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -2.9 -2)
+			(at -2.9 -2 90)
 			(size 2.8 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -8986,7 +7531,7 @@
 			(uuid "6d6c2df0-5f89-46c9-8228-d1ef10a8da4a")
 		)
 		(pad "1" smd roundrect
-			(at 2.9 -2)
+			(at 2.9 -2 90)
 			(size 2.8 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -8996,7 +7541,7 @@
 			(uuid "9db1e8fd-14fc-40cc-b07d-5ce528a3757d")
 		)
 		(pad "2" smd roundrect
-			(at -2.9 2)
+			(at -2.9 2 90)
 			(size 2.8 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -9006,7 +7551,7 @@
 			(uuid "34ac4963-90dd-45b9-84ff-e28373b66aad")
 		)
 		(pad "2" smd roundrect
-			(at 2.9 2)
+			(at 2.9 2 90)
 			(size 2.8 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -9035,7 +7580,7 @@
 		(descr "Through hole straight pin header, 1x04, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x04 2.54mm single row")
 		(property "Reference" "P3"
-			(at 2.5171 -1.0046 180)
+			(at 0 -2.38 90)
 			(layer "F.SilkS")
 			(uuid "b2962fef-4b66-40ba-b20f-352d5ec1d97d")
 			(effects
@@ -9067,7 +7612,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x04, script generated"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -9094,12 +7639,6 @@
 		(path "/fcd1cf48-280c-4314-8f21-6c97182fd6f9")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2" "3" "4")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9224,7 +7763,7 @@
 			(uuid "0b857eb0-f326-4fee-9737-e77458712558")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 3.81 0)
+			(at 0 3.81 180)
 			(layer "F.Fab")
 			(uuid "6ebdc5e7-d3af-499c-b7f4-d5e5329b54dc")
 			(effects
@@ -9298,7 +7837,7 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C5"
-			(at 0 -4.0584 0)
+			(at 0 -1.43 90)
 			(layer "F.SilkS")
 			(uuid "25f2d081-d287-43d8-87cf-67fbf2b46375")
 			(effects
@@ -9309,7 +7848,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at 0 1.43 0)
+			(at 0 1.43 90)
 			(layer "F.Fab")
 			(uuid "ba0167c2-f3b4-419f-8f1c-24af3f649731")
 			(effects
@@ -9320,7 +7859,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "72fedac0-20fd-4f41-864d-58afac0fc54a")
@@ -9330,8 +7869,8 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5c4ba07b-343b-40b4-840c-ed01a2ee45d2")
@@ -9342,49 +7881,10 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "9e47690e-0f29-4f28-b3fc-fcb2ef19db37")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "399-5089-2-ND"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "24e38d9a-2ee6-4a70-b030-9fa7955c6625")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "KEMET"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "7a445002-1bdd-4d95-bf50-2bf325ca5a7c")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "C0603C104K5RACTU"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "e3618a80-3a56-4107-9f24-93aebe99a873")
 			(effects
 				(font
 					(size 1 1)
@@ -9396,12 +7896,6 @@
 		(path "/13f4be4e-fa86-4441-8b1c-1518bf47877a")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9447,7 +7941,7 @@
 			(uuid "febba4b4-c796-406d-882c-859f5f17ca29")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "5a7c1fbd-89fb-4714-b9f1-2d23552049c2")
 			(effects
@@ -9458,7 +7952,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.775 0)
+			(at -0.775 0 90)
 			(size 0.9 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -9467,7 +7961,7 @@
 			(uuid "2dfaf70b-14ac-4ae7-b243-19ecbff3b980")
 		)
 		(pad "2" smd roundrect
-			(at 0.775 0)
+			(at 0.775 0 90)
 			(size 0.9 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -9495,7 +7989,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R13"
-			(at 0 1.75 180)
+			(at 0 -1.43 0)
 			(layer "F.SilkS")
 			(uuid "d2beafc6-a324-4e0d-b0e8-c9fa0c026da5")
 			(effects
@@ -9506,7 +8000,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 0 1.43 90)
+			(at 0 1.43 0)
 			(layer "F.Fab")
 			(uuid "478bde2e-c2d1-40e2-894b-1fb451530276")
 			(effects
@@ -9517,7 +8011,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 90)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c99229a7-a536-4a81-b0c3-8d6dcb8dd5e9")
@@ -9527,8 +8021,8 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
-			(at 0 0 90)
+		(property "Description" ""
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f1c84b2f-dd45-484c-8b53-4aaddfbfd514")
@@ -9539,49 +8033,10 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 90)
+			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "36e1436c-a538-4ce7-b04c-4b4a3cfae197")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "61b3e8dc-dd18-4d9f-a835-07e00e0b80b7")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "RC0603FR-071KL"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "243043a7-d24e-4390-806c-3b9fb47b04b2")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "311-1.00KHRCT-ND"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "b916fd95-8b85-4b33-9ffe-da1847eb19a7")
 			(effects
 				(font
 					(size 1 1)
@@ -9593,12 +8048,6 @@
 		(path "/0727d572-9cdb-4e26-823e-c91329412167")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9644,7 +8093,7 @@
 			(uuid "6e39d21a-88ac-4a93-9663-f8dfd72b74e4")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 90)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "8ff77dbf-5a75-48e9-bf46-ec327f1b9776")
 			(effects
@@ -9655,7 +8104,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.825 0 270)
+			(at -0.825 0)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -9664,7 +8113,7 @@
 			(uuid "7bfc101c-eb64-4fdd-ad92-b259c29a98af")
 		)
 		(pad "2" smd roundrect
-			(at 0.825 0 270)
+			(at 0.825 0)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -9726,7 +8175,7 @@
 				)
 			)
 		)
-		(property "Description" "Diode, small symbol"
+		(property "Description" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9739,68 +8188,10 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "5008385b-0823-4fc9-9c60-07417be6789f")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "4dc6974d-7bf3-4f1e-9389-2362c00a728a")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "onsemi"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "25f7a6ce-ba44-44ae-bae3-1634c9e2c04b")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "MURA160T3G"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "47481956-ac38-4277-af8e-0b88affe1f4e")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "TO-???* *_Diode_* *SingleDiode* D_*")
 		(path "/442f28d1-ce7e-4274-a976-f0b6d8e4c2bc")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10056,7 +8447,7 @@
 				)
 			)
 		)
-		(property "Description" "Mounting Hole with connection"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -10083,13 +8474,7 @@
 		(path "/a003b8dc-0d27-462b-a829-d71204539c9f")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins)
-			)
-		)
-		(attr exclude_from_bom)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -10140,7 +8525,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R15"
-			(at -2.325 0.75 0)
+			(at 0 -1.43 90)
 			(layer "F.SilkS")
 			(uuid "acd78855-d2fd-4bc8-9f46-7ac2aa6dd4b6")
 			(effects
@@ -10151,7 +8536,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 0 1.43 0)
+			(at 0 1.43 90)
 			(layer "F.Fab")
 			(uuid "4f977831-f8d0-4a73-b963-ada0a9eadf0a")
 			(effects
@@ -10162,7 +8547,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "af3936d0-d949-4cee-8263-90028df45ff1")
@@ -10172,8 +8557,8 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e13ef51d-b510-43db-9dce-5e281c7c7ef7")
@@ -10184,49 +8569,10 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "3924c03e-e7b3-4eb0-b6da-6c5a53fd76ff")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "560e6db0-f432-454c-a9ab-71728a770b19")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "RC0603FR-0710KL"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "8d64e677-f7bb-401e-9d78-f27739365ebb")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "311-10.0KHRCT-ND"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "59f3451f-62f9-4183-8e5a-f0819e0a8987")
 			(effects
 				(font
 					(size 1 1)
@@ -10238,12 +8584,6 @@
 		(path "/6d5bbe2a-618b-467b-ac08-40d84a3934ce")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10289,7 +8629,7 @@
 			(uuid "883451c8-9ede-4044-ab60-cbf2295a786e")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "ff58fa5a-f1f6-4894-b2ba-5f1fd7644e88")
 			(effects
@@ -10300,7 +8640,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.825 0)
+			(at -0.825 0 90)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -10309,7 +8649,7 @@
 			(uuid "c55207f2-6065-4dc9-8973-37cf03a91407")
 		)
 		(pad "2" smd roundrect
-			(at 0.825 0)
+			(at 0.825 0 90)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -10369,7 +8709,7 @@
 				)
 			)
 		)
-		(property "Description" "HV calibration tap, 5.08mm pitch PCB terminal block, replaces BG306 (2.07mm pad gap failed IEC 60664-1 creepage at ~600V)"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -10392,68 +8732,10 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Phoenix Contact"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "4b0a769e-ec9f-4450-a9cd-b5dc8cc28b24")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "1715721"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "73639bf2-293e-448e-97b0-85ebf79948d8")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "277-1263-ND"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "63b12cce-fc94-4ce3-910f-e3c7089b37a3")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "BOM Comments" "HV calibration tap. Milled slot between pads - see spec section 7.3."
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "69904252-71b7-450c-8779-aec498777a27")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/e8267d87-8aee-4058-8dbd-b4738c582f3b")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10755,7 +9037,7 @@
 		(descr "Raspberry Pi Pico (non-W) surface-mount footprint for reflow soldering with test points and debug pads, supports Raspberry Pi Pico 2 (non-W), https://datasheets.raspberrypi.com/pico/pico-datasheet.pdf")
 		(tags "module usb pcb swd")
 		(property "Reference" "U1"
-			(at 8.4454 -26.2971 0)
+			(at 11.7475 24.765 0)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "d86b0932-f454-4598-9301-a8c73c4ac174")
@@ -10768,7 +9050,7 @@
 			)
 		)
 		(property "Value" "SC0915"
-			(at -8.5546 -26.2971 0)
+			(at 0 27.94 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(uuid "d05df421-db29-40ca-a8cd-12b0a0fb82d6")
@@ -10779,7 +9061,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://datasheets.raspberrypi.com/pico/pico-datasheet.pdf"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -10791,7 +9073,7 @@
 				)
 			)
 		)
-		(property "Description" "Versatile and inexpensive microcontroller module (with full pinout for test point and debug connections) powered by RP2040 dual-core Arm Cortex-M0+ processor up to 133 MHz, 264kB SRAM, 2MB QSPI flash; also supports Raspberry Pi Pico 2"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -10803,46 +9085,10 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Raspberry Pi"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "d64fbd7d-84ea-49cd-90f5-f5c296f2efce")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "SC0915"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "1ee8c6be-1697-4073-8536-f11b70618db8")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "RaspberryPi?Pico?SMD")
 		(path "/e8d4a5ee-6f0c-4c79-b25b-bc838da13ab0")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "D1" "D3" "30" "37" "1" "2" "4" "5" "6" "7" "9" "10" "11" "12"
-					"14" "15" "16" "17" "19" "20" "TP6" "39" "40" "23" "28" "18" "3" "D2"
-					"8" "13" "38" "36" "TP1" "TP2" "TP3" "TP4" "TP5" "21" "22" "24" "25"
-					"26" "27" "29" "35" "31" "32" "34" "33"
-				)
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -12954,11 +11200,11 @@
 			)
 			(polygon
 				(pts
-					(xy 124.277539 54.174455) (xy 124.311468 54.047833) (xy 124.377012 53.934306) (xy 124.469706 53.841612)
-					(xy 124.583233 53.776068) (xy 124.709855 53.742139) (xy 124.7754 53.74) (xy 125.2254 53.74) (xy 125.2254 55.64)
-					(xy 124.7754 55.64) (xy 124.709855 55.637861) (xy 124.583233 55.603932) (xy 124.469706 55.538388)
-					(xy 124.377012 55.445694) (xy 124.311468 55.332167) (xy 124.277539 55.205545) (xy 124.2754 55.14)
-					(xy 124.2754 54.24)
+					(xy 124.442139 55.281555) (xy 124.476068 55.154933) (xy 124.541612 55.041406) (xy 124.634306 54.948712)
+					(xy 124.747833 54.883168) (xy 124.874455 54.849239) (xy 124.94 54.8471) (xy 125.39 54.8471) (xy 125.39 56.7471)
+					(xy 124.94 56.7471) (xy 124.874455 56.744961) (xy 124.747833 56.711032) (xy 124.634306 56.645488)
+					(xy 124.541612 56.552794) (xy 124.476068 56.439267) (xy 124.442139 56.312645) (xy 124.44 56.2471)
+					(xy 124.44 55.3471)
 				)
 			)
 		)
@@ -12989,11 +11235,11 @@
 			)
 			(polygon
 				(pts
-					(xy 125.2254 55.64) (xy 125.6754 55.64) (xy 125.740945 55.637861) (xy 125.867567 55.603933) (xy 125.981094 55.538388)
-					(xy 126.073788 55.445694) (xy 126.139333 55.332167) (xy 126.173261 55.205545) (xy 126.1754 55.14)
-					(xy 126.1754 54.24) (xy 126.173261 54.174455) (xy 126.139333 54.047833) (xy 126.073788 53.934306)
-					(xy 125.981094 53.841612) (xy 125.867567 53.776067) (xy 125.740945 53.742139) (xy 125.6754 53.74)
-					(xy 125.2254 53.74)
+					(xy 125.39 56.7471) (xy 125.84 56.7471) (xy 125.905545 56.744961) (xy 126.032167 56.711033) (xy 126.145694 56.645488)
+					(xy 126.238388 56.552794) (xy 126.303933 56.439267) (xy 126.337861 56.312645) (xy 126.34 56.2471)
+					(xy 126.34 55.3471) (xy 126.337861 55.281555) (xy 126.303933 55.154933) (xy 126.238388 55.041406)
+					(xy 126.145694 54.948712) (xy 126.032167 54.883167) (xy 125.905545 54.849239) (xy 125.84 54.8471)
+					(xy 125.39 54.8471)
 				)
 			)
 		)
@@ -13164,7 +11410,7 @@
 				)
 			)
 		)
-		(property "Description" "Fiducial Marker"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -13191,12 +11437,6 @@
 		(path "/c0cd147b-6a14-46c6-9591-d36d616bd388")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins)
-			)
-		)
 		(attr smd exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
@@ -13249,7 +11489,7 @@
 		(descr "SOT, 5 Pin (JEDEC MO-178 Var AA https://www.jedec.org/document_search?search_api_views_fulltext=MO-178)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "U2"
-			(at 0 -2.4 90)
+			(at 0 -2.4 270)
 			(layer "F.SilkS")
 			(uuid "9a48b8c0-f20e-4a69-a153-c14e697769ca")
 			(effects
@@ -13260,7 +11500,7 @@
 			)
 		)
 		(property "Value" "74LVC1G17"
-			(at 0 2.4 90)
+			(at 0 2.4 270)
 			(layer "F.Fab")
 			(uuid "39c6d30e-7e3e-4cfd-b6ba-acff2e7792b9")
 			(effects
@@ -13270,8 +11510,8 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74LVC1G17.pdf"
-			(at 0 0 90)
+		(property "Datasheet" ""
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7fb7cee7-a874-49cf-8fb8-fb8665ddcab1")
@@ -13281,8 +11521,8 @@
 				)
 			)
 		)
-		(property "Description" "Single Schmitt-trigger buffer, non-inverting (Y=A), 1.65-5.5V VCC, 5.5V-tolerant input"
-			(at 0 0 90)
+		(property "Description" ""
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "22b62a12-5501-4e7a-80f6-6c4105246001")
@@ -13293,49 +11533,10 @@
 			)
 		)
 		(property "KiLib_Generator" "package/gullwing"
-			(at 0 0 90)
+			(at 0 0 270)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "989a938a-dbe8-47ab-9bcd-2124badf7304")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Nexperia"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "21cd119e-4c49-4d63-a259-cc35697c44e9")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "74LVC1G17GV,125"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "9e9a82ac-0976-49ed-b02f-2b155fb75c2f")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "1727-6070-1-ND"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "c92a4687-7680-432c-922a-984c822a18ad")
 			(effects
 				(font
 					(size 1 1)
@@ -13347,12 +11548,6 @@
 		(path "/fb4224d4-d8d0-4086-bd9a-816495f67074")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "2" "1" "5" "3" "4")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -13720,7 +11915,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -13743,55 +11938,10 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Yageo"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "0ee392d6-3aa6-4e4f-89e7-b86a00d72ff9")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "RC0603FR-0722KL"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "655926a5-222d-47b5-a5fa-b8b32155d727")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "311-22.0KHRCT-ND"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "361d85f9-149e-458e-bd7d-6ab98af16173")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "R_*")
 		(path "/8702152e-6de9-4467-b1c2-8f7034f0a67f")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -13848,7 +11998,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.825 0 180)
+			(at -0.825 0)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -13857,7 +12007,7 @@
 			(uuid "b2d941bf-6911-45e8-aaf9-ace814f0a78b")
 		)
 		(pad "2" smd roundrect
-			(at 0.825 0 180)
+			(at 0.825 0)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -13885,7 +12035,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R14"
-			(at -0.5 -2.5 90)
+			(at 0 -1.43 180)
 			(layer "F.SilkS")
 			(uuid "8e3e5c37-3018-4a8a-bb35-1872f6a8b807")
 			(effects
@@ -13896,7 +12046,7 @@
 			)
 		)
 		(property "Value" "100R"
-			(at 0 1.43 0)
+			(at 0 1.43 180)
 			(layer "F.Fab")
 			(uuid "7a51a354-d6b9-4cde-938b-8db93b6b8c70")
 			(effects
@@ -13907,7 +12057,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d028cbb0-d568-414e-b8cc-27bcb76f6264")
@@ -13917,8 +12067,8 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e441d11a-0d61-4da9-bf2e-7708a5bc6d06")
@@ -13929,49 +12079,10 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "dbb50d9e-3493-44b1-998c-fe7010f2b4f5")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "971716fb-745c-467b-8b0a-02831ec76153")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "RC0603FR-07100RL"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "9ee70ed7-f541-4f2e-a46d-006274a89719")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "311-100HRCT-ND"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "779c030f-a079-4e5b-bdcc-c267baa70ea3")
 			(effects
 				(font
 					(size 1 1)
@@ -13983,12 +12094,6 @@
 		(path "/1c5258ca-f1ad-45d9-895c-c0922111eb9a")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -14034,7 +12139,7 @@
 			(uuid "d04d9775-0fdb-449d-9d7d-3f4346029991")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(uuid "431e6411-a00c-4e8c-8ba8-e2ca994dea52")
 			(effects
@@ -14082,7 +12187,7 @@
 		(descr "Capacitor SMD 2220 (5750 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size from: http://datasheets.avx.com/AVX-HV_MLCC.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C3"
-			(at 0 -3.65 0)
+			(at 0 -3.65 180)
 			(layer "F.SilkS")
 			(uuid "4a24f439-dddf-4639-9559-e37ebd234a5c")
 			(effects
@@ -14093,7 +12198,7 @@
 			)
 		)
 		(property "Value" "0.47uF,630V,X7T"
-			(at 0 3.65 0)
+			(at 0 3.65 180)
 			(layer "F.Fab")
 			(uuid "efe23ff9-8ded-4528-a731-04804a5967e6")
 			(effects
@@ -14104,7 +12209,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "badcd649-4f42-4801-9381-df219f38a30e")
@@ -14114,8 +12219,8 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 0 0 0)
+		(property "Description" ""
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "63a6e3f7-826e-4de7-9c18-1fe265622090")
@@ -14126,49 +12231,10 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "a47b4fae-8be7-4ef1-ac67-bbb8aa2c6694")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DigiKey" "490-16845-1-ND"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "ebea67b2-103e-4e82-907f-05c7d6bfc19a")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Murata"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "8964d566-fac7-44b3-8ffa-451201875799")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "KRM55TR72J474MH01K"
-			(at 0 0 180)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "15cf8818-5c0b-483a-b767-b41afc98b39f")
 			(effects
 				(font
 					(size 1 1)
@@ -14180,12 +12246,6 @@
 		(path "/5ec88ca5-021a-4236-b509-1c344e081afb")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -14231,7 +12291,7 @@
 			(uuid "d037f084-5095-4254-ba50-9f4c13cf7fc3")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(uuid "df56b51d-64d7-46dc-a488-6178f0f24dce")
 			(effects
@@ -14290,7 +12350,7 @@
 			)
 		)
 		(property "Value" "EDGE-SMA"
-			(at 5 6 90)
+			(at 5 6 270)
 			(layer "F.Fab")
 			(uuid "f9c66e79-4cb2-4372-a20c-89d0ecf750ab")
 			(effects
@@ -14313,7 +12373,7 @@
 				)
 			)
 		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+		(property "Description" ""
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -14326,42 +12386,10 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Amphenol"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "9c3c4ec4-a9ee-43cb-9df9-50bf5ac35427")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "132289"
-			(at 0 0 270)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "333aed19-dca8-44eb-a708-9606bb10dc17")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "*BNC* *SMA* *SMB* *SMC* *Cinch* *LEMO*")
 		(path "/de2200b7-1f52-404d-bc19-2215b7bdbc8a")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -14615,7 +12643,7 @@
 			(uuid "55e6e81a-60b7-4674-9a27-24be80db0196")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 4.79 0 0)
+			(at 4.79 0 180)
 			(layer "F.Fab")
 			(uuid "0bcfec68-6768-4536-83ad-01dc067fa0eb")
 			(effects
@@ -14722,7 +12750,7 @@
 				)
 			)
 		)
-		(property "Description" "Fiducial Marker"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -14749,12 +12777,6 @@
 		(path "/6d7cc242-19c8-4f4b-b09c-0cf935a19503")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins)
-			)
-		)
 		(attr smd exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
@@ -14807,7 +12829,7 @@
 		(descr "MCC SOD-123FL (flat lead), e.g. SM4005PL-TP. Pad centres at +/-1.55mm (3.10mm span), size 1.15x1.3mm -- copied from the as-fabricated main:DSS13UTR footprint used for D1 on the original board (a SOD-123FL rectifier), and cross-checked against Central Semiconductor's own SOD-123FL mounting-pad drawing (4.1mm overall pad-to-pad envelope minus a 0.95mm pad width = 3.15mm centre span, within 0.05mm). An earlier draft of this footprint used MCC's suggested-pad-layout figure at 2.36mm; that number turned out to be the INNER-EDGE gap between pads, not the centre-to-centre span, so the earlier pads landed short of the body outline entirely. KiCad's stock Diode_SMD:D_SOD-123F uses a 2.8mm pad span (1.1x1.1mm square pads), which is still off this package's real geometry; use this footprint instead for SOD-123FL parts.")
 		(tags "diode SOD-123FL SOD123FL flat lead")
 		(property "Reference" "D4"
-			(at -3.5 0.25 180)
+			(at 0 -1.3 180)
 			(layer "F.SilkS")
 			(uuid "2e49a043-ca42-4f38-9099-6e9ea7eca3b3")
 			(effects
@@ -14818,7 +12840,7 @@
 			)
 		)
 		(property "Value" "SM4005PL-TP"
-			(at 0 1.3 90)
+			(at 0 1.3 180)
 			(layer "F.Fab")
 			(uuid "faa34293-6653-492c-a300-703c17b0aab8")
 			(effects
@@ -14829,7 +12851,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 90)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -14841,8 +12863,8 @@
 				)
 			)
 		)
-		(property "Description" "Diode, small symbol"
-			(at 0 0 90)
+		(property "Description" "SOD-123FL flat-lead diode land, per MCC's own suggested pad layout. Pin 1 = cathode by SOD convention, marked with a silkscreen band."
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -14854,55 +12876,10 @@
 				)
 			)
 		)
-		(property "DigiKey" "SM4005PL-TPMSCT-ND"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "337738cd-208d-49cf-9c6e-50028498e2ff")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "MCC"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "47f6448e-d74c-4122-8719-6795570ad43a")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MPN" "SM4005PL-TP"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "34a73d75-0bd1-4166-ad0f-f7cb5d0b2624")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property ki_fp_filters "TO-???* *_Diode_* *SingleDiode* D_*")
 		(path "/2cfaafd4-e4bb-45bd-9d22-ab2df9f2132d")
 		(sheetname "/")
 		(sheetfile "picoemp-rev2026.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -14958,7 +12935,7 @@
 			(uuid "131c0e00-5888-4595-a7f1-3b8f88ae6cc2")
 		)
 		(pad "1" smd roundrect
-			(at -1.55 0 90)
+			(at -1.55 0 180)
 			(size 1.15 1.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -14968,7 +12945,7 @@
 			(uuid "48255500-7951-4220-92ed-6927cf5c90fd")
 		)
 		(pad "2" smd roundrect
-			(at 1.55 0 90)
+			(at 1.55 0 180)
 			(size 1.15 1.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -17274,54 +15251,6 @@
 		(layer "F.Cu")
 		(net "/CHARGE_LED")
 		(uuid "aa803862-efee-43d5-a79b-532167b4adc8")
-	)
-	(zone
-		(net "/TRIG_IN")
-		(layer "F.Cu")
-		(hatch none 0.1)
-		(priority 30000)
-		(attr
-			(teardrop
-				(type padvia)
-			)
-		)
-		(connect_pads yes
-			(clearance 0)
-		)
-		(min_thickness 0.0254)
-		(fill yes
-			(island_removal_mode 1)
-		)
-		(polygon
-			(pts
-				(xy 136.900663 25.952889) (xy 136.931777 25.921777) (xy 137.005 25.745) (xy 137.010192 25.660316)
-				(xy 137.02654 25.560806) (xy 137.054489 25.455717) (xy 137.095342 25.349794) (xy 137.138808 25.267659)
-				(xy 137.192102 25.192917) (xy 137.243285 25.139876) (xy 137.30172 25.096067) (xy 137.358103 25.067217)
-				(xy 137.420303 25.047888) (xy 137.505 25.039) (xy 136.755 22.498) (xy 136.005 25.039) (xy 136.068102 25.043848)
-				(xy 136.126249 25.057788) (xy 136.231844 25.111852) (xy 136.325232 25.201877) (xy 136.405921 25.331294)
-				(xy 136.468528 25.499496) (xy 136.502385 25.686401) (xy 136.505 25.745) (xy 136.578223 25.568223)
-				(xy 136.547111 25.599337)
-			)
-		)
-		(filled_polygon
-			(layer "F.Cu")
-			(pts
-				(xy 136.765277 22.533735) (xy 136.766221 22.536016) (xy 137.50102 25.025518) (xy 137.500076 25.034423)
-				(xy 137.493111 25.040051) (xy 137.49102 25.040466) (xy 137.420303 25.047887) (xy 137.358104 25.067216)
-				(xy 137.301719 25.096067) (xy 137.24329 25.13987) (xy 137.243286 25.139874) (xy 137.192099 25.19292)
-				(xy 137.138807 25.267658) (xy 137.095345 25.349786) (xy 137.095341 25.349794) (xy 137.054488 25.455718)
-				(xy 137.026541 25.560799) (xy 137.026539 25.56081) (xy 137.010191 25.66032) (xy 137.005119 25.743048)
-				(xy 137.00425 25.746809) (xy 136.932668 25.919625) (xy 136.930132 25.923421) (xy 136.908936 25.944616)
-				(xy 136.900663 25.948043) (xy 136.89239 25.944616) (xy 136.559997 25.612223) (xy 136.559996 25.612223)
-				(xy 136.52515 25.696352) (xy 136.518818 25.702684) (xy 136.509864 25.702684) (xy 136.503532 25.696352)
-				(xy 136.502653 25.692396) (xy 136.502385 25.68641) (xy 136.502385 25.686401) (xy 136.468528 25.499496)
-				(xy 136.468527 25.499493) (xy 136.405922 25.331295) (xy 136.405921 25.331294) (xy 136.325235 25.201881)
-				(xy 136.325229 25.201874) (xy 136.231846 25.111854) (xy 136.231839 25.111848) (xy 136.126257 25.057791)
-				(xy 136.126249 25.057788) (xy 136.068102 25.043848) (xy 136.019417 25.040107) (xy 136.011431 25.036056)
-				(xy 136.008648 25.027544) (xy 136.009091 25.025139) (xy 136.743779 22.536015) (xy 136.749407 22.529051)
-				(xy 136.758312 22.528107)
-			)
-		)
 	)
 	(zone
 		(net "GND")
