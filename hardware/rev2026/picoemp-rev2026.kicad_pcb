@@ -15259,11 +15259,11 @@
 		(name "MCU GND Pour")
 		(hatch edge 0.5)
 		(connect_pads thru_hole_only
-			(clearance 0.5)
+			(clearance 0.25)
 		)
 		(min_thickness 0.25)
 		(fill yes
-			(thermal_gap 0.5)
+			(thermal_gap 0.3)
 			(thermal_bridge_width 0.5)
 			(island_removal_mode 0)
 		)
