@@ -3405,6 +3405,105 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Mechanical:MountingHole_Pad"
 			(pin_numbers
 				(hide yes)
@@ -5650,16 +5749,8 @@
 		(uuid "7583c973-a09c-4091-82f7-90181f4c0c3c")
 	)
 	(no_connect
-		(at 123.19 198.12)
-		(uuid "7ee94205-883f-476f-8bde-724ccc7e8276")
-	)
-	(no_connect
 		(at 119.38 139.7)
 		(uuid "85e0e4b3-4e1c-4b1b-9878-71cc4b039804")
-	)
-	(no_connect
-		(at 123.19 213.36)
-		(uuid "9bc060cd-61ff-4aee-bc36-e7ac31272f8a")
 	)
 	(no_connect
 		(at 119.38 124.46)
@@ -12339,7 +12430,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
+		(lib_id "Mechanical:MountingHole")
 		(at 123.19 210.82 0)
 		(unit 1)
 		(body_style 1)
@@ -12351,7 +12442,7 @@
 		(fields_autoplaced yes)
 		(uuid "a003b8dc-0d27-462b-a829-d71204539c9f")
 		(property "Reference" "MH2"
-			(at 125.73 208.2799 0)
+			(at 125.73 209.5499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12362,7 +12453,7 @@
 			)
 		)
 		(property "Value" "M3"
-			(at 125.73 210.8199 0)
+			(at 125.73 212.0899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12372,7 +12463,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
 			(at 123.19 210.82 0)
 			(hide yes)
 			(show_name no)
@@ -12394,7 +12485,7 @@
 				)
 			)
 		)
-		(property "Description" "Mounting Hole with connection"
+		(property "Description" "Mounting Hole without connection"
 			(at 123.19 210.82 0)
 			(hide yes)
 			(show_name no)
@@ -12404,9 +12495,6 @@
 					(size 1.27 1.27)
 				)
 			)
-		)
-		(pin "1"
-			(uuid "5a3adafc-cdf0-440d-bb81-49582f4e642e")
 		)
 		(instances
 			(project "picoemp-rev2026"
@@ -13809,7 +13897,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
+		(lib_id "Mechanical:MountingHole")
 		(at 123.19 195.58 0)
 		(unit 1)
 		(body_style 1)
@@ -13821,7 +13909,7 @@
 		(fields_autoplaced yes)
 		(uuid "d18877b0-4851-4e5b-9c00-15c4656de34c")
 		(property "Reference" "MH1"
-			(at 125.73 193.0399 0)
+			(at 125.73 194.3099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13832,7 +13920,7 @@
 			)
 		)
 		(property "Value" "M3"
-			(at 125.73 195.5799 0)
+			(at 125.73 196.8499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13842,7 +13930,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
 			(at 123.19 195.58 0)
 			(hide yes)
 			(show_name no)
@@ -13864,7 +13952,7 @@
 				)
 			)
 		)
-		(property "Description" "Mounting Hole with connection"
+		(property "Description" "Mounting Hole without connection"
 			(at 123.19 195.58 0)
 			(hide yes)
 			(show_name no)
@@ -13874,9 +13962,6 @@
 					(size 1.27 1.27)
 				)
 			)
-		)
-		(pin "1"
-			(uuid "a8c76b7b-510e-4846-9c8d-9453432711be")
 		)
 		(instances
 			(project "picoemp-rev2026"
