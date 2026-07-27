@@ -572,7 +572,7 @@
 	(footprint "Resistor_SMD:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "01b738a7-b084-4d36-b73f-f7e910932097")
-		(at 117 115.5 180)
+		(at 114 121.5)
 		(descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R9"
@@ -736,7 +736,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.9125 0 180)
+			(at -0.9125 0)
 			(size 1.025 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.243902)
@@ -745,7 +745,7 @@
 			(uuid "f46dd382-a639-45db-9c88-2a78d9f156bf")
 		)
 		(pad "2" smd roundrect
-			(at 0.9125 0 180)
+			(at 0.9125 0)
 			(size 1.025 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.243902)
@@ -769,7 +769,7 @@
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "034ac263-5e54-44ed-8558-0f356fadc648")
-		(at 133.2946 111.5171 180)
+		(at 136.8 101.6 90)
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R5"
@@ -933,7 +933,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.825 0 180)
+			(at -0.825 0 90)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -942,7 +942,7 @@
 			(uuid "fe8af963-6e2c-4b46-bc31-a7ffdd1076bf")
 		)
 		(pad "2" smd roundrect
-			(at 0.825 0 180)
+			(at 0.825 0 90)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -966,7 +966,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23"
 		(layer "F.Cu")
 		(uuid "0b551299-2197-4fe6-ba32-c1b6152149e9")
-		(at 132.7836 114.8821 -90)
+		(at 134 105.2)
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "Q3"
@@ -1328,7 +1328,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.9375 -0.95 270)
+			(at -0.9375 -0.95)
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -1338,7 +1338,7 @@
 			(uuid "02eeb117-d9c0-4dc1-8549-3751d7e539bf")
 		)
 		(pad "2" smd roundrect
-			(at -0.9375 0.95 270)
+			(at -0.9375 0.95)
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -1348,7 +1348,7 @@
 			(uuid "0d8b4056-f41e-49ce-aecd-24b8ea57c3e7")
 		)
 		(pad "3" smd roundrect
-			(at 0.9375 0 270)
+			(at 0.9375 0)
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -1373,7 +1373,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "15a25bae-2619-41d5-a6c4-fba44b252b05")
-		(at 131.7946 106.7671)
+		(at 134 101.6)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor")
 		(property "Reference" "C2"
@@ -1771,7 +1771,7 @@
 	(footprint "picoemp:ATB322524"
 		(layer "F.Cu")
 		(uuid "28f366eb-77b7-48b1-b0f8-9377918b6a90")
-		(at 117.0356 112.2151 180)
+		(at 116.89 113 180)
 		(descr "TDK ATB322524-0110-T000 HV step-up transformer, 1:10.2, 3.2x2.5x2.4mm max. Pins 1/4 = primary, pins 2/3 = secondary (verified from netlist on the original board). https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/644/ATB322515-(15,24)_DS.pdf")
 		(tags "transformer ATB3225 ATB322524")
 		(property "Reference" "T2"
@@ -1978,7 +1978,7 @@
 	(footprint "Resistor_SMD:R_2512_6332Metric"
 		(layer "F.Cu")
 		(uuid "2bb04f0f-b42f-40bc-ae83-f8b15cc205ec")
-		(at 128.45 132.2)
+		(at 131 122.5)
 		(descr "Resistor SMD 2512 (6332 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R2"
@@ -2175,7 +2175,7 @@
 	(footprint "Resistor_SMD:R_2010_5025Metric"
 		(layer "F.Cu")
 		(uuid "32b9ed83-df4f-47ad-84f0-f4fcb222d762")
-		(at 121.8 113.3 90)
+		(at 122 119.5)
 		(descr "Resistor SMD 2010 (5025 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R1"
@@ -2326,7 +2326,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -2.3125 0 90)
+			(at -2.3125 0)
 			(size 1.225 2.65)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.204082)
@@ -2335,7 +2335,7 @@
 			(uuid "e702e697-bc36-49fd-9012-e1d68a0b203a")
 		)
 		(pad "2" smd roundrect
-			(at 2.3125 0 90)
+			(at 2.3125 0)
 			(size 1.225 2.65)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.204082)
@@ -2359,7 +2359,7 @@
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "3300c8e7-4faa-4969-8035-5f7163b99d87")
-		(at 118.8 103.8077 -90)
+		(at 114.5 101.6)
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R3"
@@ -2523,7 +2523,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.825 0 270)
+			(at -0.825 0)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -2532,7 +2532,7 @@
 			(uuid "4fdc6782-f6ac-40a3-a6e4-1ec8a3ba7ec5")
 		)
 		(pad "2" smd roundrect
-			(at 0.825 0 270)
+			(at 0.825 0)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -2556,7 +2556,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23"
 		(layer "F.Cu")
 		(uuid "37e82c3b-558b-4d0b-a310-99ab4a943948")
-		(at 118.2508 108.3797 -90)
+		(at 114.5 105.2)
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "Q4"
@@ -2918,7 +2918,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.9375 -0.95 270)
+			(at -0.9375 -0.95)
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -2928,7 +2928,7 @@
 			(uuid "32a89e5e-6c54-4c28-a9d1-36f14ded768c")
 		)
 		(pad "2" smd roundrect
-			(at -0.9375 0.95 270)
+			(at -0.9375 0.95)
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -2938,7 +2938,7 @@
 			(uuid "9b02a7c9-f486-4d37-a5c7-a5bbdb062087")
 		)
 		(pad "3" smd roundrect
-			(at 0.9375 0 270)
+			(at 0.9375 0)
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -2963,7 +2963,7 @@
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "39af761b-d5ac-463a-9fcc-3896b5b5b047")
-		(at 115.75 120.25 90)
+		(at 114 118)
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R7"
@@ -3127,7 +3127,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.825 0 90)
+			(at -0.825 0)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -3136,7 +3136,7 @@
 			(uuid "08f073ab-92c4-45e3-9374-1e4637b8170b")
 		)
 		(pad "2" smd roundrect
-			(at 0.825 0 90)
+			(at 0.825 0)
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -3638,7 +3638,7 @@
 	(footprint "picoemp:D_SOD-123FL"
 		(layer "F.Cu")
 		(uuid "44e7cb65-8ef5-4050-9ab2-396596133341")
-		(at 118.4 99.6167 90)
+		(at 118.8 96.4)
 		(descr "MCC SOD-123FL (flat lead), e.g. SM4005PL-TP. Pad centres at +/-1.55mm (3.10mm span), size 1.15x1.3mm -- copied from the as-fabricated main:DSS13UTR footprint used for D1 on the original board (a SOD-123FL rectifier), and cross-checked against Central Semiconductor's own SOD-123FL mounting-pad drawing (4.1mm overall pad-to-pad envelope minus a 0.95mm pad width = 3.15mm centre span, within 0.05mm). An earlier draft of this footprint used MCC's suggested-pad-layout figure at 2.36mm; that number turned out to be the INNER-EDGE gap between pads, not the centre-to-centre span, so the earlier pads landed short of the body outline entirely. KiCad's stock Diode_SMD:D_SOD-123F uses a 2.8mm pad span (1.1x1.1mm square pads), which is still off this package's real geometry; use this footprint instead for SOD-123FL parts.")
 		(tags "diode SOD-123FL SOD123FL flat lead")
 		(property "Reference" "D5"
@@ -3793,7 +3793,7 @@
 			(uuid "8452073f-9f81-405b-bac3-5f948fe08d0c")
 		)
 		(pad "1" smd roundrect
-			(at -1.55 0 90)
+			(at -1.55 0)
 			(size 1.15 1.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -3803,7 +3803,7 @@
 			(uuid "da68b5cc-26d5-40b9-ba17-86a011d295f6")
 		)
 		(pad "2" smd roundrect
-			(at 1.55 0 90)
+			(at 1.55 0)
 			(size 1.15 1.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -3817,7 +3817,7 @@
 	(footprint "Package_TO_SOT_SMD:TO-252-3_TabPin2"
 		(layer "F.Cu")
 		(uuid "46fcd83f-e368-4582-acea-56cbe5030137")
-		(at 119.5054 133.6675 90)
+		(at 119.19 137.3 90)
 		(descr "TO-252/DPAK SMD package, http://www.infineon.com/cms/en/product/packages/PG-TO252/PG-TO252-3-1/")
 		(tags "DPAK TO-252 DPAK-3 TO-252-3 SOT-428")
 		(property "Reference" "Q2"
@@ -4203,7 +4203,7 @@
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "4766770c-3a00-442a-95a3-268e4947daf7")
-		(at 115.4 101.3)
+		(at 114.5 98.6)
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R10"
@@ -4734,7 +4734,7 @@
 	(footprint "Diode_SMD:D_SOD-323F"
 		(layer "F.Cu")
 		(uuid "502f4e0c-b363-4bc3-ac52-e4910c46594d")
-		(at 115.75 124.25 -90)
+		(at 114 125)
 		(descr "SOD-323F http://www.nxp.com/documents/outline_drawing/SOD323F.pdf")
 		(tags "SOD-323F")
 		(property "Reference" "D7"
@@ -5018,7 +5018,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -1.1 0 270)
+			(at -1.1 0)
 			(size 0.5 0.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -5028,7 +5028,7 @@
 			(uuid "a412b5a0-6e14-48ef-a42b-459d5fd7b5d6")
 		)
 		(pad "2" smd roundrect
-			(at 1.1 0 270)
+			(at 1.1 0)
 			(size 0.5 0.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -5053,7 +5053,7 @@
 	(footprint "picoemp:ATB322524"
 		(layer "F.Cu")
 		(uuid "504b0fe4-996c-434a-9151-b7f0bd6e7294")
-		(at 128.8466 114.6281 90)
+		(at 131.89 113 180)
 		(descr "TDK ATB322524-0110-T000 HV step-up transformer, 1:10.2, 3.2x2.5x2.4mm max. Pins 1/4 = primary, pins 2/3 = secondary (verified from netlist on the original board). https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/644/ATB322515-(15,24)_DS.pdf")
 		(tags "transformer ATB3225 ATB322524")
 		(property "Reference" "T1"
@@ -5220,7 +5220,7 @@
 			)
 		)
 		(pad "1" smd rect
-			(at -1.5 0.885 90)
+			(at -1.5 0.885 180)
 			(size 0.55 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/T1_PRI_A")
@@ -5229,7 +5229,7 @@
 			(uuid "63f50377-918e-4467-93f3-93082c82afb5")
 		)
 		(pad "2" smd rect
-			(at -1.5 -0.885 90)
+			(at -1.5 -0.885 180)
 			(size 0.55 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/HV_RECT")
@@ -5238,7 +5238,7 @@
 			(uuid "fb99683d-6116-4457-92e6-397f7a7938cd")
 		)
 		(pad "3" smd rect
-			(at 1.5 -0.885 90)
+			(at 1.5 -0.885 180)
 			(size 0.55 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/HV_RTN")
@@ -5247,7 +5247,7 @@
 			(uuid "5797a2c5-8552-471e-9809-abcbbfc706a7")
 		)
 		(pad "4" smd rect
-			(at 1.5 0.885 90)
+			(at 1.5 0.885 180)
 			(size 0.55 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/T1_PRI_B")
@@ -6490,7 +6490,7 @@
 	(footprint "picoemp:SOP-6_LDA111"
 		(layer "F.Cu")
 		(uuid "66a16ef9-dd90-4752-9fb0-285874fad5e4")
-		(at 124.39 103.8131 90)
+		(at 124.39 106 90)
 		(descr "Littelfuse LDA111STR, SOP-6 gull-wing (SamacSys SOP254P952X470-6N), 2.54mm pitch, body height 4.70mm max. Pad centres and pitch taken from the original ChipShouter-Pico footprint on the as-received board, but pad rotation was corrected: the source Altium->KiCad import had the 2.54mm pad dimension along the 2.54mm pitch axis, fusing adjacent pads into one solid bar with zero gap. Here the 2.54mm dimension runs along X (toe-to-heel, away from the body) and 1.27mm along Y, leaving a 1.27mm gap between adjacent pads. Pin 3 is electrically NC but its lead physically exists -- pad 3 is included so the lead isn't left unsoldered.")
 		(tags "optocoupler LDA111 SOP-6 SOP254P952X470-6N")
 		(property "Reference" "Q1"
@@ -7188,7 +7188,7 @@
 	(footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 		(layer "F.Cu")
 		(uuid "71217af6-3805-479b-a206-26b79979aa77")
-		(at 118.36 92.25 90)
+		(at 118 92.25 90)
 		(descr "Through hole straight pin header, 1x02, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x02 2.54mm single row")
 		(property "Reference" "P2"
@@ -7648,7 +7648,7 @@
 	(footprint "picoemp:D_SOD-123FL"
 		(layer "F.Cu")
 		(uuid "7e36ef14-671b-4f9c-9aad-31c01385e3a0")
-		(at 131.0056 99.4141 90)
+		(at 134 95.6)
 		(descr "MCC SOD-123FL (flat lead), e.g. SM4005PL-TP. Pad centres at +/-1.55mm (3.10mm span), size 1.15x1.3mm -- copied from the as-fabricated main:DSS13UTR footprint used for D1 on the original board (a SOD-123FL rectifier), and cross-checked against Central Semiconductor's own SOD-123FL mounting-pad drawing (4.1mm overall pad-to-pad envelope minus a 0.95mm pad width = 3.15mm centre span, within 0.05mm). An earlier draft of this footprint used MCC's suggested-pad-layout figure at 2.36mm; that number turned out to be the INNER-EDGE gap between pads, not the centre-to-centre span, so the earlier pads landed short of the body outline entirely. KiCad's stock Diode_SMD:D_SOD-123F uses a 2.8mm pad span (1.1x1.1mm square pads), which is still off this package's real geometry; use this footprint instead for SOD-123FL parts.")
 		(tags "diode SOD-123FL SOD123FL flat lead")
 		(property "Reference" "D3"
@@ -7803,7 +7803,7 @@
 			(uuid "b928faff-fdfe-41aa-b014-3dfc29f505c4")
 		)
 		(pad "1" smd roundrect
-			(at -1.55 0 90)
+			(at -1.55 0)
 			(size 1.15 1.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -7813,7 +7813,7 @@
 			(uuid "ec1e576a-e93e-46e0-93da-ac0969ac4411")
 		)
 		(pad "2" smd roundrect
-			(at 1.55 0 90)
+			(at 1.55 0)
 			(size 1.15 1.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -7827,7 +7827,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "8230d4b2-fb61-4f1a-90c4-718d7d283212")
-		(at 131.7946 109.2671)
+		(at 134 109)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor")
 		(property "Reference" "C1"
@@ -8221,7 +8221,7 @@
 	(footprint "picoemp:SW_Push_ESwitch_TL3301AJ"
 		(layer "F.Cu")
 		(uuid "892aef83-3a9d-4052-aa77-c1c1b0f3a7b0")
-		(at 121.1758 121.3083 90)
+		(at 121.5 127)
 		(descr "E-Switch TL3301A series 6.0x6.0mm SMT tactile switch, J-lead ('QJ') termination -- per E-Switch's TL3301 Series datasheet (e-switch.com/product-catalog/tl3301-series-smt-tactile-switch), J-Lead Termination PCB Layout drawing. Pad centres at +/-2.785mm X, +/-2.25mm Y (5.57mm x 4.50mm pitch), pad size 2.03x1.40mm, derived from the datasheet's 7.60mm overall pad envelope and 4.50mm row pitch. Deliberately NOT sharing KiCad stock Button_Switch_SMD:SW_Push_1P1T_NO_CK_KSC7xxJ: upstream calls the TL3301A 'same footprint' as the KSC741J, but the two datasheets disagree materially -- 6.0x6.0mm body vs KSC7xxJ's 6.2x6.2mm, and critically a 4.50mm row pitch vs the KSC7xxJ land's 4.00mm, a 12.5% mismatch that would put this part's leads on top of soldermask/copper meant for a different pitch rather than centered on a pad. See Task 8 report for the full comparison.")
 		(tags "tactile switch tl3301 e-switch")
 		(property "Reference" "SW3"
@@ -8436,7 +8436,7 @@
 			(uuid "c16a3fcc-4cf6-471a-8303-2ec05624b8d6")
 		)
 		(pad "1" smd roundrect
-			(at -2.785 -2.25 90)
+			(at -2.785 -2.25)
 			(size 2.03 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -8446,7 +8446,7 @@
 			(uuid "85120033-5355-4d94-b12e-9b5f447c7820")
 		)
 		(pad "1" smd roundrect
-			(at 2.785 -2.25 90)
+			(at 2.785 -2.25)
 			(size 2.03 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -8456,7 +8456,7 @@
 			(uuid "64ab9d86-e5c1-44d3-81d9-8735eebb2dfb")
 		)
 		(pad "2" smd roundrect
-			(at -2.785 2.25 90)
+			(at -2.785 2.25)
 			(size 2.03 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -8466,7 +8466,7 @@
 			(uuid "e89561c5-5a77-4f53-a208-2644ff091924")
 		)
 		(pad "2" smd roundrect
-			(at 2.785 2.25 90)
+			(at 2.785 2.25)
 			(size 2.03 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -8480,7 +8480,7 @@
 	(footprint "Resistor_SMD:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "a517f664-84ee-462e-9d18-192bb7b469be")
-		(at 130.7946 104.0171 -90)
+		(at 134 98.6)
 		(descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R4"
@@ -8644,7 +8644,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.9125 0 270)
+			(at -0.9125 0)
 			(size 1.025 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.243902)
@@ -8653,7 +8653,7 @@
 			(uuid "6f4a6244-fa7a-41bb-8723-033fe61d4a21")
 		)
 		(pad "2" smd roundrect
-			(at 0.9125 0 270)
+			(at 0.9125 0)
 			(size 1.025 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.243902)
@@ -9630,7 +9630,7 @@
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "af28e2be-0ea3-4360-b315-2fe37b54c9a0")
-		(at 115.5584 108.3797 90)
+		(at 114.5 109)
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C5"
@@ -9794,7 +9794,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.775 0 90)
+			(at -0.775 0)
 			(size 0.9 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -9803,7 +9803,7 @@
 			(uuid "2dfaf70b-14ac-4ae7-b243-19ecbff3b980")
 		)
 		(pad "2" smd roundrect
-			(at 0.775 0 90)
+			(at 0.775 0)
 			(size 0.9 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -10024,7 +10024,7 @@
 	(footprint "Diode_SMD:D_SMA"
 		(layer "F.Cu")
 		(uuid "b7a0af29-65e9-4381-9b4f-f271e04eef54")
-		(at 129.35 119.1)
+		(at 131 118)
 		(descr "Diode SMA (DO-214AC)")
 		(tags "Diode SMA (DO-214AC)")
 		(property "Reference" "D2"
@@ -10781,7 +10781,7 @@
 	(footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal"
 		(layer "F.Cu")
 		(uuid "c7192a6d-5cf8-4ab7-8490-25088a4cde8f")
-		(at 135.6 129.1 90)
+		(at 133.5 133 90)
 		(descr "Terminal Block Phoenix MKDS-1,5-2-5.08, 2 pins, pitch 5.08mm, size 10.2x9.8mm, drill diameter 1.3mm, pad diameter 2.6mm, http://www.farnell.com/datasheets/100425.pdf")
 		(tags "THT Terminal Block Phoenix MKDS-1,5-2-5.08 pitch 5.08mm size 10.2x9.8mm drill 1.3mm pad 2.6mm")
 		(property "Reference" "J3"
@@ -14176,7 +14176,7 @@
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "eb803797-3eec-4986-8fd3-343f00b5115f")
-		(at 125.25 96.55)
+		(at 121.5 98.6)
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R6"
@@ -14592,7 +14592,7 @@
 	(footprint "Capacitor_SMD:C_2220_5750Metric"
 		(layer "F.Cu")
 		(uuid "ef0d0e04-a3c9-4bd5-bf11-e6ff00d83e85")
-		(at 126.95 137.3357 180)
+		(at 129.59 139.5 180)
 		(descr "Capacitor SMD 2220 (5750 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size from: http://datasheets.avx.com/AVX-HV_MLCC.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C3"
@@ -15317,7 +15317,7 @@
 	(footprint "picoemp:D_SOD-123FL"
 		(layer "F.Cu")
 		(uuid "fb87d72b-bdfd-4bb7-b644-bc3819b0a470")
-		(at 131.25 95.5 180)
+		(at 126 95.6)
 		(descr "MCC SOD-123FL (flat lead), e.g. SM4005PL-TP. Pad centres at +/-1.55mm (3.10mm span), size 1.15x1.3mm -- copied from the as-fabricated main:DSS13UTR footprint used for D1 on the original board (a SOD-123FL rectifier), and cross-checked against Central Semiconductor's own SOD-123FL mounting-pad drawing (4.1mm overall pad-to-pad envelope minus a 0.95mm pad width = 3.15mm centre span, within 0.05mm). An earlier draft of this footprint used MCC's suggested-pad-layout figure at 2.36mm; that number turned out to be the INNER-EDGE gap between pads, not the centre-to-centre span, so the earlier pads landed short of the body outline entirely. KiCad's stock Diode_SMD:D_SOD-123F uses a 2.8mm pad span (1.1x1.1mm square pads), which is still off this package's real geometry; use this footprint instead for SOD-123FL parts.")
 		(tags "diode SOD-123FL SOD123FL flat lead")
 		(property "Reference" "D4"
@@ -15472,7 +15472,7 @@
 			(uuid "131c0e00-5888-4595-a7f1-3b8f88ae6cc2")
 		)
 		(pad "1" smd roundrect
-			(at -1.55 0 180)
+			(at -1.55 0)
 			(size 1.15 1.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -15482,7 +15482,7 @@
 			(uuid "48255500-7951-4220-92ed-6927cf5c90fd")
 		)
 		(pad "2" smd roundrect
-			(at 1.55 0 180)
+			(at 1.55 0)
 			(size 1.15 1.3)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
@@ -15536,9 +15536,9 @@
 		(uuid "a30ea5e1-3c12-4eea-872b-9ad2ba53fb20")
 	)
 	(gr_arc
-		(start 109.711 100.556)
+		(start 109.344 100.556)
 		(mid 109.857447 100.202447)
-		(end 110.211 100.056)
+		(end 109.844 100.056)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -15547,8 +15547,8 @@
 		(uuid "74b34655-bb27-4e3d-a827-ab0e69c52915")
 	)
 	(gr_line
-		(start 109.711 134.7)
-		(end 109.711 100.556)
+		(start 109.344 134.7)
+		(end 109.344 100.556)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15557,8 +15557,8 @@
 		(uuid "64cf73ff-9063-4e54-b2cd-9213df4d9b3b")
 	)
 	(gr_line
-		(start 110.211 100.056)
-		(end 110.481 100.056)
+		(start 109.844 100.056)
+		(end 110.115 100.056)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15567,9 +15567,9 @@
 		(uuid "9fda7d95-82f6-4f91-be51-c74fece86b22")
 	)
 	(gr_arc
-		(start 110.211 135.2)
+		(start 109.844 135.2)
 		(mid 109.857447 135.053553)
-		(end 109.711 134.7)
+		(end 109.344 134.7)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -15578,9 +15578,9 @@
 		(uuid "7b11d00e-3115-4749-9cde-32712e329f3a")
 	)
 	(gr_arc
-		(start 110.481 100.056)
+		(start 110.115 100.056)
 		(mid 110.834553 100.202447)
-		(end 110.981 100.556)
+		(end 110.615 100.556)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -15589,8 +15589,8 @@
 		(uuid "47cceb15-b4c2-438a-9f2d-2cffcecf3108")
 	)
 	(gr_line
-		(start 110.481 135.2)
-		(end 110.211 135.2)
+		(start 110.115 135.2)
+		(end 109.844 135.2)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15599,8 +15599,8 @@
 		(uuid "ac452fa6-e879-458c-9708-2445c7f2b13c")
 	)
 	(gr_line
-		(start 110.677 96.854)
-		(end 110.677 98.8)
+		(start 110.311 96.854)
+		(end 110.311 98.8)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15609,9 +15609,9 @@
 		(uuid "dff2553c-60c7-4a02-9362-dfd893e29060")
 	)
 	(gr_arc
-		(start 110.677 96.854)
+		(start 110.311 96.854)
 		(mid 110.823447 96.500447)
-		(end 111.177 96.354)
+		(end 110.811 96.354)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -15620,8 +15620,8 @@
 		(uuid "dd0d57c0-aba1-49ed-94ee-33482c6dc4d5")
 	)
 	(gr_line
-		(start 110.981 100.556)
-		(end 110.981 134.7)
+		(start 110.615 100.556)
+		(end 110.615 134.7)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15630,9 +15630,9 @@
 		(uuid "2d4239f6-9244-4eee-a060-6ff9f3ddf8c1")
 	)
 	(gr_arc
-		(start 110.981 134.7)
+		(start 110.615 134.7)
 		(mid 110.834553 135.053553)
-		(end 110.481 135.2)
+		(end 110.115 135.2)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -15641,9 +15641,9 @@
 		(uuid "a6b4dad2-3629-4f3f-826e-56fb9c602697")
 	)
 	(gr_arc
-		(start 111.177 99.3)
+		(start 110.811 99.3)
 		(mid 110.823447 99.153553)
-		(end 110.677 98.8)
+		(end 110.311 98.8)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -15652,8 +15652,8 @@
 		(uuid "09f61b4d-ebd0-4d36-b36d-75d934ff6aa6")
 	)
 	(gr_line
-		(start 111.177 99.3)
-		(end 111.6 99.3)
+		(start 110.811 99.3)
+		(end 111.234 99.3)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15662,8 +15662,8 @@
 		(uuid "9c13a7a3-49e6-40be-ae98-102985c54f07")
 	)
 	(gr_line
-		(start 111.6 96.354)
-		(end 111.177 96.354)
+		(start 111.234 96.354)
+		(end 110.811 96.354)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -15672,9 +15672,9 @@
 		(uuid "6e5a3755-27b3-4d5d-84a2-7408f0caeb0c")
 	)
 	(gr_arc
-		(start 111.6 96.354)
+		(start 111.234 96.354)
 		(mid 111.953553 96.500447)
-		(end 112.1 96.854)
+		(end 111.734 96.854)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -15683,9 +15683,9 @@
 		(uuid "c991b140-b096-4bf2-85dd-5895a22119c6")
 	)
 	(gr_arc
-		(start 112.1 98.8)
+		(start 111.734 98.8)
 		(mid 111.953553 99.153553)
-		(end 111.6 99.3)
+		(end 111.234 99.3)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -15694,8 +15694,8 @@
 		(uuid "9e9a1544-113d-4f42-8ff1-f2314354642e")
 	)
 	(gr_line
-		(start 112.1 98.8)
-		(end 112.1 96.854)
+		(start 111.734 98.8)
+		(end 111.734 96.854)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -21108,4 +21108,92 @@
 		)
 	)
 	(embedded_fonts no)
+	(segment
+		(start 128.037 122.5)
+		(end 129 118)
+		(width 0.5)
+		(layer "F.Cu")
+		(net "/HV_RAIL")
+		(uuid "2c311e64-afea-404d-99c8-f9c71d892f78")
+	)
+	(segment
+		(start 128.037 122.5)
+		(end 127.04 139.5)
+		(width 0.5)
+		(layer "F.Cu")
+		(net "/HV_RAIL")
+		(uuid "a173ad79-a52d-492a-b197-1b125ed332c6")
+	)
+	(segment
+		(start 127.04 139.5)
+		(end 124.39 147.242)
+		(width 0.5)
+		(layer "F.Cu")
+		(net "/HV_RAIL")
+		(uuid "d2eee4f4-4de6-4f91-a1f4-f6f921fc6cd9")
+	)
+	(segment
+		(start 113.088 121.5)
+		(end 115.1 125)
+		(width 0.5)
+		(layer "F.Cu")
+		(net "/HV_RTN")
+		(uuid "b7db67a3-38ae-4473-a81b-87217f51d7af")
+	)
+	(segment
+		(start 115.1 125)
+		(end 118.715 124.75)
+		(width 0.5)
+		(layer "F.Cu")
+		(net "/HV_RTN")
+		(uuid "a7720bf6-bb0c-4387-839a-b260bd4f8d39")
+	)
+	(segment
+		(start 133.5 133)
+		(end 132.14 139.5)
+		(width 0.5)
+		(layer "F.Cu")
+		(net "/HV_RTN")
+		(uuid "ac41e73f-cc59-494f-8d75-d27b1ffc0d90")
+	)
+	(segment
+		(start 133.39 113.885)
+		(end 133 118)
+		(width 0.5)
+		(layer "F.Cu")
+		(net "/HV_RECT")
+		(uuid "a00da8e8-beb0-4c67-a9f2-c1df75d5582d")
+	)
+	(segment
+		(start 133.963 122.5)
+		(end 133.5 127.92)
+		(width 0.5)
+		(layer "F.Cu")
+		(net "/HV_SENSE")
+		(uuid "45313424-6181-40da-b036-77be0f8bd795")
+	)
+	(segment
+		(start 124.312 119.5)
+		(end 121.85 110.425)
+		(width 0.5)
+		(layer "F.Cu")
+		(net "/HV_SENSE_LED")
+		(uuid "577e1637-b5e4-46e9-9eae-4ec119fd5cde")
+	)
+	(segment
+		(start 114.912 121.5)
+		(end 114.825 118)
+		(width 0.5)
+		(layer "F.Cu")
+		(net "/HV_GATE_DRV")
+		(uuid "eee4d0fe-d469-4eb7-bb21-3eff8bf1b25a")
+	)
+	(segment
+		(start 114.825 118)
+		(end 115.39 113.885)
+		(width 0.5)
+		(layer "F.Cu")
+		(net "/HV_GATE_DRV")
+		(uuid "83221909-07ae-4f69-97c7-5202bedd4fb9")
+	)
 )
