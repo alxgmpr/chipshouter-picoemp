@@ -3405,105 +3405,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Mechanical:MountingHole"
-				(pin_names
-					(offset 1.016)
-				)
-				(exclude_from_sim no)
-				(in_bom no)
-				(on_board yes)
-				(in_pos_files yes)
-				(duplicate_pin_numbers_are_jumpers no)
-				(property "Reference" "H"
-					(at 0 5.08 0)
-					(show_name no)
-					(do_not_autoplace no)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(property "Value" "MountingHole"
-					(at 0 3.175 0)
-					(show_name no)
-					(do_not_autoplace no)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(property "Footprint" ""
-					(at 0 0 0)
-					(show_name no)
-					(do_not_autoplace no)
-					(hide yes)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(property "Datasheet" ""
-					(at 0 0 0)
-					(show_name no)
-					(do_not_autoplace no)
-					(hide yes)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(property "Description" "Mounting Hole without connection"
-					(at 0 0 0)
-					(show_name no)
-					(do_not_autoplace no)
-					(hide yes)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(property "ki_keywords" "mounting hole"
-					(at 0 0 0)
-					(show_name no)
-					(do_not_autoplace no)
-					(hide yes)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(property "ki_fp_filters" "MountingHole*"
-					(at 0 0 0)
-					(show_name no)
-					(do_not_autoplace no)
-					(hide yes)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(symbol "MountingHole_0_1"
-					(circle
-						(center 0 0)
-						(radius 1.27)
-						(stroke
-							(width 1.27)
-							(type default)
-						)
-						(fill
-							(type none)
-						)
-					)
-				)
-				(embedded_fonts no)
-			)
 		(symbol "Mechanical:MountingHole_Pad"
 			(pin_numbers
 				(hide yes)
@@ -5717,10 +5618,6 @@
 		(uuid "2cfd9f00-e9a4-4529-9171-38397b6da8c8")
 	)
 	(no_connect
-		(at 123.19 228.6)
-		(uuid "3fc5a2a9-8124-4dd3-bc45-491ef322340f")
-	)
-	(no_connect
 		(at 165.1 88.9)
 		(uuid "4efa9c2a-7cf1-4a79-b298-7d54bef7c69f")
 	)
@@ -5751,6 +5648,10 @@
 	(no_connect
 		(at 165.1 91.44)
 		(uuid "7583c973-a09c-4091-82f7-90181f4c0c3c")
+	)
+	(no_connect
+		(at 123.19 198.12)
+		(uuid "7ee94205-883f-476f-8bde-724ccc7e8276")
 	)
 	(no_connect
 		(at 119.38 139.7)
@@ -5791,10 +5692,6 @@
 	(no_connect
 		(at 119.38 132.08)
 		(uuid "d618a83a-eb3c-4c54-8b91-0dcc72b80a9e")
-	)
-	(no_connect
-		(at 123.19 198.12)
-		(uuid "e29c7f69-30f0-4505-ba39-25f993d90120")
 	)
 	(no_connect
 		(at 165.1 99.06)
@@ -11451,6 +11348,84 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 80.01 218.44 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "80422243-770a-4279-9d04-2530f0bad794")
+		(property "Reference" "#PWR013"
+			(at 80.01 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 80.01 223.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 80.01 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 80.01 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 80.01 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d655f8d2-98b4-4090-8f2d-140e3dac6ea5")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 165.1 139.7 0)
 		(unit 1)
 		(body_style 1)
@@ -12364,7 +12339,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole")
+		(lib_id "Mechanical:MountingHole_Pad")
 		(at 123.19 210.82 0)
 		(unit 1)
 		(body_style 1)
@@ -12397,7 +12372,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
 			(at 123.19 210.82 0)
 			(hide yes)
 			(show_name no)
@@ -12429,6 +12404,9 @@
 					(size 1.27 1.27)
 				)
 			)
+		)
+		(pin "1"
+			(uuid "5a3adafc-cdf0-440d-bb81-49582f4e642e")
 		)
 		(instances
 			(project "picoemp-rev2026"
@@ -12550,85 +12528,6 @@
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
 					(reference "R3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 80.01 218.44 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a79b6aff-66dc-450c-a291-3b3e6ca32567")
-		(property "Reference" "#PWR013"
-			(at 80.01 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 82.55 219.7099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 80.01 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 80.01 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 80.01 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "cde9c6af-6d64-4471-a1b4-bba587adf7b4")
-		)
-		(instances
-			(project "picoemp-rev2026"
-				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -13910,7 +13809,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole")
+		(lib_id "Mechanical:MountingHole_Pad")
 		(at 123.19 195.58 0)
 		(unit 1)
 		(body_style 1)
@@ -13943,7 +13842,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
 			(at 123.19 195.58 0)
 			(hide yes)
 			(show_name no)
@@ -13975,6 +13874,9 @@
 					(size 1.27 1.27)
 				)
 			)
+		)
+		(pin "1"
+			(uuid "a8c76b7b-510e-4846-9c8d-9453432711be")
 		)
 		(instances
 			(project "picoemp-rev2026"
@@ -14100,6 +14002,84 @@
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
 					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 123.19 228.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d6d2d0c7-96f8-4f66-be55-da48dd271883")
+		(property "Reference" "#PWR018"
+			(at 123.19 234.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 123.19 233.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 123.19 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 123.19 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 123.19 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d655f8d2-98b4-4090-8f2d-140e3dac6ea5")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -14707,7 +14687,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "ee878990-ac13-472f-9fc3-87644ccba791")
 		(property "Reference" "#PWR012"
 			(at 80.01 205.74 0)
@@ -14721,7 +14700,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 82.55 204.4699 0)
+			(at 77.47 201.422 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15096,7 +15075,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole")
+		(lib_id "Mechanical:MountingHole_Pad")
 		(at 123.19 226.06 0)
 		(unit 1)
 		(body_style 1)
@@ -15129,7 +15108,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
 			(at 123.19 226.06 0)
 			(hide yes)
 			(show_name no)
@@ -15161,6 +15140,9 @@
 					(size 1.27 1.27)
 				)
 			)
+		)
+		(pin "1"
+			(uuid "9af21a46-8e2e-4646-8fbd-34cbb0440bf1")
 		)
 		(instances
 			(project "picoemp-rev2026"
