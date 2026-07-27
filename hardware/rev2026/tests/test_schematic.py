@@ -255,9 +255,18 @@ def test_bypass_resistor_is_dnp(syms):
     assert r16.dnp, 'R16 must be DNP - fitting it with U2 causes output contention'
 
 
-def test_optional_trigger_sma_is_dnp(syms):
+def test_trigger_sma_is_populated(syms):
+    """J4 is fitted, not DNP.
+
+    It started as an optional footprint. That is why it was given the cramped
+    east strip when the USB notch and J4 competed for the north edge -- the
+    always-used part won and the optional one took the compromise. J4 being
+    populated changes that trade, so if this ever flips back to DNP the
+    placement reasoning should be revisited too.
+    """
     j4 = next(s for s in syms if s.ref == 'J4')
-    assert j4.dnp, 'J4 is the optional trigger SMA and must be DNP'
+    assert not j4.dnp, 'J4 is a fitted connector; DNP would contradict the BOM'
+    assert j4.in_bom, 'J4 must be in the BOM'
 
 
 def test_j3_is_wide_pitch(syms):
