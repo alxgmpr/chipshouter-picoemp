@@ -402,3 +402,39 @@ def test_sma_tab_is_centred_on_the_board_axis():
         f'x={board_centre:.3f}; the outline is asymmetric by '
         f'{tab_centre - board_centre:+.3f} mm'
     )
+
+
+def test_q2_lead_pads_clear_each_other():
+    """Q2's TO-252 lead pads are the IGBT gate, collector and emitter at ~250 V.
+
+    They plotted 0.080 mm apart, which is close to the ~240 V that gap breaks
+    down at in air and below JLCPCB's 0.127 mm minimum. The cause was not the
+    library footprint -- that is correct, 1.2 mm pads on a 2.286 mm pitch. It was
+    the board's copy: pad angles in a .kicad_pcb are absolute, and Q2's pads
+    carried no angle while the footprint sat at rot 90, so the pads never rotated
+    with it and presented their 2.2 mm dimension across the pitch axis instead of
+    their 1.2 mm one.
+
+    Verified by plotting F.Cu and measuring: the pads now come out 1.200 mm
+    across the pitch with 1.080 mm gaps.
+    """
+    import kicad_parse as kp
+    d = kp.parse_file(str(conftest.PRO.with_suffix('.kicad_pcb')))
+    for fp in kp._walk(d, 'footprint'):
+        ref = next((kp.sval(p[2]) for p in fp if isinstance(p, list) and p
+                    and p[0] == 'property' and kp.sval(p[1]) == 'Reference'), None)
+        if ref != 'Q2':
+            continue
+        at = next(c for c in fp if isinstance(c, list) and c and c[0] == 'at')
+        rot = float(at[3]) if len(at) > 3 else 0.0
+        for pad in kp._walk(fp, 'pad'):
+            pa = next(c for c in pad if isinstance(c, list) and c and c[0] == 'at')
+            ang = float(pa[3]) if len(pa) > 3 else 0.0
+            assert abs((ang - rot) % 360) < 0.01, (
+                f'Q2 pad {kp.sval(pad[1])!r} is at {ang} deg while the footprint '
+                f'is at {rot} deg. The pad did not rotate with the footprint, '
+                'which puts its 2.2 mm dimension across a 2.286 mm pitch and '
+                'leaves 0.080 mm between the collector and emitter at 250 V.'
+            )
+        return
+    raise AssertionError('Q2 not found on the board')
