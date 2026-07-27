@@ -5,12 +5,10 @@
 	(layer "F.Cu")
 	(descr "TDK ATB322524-0110-T000 HV step-up transformer, 1:10.2, 3.2x2.5x2.4mm max. Pins 1/4 = primary, pins 2/3 = secondary (verified from netlist on the original board). https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/644/ATB322515-(15,24)_DS.pdf")
 	(tags "transformer ATB3225 ATB322524")
-	(attr smd)
-	(duplicate_pad_numbers_are_jumpers no)
 	(property "Reference" "REF**"
 		(at 0 -1.9 0)
 		(layer "F.SilkS")
-		(uuid "122e6364-dd59-4dae-8e01-18bd574e167d")
+		(uuid "4792ad23-868b-4aae-895b-df98f490fb54")
 		(effects
 			(font
 				(size 1 1)
@@ -21,7 +19,7 @@
 	(property "Value" "ATB322524"
 		(at 0 1.9 0)
 		(layer "F.Fab")
-		(uuid "ae696a71-38a4-405f-87e1-d1fe88a3457c")
+		(uuid "d3a11a3d-802d-459c-ab3c-c1f9f847ecb9")
 		(effects
 			(font
 				(size 1 1)
@@ -34,7 +32,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "136310f5-7492-4cf6-a119-27e365d2776d")
+		(uuid "d682f7e8-8057-488f-a7b5-0644ce0b34a4")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -47,7 +45,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "09c4168f-40a2-4cc9-b4f0-1d576d1b3123")
+		(uuid "0d511594-adba-46ef-8030-d405ad83ab61")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -55,47 +53,38 @@
 			)
 		)
 	)
-	(fp_rect
-		(start -1.6 -1.25)
-		(end 1.6 1.25)
-		(stroke
-			(width 0.1)
-			(type solid)
-		)
-		(fill none)
-		(layer "F.Fab")
-		(uuid "c78d1274-e0b1-43b9-bfd0-dc1c2b1e0e09")
-	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
 	(fp_line
-		(start -1.2 1.25)
-		(end 1.2 1.25)
+		(start -1.15 -1.25)
+		(end 1.15 -1.25)
 		(stroke
 			(width 0.12)
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "fb5b2f61-0f03-4b52-ab9b-ece789656d0f")
+		(uuid "458e17b3-cc3e-406c-b561-3097b7ed6a43")
 	)
 	(fp_line
-		(start -1.2 -1.25)
-		(end 1.2 -1.25)
+		(start -1.15 1.25)
+		(end 1.15 1.25)
 		(stroke
 			(width 0.12)
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "fa2144e7-78d8-4b9e-81ec-eed38278ba45")
+		(uuid "8e08f24a-0d44-4655-b6c4-dac1d5e3f520")
 	)
 	(fp_circle
-		(center -2.0 1.55)
+		(center -2 1.55)
 		(end -1.82 1.55)
 		(stroke
 			(width 0.05)
 			(type solid)
 		)
-		(fill solid)
+		(fill yes)
 		(layer "F.SilkS")
-		(uuid "40a4ad28-393f-4b75-b43a-fd3ec478ec2d")
+		(uuid "4c7f3ca5-c2c8-4dca-8c81-343285c29c81")
 	)
 	(fp_rect
 		(start -2.2 -1.75)
@@ -104,14 +93,25 @@
 			(width 0.05)
 			(type solid)
 		)
-		(fill none)
+		(fill no)
 		(layer "F.CrtYd")
-		(uuid "ab221ced-4302-4143-8d84-50da8405392c")
+		(uuid "3811c80c-08d9-4062-bcf0-8d5e5c73deb2")
+	)
+	(fp_rect
+		(start -1.6 -1.25)
+		(end 1.6 1.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "e8a904f7-70d4-4c17-a164-8d69a519c340")
 	)
 	(fp_text user "${REFERENCE}"
 		(at 0 -1.9 0)
 		(layer "F.Fab")
-		(uuid "ecd928b5-e8df-40a1-9ac2-e4e9dc6bbe5a")
+		(uuid "8ea528ac-c1fe-43cb-a107-260c4298177c")
 		(effects
 			(font
 				(size 1 1)
@@ -121,27 +121,27 @@
 	)
 	(pad "1" smd rect
 		(at -1.5 0.885)
-		(size 0.55 1.0)
+		(size 0.55 1)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "8e4884ba-ac1a-4b1f-b287-0766d1d76f03")
+		(uuid "8a8bb359-cd86-4789-a50a-edebe1c813ef")
 	)
 	(pad "2" smd rect
 		(at -1.5 -0.885)
-		(size 0.55 1.0)
+		(size 0.55 1)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "173a08c6-00f5-498b-99a4-a30110a1dc55")
+		(uuid "8be78cb2-b8a2-4bc1-a697-3f0a5b7da45b")
 	)
 	(pad "3" smd rect
 		(at 1.5 -0.885)
-		(size 0.55 1.0)
+		(size 0.55 1)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "e2658628-cb7c-4406-a9bc-aa20b76b7940")
+		(uuid "3f4eeca9-9024-4fb8-a592-37b34bdaeb19")
 	)
 	(pad "4" smd rect
 		(at 1.5 0.885)
-		(size 0.55 1.0)
+		(size 0.55 1)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "84aa257b-c633-4187-904b-c24f9fca6304")
+		(uuid "bb9ddafb-268c-418d-b1f7-1b1bd5ce909b")
 	)
 	(embedded_fonts no)
 )

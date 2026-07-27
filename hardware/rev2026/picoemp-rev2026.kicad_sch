@@ -12815,7 +12815,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b5dc0e9a-592b-4e37-8c21-45cd086226a1")
 		(property "Reference" "J4"
@@ -14074,7 +14074,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "d655f8d2-98b4-4090-8f2d-140e3dac6ea5")
+			(uuid "d655f8d2-98b4-4090-8f2d-140e3dac6ea6")
 		)
 		(instances
 			(project "picoemp-rev2026"
