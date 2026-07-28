@@ -1,5 +1,5 @@
 out/
 __pycache__/
 .pytest_cache/
-lib/models/Hammond_1551B_Top.step
+lib/models/Hammond_*.step
 preview-*

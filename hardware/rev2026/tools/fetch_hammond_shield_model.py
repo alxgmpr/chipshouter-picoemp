@@ -1,19 +1,22 @@
 #!/usr/bin/env python3
-"""Regenerate lib/models/Hammond_1551B_Top.step from Hammond's published STEP.
+"""Regenerate the Hammond shield 3D models from Hammond's published STEP files.
 
-Hammond's 3D models are not covered by this project's licence, so the STEP is
-gitignored rather than committed. Run this once after cloning if you want the
-shield to appear in the 3D viewer:
+Hammond's 3D models are not covered by this project's licence, so the STEPs are
+gitignored rather than committed. Run this after cloning if you want the shield
+to appear in the 3D viewer:
 
     uv run --with cadquery tools/fetch_hammond_shield_model.py
 
-The 1551B assembly ships as bottom half + top half + two screws. Only the top
-half is used here -- it is the safety shield. The model is re-axed into KiCad's
-3D-model frame so the footprint needs no offset or rotation:
+Two candidate shields, built differently:
 
-    model X = Hammond Z   (across the board, the 25 mm axis)
-    model Y = Hammond X   (along the board, the 50 mm axis; screw end at +Y)
-    model Z = Hammond Y   (up; parting plane at Z = 0)
+  1551B  two symmetric snap-together halves; the top half is the shield and is
+         used as moulded. Interior clear height above the board 5.80 mm.
+  1551G  box + lid held by two #4 screws; the deep box is the shield and is used
+         upside down, lid discarded. Interior clear height 15.05 mm.
+
+Both are re-axed into KiCad's 3D-model frame so the footprints need no offset or
+rotation: model X runs across the board, model Y along it, model Z up, with the
+face that meets the PCB at Z = 0.
 """
 
 import io
@@ -22,75 +25,137 @@ import sys
 import urllib.request
 import zipfile
 
-URL = "https://www.hammfg.com/files/parts/stp/1551BTRD.zip"
-DEST = pathlib.Path(__file__).resolve().parent.parent / "lib" / "models" / "Hammond_1551B_Top.step"
+MODELS = pathlib.Path(__file__).resolve().parent.parent / "lib" / "models"
+
+# output name: (archive url, component-name substring, axis matrix)
+# The axis matrix maps the Hammond frame onto KiCad's. Both have determinant +1;
+# a determinant of -1 would mirror the part rather than rotate it.
+PARTS = {
+    "Hammond_1551B_Top.step": (
+        "https://www.hammfg.com/files/parts/stp/1551BTRD.zip", "top",
+        (0, 0, 1, 1, 0, 0, 0, 1, 0),
+    ),
+    "Hammond_1551G_Box.step": (
+        "https://www.hammfg.com/files/parts/stp/1551GTBU.zip", "box",
+        (0, 1, 0, 1, 0, 0, 0, 0, -1),
+    ),
+}
 
 
-def main() -> int:
-    try:
-        from OCP.BRepBuilderAPI import BRepBuilderAPI_Transform
-        from OCP.gp import gp_Trsf
-        from OCP.STEPCAFControl import STEPCAFControl_Reader
-        from OCP.STEPControl import STEPControl_AsIs, STEPControl_Writer
-        from OCP.TCollection import TCollection_ExtendedString
-        from OCP.TDataStd import TDataStd_Name
-        from OCP.TDF import TDF_LabelSequence
-        from OCP.TDocStd import TDocStd_Document
-        from OCP.XCAFApp import XCAFApp_Application
-        from OCP.XCAFDoc import XCAFDoc_DocumentTool
-    except ImportError:
-        print("needs OCCT bindings; run with:  uv run --with cadquery " + __file__, file=sys.stderr)
-        return 1
-
-    print(f"fetching {URL}")
+def fetch(url):
     # hammfg.com 403s the stock urllib agent string
-    request = urllib.request.Request(URL, headers={"User-Agent": "curl/8.7.1"})
+    request = urllib.request.Request(url, headers={"User-Agent": "curl/8.7.1"})
     with urllib.request.urlopen(request, timeout=60) as resp:
         archive = zipfile.ZipFile(io.BytesIO(resp.read()))
     (name,) = [n for n in archive.namelist() if n.lower().endswith((".stp", ".step"))]
-    scratch = DEST.parent / "_1551BTRD_full.stp"
-    scratch.write_bytes(archive.read(name))
+    return archive.read(name)
+
+
+def pick_shape(path, want):
+    """Return the shield half, by assembly component name where the STEP has one."""
+    from OCP.STEPCAFControl import STEPCAFControl_Reader
+    from OCP.STEPControl import STEPControl_Reader
+    from OCP.TCollection import TCollection_ExtendedString
+    from OCP.TDataStd import TDataStd_Name
+    from OCP.TDF import TDF_Label, TDF_LabelSequence
+    from OCP.TDocStd import TDocStd_Document
+    from OCP.TopAbs import TopAbs_SOLID
+    from OCP.TopExp import TopExp_Explorer
+    from OCP.TopoDS import TopoDS
+    from OCP.XCAFApp import XCAFApp_Application
+    from OCP.XCAFDoc import XCAFDoc_DocumentTool
 
     app = XCAFApp_Application.GetApplication_s()
     doc = TDocStd_Document(TCollection_ExtendedString("d"))
     app.NewDocument(TCollection_ExtendedString("MDTV-XCAF"), doc)
     reader = STEPCAFControl_Reader()
     reader.SetNameMode(True)
-    reader.ReadFile(str(scratch))
+    reader.ReadFile(str(path))
     reader.Transfer(doc)
-
     tool = XCAFDoc_DocumentTool.ShapeTool_s(doc.Main())
-    free = TDF_LabelSequence()
-    tool.GetFreeShapes(free)
-    parts = TDF_LabelSequence()
-    tool.GetComponents_s(free.Value(1), parts)
 
     def label_name(label):
         attr = TDataStd_Name()
         if label.FindAttribute(TDataStd_Name.GetID_s(), attr):
-            return attr.Get().ToExtString()
+            return attr.Get().ToExtString().lower()
         return ""
 
-    top = None
-    for i in range(1, parts.Length() + 1):
-        component = parts.Value(i)
-        if "top" in label_name(component):
-            top = tool.GetShape_s(component)
-    if top is None:
-        print("no '1551B top' component in the archive", file=sys.stderr)
+    free = TDF_LabelSequence()
+    tool.GetFreeShapes(free)
+    for i in range(1, free.Length() + 1):
+        parts = TDF_LabelSequence()
+        tool.GetComponents_s(free.Value(i), parts)
+        for j in range(1, parts.Length() + 1):
+            component = parts.Value(j)
+            referred = TDF_Label()
+            if not tool.GetReferredShape_s(component, referred):
+                continue
+            if want in label_name(component):
+                return tool.GetShape_s(component)
+
+    # 1551F/G ship the halves as bare solids; the box is the first and largest
+    reader = STEPControl_Reader()
+    reader.ReadFile(str(path))
+    reader.TransferRoots()
+    explorer = TopExp_Explorer(reader.OneShape(), TopAbs_SOLID)
+    if explorer.More():
+        return TopoDS.Solid_s(explorer.Current())
+    return None
+
+
+def main() -> int:
+    try:
+        from OCP.Bnd import Bnd_Box
+        from OCP.BRepBndLib import BRepBndLib
+        from OCP.BRepBuilderAPI import BRepBuilderAPI_Transform
+        from OCP.gp import gp_Trsf, gp_Vec
+        from OCP.STEPControl import STEPControl_AsIs, STEPControl_Writer
+    except ImportError:
+        print("needs OCCT bindings; run with:  uv run --with cadquery " + __file__, file=sys.stderr)
         return 1
 
-    trsf = gp_Trsf()
-    trsf.SetValues(0, 0, 1, 0,
-                   1, 0, 0, 0,
-                   0, 1, 0, 0)
-    shape = BRepBuilderAPI_Transform(top, trsf, True).Shape()
+    for name, (url, want, matrix) in PARTS.items():
+        print(f"fetching {url}")
+        scratch = MODELS / f"_{name}.tmp.stp"
+        scratch.write_bytes(fetch(url))
+        shape = pick_shape(scratch, want)
+        if shape is None:
+            print(f"  no '{want}' half in the archive", file=sys.stderr)
+            scratch.unlink()
+            return 1
 
-    writer = STEPControl_Writer()
-    writer.Transfer(shape, STEPControl_AsIs)
-    writer.Write(str(DEST))
-    scratch.unlink()
-    print(f"wrote {DEST}")
+        # Rotate first, then centre. Doing it the other way needs to know which
+        # Hammond axis is "up", and that differs between the two parts -- the
+        # 1551B's datum is its parting plane (Hammond Y = 0), the 1551G's is its
+        # rim (box Z = 0). Both land on model Z = 0 once the matrix is applied,
+        # so afterwards only X and Y need centring.
+        axes = gp_Trsf()
+        axes.SetValues(matrix[0], matrix[1], matrix[2], 0,
+                       matrix[3], matrix[4], matrix[5], 0,
+                       matrix[6], matrix[7], matrix[8], 0)
+        shape = BRepBuilderAPI_Transform(shape, axes, True).Shape()
+
+        # Draft-angled walls are cones, and the default bounding box takes their
+        # untrimmed extent -- AddOptimal is needed or the box reads ~127 mm tall.
+        bbox = Bnd_Box()
+        BRepBndLib.AddOptimal_s(shape, bbox, True, False)
+        cx = (bbox.CornerMin().X() + bbox.CornerMax().X()) / 2
+        cy = (bbox.CornerMin().Y() + bbox.CornerMax().Y()) / 2
+
+        centre = gp_Trsf()
+        centre.SetTranslation(gp_Vec(-cx, -cy, 0))
+        shape = BRepBuilderAPI_Transform(shape, centre, True).Shape()
+
+        out = Bnd_Box()
+        BRepBndLib.AddOptimal_s(shape, out, True, False)
+        writer = STEPControl_Writer()
+        writer.Transfer(shape, STEPControl_AsIs)
+        writer.Write(str(MODELS / name))
+        scratch.unlink()
+        print(f"  wrote {name}  "
+              f"X[{out.CornerMin().X():.2f},{out.CornerMax().X():.2f}] "
+              f"Y[{out.CornerMin().Y():.2f},{out.CornerMax().Y():.2f}] "
+              f"Z[{out.CornerMin().Z():.2f},{out.CornerMax().Z():.2f}]")
     return 0
 
 

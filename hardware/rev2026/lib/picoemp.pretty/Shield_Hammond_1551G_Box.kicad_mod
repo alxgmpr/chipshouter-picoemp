@@ -1,0 +1,146 @@
+(footprint "Shield_Hammond_1551G_Box"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Hammond 1551G enclosure, BOX half only, inverted and used as the HV safety shield. Mechanical reference footprint -- no copper, no drills. Geometry measured from Hammond's own STEP, https://www.hammfg.com/files/parts/stp/1551GTBU.zip, plus the dimensioned drawing at https://www.hammfg.com/files/parts/pdf/1551GTBU.pdf. Unlike the 1551B this part is box + lid rather than two symmetric halves; the box is the deep piece and the lid is discarded. Box outer 50.000 x 35.000 x 17.000, open face down on the board. Interior clear height 15.050 mm; interior 44.73 x 29.73. Lid screw pattern 43.880 x 28.880, #4 x 1/2 in self-tapping. Four corner bosses run the full depth to the rim.")
+	(tags "hammond 1551G enclosure shield mechanical")
+	(property "Reference" "REF**"
+		(at 0 -27 0)
+		(layer "F.SilkS")
+		(uuid "3a1e1000-0000-4000-8000-000000000001")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Shield_Hammond_1551G_Box"
+		(at 0 27 0)
+		(layer "F.Fab")
+		(uuid "3a1e1000-0000-4000-8000-000000000002")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.hammfg.com/part/1551GTBU"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3a1e1000-0000-4000-8000-000000000003")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Hammond 1551G box used inverted as HV safety shield"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3a1e1000-0000-4000-8000-000000000004")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
+	(fp_rect
+		(start -17.5 -25)
+		(end 17.5 25)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "3a1e1001-0000-4000-8000-000000000001")
+	)
+	(fp_rect
+		(start -14.865 -22.365)
+		(end 14.865 22.365)
+		(stroke
+			(width 0.1)
+			(type dash)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "3a1e1002-0000-4000-8000-000000000001")
+	)
+	(fp_circle
+		(center -14.44 -21.94)
+		(end -13.19 -21.94)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "3a1e1003-0000-4000-8000-000000000001")
+	)
+	(fp_circle
+		(center 14.44 -21.94)
+		(end 15.69 -21.94)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "3a1e1003-0000-4000-8000-000000000002")
+	)
+	(fp_circle
+		(center -14.44 21.94)
+		(end -13.19 21.94)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "3a1e1003-0000-4000-8000-000000000003")
+	)
+	(fp_circle
+		(center 14.44 21.94)
+		(end 15.69 21.94)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "3a1e1003-0000-4000-8000-000000000004")
+	)
+	(fp_rect
+		(start -17.5 -25)
+		(end 17.5 25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "3a1e1004-0000-4000-8000-000000000001")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/models/Hammond_1551G_Box.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
