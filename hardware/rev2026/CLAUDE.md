@@ -119,8 +119,8 @@ That is precisely why the rule is scoped to `HV_RTN` against `HV_SENSE`,
 `HV_RAIL` and `HV_OUT` and not to the class as a whole.
 
 **Teardrops are materialized zone objects**
-(`(zone ... (attr (teardrop (type padvia))))` — 77 of the board's 78 zones; the
-78th is the `MCU GND Pour`). The `(teardrops ... (enabled ...))` block inside
+(`(zone ... (attr (teardrop (type padvia))))` — 75 of the board's 76 zones; the
+76th is the `MCU GND Pour`). The `(teardrops ... (enabled ...))` block inside
 each pad is only the regeneration parameters. Setting `enabled no` does not
 remove existing teardrop copper; the zones have to go. When an earlier
 clearance question was investigated, disabling teardrops on all 33 HV pads and
