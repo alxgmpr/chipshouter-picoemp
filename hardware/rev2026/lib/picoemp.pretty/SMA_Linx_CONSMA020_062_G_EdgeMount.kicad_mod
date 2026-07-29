@@ -139,13 +139,13 @@
 	(embedded_fonts no)
 	(model "${KIPRJMOD}/lib/models/SMA_Linx_CONSMA020_062_G.step"
 		(offset
-			(xyz 0 0 0)
+			(xyz -5 0 -0.5)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz 0 0 0)
+			(xyz 0 -180 0)
 		)
 	)
 )

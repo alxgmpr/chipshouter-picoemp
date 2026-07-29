@@ -9,8 +9,15 @@ the board, Y = minus the footprint Y, Z up from the board's top surface.
     model Y = STEP X
     model Z = STEP Y - 0.785   (connector axis sits at mid-thickness of a 1.57 mm board)
 
-Determinant is +1, so this rotates rather than mirrors. Run with the vendor zip
-already unpacked somewhere and pass the .STEP path:
+Determinant is +1, so this rotates rather than mirrors.
+
+KNOWN GAP: the transform below is not quite right -- the connector comes out
+reversed along its own axis and 0.5 mm high. The footprint compensates in its
+(model ...) block with offset (-5, 0, -0.5) and 180 degrees about Y, verified in
+KiCad's 3D viewer. If you correct the maths here, zero those out at the same
+time or the correction will apply twice.
+
+Run with the vendor zip already unpacked somewhere and pass the .STEP path:
 
     uv run --with cadquery tools/prepare_linx_sma_model.py L9000279-01.STEP
 """
