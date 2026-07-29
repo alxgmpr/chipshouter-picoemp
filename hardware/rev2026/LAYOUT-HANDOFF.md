@@ -18,16 +18,24 @@ For orientation in a fresh session, read `CLAUDE.md` in this directory first.
 | Gate | Result |
 |---|---|
 | `uv run --with pytest pytest tests/` | **66 passed**, 0 failed, 0 skipped |
-| `kicad-cli pcb drc --severity-error --schematic-parity --exit-code-violations` | **0 errors, 0 unconnected, 0 parity issues**, exit 0 |
+| `kicad-cli pcb drc --severity-error --schematic-parity --exit-code-violations` | **exit 0** |
+| Same, **without** `--severity-error` (errors *and* warnings) | **0 violations, 0 unconnected, 0 footprint errors**, exit 0 |
+| `kicad-cli sch erc --severity-error` | 0 violations |
 | Routing | complete |
 | Every symbol has a resolvable footprint | yes |
 
-Board: 40.01 × 130.00 mm, 2 layers, 1.6 mm, 55 footprints (45 SMD / 5 THT),
-104 vias. 83 zones — 80 teardrops, 2 `Pad Keep Out TP7` keepouts, and the
-`MCU GND Pour` spanning both layers. 53 schematic components, 64 nets, 1 DNP
-(`R16`).
+Board: 40.010 × 130.000 mm overall — the **body** is 40.010 × 125.000 and the
+south **15.780 mm-wide SMA tab** carries the remaining 5.000 mm. 2 layers,
+1.6 mm. **55 footprints** (45 SMD / 5 THT / 5 other — 3 mounting holes and the
+2 HV warning marks), 245 track segments, **104 vias**, **81 zones** (80
+teardrops + the `MCU GND Pour` spanning both layers). 53 schematic components,
+64 nets. DNP: `R16`, plus both `REF**` HV warning marks.
 
-DRC warnings are non-empty by design — see `CLAUDE.md`.
+**DRC warnings are now empty.** Earlier revisions said they were non-empty by
+design — two cosmetic silk items and nine from the intra-HV rule. Neither is
+still true: the silk was cleaned up and the intra-HV rule now passes. The
+`Pad Keep Out TP7` keepouts are also gone, which is why the zone count dropped
+from 83 to 81.
 
 ---
 
@@ -99,17 +107,99 @@ upstream accepted it. Targeted exceptions for T1 and T2 are in the `.dru`.
 - **Board setup.** Minimum clearance is 0.2 mm (was 0.0). Thickness 1.6 mm, as
   required by the edge-mount SMA which clamps the board edge and is specified
   for 0.062″.
+- **Intra-HV clearance.** Recorded as 0.498 mm at SW3, "the thinnest copper on
+  the HV side". No longer true — the `Intra-HV spacing at full rail voltage`
+  rule in the `.dru` now reports **zero** violations at its 0.8 mm target, and
+  SW3 does not feature. The header comment in the `.dru` still says "As of this
+  writing it reports 9 violations"; that predates the fixes that cleared them.
+  Sub-0.4 mm gaps do exist between other HV nets, but those pairs sit a few
+  volts apart, not 250 — `HV_SENSE` is ~1.5% below `HV_RAIL` across the
+  300 k / 20 M divider, and `HV_SENSE_LED` is one opto LED drop above `HV_RTN`.
+  That is exactly why the rule is scoped to the three pairs that matter.
+- **SW3 clearance under the shield.** Previously unverifiable "for want of a
+  3D model" — `lib/models/TL3301AF160QJ.STEP` exists and the part measures
+  **4.64 mm**, clearing the 1551G's 15.05 mm cavity easily.
+- **The two short Edge.Cuts slots at y 121.754–124.700.** These were the
+  1551B's snap-tab pockets, not creepage features — nearest HV-netclass copper
+  was 16.6 mm. Removed with the switch to the 1551G.
+- **MH1/MH2's 32.000 mm spacing.** Recorded as "the dimension a shield keys
+  off". It was not — it was 40.010 minus two 4.000 mm corner insets, and
+  upstream REV04's fab drill has the identical pattern.
+
+## The HV safety shield — Hammond 1551G, not the 1551B
+
+Upstream uses the **top half of a 1551B** (50 × 25 × 15) as a see-through shield
+over the HV end. This port cannot: **J3's Phoenix terminal block is 13.80 mm
+tall and a 1551B half-shell gives 5.80 mm of clear height above the board.** The
+creepage upgrade to the 5.08 mm Phoenix part and the shield were never checked
+against each other.
+
+The replacement is the **1551G box, inverted, lid discarded**. The larger 1551
+sizes are box + lid rather than two symmetric halves, so the box is far deeper
+than any half-shell. Every figure below is measured from Hammond's own STEP —
+`tools/fetch_hammond_shield_model.py` re-downloads and re-axes both models, and
+they are gitignored because Hammond's models are not under this project's
+licence.
+
+| | 1551B top half | **1551G box, inverted** |
+|---|---|---|
+| Outer | 50 × 25 × 15 | **50.000 × 35.000 × 17.000** |
+| Interior clear height | 5.80 | **15.050** |
+| Interior L × W | 47.4 × 21.6 | **44.73 × 29.73** |
+| Screws | 2 × #2, 19.000 pitch | **2 × #4 × ½″, diagonal** |
+
+**The screw pattern is a diagonal pair on 38.500 × 23.500 mm** — *not* the
+43.88 × 28.88 the drawing appears to give. That is the outside extent of the
+Ø5.00 boss recesses: 43.88 − 5.00 and 28.88 − 5.00. The box's Ø2.50 bores and
+the lid's Ø3.50 through-holes both sit at (±19.25, ∓11.75), which is what
+"includes 2 cover screws" meant. Shell centre on this board is
+**(124.390, 145.272)**, south edge flush with the board body, so the screws want
+**(112.640, 126.022)** and **(136.140, 164.522)**.
+
+`picoemp:Shield_Hammond_1551G_Box` carries the geometry. Silk marks the north
+two corners at (106.890, 120.272) and (141.890, 120.272) plus a `1551G` label —
+only the north edge is ambiguous, since the south edge is flush and the width is
+centred.
+
+**The lid is not waste.** Its two Ø3.50 holes are on the same diagonal, so the
+stack is screw → lid → PCB → box bore, capturing an underside cover on the same
+two screws. Its inner recess is 3.05 mm against J3's 3.50 mm pin protrusion, so
+trim the pins.
+
+### Still blocking a seat
+
+The rim contacts the board across a solid ~2 mm band (|local Y| 23.0–25.0,
+|local X| 15.4–17.5) with a chamfer inboard of it. Probing every part under the
+shell against the real STEP, four still foul:
+
+- **Q2** — 0.00 mm clear at local (−8.50, +23.29), needs 2.32. About **0.4 mm
+  north**, 0.6 with margin. Beware: a scripted 0.6 mm move on the development
+  branch shorted `HV_OUT` to the `HV_RTN` trunk beside it, so the trunk moves in
+  the same operation.
+- **D3 / D4 / D5** — 0.00 mm clear at local y −23.55, need 1.10. About
+  **0.6 mm south** puts them under the chamfer.
+
+Everything else clears: **J3 by 1.20 mm** (the whole point of the 1551G),
+SW3 by 10.36, Q1 by 11.32, every passive by 13–14.5. Q4 and R10 sit under the
+screw-boss recesses with 0.80 and 1.55 mm.
+
+**MH1/MH2 have not been moved yet.** MH2's target is clear (+1.054 mm); MH1's is
+not — `GND` tracks sit 0.677 mm inside the hole and R10 pad 1 sits 0.206 mm
+inside. Nothing routes west of that hole either: the gap to the isolation slot
+is 0.425 mm and a 0.25 mm track needs 0.65. Branch `shield-1551g-board-edits`
+solved the same problem on the pre-shift geometry by rotating R10 to 180° and
+dropping `GND` to B.Cu past the hole, but that layout has since diverged too far
+to transplant.
 
 ## Still open
 
-Carried in `CLAUDE.md` under "Open items", in short:
-
-- Intra-HV clearance at SW3 is 0.498 mm — IPC-compliant, but the thinnest
-  copper on the HV side. Not teardrop-related.
-- TL3301 internal standoff at ~246 V is unverified — no datasheet in repo.
+- Q2 and D3/D4/D5 foul the shield rim; MH1's screw position is occupied — above.
+- TL3301 **internal** standoff at ~246 V across open contacts is unverified —
+  no datasheet in repo, only a STEP model.
 - P1/P2/P3 have no MPN.
 - J3 has no routed creepage slot; the 5.08 mm part's 2.480 mm pad separation is
-  the documented fallback.
+  the documented fallback. Its schematic `BOM Comments` field still says "Milled
+  slot between pads" — stale.
 
 ---
 
@@ -143,7 +233,13 @@ section.
 your silk DRC rule is stricter, pull the silk notches wider rather than removing
 them. This is the source of the two standing `silk_over_copper` warnings.
 
-**SW3 has no 3D model**, so the 3D viewer won't show its actuator. Check
+**Beware "Update Footprints from Library."** It has already wiped DNP
+attributes on this project once (commit 3b90f5e). After running it, check that
+`R16` and the two `REF**` marks are still DNP and that `Q1` still has six pads.
+
+**SW3 now has a 3D model** — `lib/models/TL3301AF160QJ.STEP`, measuring 4.64 mm
+tall, so its clearance under the shield is verified rather than assumed. The
+note below is kept only for the SW1/SW2 comparison. Check
 clearance against the 1551B half-shell by hand: SW1/SW2 are 4.30 mm, SW3 is
 5.00 mm.
 
