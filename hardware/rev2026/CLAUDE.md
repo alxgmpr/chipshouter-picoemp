@@ -1,14 +1,13 @@
 # PicoEMP Rev-2026 — KiCad project
 
 A KiCad 10 port and rework of the ChipShouter-PicoEMP REV04 EM fault-injection
-board. Two copper layers, 1.6 mm thick, **55 footprints** (45 SMD / 5 THT /
-5 other — 3 mounting holes and 2 HV warning marks), 53 schematic components
-across 64 nets.
+board. Two copper layers, 1.6 mm thick, **53 footprints** (45 SMD / 5 THT /
+3 other — the mounting holes), 53 schematic components across 64 nets.
 
 **40.010 × 130.000 mm overall**, but that is not one rectangle: the **body** is
 40.010 × 125.000 and a **15.780 mm-wide SMA tab** projects 5.000 mm south of it.
 Anything mechanical — enclosure fit, edge clearance — registers to the body edge
-at y = 170.272, not to the overall extent.
+at y = 144.872, not to the overall extent.
 
 The board makes ~250 V on a 0.47 µF capacitor and dumps it through an IGBT into
 an injection coil. Treat every `HV_*` net as live — **except `HVPULSE` and
@@ -16,8 +15,10 @@ an injection coil. Treat every `HV_*` net as live — **except `HVPULSE` and
 the `HV` netclass. That class is exactly `HV_RAIL`, `HV_RTN`, `HV_RECT`,
 `HV_OUT`, `HV_SENSE`, `HV_SENSE_LED`, `HV_GATE`, `HV_GATE_DRV`.
 
-Branch: `rev2026`. A parallel line of shield work lives on
-`shield-1551g-board-edits` — see "The HV shield" below.
+Branch: `rev2026`. **A second, incompatible board exists on branch
+`relayout-shifted-25mm`** — the whole layout translated +25.400 mm in Y with 21
+footprints moved, two HV warning marks and ~150 tracks different. It is not
+mergeable with this one; see "The HV shield" below.
 
 ---
 
@@ -59,15 +60,14 @@ cd hardware/rev2026 && uv run --with pytest pytest tests/
 ```
 
 Current state, verified 2026-07-28: **66 tests pass**; DRC reports **0
-violations, 0 unconnected, 0 footprint errors**, exit code 0 — and that holds
-**with warnings included**, i.e. running the same command *without*
-`--severity-error`. ERC is also clean.
+violations, 0 unconnected, 0 schematic-parity issues**, exit code 0. ERC clean.
 
-Earlier revisions of this file said warnings were non-empty by design — two
-cosmetic silk items plus nine from the intra-HV rule. Neither is true any more.
-Both were fixed; the intra-HV rule now passes at its 0.8 mm target. **Run
-without `--severity-error` and expect zero** — if you see warnings, you
-introduced them.
+Run without `--severity-error` and you get **exactly one warning**: the
+`Intra-HV spacing at full rail voltage` rule reporting **0.648 mm** against its
+0.8 mm target, between the `HV_RTN` track at (121.470, 142.340) and `C3` pad 2.
+That is compliant — IPC-2221A B1 requires 0.40 mm at 171–300 V — and the rule is
+a deliberately tighter goal at warning severity. It is the only warning; two
+cosmetic silk items that older revisions of this file mention are gone.
 
 ---
 
@@ -97,13 +97,13 @@ oversight.
 **The HV shield does not seat yet — Q2 and D3/D4/D5.** See "The HV shield"
 below. This is the main outstanding piece of work.
 
-**MH1/MH2 are not on the shield screw axes.** They sit at the old HV-end
-corners, (108.390, 166.272) and (140.390, 166.272), which the 1551G box covers —
-under the box they are unreachable. The screws want (112.640, 126.022) and
-(136.140, 164.522). MH2's target is clear; **MH1's is occupied** — `GND` tracks
-0.677 mm inside the hole, R10 pad 1 0.206 mm inside, and nothing can route west
-of it (0.425 mm to the isolation slot, against 0.65 mm needed for a 0.25 mm
-track). Needs interactive rework of R10 and the `GND` spine.
+**MH1/MH2 are on the shield screw axes** — (112.640, 100.622) and
+(136.140, 139.122). They used to sit at the HV-end corners, which the box covers,
+making them unreachable. Getting MH1 there needed R10 moved to
+(116.900, 103.400) rot 180 with `GND` jogged onto B.Cu past the hole, because
+nothing routes west of that hole: 0.425 mm to the isolation slot against the
+0.65 mm a 0.25 mm track needs. Nearest copper to MH1 is now +2.210 mm from the
+hole edge.
 
 **~~Intra-HV clearance at SW3 — 0.498 mm.~~ Resolved.** The
 `Intra-HV spacing at full rail voltage` rule now reports **zero** violations at
@@ -117,8 +117,8 @@ That is precisely why the rule is scoped to `HV_RTN` against `HV_SENSE`,
 `HV_RAIL` and `HV_OUT` and not to the class as a whole.
 
 **Teardrops are materialized zone objects**
-(`(zone ... (attr (teardrop (type padvia))))` — 80 of the board's 81 zones; the
-81st is the `MCU GND Pour`). The `(teardrops ... (enabled ...))` block inside
+(`(zone ... (attr (teardrop (type padvia))))` — 77 of the board's 78 zones; the
+78th is the `MCU GND Pour`). The `(teardrops ... (enabled ...))` block inside
 each pad is only the regeneration parameters. Setting `enabled no` does not
 remove existing teardrop copper; the zones have to go. When an earlier
 clearance question was investigated, disabling teardrops on all 33 HV pads and
@@ -145,7 +145,7 @@ the shield were never checked against each other.
 The replacement is the **1551G box, inverted, lid discarded** — the larger 1551
 sizes are box + lid, not two symmetric halves, so the box is far deeper. Outer
 50.000 × 35.000 × 17.000, **interior clear height 15.050 mm**, interior
-44.73 × 29.73. Shell centre (124.390, 145.272), south edge flush with the board
+44.73 × 29.73. Shell centre (124.390, 119.872), south edge flush with the board
 body.
 
 **Screws are a diagonal pair on 38.500 × 23.500 mm**, not the 43.88 × 28.88 the
@@ -155,8 +155,8 @@ Two #4 × ½″ screws, so the stack **screw → lid → PCB → box bore** capt
 underside cover for free; the lid's 3.05 mm recess needs J3's 3.50 mm pins
 trimmed.
 
-Silk marks the **north** two corners only, (106.890, 120.272) and
-(141.890, 120.272), plus a `1551G` label — the south edge is flush and the
+Silk marks the **north** two corners only, (106.890, 94.872) and
+(141.890, 94.872), plus a `1551G` label — the south edge is flush and the
 width is centred, so the north edge is the only ambiguous dimension. A full
 witness rectangle was tried and produced 25 silk violations against the
 HIGH VOLTAGE legend, the HV warning marks and the D3/D4/D5 designators.
@@ -165,7 +165,7 @@ HIGH VOLTAGE legend, the HV warning marks and the D3/D4/D5 designators.
 inboard. **Q2** has 0.00 mm clear at local (−8.50, +23.29) and needs 2.32 —
 about 0.4 mm north, 0.6 with margin, moving the `HV_RTN` trunk with it (a
 scripted move without that shorted `HV_OUT` to `HV_RTN`). **D3/D4/D5** have
-0.00 mm at local y −23.55 and need 1.10 — about 0.6 mm south. Everything else
+0.00 mm at local y −23.90 and need 1.10 — about 0.6 mm south. Everything else
 clears, J3 by 1.20 mm.
 
 Models are gitignored (Hammond's are not under this project's licence);
@@ -203,8 +203,8 @@ which is the documented fallback ("wider pad separation"). Adequate at 246 V.
 - **`Q2`'s DPAK pad spacing is 1.080 mm.** An older note in the `.dru` flagged a
   0.080 mm DRC reading as unresolved and fab-blocking; it was spurious. Measured
   directly, the geometry is 1.080 mm and fine at 250 V.
-- **DNP is `R16` plus the two `REF**` HV warning marks** (which are copper
-  artwork, not parts). `J4` is populated despite older notes saying otherwise.
+- **`R16` is the only DNP part.** `J4` is populated despite older notes saying
+  otherwise.
 - **MH1/MH2's 32.000 mm spacing was never a shield dimension.** It is 40.010
   minus two 4.000 mm corner insets, and upstream REV04's fab drill has the
   identical pattern. Do not treat it as keying to anything.
@@ -212,8 +212,8 @@ which is the documented fallback ("wider pad separation"). Adequate at 246 V.
   `${KIPRJMOD}` stops resolving, so the `picoemp` footprint library goes missing
   and edge-clearance results change. Always run it in place.
 - **Beware "Update Footprints from Library."** It wiped DNP attributes here once
-  (commit 3b90f5e). Afterwards, check `R16` and both `REF**` marks are still DNP
-  and that `Q1` still has six pads.
+  (commit 3b90f5e). Afterwards, check `R16` is still DNP and that `Q1`
+  still has six pads.
 
 ---
 
