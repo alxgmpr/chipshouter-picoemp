@@ -1,160 +1,158 @@
-# Layout Handoff — PicoEMP Rev-2026
+# Layout Record — PicoEMP Rev-2026
 
-The schematic is complete and gated. PCB layout is interactive work that needs
-you in KiCad; this is everything required to do it.
+**Status: layout is done.** Board routed, DRC clean, both gates green. This
+file records what was built and why. It was previously a set of instructions
+for work not yet started; those instructions have been carried out and are kept
+below only where the reasoning still matters.
 
-**Plan:** `docs/superpowers/plans/2026-07-25-picoemp-rev2026.md` (Tasks 10 & 11)
+For orientation in a fresh session, read `CLAUDE.md` in this directory first.
+
+**Plan:** `docs/superpowers/plans/2026-07-25-picoemp-rev2026.md`
 **Spec:** `docs/superpowers/specs/2026-07-25-picoemp-rev2026-design.md`
 **Branch:** `rev2026`
 
 ---
 
-## Where the design stands
+## Verified state — 2026-07-28
 
-24 commits on `rev2026`. All gates green:
-
-| Gate | State |
+| Gate | Result |
 |---|---|
-| `kicad-cli sch erc --severity-error --exit-code-violations` | **exit 0** |
-| `cd hardware/rev2026 && uv run --with pytest pytest tests/` | **49 passed**, 0 failed, 0 skipped |
-| Every symbol has a resolvable footprint | yes — 47 refs, 0 broken |
-| Connectivity vs. the as-received design | verified identical at every step, by net membership |
+| `uv run --with pytest pytest tests/` | **66 passed**, 0 failed, 0 skipped |
+| `kicad-cli pcb drc --severity-error --schematic-parity --exit-code-violations` | **0 errors, 0 unconnected, 0 parity issues**, exit 0 |
+| Routing | complete |
+| Every symbol has a resolvable footprint | yes |
 
-### What changed from the as-received port
+Board: 40.01 × 130.00 mm, 2 layers, 1.6 mm, 55 footprints (45 SMD / 5 THT),
+104 vias. 83 zones — 80 teardrops, 2 `Pad Keep Out TP7` keepouts, and the
+`MCU GND Pour` spanning both layers. 53 schematic components, 64 nets, 1 DNP
+(`R16`).
 
-- **R9's part data corrected.** It carried R4's 75 Ω MPN, DigiKey PN and value while
-  being a 2 k part. This is a genuine upstream schematic bug.
+DRC warnings are non-empty by design — see `CLAUDE.md`.
+
+---
+
+## What changed from the as-received port
+
+- **R9's part data corrected.** It carried R4's 75 Ω MPN, DigiKey PN and value
+  while being a 2 k part. A genuine upstream schematic bug.
 - **C5's missing value** restored to 100 n.
-- All Altium metadata stripped; fields normalised to `MPN` / `Manufacturer` / `DigiKey`.
-- **Symbol classes corrected** — IGBT (with its co-packed antiparallel diode), enhancement
-  MOSFETs, non-Schottky rectifiers, a real Darlington opto, and a transformer symbol whose
-  windings match this design's actual 1,4-primary / 2,3-secondary grouping.
-- **All five header footprints** moved from 1.00/1.27 mm to the correct **2.54 mm**.
-- **Designators restored to upstream's scheme** — `D6/D8/D9`, `P1/P2/P3`, `J1` = SMA — so
-  `BUILD-DRAWING-REV04.PDF` and the README BOM explainer apply again.
-- **New trigger front-end:** `U2` 74LVC1G17 Schmitt buffer, `R14` 100 R series, `R15` 10 k
-  pulldown, `C6` decoupling, `R16` 0 Ω bypass (DNP), `J4` optional SMA (DNP).
+- All Altium metadata stripped; fields normalised to `MPN` / `Manufacturer` /
+  `DigiKey`.
+- **Symbol classes corrected** — IGBT (with its co-packed antiparallel diode),
+  enhancement MOSFETs, non-Schottky rectifiers, a real Darlington opto, and a
+  transformer symbol whose windings match this design's actual 1,4-primary /
+  2,3-secondary grouping.
+- **All five header footprints** moved from 1.00/1.27 mm to the correct 2.54 mm.
+- **Designators restored to upstream's scheme** — `D6/D8/D9`, `P1/P2/P3`,
+  `J1` = SMA — so `BUILD-DRAWING-REV04.PDF` and the README BOM explainer apply.
+- **New trigger front-end:** `U2` 74LVC1G17 Schmitt buffer, `R14` 100 R series,
+  `R15` 10 k pulldown, `C6` decoupling, `R16` 0 Ω bypass (DNP), `J4` optional
+  SMA (populated).
 - **J3** replaced with a Phoenix `MKDS 1,5/2-5.08` (5.08 mm, 300 V) for creepage.
 
 ---
 
-## ⚠️ Read this before you open the old board
+## The 1 mm isolation barrier — how it was implemented
 
-**The as-received board's imported footprints are not trustworthy.** At least one —
-`SamacSys:SOP254P952X470-6N`, the optocoupler — has pads whose rotation fuses them into
-two solid copper bars. It would have shorted pins 1‑2‑3 and 4‑5‑6 together.
-
-This matters for how you use the old board as a reference:
-
-- **The routed copper geometry is still a valid reference** — that's what was hi-pot tested.
-- **The footprint definitions are not.** Render anything you take from that file before
-  believing it (`kicad-cli fp export svg`).
-
----
-
-## Task 10 — Board setup and HV layout
-
-### Step 1: HV clearance — already decided, 1.0 mm
-
-**This is done.** The netclass is configured; no measurement needed.
-
-The value is **upstream's own design rule**, annotated on `SCH-PICOEMP-REV04.PDF`:
+The value is **upstream's own design rule**, annotated on
+`SCH-PICOEMP-REV04.PDF`:
 
 > `ISOLATION BARRIER, 400V MIN.  >1MM CLEARANCE PER 61010-1.`
 
-Corroborated by measurement — pad geometry on the hi-pot-validated original board gives
-~1.002 mm across the barrier in routed copper.
+Corroborated by measurement — pad geometry on the hi-pot-validated original
+board gives ~1.002 mm across the barrier in routed copper.
 
-**Voltages, from primary sources** (component ratings are headroom, not operating points):
+**Voltages, from primary sources** (component ratings are headroom, not
+operating points):
 
 | | |
 |---|---|
-| HV capacitor charge | **~250 V** — firmware states this explicitly |
+| HV capacitor charge | **~250 V** — `firmware/micropython/cspico_simple.py` |
 | Upstream barrier design rating | **400 V min** |
 | Hi-pot proof test | 1 kV, "well beyond the voltages the device can generate" |
 
-**Known exception:** T1's own primary↔secondary pad spacing is 0.770 mm, below this rule.
-That is the ATB3225 package's geometry, not a routing choice, and upstream accepted it.
-When it flags in DRC, add a targeted exclusion for that pad pair — do not loosen the class.
+It is enforced as a **scoped DRC rule**, not as netclass clearance. An earlier
+draft of this document instructed adding the 1 mm figure to the `HV` netclass;
+that turned out to be wrong. As a plain netclass clearance it applies between
+any two nets touching the class, which makes 0603 (0.70 mm between its own
+pads) and 0805 (0.80 mm) parts illegal on HV nets. The `HV` class therefore
+carries 0.2 mm clearance / 0.5 mm track, and `picoemp-rev2026.kicad_dru` scopes
+the barrier correctly as HV-to-non-HV. Read that file before changing anything
+here.
 
-### Step 2: Board Setup
-
-- **Board thickness 1.6 mm — not optional.** The edge-mount SMA is specified for 0.062″
-  (1.57 mm) and clamps the board edge. Get this wrong and J1 won't seat.
-- 2 copper layers.
-- Constraints → set **minimum clearance to 0.2 mm**. It is currently `0.0`, i.e. DRC
-  enforcing nothing on a board that makes ~500 V.
-- Net classes → add **`HV`** with the clearance from Step 1. Assign: the T1/T2 secondaries,
-  D2, C3 both nodes, Q2's collector, J1's centre pin, R1's high side, and J3.
-- Import `Edge.Cuts` from the old board — 40 × 116 mm with its slots and arcs.
-
-### Step 3: Place and route the HV section
-
-Update PCB from Schematic, then replicate placement and copper for
-`T1, T2, C1, C2, C3, D2, D3, D4, D5, Q1, Q2, R1, R2, J3` from the old board, side by side.
-This geometry is what was hi-pot tested at 1 kV.
-
-**Match the T1/T2 pin-1 dot to `BUILD-DRAWING-REV04.PDF`.** Upstream reversed this on the
-original prototype and got a wrong-polarity spike.
+**Known exception:** T1's own primary↔secondary pad spacing is 0.770 mm, below
+this rule. That is the ATB3225 package's geometry, not a routing choice, and
+upstream accepted it. Targeted exceptions for T1 and T2 are in the `.dru`.
 
 ---
 
-## Task 11 — Logic layout, creepage slot, DRC
+## Resolved — items that were open in the previous draft
 
-### Step 4: Route the logic side
+- **`Q2` DPAK pad spacing.** Flagged as fab-blocking on a DRC reading of
+  0.080 mm that could not be reconciled with geometry computing to 1.08 mm.
+  Measured directly: **1.080 mm**. The reading was spurious; the footprint is
+  fine at 250 V.
+- **`LDA111` pad 3 parity.** The symbol has five pins, the footprint six pads,
+  because pin 3's lead physically exists while being electrically NC.
+  `--schematic-parity` now reports 0 issues. The pad was not deleted — doing so
+  would leave a lead unsoldered.
+- **Board setup.** Minimum clearance is 0.2 mm (was 0.0). Thickness 1.6 mm, as
+  required by the edge-mount SMA which clamps the board edge and is specified
+  for 0.062″.
 
-Place `U1, U2, D6, D8, D9, SW1-3, P1-P3, R5, R10-R16, C5, C6, D1, J2, MH1-3, FID1-3`.
-No special constraints beyond the 0.2 mm default class.
+## Still open
 
-Keep the trigger path — `P1.1 → R14 → U2 → GP0` — short and away from the HV section.
+Carried in `CLAUDE.md` under "Open items", in short:
 
-### Step 5: The J3 creepage slot
-
-Draw a slot on `Edge.Cuts` between J3's two HV pads. **Check JLCPCB's current minimum
-routed slot width first** — it's router-bit limited, typically around 1.0 mm, and the
-`kicad-happy:jlcpcb` skill does not document it.
-
-Fallback if impractical: wider pad separation plus conformal coating.
-
-### Step 6: Gates
-
-```bash
-cd hardware/rev2026
-uv run --with pytest pytest tests/ -v
-```
-
-```bash
-/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli pcb drc --severity-error --schematic-parity --exit-code-violations -o /tmp/drc.rpt hardware/rev2026/picoemp-rev2026.kicad_pcb
-```
-
-Both must pass before fab output.
+- Intra-HV clearance at SW3 is 0.498 mm — IPC-compliant, but the thinnest
+  copper on the HV side. Not teardrop-related.
+- TL3301 internal standoff at ~246 V is unverified — no datasheet in repo.
+- P1/P2/P3 have no MPN.
+- J3 has no routed creepage slot; the 5.08 mm part's 2.480 mm pad separation is
+  the documented fallback.
 
 ---
 
-## Contingencies — known things that may surface in DRC
+## ⚠️ Still true: do not trust the old board's footprints
 
-**LDA111 pad 3 parity.** The `picoemp:LDA111` symbol has five pins (no pin 3); the
-footprint has six pads, because pin 3's lead physically exists even though it's
-electrically NC. Pad 3 will carry no net. If `--schematic-parity` objects, restore pin 3 to
-the symbol as an `unconnected`-type pin plus a no-connect flag — which is what the original
-Altium design did. **Do not delete the pad**; that would leave a lead unsoldered.
+**The as-received board's imported footprints are not trustworthy.** At least
+one — `SamacSys:SOP254P952X470-6N`, the optocoupler — has pads whose rotation
+fuses them into two solid copper bars. It would have shorted pins 1‑2‑3 and
+4‑5‑6 together.
 
-**SW3 silk-to-pad clearance is 0.05 mm.** Tight against typical fab guidance (~0.15–0.2 mm),
-but it matches KiCad's own stock `TL3301NxxxxxG` precedent. If your silk DRC rule is
-stricter, pull the silk notches wider rather than removing them.
+- **The routed copper geometry is still a valid reference** — that is what was
+  hi-pot tested.
+- **The footprint definitions are not.** Render anything you take from that file
+  before believing it (`kicad-cli fp export svg`).
 
-**SW3 has no 3D model.** So the 3D viewer won't show its actuator. Check clearance against
-the 1551B half-shell by hand: SW1/SW2 are 4.30 mm, SW3 is 5.00 mm.
-
-**P1/P2/P3 have no MPN.** Generic 2.54 mm headers, normally bought as a strip and cut. Task
-12's BOM export needs a DigiKey line for them.
+Related: `hardware/altium_src/kc/` is a *different* in-progress REV04 migration
+and its HV sense section is miswired. See `CLAUDE.md`.
 
 ---
 
-## When layout is done
+## Other notes that remain relevant
 
-Tasks 12 and 13 are automatable again — fab outputs, the DigiKey BOM, and a full
-pre-fabrication design review. Say the word and I'll run them.
+**T1/T2 pin-1 dot must match `BUILD-DRAWING-REV04.PDF`.** Upstream reversed this
+on the original prototype and got a wrong-polarity spike.
 
-**Do not order without** reviewing the gerbers in KiCad's Gerber Viewer, including the J3
-slot and the drill file.
+**Keep the trigger path short** — `P1.1 → R14 → U2 → GP0` — and away from the HV
+section.
+
+**SW3 silk-to-pad clearance is 0.05 mm.** Tight against typical fab guidance
+(~0.15–0.2 mm), but it matches KiCad's own stock `TL3301NxxxxxG` precedent. If
+your silk DRC rule is stricter, pull the silk notches wider rather than removing
+them. This is the source of the two standing `silk_over_copper` warnings.
+
+**SW3 has no 3D model**, so the 3D viewer won't show its actuator. Check
+clearance against the 1551B half-shell by hand: SW1/SW2 are 4.30 mm, SW3 is
+5.00 mm.
+
+---
+
+## Next
+
+Tasks 12 and 13 — fab outputs, the DigiKey BOM, and a full pre-fabrication
+design review.
+
+**Do not order without** reviewing the gerbers in KiCad's Gerber Viewer,
+including the drill file.

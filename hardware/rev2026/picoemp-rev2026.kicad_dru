@@ -54,6 +54,48 @@
 	(constraint edge_clearance (min 1.0mm))
 	(condition "A.hasNetclass('HV') && (A.Type == 'Track' || A.Type == 'Via')"))
 
+# The barrier rule above is scoped HV-to-non-HV, so it deliberately says nothing
+# about spacing *between* two HV nets. That is right in general -- intra-HV
+# spacing is bounded by package geometry -- but it leaves three pairs unguarded
+# that actually stand at the full rail voltage:
+#
+#   HV_RTN <-> HV_SENSE   ~246 V   (SW3 / J3 contacts, and the R1 + Q1 LED branch)
+#   HV_RTN <-> HV_RAIL     250 V   (across C3)
+#   HV_RTN <-> HV_OUT      250 V   (Q2 collector-emitter, when the IGBT is off)
+#
+# Everything else on the HV side sits within a few volts of its neighbour
+# (R2 drops 3.7 V; D7 clamps the gate to 18 V), so those pairs need nothing
+# beyond the default class.
+#
+# IPC-2221A Table 6-1 B1 (external, uncoated, <=3050 m) requires 0.40 mm at
+# 171-300 V. The board currently achieves 0.498 mm at its worst point, so it is
+# compliant with ~25% margin -- but that is thinner than anywhere else on the HV
+# side, and thinner than you would pick deliberately for a 246 V gap.
+#
+# 0.8 mm below is a TARGET, not the current state. As of this writing it reports
+# 9 violations, worst first:
+#
+#   0.498 mm  HV_RTN trunk track  <->  SW3 pad 2 (HV_SENSE)   x3 track segments
+#   0.514 -
+#   0.552 mm  HV_RTN trunk track  <->  HV_SENSE teardrops     x5
+#   0.648 mm  HV_RTN track        <->  C3 pad 2 (HV_RAIL)
+#
+# Severity is `warning` for that reason -- it should inform a layout decision,
+# not block the fab gate on a board that already meets IPC.
+#
+# The governing number, 0.498 mm, is pad-to-track and has nothing to do with
+# teardrops: the HV_RTN trunk running down x = 124.39 simply passes close to
+# SW3's HV_SENSE pad at (122.942, 149.664). Disabling teardrops on the HV nets
+# does NOT fix it -- that was tried and measured. Closing this properly means
+# nudging that trunk east of SW3, which is interactive work in pcbnew.
+#
+# Confirmed to fire: temporarily raising the constraint to 5 mm produced
+# violations naming this rule, per the procedure in the header above.
+(rule "Intra-HV spacing at full rail voltage"
+	(severity warning)
+	(constraint clearance (min 0.8mm))
+	(condition "A.NetName == '/HV_RTN' && (B.NetName == '/HV_SENSE' || B.NetName == '/HV_RAIL' || B.NetName == '/HV_OUT')"))
+
 # Advisory, not blocking. HV copper carries a 250 V rail and, on the discharge
 # loop, a very high dI/dt pulse; 0.2 mm signal track is thin for both. Necking
 # below this at a pad is legitimate and KiCad has no auto-neck, so this is a
