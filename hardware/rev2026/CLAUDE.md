@@ -62,12 +62,10 @@ cd hardware/rev2026 && uv run --with pytest pytest tests/
 Current state, verified 2026-07-28: **66 tests pass**; DRC reports **0
 violations, 0 unconnected, 0 schematic-parity issues**, exit code 0. ERC clean.
 
-Run without `--severity-error` and you get **exactly one warning**: the
-`Intra-HV spacing at full rail voltage` rule reporting **0.648 mm** against its
-0.8 mm target, between the `HV_RTN` track at (121.470, 142.340) and `C3` pad 2.
-That is compliant — IPC-2221A B1 requires 0.40 mm at 171–300 V — and the rule is
-a deliberately tighter goal at warning severity. It is the only warning; two
-cosmetic silk items that older revisions of this file mention are gone.
+**Warnings are empty too.** Run the same command without `--severity-error` and
+you still get zero — the `Intra-HV spacing at full rail voltage` rule passes at
+its 0.8 mm target, and the two cosmetic silk items older revisions mention are
+gone. If you see any warning, you introduced it.
 
 ---
 
@@ -94,8 +92,12 @@ oversight.
 
 ## Open items
 
-**The HV shield does not seat yet — Q2 and D3/D4/D5.** See "The HV shield"
-below. This is the main outstanding piece of work.
+**The HV shield does not seat yet — Q2 only.** It has 0.00 mm clear at local
+(−8.50, +23.29) against the 2.32 mm it needs, so about 0.4 mm north (0.6 with
+margin), moving the `HV_RTN` trunk beside it in the same operation — a scripted
+move without that shorted `HV_OUT` to `HV_RTN`. D3/D4/D5 used to foul as well
+and no longer do. This is the last thing between here and a shield that sits
+flat.
 
 **MH1/MH2 are on the shield screw axes** — (112.640, 100.622) and
 (136.140, 139.122). They used to sit at the HV-end corners, which the box covers,
@@ -162,11 +164,10 @@ witness rectangle was tried and produced 25 silk violations against the
 HIGH VOLTAGE legend, the HV warning marks and the D3/D4/D5 designators.
 
 **Blocking a seat:** the rim contacts across a solid ~2 mm band with a chamfer
-inboard. **Q2** has 0.00 mm clear at local (−8.50, +23.29) and needs 2.32 —
-about 0.4 mm north, 0.6 with margin, moving the `HV_RTN` trunk with it (a
-scripted move without that shorted `HV_OUT` to `HV_RTN`). **D3/D4/D5** have
-0.00 mm at local y −23.90 and need 1.10 — about 0.6 mm south. Everything else
-clears, J3 by 1.20 mm.
+inboard. **Q2 is the only part still fouling** — 0.00 mm clear at local
+(−8.50, +23.29) against 2.32 needed. D3/D4/D5 were the other offenders and were
+moved +1.5 mm south, now clearing by 12.75 mm. Everything else clears too:
+J3 by 1.20 mm, SW3 by 10.36, Q1 by 11.32.
 
 Models are gitignored (Hammond's are not under this project's licence);
 `tools/fetch_hammond_shield_model.py` re-downloads and re-axes both.

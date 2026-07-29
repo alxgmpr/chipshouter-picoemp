@@ -20,7 +20,7 @@ For orientation in a fresh session, read `CLAUDE.md` in this directory first.
 |---|---|
 | `uv run --with pytest pytest tests/` | **66 passed**, 0 failed, 0 skipped |
 | `kicad-cli pcb drc --severity-error --schematic-parity --exit-code-violations` | **0 errors, 0 unconnected, 0 parity issues**, exit 0 |
-| Same, **without** `--severity-error` | exactly **one** warning — see below |
+| Same, **without** `--severity-error` | **0 violations** — warnings are empty too |
 | `kicad-cli sch erc --severity-error` | 0 violations |
 | Routing | complete |
 | Every symbol has a resolvable footprint | yes |
@@ -28,16 +28,13 @@ For orientation in a fresh session, read `CLAUDE.md` in this directory first.
 Board: 40.010 × 130.000 mm overall — the **body** is 40.010 × 125.000 and the
 south **15.780 mm-wide SMA tab** carries the remaining 5.000 mm. 2 layers,
 1.6 mm. **53 footprints** (45 SMD / 5 THT / 3 other — the mounting holes),
-246 track segments, **101 vias**, **78 zones** (77 teardrops + the
+252 track segments, **102 vias**, **76 zones** (75 teardrops + the
 `MCU GND Pour`). 53 schematic components, 64 nets. `R16` is the only DNP part.
 
-**One DRC warning, by design.** The `Intra-HV spacing at full rail voltage`
-rule reports **0.648 mm** against its 0.8 mm target, between the `HV_RTN` track
-at (121.470, 142.340) and `C3` pad 2. IPC-2221A B1 requires 0.40 mm at
-171–300 V, so it is compliant; the rule is a deliberately tighter goal at
-warning severity. Older revisions describe two cosmetic silk warnings and nine
-intra-HV ones — the silk is fixed and only this one gap remains. The
-`Pad Keep Out TP7` keepouts are also gone.
+**DRC warnings are empty.** Older revisions describe two cosmetic silk warnings
+and nine from the intra-HV rule; both sets are fixed, and the
+`Intra-HV spacing at full rail voltage` rule now passes at its 0.8 mm target.
+The `Pad Keep Out TP7` keepouts are also gone.
 
 ---
 
@@ -175,11 +172,11 @@ The rim contacts the board across a solid ~2 mm band (|local Y| 23.0–25.0,
 shell against the real STEP, four still foul:
 
 - **Q2** — 0.00 mm clear at local (−8.50, +23.29), needs 2.32. About **0.4 mm
-  north**, 0.6 with margin. Beware: a scripted 0.6 mm move on the development
-  branch shorted `HV_OUT` to the `HV_RTN` trunk beside it, so the trunk moves in
-  the same operation.
-- **D3 / D4 / D5** — 0.00 mm clear at local y −23.90, need 1.10. About
-  **0.6 mm south** puts them under the chamfer.
+  north**, 0.6 with margin. Beware: a scripted 0.6 mm move shorted `HV_OUT` to
+  the `HV_RTN` trunk beside it, so the trunk moves in the same operation. This
+  is the only part still fouling.
+- ~~D3 / D4 / D5~~ — **resolved.** Moved +1.5 mm south to y 98.4 (with R6 out to
+  (128.100, 98.075) to make room); they now clear by 12.75 mm.
 
 Everything else clears: **J3 by 1.20 mm** (the whole point of the 1551G),
 SW3 by 10.36, Q1 by 11.32, every passive by 13–14.5. Q4 and R10 sit under the
@@ -196,8 +193,7 @@ B.Cu run clears the nearest HV copper by 5.12 mm.
 
 ## Still open
 
-- Q2 and D3/D4/D5 foul the shield rim — above. The screw holes themselves are
-  done.
+- Q2 fouls the shield rim — above. The screw holes and D3/D4/D5 are done.
 - TL3301 **internal** standoff at ~246 V across open contacts is unverified —
   no datasheet in repo, only a STEP model.
 - P1/P2/P3 have no MPN.
