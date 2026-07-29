@@ -12932,7 +12932,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount"
+		(property "Footprint" "picoemp:SMA_Linx_CONSMA020_062_G_EdgeMount"
 			(at 313.69 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -12943,7 +12943,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.te.com/usa-en/product-CONSMA020.062-G.html"
 			(at 313.69 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -12965,7 +12965,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Amphenol"
+		(property "Manufacturer" "TE Connectivity Linx"
 			(at -136.31 12.71 0)
 			(hide yes)
 			(show_name no)
@@ -12976,7 +12976,7 @@
 				)
 			)
 		)
-		(property "MPN" "132289"
+		(property "MPN" "CONSMA020.062-G"
 			(at -136.31 12.71 0)
 			(hide yes)
 			(show_name no)
@@ -12985,6 +12985,14 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "DigiKey" "343-CONSMA020.062-G-ND" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -14206,7 +14214,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount"
+		(property "Footprint" "picoemp:SMA_Linx_CONSMA020_062_G_EdgeMount"
 			(at 420.37 276.86 0)
 			(hide yes)
 			(show_name no)
@@ -14217,7 +14225,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.te.com/usa-en/product-CONSMA020.062-G.html"
 			(at 420.37 276.86 0)
 			(hide yes)
 			(show_name no)
@@ -14239,7 +14247,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Amphenol"
+		(property "Manufacturer" "TE Connectivity Linx"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -14250,7 +14258,7 @@
 				)
 			)
 		)
-		(property "MPN" "132289"
+		(property "MPN" "CONSMA020.062-G"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -14259,6 +14267,14 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "DigiKey" "343-CONSMA020.062-G-ND" (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"

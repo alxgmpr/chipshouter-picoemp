@@ -3,3 +3,4 @@ __pycache__/
 .pytest_cache/
 lib/models/Hammond_*.step
 preview-*
+lib/models/SMA_Linx_*.step

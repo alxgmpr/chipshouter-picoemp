@@ -140,8 +140,11 @@ def test_mosfets_use_numeric_pin_symbol(syms):
 # Task 9 additions: U2 is the 74LVC1G17 Schmitt buffer in SOT-23-5 (verified
 # against the Nexperia 74LVC1G17GV,125 datasheet -- NOT the stock symbol's
 # TI-only assumption, since SOT-23-5 single-gate logic pinouts are
-# vendor-specific). J4 reuses J1's SMA footprint (DNP optional trigger
-# input). R14/R15/R16 are 0603 resistors. J3 is deliberately absent from
+# vendor-specific). J4 reuses J1's SMA footprint (optional trigger
+# input). Both SMAs are the TE/Linx CONSMA020.062-G edge mount -- 500 V RMS,
+# which matters because J1 carries HV_OUT/HV_RAIL. It replaced the Amphenol
+# 132289, whose land pattern was within 0.01 mm of this one but which carried
+# no published voltage rating. R14/R15/R16 are 0603 resistors. J3 is deliberately absent from
 # this dict -- test_j3_is_wide_pitch below covers it with a substring check
 # instead of an exact-match, since the point of that test is "not 2.54mm /
 # is a wide pitch", not one specific part.
@@ -165,9 +168,9 @@ FOOTPRINTS = {
     'T2': 'picoemp:ATB322524',
     'U1': 'Module:RaspberryPi_Pico_SMD',
     'U2': 'Package_TO_SOT_SMD:SOT-23-5',
-    'J1': 'Connector_Coaxial:SMA_Amphenol_132289_EdgeMount',
+    'J1': 'picoemp:SMA_Linx_CONSMA020_062_G_EdgeMount',
     'J2': 'Connector_JST:JST_XH_S2B-XH-A_1x02_P2.50mm_Horizontal',
-    'J4': 'Connector_Coaxial:SMA_Amphenol_132289_EdgeMount',
+    'J4': 'picoemp:SMA_Linx_CONSMA020_062_G_EdgeMount',
     'P1': 'Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical',
     'P2': 'Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical',
     'P3': 'Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical',

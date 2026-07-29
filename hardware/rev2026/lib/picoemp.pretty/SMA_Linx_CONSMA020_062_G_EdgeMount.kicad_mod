@@ -1,0 +1,151 @@
+(footprint "SMA_Linx_CONSMA020_062_G_EdgeMount"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "TE Connectivity / Linx CONSMA020.062-G -- SMA jack (female socket), PCB edge mount, end launch, 50 ohm, for 0.062 in (1.57 mm) board. 500 V RMS, DC-18 GHz, -65 to +165 C. Land pattern taken from the recommended footprint on sheet 2 of ENG_DS_L9000279-01_A: centre pad 5.60 x 1.50, four ground pads 4.90 x 1.60 on a 8.52 mm pitch (+/-4.26), grounds on both copper layers because the connector straddles the board edge. ORIGIN IS AT THE BOARD EDGE, +X pointing into the board -- place the origin on Edge.Cuts. Copper is set back 0.100 mm from the origin so it does not overlap the edge graphic; KiCad flags a coincident pad even under a 0 mm edge rule, and fabs cannot plate right to a routed edge anyway. The stock Amphenol footprint uses the same trick with 0.090 mm. DigiKey 343-CONSMA020.062-G-ND.")
+	(tags "SMA edge mount end launch RF coaxial linx TE")
+	(property "Reference" "REF**"
+		(at -2 -6.5 0)
+		(layer "F.SilkS")
+		(uuid "5a1c0000-0000-4000-8000-000000000001")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "SMA_Linx_CONSMA020_062_G_EdgeMount"
+		(at -2 6.5 0)
+		(layer "F.Fab")
+		(uuid "5a1c0000-0000-4000-8000-000000000002")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.te.com/usa-en/product-CONSMA020.062-G.html"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5a1c0000-0000-4000-8000-000000000003")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "SMA jack, PCB edge mount, 50 ohm, 500 V RMS, 0.062 in board"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5a1c0000-0000-4000-8000-000000000004")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start 0 -4.76)
+		(end 0 4.76)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "5a1c0001-0000-4000-8000-000000000001")
+	)
+	(fp_rect
+		(start -9.5 -4.76)
+		(end 0 4.76)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "5a1c0001-0000-4000-8000-000000000002")
+	)
+	(fp_line
+		(start -0.2 -4.76)
+		(end -0.2 -2.2)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "5a1c0002-0000-4000-8000-000000000001")
+	)
+	(fp_line
+		(start -0.2 2.2)
+		(end -0.2 4.76)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "5a1c0002-0000-4000-8000-000000000002")
+	)
+	(fp_rect
+		(start -9.75 -5.01)
+		(end 5.85 5.01)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "5a1c0003-0000-4000-8000-000000000001")
+	)
+	(pad "1" smd rect
+		(at 2.9 0)
+		(size 5.6 1.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "5a1c0100-0000-4000-8000-000000000001")
+	)
+	(pad "2" smd rect
+		(at 2.55 -4.26)
+		(size 4.9 1.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "5a1c0100-0000-4000-8000-000000000002")
+	)
+	(pad "2" smd rect
+		(at 2.55 -4.26)
+		(size 4.9 1.6)
+		(layers "B.Cu" "B.Mask" "B.Paste")
+		(uuid "5a1c0100-0000-4000-8000-000000000003")
+	)
+	(pad "2" smd rect
+		(at 2.55 4.26)
+		(size 4.9 1.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "5a1c0100-0000-4000-8000-000000000004")
+	)
+	(pad "2" smd rect
+		(at 2.55 4.26)
+		(size 4.9 1.6)
+		(layers "B.Cu" "B.Mask" "B.Paste")
+		(uuid "5a1c0100-0000-4000-8000-000000000005")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/models/SMA_Linx_CONSMA020_062_G.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
