@@ -10792,7 +10792,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "Datasheet" "https://product.tdk.com/en/search/capacitor/ceramic/mlcc/info?part_no=CGA9P1X7T2J474K250KE"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GR355DD7LQ474KW01-01.pdf"
 			(at 345.44 284.48 0)
 			(hide yes)
 			(show_name no)
@@ -10814,7 +10814,7 @@
 				)
 			)
 		)
-		(property "DigiKey" "445-8764-1-ND"
+		(property "DigiKey" "490-GR355DD7LQ474KW01KCT-ND"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -10825,7 +10825,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "TDK"
+		(property "Manufacturer" "Murata Electronics"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -10836,7 +10836,7 @@
 				)
 			)
 		)
-		(property "MPN" "CGA9P1X7T2J474K250KE"
+		(property "MPN" "GR355DD7LQ474KW01K"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -10845,6 +10845,14 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "BOM Comments" "HV storage cap, 5.7x5.0x2.0 plain chip on C_2220_5750Metric. Buy spares -- no soft termination, and MH2 is 9.9mm away, so go gentle tightening that screw." (at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
