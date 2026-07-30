@@ -10792,7 +10792,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://product.tdk.com/en/search/capacitor/ceramic/mlcc/info?part_no=CGA9P1X7T2J474K250KE"
 			(at 345.44 284.48 0)
 			(hide yes)
 			(show_name no)
@@ -10814,7 +10814,7 @@
 				)
 			)
 		)
-		(property "DigiKey" "490-16845-1-ND"
+		(property "DigiKey" "445-8764-1-ND"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -10825,7 +10825,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Murata"
+		(property "Manufacturer" "TDK"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -10836,7 +10836,7 @@
 				)
 			)
 		)
-		(property "MPN" "KRM55TR72J474MH01K"
+		(property "MPN" "CGA9P1X7T2J474K250KE"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
