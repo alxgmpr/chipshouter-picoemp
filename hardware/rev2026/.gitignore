@@ -4,3 +4,4 @@ __pycache__/
 lib/models/Hammond_*.step
 preview-*
 lib/models/SMA_Linx_*.step
+analysis/
