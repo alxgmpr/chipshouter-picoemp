@@ -14316,7 +14316,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "MKDS 1,5/2-5.08"
+		(property "Value" "MKDSN 1,5/2-5,08"
 			(at 387.35 218.4399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14327,7 +14327,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal"
+		(property "Footprint" "picoemp:TerminalBlock_Phoenix_MKDSN-1,5-2-5.08_1x02_P5.08mm_Horizontal"
 			(at 386.08 215.9 0)
 			(hide yes)
 			(show_name no)
@@ -14338,7 +14338,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.phoenixcontact.com/us/products/1548128"
 			(at 386.08 215.9 0)
 			(hide yes)
 			(show_name no)
@@ -14349,7 +14349,7 @@
 				)
 			)
 		)
-		(property "Description" "HV calibration tap, 5.08mm pitch PCB terminal block, replaces BG306 (2.07mm pad gap failed IEC 60664-1 creepage at ~600V)"
+		(property "Description" "HV calibration tap, 5.08mm pitch PCB terminal block. 630 V at IEC 60664-1 II/2 (400 V III/2, 250 V III/3), CTI 600, creepage 3.2mm. Replaced MKDS 1,5/2-5.08 (300 V) for headroom on a ~246V node; MKDS replaced BG306 whose 2.07mm pad gap failed creepage."
 			(at 386.08 215.9 0)
 			(hide yes)
 			(show_name no)
@@ -14371,7 +14371,7 @@
 				)
 			)
 		)
-		(property "MPN" "1715721"
+		(property "MPN" "1548128"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -14382,7 +14382,7 @@
 				)
 			)
 		)
-		(property "DigiKey" "277-1263-ND"
+		(property "DigiKey" ""
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -14393,7 +14393,7 @@
 				)
 			)
 		)
-		(property "BOM Comments" "HV calibration tap. Milled slot between pads - see spec section 7.3."
+		(property "BOM Comments" "HV calibration tap, optional -- upstream fits it only for charge-voltage calibration. Drop-in on the MKDS land: same 1.3mm drill and 5.08 pitch."
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)

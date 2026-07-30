@@ -1,0 +1,158 @@
+(footprint "TerminalBlock_Phoenix_MKDSN-1,5-2-5.08_1x02_P5.08mm_Horizontal"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Phoenix Contact MKDSN 1,5/2-5,08 -- COMBICON Terminals S, 2 positions, 5.08 mm pitch, horizontal wire entry (0 deg), screw with tension sleeve. Body 10.16 (w) x 8.15 (l) x 13.5 (h), installed height 10, solder pin 3.5 long, pin 0.5 x 1.0, PCB hole 1.3. Insulation coordination per IEC 60664-1: 630 V at II/2, 400 V at III/2, 250 V at III/3, 4 kV rated surge throughout; material group I, CTI 600, clearance 3, creepage 3.2. cULus 300 V / 10 A, VDE 400 V / 17.5 A. Copper is identical to the stock MKDS footprint (1.3 drill, 2.6 pad, 5.08 pitch) so it is drop-in on that land. NOTE: the datasheet gives body depth 8.15 but does not publish where the pins sit within it; the outline here keeps the rear edge where the MKDS had it and pulls the front in by 1.65. That affects silk and courtyard only, never copper. Item 1548128 (SPE variant).")
+	(tags "THT terminal block Phoenix MKDSN COMBICON pitch 5.08mm")
+	(property "Reference" "REF**"
+		(at 2.54 -6.6 0)
+		(layer "F.SilkS")
+		(uuid "7b3c0000-0000-4000-8000-000000000001")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "TerminalBlock_Phoenix_MKDSN-1,5-2-5.08_1x02_P5.08mm_Horizontal"
+		(at 2.54 4.4 0)
+		(layer "F.Fab")
+		(uuid "7b3c0000-0000-4000-8000-000000000002")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.phoenixcontact.com/us/products/1548128"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7b3c0000-0000-4000-8000-000000000003")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Terminal block, 2 pos, 5.08 mm pitch, 630 V at II/2"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7b3c0000-0000-4000-8000-000000000004")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_rect
+		(start -2.54 -5.2)
+		(end 7.62 2.95)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "7b3c0001-0000-4000-8000-000000000001")
+	)
+	(fp_line
+		(start -2.54 -2.3)
+		(end 7.62 -2.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "7b3c0001-0000-4000-8000-000000000002")
+	)
+	(fp_line
+		(start -2.04 2.45)
+		(end -2.54 2.95)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "7b3c0001-0000-4000-8000-000000000003")
+	)
+	(fp_rect
+		(start -2.65 -5.31)
+		(end 7.73 3.06)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "7b3c0002-0000-4000-8000-000000000001")
+	)
+	(fp_line
+		(start -2.65 -2.3)
+		(end 7.73 -2.3)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7b3c0002-0000-4000-8000-000000000002")
+	)
+	(fp_circle
+		(center -1.7 -3.75)
+		(end -1.45 -3.75)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill solid)
+		(layer "F.SilkS")
+		(uuid "7b3c0002-0000-4000-8000-000000000003")
+	)
+	(fp_rect
+		(start -2.9 -5.56)
+		(end 7.98 3.31)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "7b3c0003-0000-4000-8000-000000000001")
+	)
+	(pad "1" thru_hole roundrect
+		(at 0 0)
+		(size 2.6 2.6)
+		(drill 1.3)
+		(layers "*.Cu" "*.Mask")
+		(roundrect_rratio 0.25)
+		(uuid "7b3c0100-0000-4000-8000-000000000001")
+	)
+	(pad "2" thru_hole circle
+		(at 5.08 0)
+		(size 2.6 2.6)
+		(drill 1.3)
+		(layers "*.Cu" "*.Mask")
+		(uuid "7b3c0100-0000-4000-8000-000000000002")
+	)
+	(embedded_fonts no)
+	(model "${KICAD10_3DMODEL_DIR}/TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
