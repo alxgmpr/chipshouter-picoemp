@@ -11,7 +11,7 @@ EXPECTED_REFS = {
     'FID1', 'FID2', 'FID3',
     'J1', 'J2', 'J3', 'J4',
     'MH1', 'MH2', 'MH3',
-    'P1', 'P2', 'P3',
+    'J5', 'J6',
     'Q1', 'Q2', 'Q3', 'Q4',
     'R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R9',
     'R10', 'R11', 'R12', 'R13', 'R14', 'R15', 'R16',
@@ -171,9 +171,8 @@ FOOTPRINTS = {
     'J1': 'picoemp:SMA_Linx_CONSMA020_062_G_EdgeMount',
     'J2': 'Connector_JST:JST_XH_S2B-XH-A_1x02_P2.50mm_Horizontal',
     'J4': 'picoemp:SMA_Linx_CONSMA020_062_G_EdgeMount',
-    'P1': 'Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical',
-    'P2': 'Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical',
-    'P3': 'Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical',
+    'J5': 'Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical',
+    'J6': 'Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical',
     'R14': 'Resistor_SMD:R_0603_1608Metric',
     'R15': 'Resistor_SMD:R_0603_1608Metric',
     'R16': 'Resistor_SMD:R_0603_1608Metric',
@@ -213,12 +212,26 @@ def test_expected_footprint_assignments(syms):
 
 
 def test_upstream_designators_restored(syms):
+    """Upstream REV04's designator scheme, except for the headers.
+
+    The LED and SMA designators still follow upstream so that
+    BUILD-DRAWING-REV04.PDF and the README BOM explainer apply.
+
+    The headers no longer do. They were P1/P2/P3 -- a 7-pin, a 2-pin and a
+    4-pin -- and were consolidated on 2026-08-05 into J5 (1x05) and J6
+    (1x07), carrying the same signals on twelve pins instead of thirteen.
+    This test previously asserted J5/J6 were absent, treating them as
+    leftovers from the Altium import; that assertion is now wrong and has
+    been removed rather than weakened, since there is no version of it that
+    is both true and useful.
+    """
     refs = {s.ref for s in syms}
     assert {'D6', 'D8', 'D9'} <= refs, 'LEDs must be D6/D8/D9, not LED1-3'
     assert not (refs & {'LED1', 'LED2', 'LED3'}), 'LED1-3 designators still present'
-    assert {'P1', 'P2', 'P3'} <= refs, 'headers must be P1/P2/P3'
+    assert {'J5', 'J6'} <= refs, 'headers must be J5/J6'
+    assert not (refs & {'P1', 'P2', 'P3'}), \
+        'P1/P2/P3 still present -- the header consolidation is half-applied'
     assert {'J1', 'J2', 'J3', 'J4'} <= refs
-    assert 'J5' not in refs and 'J6' not in refs, 'stale J5/J6 designators remain'
 
 
 def test_sma_is_j1(syms):
@@ -227,8 +240,8 @@ def test_sma_is_j1(syms):
 
 
 def test_headers_are_2540um_pitch(syms):
-    """All original headers are 2.54 mm; the port had them at 1.00/1.27 mm."""
-    for ref in ('P1', 'P2', 'P3'):
+    """All headers are 2.54 mm; the port had them at 1.00/1.27 mm."""
+    for ref in ('J5', 'J6'):
         s = next(x for x in syms if x.ref == ref)
         assert 'P2.54mm' in s.footprint, f'{ref} footprint {s.footprint!r} is not 2.54 mm pitch'
 

@@ -82,7 +82,7 @@ def test_trigger_front_end_connectivity(tmp_path):
     genuinely new circuitry in this revision, and the highest-risk item in
     the task: a swapped or floating buffer supply pin destroys the part
     (and possibly the Pico's GPIO), and an accidental direct reconnection
-    of P1.1 to GP0 would silently bypass the Schmitt buffer and its series
+    of J6.1 to GP0 would silently bypass the Schmitt buffer and its series
     protection entirely, with no visual difference in the schematic render.
     Auto-generated net names drift across re-exports (see other tests in
     this file), so every check here is by pin co-membership, never by net
@@ -117,18 +117,18 @@ def test_trigger_front_end_connectivity(tmp_path):
     assert same_net('U2.4', 'U1.1'), \
         'U2 Y (pin 4, output) is not on the same net as U1.1 (GP0) -- buffer output is not driving GPIO0'
     # The raw trigger input (header pin + optional DNP SMA) feeds R14.
-    assert same_net('P1.1', 'J4.1'), \
-        'P1.1 and J4.1 (parallel trigger inputs) are not on the same net'
-    assert same_net('P1.1', 'R14.1'), \
-        'P1.1 is not on the same net as R14.1 (series input resistor)'
+    assert same_net('J6.1', 'J4.1'), \
+        'J6.1 and J4.1 (parallel trigger inputs) are not on the same net'
+    assert same_net('J6.1', 'R14.1'), \
+        'J6.1 is not on the same net as R14.1 (series input resistor)'
 
-    # THE regression this test exists to catch: P1.1 must NOT be directly
+    # THE regression this test exists to catch: J6.1 must NOT be directly
     # wired to GP0 any more. A direct reconnect would bypass the Schmitt
     # buffer and series/pulldown protection entirely and put the raw,
     # unbuffered trigger signal straight on the Pico's GPIO -- silently,
     # since nothing else in this suite checks for it.
-    assert not same_net('P1.1', 'U1.1'), \
-        'P1.1 and U1.1 (GP0) are on the same net -- the direct trigger-to-GPIO ' \
+    assert not same_net('J6.1', 'U1.1'), \
+        'J6.1 and U1.1 (GP0) are on the same net -- the direct trigger-to-GPIO ' \
         'path has been reconnected, bypassing the buffer'
 
 
