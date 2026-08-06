@@ -153,3 +153,40 @@ Not carried out: the Phase 1 current cross-check. Supply draw with
 MicroPython running was not re-measured, so the 0.87 mA reading above
 remains unexplained rather than confirmed as a DMM burden artifact. Low
 priority — it did not block anything.
+
+---
+
+## Phase 3 — first charge
+
+Date: 2026-08-05
+Shield: Kapton-taped, **sits flush** (see open items). J1: dust cap fitted.
+Power: USB. Script: `firmware/micropython/chargetest.py`
+
+Three consecutive runs:
+
+| Run | At rest | Time to assert | Result |
+|---|---|---|---|
+| 1 | 3.21 V | 2165 ms | PASS |
+| 2 | 3.21 V | 2110 ms | PASS |
+| 3 | 3.19 V | 2101 ms | PASS |
+
+| Check | Expected | Observed | Pass |
+|---|---|---|---|
+| CHARGED asserts | within 10 s | 2.1 s | ✅ |
+| Repeatability | — | 2101–2165 ms, 3 % spread | ✅ |
+| SW3 releases CHARGED | yes | yes, all three runs | ✅ |
+
+**What these numbers do and do not mean.** The charge time and its
+repeatability are real: the T1 channel charges consistently, not marginally.
+
+The "asserted at 0.99 V" the script prints is tautological — the poll loop
+exits the moment the net crosses `CHARGED_MAX_V = 1.0`, so it reports the
+threshold, not a measurement. Worth changing to sample after a short settle
+if that number is ever wanted.
+
+The discharge times (5899 / 3046 / 1101 ms) are dominated by operator reaction
+time between the prompt and pressing SW3. τ is 141 ms, so the circuit's share
+of each is small. These are not a measurement of discharge speed, and the
+downward trend across runs is the operator getting quicker.
+
+Rail voltage remains unverified — see "Open after bring-up".
