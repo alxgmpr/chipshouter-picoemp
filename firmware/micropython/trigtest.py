@@ -24,9 +24,12 @@
 #   P1.2. Only the silkscreen changed -- the Pico pins and the nets behind
 #   them are identical, so this script needs no edit to run there.
 #
-#   Watch -- mirrors GP0 onto the STATUS LED and counts edges, so an external
-#   source through the SMA can be checked by eye. The loopback jumper must be
-#   OFF for this phase, or GP1 fights the external driver.
+#   Watch -- mirrors GP0 onto the STATUS LED and counts edges, so an outside
+#   source can be checked by eye. GP1 is released to an input first, so the
+#   loopback jumper no longer holds the trigger down if it is left fitted.
+#   Something still has to drive the trigger: the SMA, or a wire touched from
+#   TRIG_IN to +3V3. An idle input reads 0 and the LED stays dark, which looks
+#   identical to a broken board.
 #
 # It CANNOT make high voltage: GP20 (HVPWM) and GP14 (HVPULSE) are never
 # referenced, so both stay high-Z and R5/R10 hold the Q3/Q4 gates at GND.
@@ -50,6 +53,7 @@ SLOW_HALF_MS = 1
 # short as two consecutive MicroPython pin writes can make it -- somewhere
 # under a microsecond, and the shortest edge this script can generate.
 NARROW_WIDTHS_US = (100, 10, 1, None)
+JUMPER_REMOVE_MS = 5000
 WATCH_MS = 15000
 
 
@@ -82,7 +86,12 @@ class EdgeCounter:
 
 
 def check_idle(trig):
-    """With nothing driving TRIG_IN, R15 must hold GP0 low and steady."""
+    """With nothing driving TRIG_IN, R15 must hold GP0 low and steady.
+
+    Only a real test of R15 with the loopback jumper OFF. With it fitted,
+    GP1 is already an output at 0 and holds the trigger down itself, so this
+    passes whether or not R15 is there.
+    """
     level = trig.value()
     stable = True
     deadline = utime.ticks_add(utime.ticks_ms(), IDLE_SAMPLE_MS)
@@ -192,10 +201,13 @@ def watch(trig, led, counter):
     """Mirror GP0 onto the STATUS LED and count edges from an outside source.
 
     This is the phase that covers the SMA, which the loopback jumper cannot
-    reach. Remove the jumper first.
+    reach. The caller must release GP1 first, or a jumper left fitted holds
+    the trigger at 0 for the whole phase.
     """
-    print('WATCH: %d s -- feed the SMA or J6.1. The STATUS LED follows GP0.'
+    print('WATCH: %d s. The STATUS LED follows GP0. Something has to drive'
           % (WATCH_MS // 1000))
+    print('       the trigger: the SMA, or a wire touched from TRIG_IN')
+    print('       (J6.1 / P1.1) to +3V3 (J5.1 / P3.2 on rev A).')
     counter.reset()
     last = trig.value()
     led.value(last)
@@ -210,6 +222,10 @@ def watch(trig, led, counter):
             led.value(level)
             print('  t=%6d ms  GP0 -> %d' % (utime.ticks_diff(utime.ticks_ms(), start), level))
     led.off()
+    if changes == 0 and counter.n == 0:
+        print('WATCH: NO SOURCE -- the trigger never moved. Nothing was '
+              'driving it; this says nothing about the board.')
+        return
     print('WATCH: done -- %d level changes seen by polling, %d rising edges '
           'counted by IRQ' % (changes, counter.n))
     print('       The polled figure lags a fast source; the IRQ count is the '
@@ -244,8 +260,13 @@ def main():
             results.append(False)
             print('SKIP: edge and narrow-pulse checks need the jumper.')
         print('=== RESULT: %s ===' % ('PASS' if all(results) else 'FAIL'))
-        print('Remove the jumper now if you want to test through the SMA.')
-        utime.sleep_ms(WATCH_MS // 3)
+        # Release GP1 before the watch phase. Left as an output it sits at 0
+        # and, through a jumper the operator has not removed, holds the
+        # trigger down against whatever they are trying to drive it with.
+        src.init(Pin.IN, None)
+        print('GP1 released. %d s to fit a source -- SMA, or a wire from '
+              'TRIG_IN to +3V3.' % (JUMPER_REMOVE_MS // 1000))
+        utime.sleep_ms(JUMPER_REMOVE_MS)
         watch(trig, led, counter)
     finally:
         counter.stop()

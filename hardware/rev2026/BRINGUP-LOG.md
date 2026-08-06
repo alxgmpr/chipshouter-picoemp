@@ -317,17 +317,20 @@ CHARGED, and discharges on SW3. Stock firmware is installed as `main.py`.
   MicroPython running was not taken.
 - **Upstream `cspico_simple.py` has the CHARGED two-pad defect** described
   above. Not fixed here; did not manifest on this board.
-- **The trigger front-end has never been exercised.** U2, R14, R15 and the
-  input SMA went on the board in this port and no phase touched them. No
-  firmware in the repo reads GP0 either — `bringup.py`, `chargetest.py` and
-  `cspico_simple.py` all ignore it. Phase 5 below is written but not run.
+- **The trigger front-end is only half tested.** Phase 5 §5.3 passes on board
+  #1: the buffered path from the header through R14 and U2 to GP0 carries DC,
+  slow edges and short pulses. Everything entering through the **SMA** is
+  still untested, as are the DC levels (§5.1) and the Schmitt trip points
+  (§5.2). No shipped firmware reads GP0 either — `cspico_simple.py`,
+  `bringup.py` and `chargetest.py` all ignore it, so the trigger does nothing
+  on a board running stock firmware.
 
 ---
 
 ## Phase 5 — trigger front-end
 
-Date: **not yet run.** Everything below is the procedure and its expected
-values; the Measured and Pass columns are blank on purpose.
+Date: 2026-08-06 for §5.3, on board #1. **§5.0, §5.1 and §5.2 have not been
+run** — their Measured and Pass columns are blank on purpose.
 
 Script: `firmware/micropython/trigtest.py`
 
@@ -380,6 +383,11 @@ R16 is not.
 SMA's centre-pin joint is the thing most likely to be bad. 5.0.9 catches R16
 fitted, which would put the unbuffered node straight onto GP0.
 
+`R15` is an easier probe point for the buffer input than U2's SOT-23-5 pins:
+**pad 1 is the input node, pad 2 is GND**. Which one is which physically
+depends on how R15 is rotated in the layout, so tell them apart with the
+meter — the GND pad reads 0 Ω to ground — rather than by position.
+
 ### 5.1 — powered, static
 
 USB power, nothing connected to the trigger.
@@ -429,15 +437,26 @@ self-checking rather than operator-judged.
 
 | Check | Expected | Observed | Pass |
 |---|---|---|---|
-| `IDLE` | PASS — GP0 low and steady, trigger open | | |
-| `DC` | PASS — GP0 follows 0/1/0 | | |
-| `EDGES` | PASS — 50 sent, 50 counted | | |
-| `NARROW 100/10/1 us, back-to-back` | PASS on all four | | |
-| `RESULT` | PASS | | |
+| `IDLE` | PASS — GP0 low and steady, trigger open | PASS | ✅ |
+| `DC` | PASS — GP0 follows 0/1/0 | PASS | ✅ |
+| `EDGES` | PASS — 50 sent, 50 counted | 50 / 50 | ✅ |
+| `NARROW 100/10/1 us, back-to-back` | PASS on all four | PASS ×4 | ✅ |
+| `RESULT` | PASS | PASS | ✅ |
 
-Then remove the jumper. The script's `WATCH` phase mirrors GP0 onto the STATUS
-LED for 15 s and counts rising edges, which is how the SMA gets tested — the
-jumper cannot reach it.
+**The buffered path is good on board #1.** GP1 → header → R14 → U2 → GP0
+carries DC, 50 slow edges with no extras, and a pulse as short as two
+consecutive MicroPython pin writes.
+
+Two caveats on what that does *not* cover. The jumper enters at the header, so
+the SMA and its centre-pin joint are untested — that is what §5.4 and the
+`WATCH` phase are for. And `IDLE` is only a real test of R15 with the jumper
+off: fitted, GP1 is already an output at 0 and holds the trigger down itself.
+
+`WATCH` reported no source on the first three runs, correctly — nothing was
+driving the trigger. On the first two the jumper was fitted mid-phase, which
+does nothing on its own: GP1 was still an output at 0. The script now releases
+GP1 to an input before `WATCH` and says so, so a jumper left in place no longer
+fights an outside source.
 
 It cannot make high voltage: GP20 and GP14 are never referenced, enforced by
 `tests/test_bringup_firmware.py::test_cannot_drive_hv`.
