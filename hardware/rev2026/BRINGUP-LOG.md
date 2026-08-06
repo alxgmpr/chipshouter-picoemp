@@ -79,3 +79,35 @@ Not a concern for what Phase 1 tests. Sub-mA draw with the 3V3 rail up means
 no leakage path anywhere, which is the stronger version of the result we
 wanted. Cross-check in Phase 2: with MicroPython flashed, draw should rise to
 tens of mA. If it does not, revisit this.
+
+---
+
+## Phase 2 — I/O self-test
+
+Date: 2026-08-05
+MicroPython: v1.28.0, build `RPI_PICO`, `Raspberry Pi Pico with RP2040`
+UF2: `RPI_PICO-20260406-v1.28.0.uf2`, familyID `0xe48bff56` (RP2040), header verified before flashing
+Port: `/dev/tty.usbmodem212201`
+Script: `firmware/micropython/bringup.py`
+
+| Check | Expected | Observed | Pass |
+|---|---|---|---|
+| STATUS LED | lights alone | lit | ✅ |
+| HV_DET LED | lights alone | lit | ✅ |
+| CHARGE LED | lights alone | lit | ✅ |
+| All three together | all lit | all lit | ✅ |
+| CHARGED idle level | 1 | 1 | ✅ |
+| ARM button | PASS | PASS | ✅ |
+| PULSE button | PASS | PASS | ✅ |
+
+The script's own `RESULT: PASS` covers only the two button presses — it
+cannot sense the LEDs. The four LED rows above are operator-confirmed.
+
+`U1` is `SC0915`, a plain Pico, so the non-W `RPI_PICO` build is correct.
+Two other `/dev/tty.usbmodem*` ports on this host belong to an unrelated
+device and do not respond to mpremote.
+
+Not carried out: the Phase 1 current cross-check. Supply draw with
+MicroPython running was not re-measured, so the 0.87 mA reading above
+remains unexplained rather than confirmed as a DMM burden artifact. Low
+priority — it did not block anything.
