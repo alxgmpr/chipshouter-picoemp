@@ -189,4 +189,93 @@ time between the prompt and pressing SW3. τ is 141 ms, so the circuit's share
 of each is small. These are not a measurement of discharge speed, and the
 downward trend across runs is the operator getting quicker.
 
-Rail voltage remains unverified — see "Open after bring-up".
+Rail voltage measured in Phase 4 — see below.
+
+---
+
+## Phase 4 — stock firmware
+
+Date: 2026-08-05
+Firmware: `firmware/micropython/cspico_simple.py` copied to `:main.py`
+
+| Check | Expected | Observed | Pass |
+|---|---|---|---|
+| ARM lights CHARGE LED | immediately | yes | ✅ |
+| HV LED follows | ~2 s | yes | ✅ |
+| SW3 drops HV LED | yes | yes | ✅ |
+| 60 s auto-disarm | CHARGE LED off | yes | ✅ |
+
+PULSE not exercised — no injection tip. See spec section 8.
+
+**The upstream CHARGED defect did not manifest on this board.** Stock firmware
+configures GP18 only and leaves GP26's pull-down on the net, but the HV LED
+behaved correctly throughout — no spurious assert at rest, no flicker. This
+supports the earlier claim that upstream "mostly works" despite the defect,
+which had been asserted without observation. One board, one session; not a
+strong result, but it is now an observation rather than a guess.
+
+### Rail voltage — approximately 261 V
+
+Measured with the DMM across J3, i.e. `HV_SENSE` to `HV_RTN`: **250 V** while
+charged, decaying after auto-disarm.
+
+That reading is loaded. The DMM's 10 MΩ input sits in parallel with R1 plus
+the opto LED, so it is not a direct rail measurement:
+
+```
+HV_RAIL --[R2 300k]-- HV_SENSE --+--[R1 20M]--[LED]-- HV_RTN
+                                 +--[DMM 10M]--------/
+```
+
+Solving the node at 250 V with the LED at ~1.2 V:
+
+| Branch | Current |
+|---|---|
+| through R1 + LED | (250 − 1.2) / 20 M = 12.4 µA |
+| through the DMM | 250 / 10 M = 25.0 µA |
+| total through R2 | 37.4 µA → 11.2 V across R2 |
+
+**V_rail ≈ 261 V.** This corroborates the ~250 V figure that previously came
+only from the firmware's empirically tuned duty cycle, and leaves comfortable
+headroom against C3's 630 V and Q2's 650 V.
+
+**Assumption: 10 MΩ DMM input impedance.** The result is sensitive to it — the
+same 250 V reading at 1 MΩ input would imply a 329 V rail. Confirm the meter's
+spec before treating 261 V as settled.
+
+The observed decay after auto-disarm is consistent: the DMM shortens the bleed
+path from 20.3 MΩ to ~6.97 MΩ, so τ falls from 9.5 s to 3.3 s.
+
+This measurement is repeatable and is now the documented way to check the rail
+without an HV probe.
+
+---
+
+## Bring-up complete
+
+All five phases pass. The board charges to roughly 261 V in ~2.1 s, asserts
+CHARGED, and discharges on SW3. Stock firmware is installed as `main.py`.
+
+## Open after bring-up
+
+- **Rail voltage is approximate, not qualified.** 261 V is derived from a
+  loaded divider measurement with an assumed 10 MΩ meter input, not read
+  directly. A proper HV probe would settle it.
+- **No injection tip, so pulsing has never been exercised.** Suggested parts:
+  Würth `744710603` inductor plus a `CONSMA013.062` edge-mount SMA male. See
+  `hardware/injection_tips/README.md`.
+- **Mounting holes mirrored.** MH1/MH2 sit on the opposite diagonal to the
+  1551G's screw bores; the shield is Kapton-taped rather than screwed. The
+  proposed fix is to swap MH1's and MH2's Y coordinates — but see the next
+  item before editing anything.
+- **The shield seats flush, contradicting the layout record.** `CLAUDE.md` and
+  `LAYOUT-HANDOFF.md` both state Q2 fouls the shield rim with 0.00 mm clear
+  against 2.32 mm needed, and call it the last open item before the shield
+  sits flat. It sits flat on the physical board. Either that note is stale or
+  the fabbed board differs from the working copy — which is itself on the
+  `+25.4 mm` shifted layout rather than the `rev2026` geometry. Establish
+  which revision was actually fabbed before touching MH1/MH2.
+- **Phase 1's 0.87 mA draw was never explained**, and the cross-check with
+  MicroPython running was not taken.
+- **Upstream `cspico_simple.py` has the CHARGED two-pad defect** described
+  above. Not fixed here; did not manifest on this board.
