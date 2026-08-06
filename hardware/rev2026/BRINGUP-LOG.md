@@ -345,9 +345,19 @@ Two naming traps. **`TRIG_BUF` is the buffer's input node, not its output** —
 the output net is plain `GP0`. And `GP0` is not on any header, so the only
 places to probe it are U2 pin 4 and the Pico's pin 1.
 
-**Board #1 designators.** This is rev B naming. On board #1 the trigger SMA is
-`J4`, and the 7-pin header is `P1` — so the loopback jumper described below is
-`P1.1 ↔ P1.2` there, not `J6.1 ↔ J6.2`. `trigtest.py` prints the rev B names.
+**Board #1 is rev A, and the tables below are in rev B names.** Nothing
+electrical differs in this path — same Pico pins, same nets, same parts — so
+`trigtest.py` runs on rev A unedited. Only the silkscreen names change:
+
+| What | Rev B (below) | Rev A (board #1) |
+|---|---|---|
+| Trigger input SMA | `J3` | **`J4`** |
+| 7-pin header: `TRIG_IN`, `GP1`–`GP5`, `GND` | `J6` | **`P1`** |
+| Loopback jumper | `J6.1 ↔ J6.2` | **`P1.1 ↔ P1.2`** |
+| `+3V3` pin for 5.1.3 | `J5.1` | **`P3.2`** (4-pin: `CHARGED`, `+3V3`, `GND`, `HVPWM`) |
+
+`J3` in a rev A context is the HV terminal block, not the trigger — keep the
+two apart when probing.
 
 ### 5.0 — cold checks
 
@@ -407,7 +417,13 @@ mpremote connect <port> run trigtest.py
 ```
 
 Needs one jumper, `J6.1 ↔ J6.2` (`P1.1 ↔ P1.2` on board #1), and **nothing
-else on TRIG_IN or the SMA** — GP1 would be fighting it. The script drives its
+else on TRIG_IN or the SMA** — GP1 would be fighting it.
+
+Precondition: board disarmed and the cap down before mpremote connects. Stock
+`main.py` is running on board #1, and `mpremote` interrupts it — but the
+RP2040's PWM slice keeps running after the script that started it stops, so
+interrupting mid-charge leaves HVPWM driving. `trigtest.py` never references
+GP20 and so cannot stop it either. Confirm the HV LED is out first. The script drives its
 own trigger through the whole chain and checks GP0 follows, so it is
 self-checking rather than operator-judged.
 

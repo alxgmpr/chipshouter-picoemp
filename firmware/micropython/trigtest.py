@@ -20,6 +20,10 @@
 #   DISCONNECT anything else driving TRIG_IN first, including the SMA: GP1
 #   would be fighting it.
 #
+#   On a rev A board that header is P1, so the same two pins are P1.1 and
+#   P1.2. Only the silkscreen changed -- the Pico pins and the nets behind
+#   them are identical, so this script needs no edit to run there.
+#
 #   Watch -- mirrors GP0 onto the STATUS LED and counts edges, so an external
 #   source through the SMA can be checked by eye. The loopback jumper must be
 #   OFF for this phase, or GP1 fights the external driver.
@@ -118,8 +122,8 @@ def check_dc(trig, src):
 
     if low == high:
         print('DC: NO RESPONSE -- GP0 stayed at %d while GP1 was driven both '
-              'ways. Fit the jumper from J6.1 (TRIG_IN) to J6.2 (GP1), or '
-              'check R14/U2.' % low)
+              'ways. Fit the jumper from J6.1 (TRIG_IN) to J6.2 (GP1) -- P1.1 '
+              'to P1.2 on rev A -- or check R14/U2.' % low)
         return False
     if (low, high, back) == (0, 1, 0):
         print('DC: PASS -- GP0 follows the trigger 0/1/0')
@@ -216,7 +220,8 @@ def main():
     print('=== PicoEMP trigger front-end self-test (Phase 5) ===')
     print('HVPWM and HVPULSE are not driven by this script.')
     print('Loopback phases need a jumper: J6.1 (TRIG_IN) <-> J6.2 (GP1),')
-    print('and nothing else connected to TRIG_IN or the SMA.')
+    print('P1.1 <-> P1.2 on a rev A board, and nothing else connected to')
+    print('TRIG_IN or the SMA.')
 
     # No pull on GP0. The RP2040 resets every pad with its pull-down enabled
     # (PADS_BANK0 reset value 0x56, bit 2 PDE=1); U2 drives hard enough that
