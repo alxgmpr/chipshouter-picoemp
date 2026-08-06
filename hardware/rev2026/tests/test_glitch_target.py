@@ -60,3 +60,60 @@ def test_target_uses_no_gpio():
     source = TARGET.read_text()
     assert 'import machine' not in source
     assert 'from machine' not in source
+
+
+ANALYZER = conftest.ROOT / 'tools' / 'analyze_glitch_log.py'
+
+
+def _load_analyzer():
+    return _load_module(ANALYZER, 'analyze_glitch_log')
+
+
+CLEAN_LOG = """GLITCH TARGET BLOCK_N 100000 EXPECTED 100000
+SEQ 0 ACC 100000
+SEQ 1 ACC 100000
+SEQ 2 ACC 100000
+"""
+
+FAULTED_LOG = """GLITCH TARGET BLOCK_N 100000 EXPECTED 100000
+SEQ 0 ACC 100000
+SEQ 1 ACC 99999
+SEQ 2 ACC 100000
+SEQ 3 ACC 100002
+"""
+
+
+def test_clean_log_reports_no_faults():
+    a = _load_analyzer().analyze(CLEAN_LOG, 100000)
+    assert a['blocks'] == 3
+    assert a['faults'] == []
+    assert a['fault_rate'] == 0.0
+    assert a['last_seq'] == 2
+
+
+def test_faulted_log_reports_both_directions():
+    """Both a low and a high ACC are faults -- a glitch can skip or repeat."""
+    a = _load_analyzer().analyze(FAULTED_LOG, 100000)
+    assert a['blocks'] == 4
+    assert a['faults'] == [(1, 99999), (3, 100002)]
+    assert a['fault_rate'] == 0.5
+
+
+def test_truncated_final_line_is_counted_not_crashed():
+    """A capture cut off mid-line must not look like a fault.
+
+    The target is reset by design during these runs, so the last line of a
+    real log is very often a partial one. Counting that as a corrupted
+    result would manufacture faults out of the capture ending.
+    """
+    a = _load_analyzer().analyze(CLEAN_LOG + 'SEQ 3 AC', 100000)
+    assert a['blocks'] == 3
+    assert a['faults'] == []
+    assert a['malformed'] == 1
+
+
+def test_empty_log_is_not_a_division_by_zero():
+    a = _load_analyzer().analyze('', 100000)
+    assert a['blocks'] == 0
+    assert a['fault_rate'] == 0.0
+    assert a['last_seq'] is None

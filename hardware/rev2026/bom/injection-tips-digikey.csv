@@ -1,6 +1,6 @@
-732-2569-ND,2,Tip A inductor 6.0mm 10uH
-732-3763-ND,2,Tip B inductor 7.8mm 10uH
-595-DRC-0707-100K-UL-ND,2,Tip C inductor 8.5mm 10uH
-595-DRC-0807-100K-UL-ND,2,Tip D inductor 10.0mm 10uH
-732-2566-ND,2,Tip E reserve inductor 6.0mm 2.2uH
-EMPCB.SMAMST.A,6,SMA plug male edge mount end launch
+732-2569-ND,2
+732-3763-ND,2
+595-DRC-0707-100K-UL-ND,2
+595-DRC-0807-100K-UL-ND,2
+732-2566-ND,2
+EMPCB.SMAMST.A,6
