@@ -7,6 +7,44 @@ Equipment: DMM; bench PSU with current limit. No scope, no HV probe.
 
 ---
 
+## ⚠️ Designators below are board #1's, and rev B moved several
+
+This log is a record of what was measured on the first assembled board. The
+readings and conclusions stand. **The reference designators do not** — rev B
+re-designated things, so a designator here may name a different part on a
+later board.
+
+**Follow this log by what each part is, not by what it is called.**
+
+| What it is | Board #1 | Rev B |
+|---|---|---|
+| HV terminal block, the `HV_RTN` / `HV_SENSE` tap | `J3` | **`J4`** |
+| Trigger input SMA | `J4` | **`J3`** |
+| 7-pin header: `TRIG_IN`, `GP1`–`GP5`, `GND` | `P1` | **`J6`** |
+| 2-pin header: `GND`, `HVPULSE` | `P2` | folded into the 5-pin |
+| 4-pin header: `CHARGED`, `+3V3`, `GND`, `HVPWM` | `P3` | folded into the 5-pin |
+| 5-pin header: `+3V3`, `CHARGED`, `HVPULSE`, `HVPWM`, `GND` | — | **`J5`** |
+
+The HV output SMA, the JST power input, all three switches and the Pico keep
+their designators.
+
+**One functional change, not just a rename.** The arm switch now pulls its net
+to `GND`; on board #1 it pulled up to `+3V3`. Both switches are now
+pull-to-ground, which is why `firmware/micropython/bringup.py` configures both
+with `PULL_UP` and treats a press as a low reading.
+
+**Consequence: the current `bringup.py` will fail the ARM button check on
+board #1.** With an internal pull-up on a pin that board #1's arm switch drives
+to `+3V3`, the pin reads high whether or not the button is pressed, so the
+press is never seen. That script now targets rev B. Board #1 needs the arm
+switch read as `PULL_DOWN`, active high.
+
+Everything electrical in the fault-injection path is unchanged — the charge
+loop, the sense chain, the isolation barrier and the discharge path are the
+same circuit.
+
+---
+
 ## Phase 0 — cold checks
 
 Date: 2026-08-05

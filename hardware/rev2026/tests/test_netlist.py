@@ -117,8 +117,8 @@ def test_trigger_front_end_connectivity(tmp_path):
     assert same_net('U2.4', 'U1.1'), \
         'U2 Y (pin 4, output) is not on the same net as U1.1 (GP0) -- buffer output is not driving GPIO0'
     # The raw trigger input (header pin + optional DNP SMA) feeds R14.
-    assert same_net('J6.1', 'J4.1'), \
-        'J6.1 and J4.1 (parallel trigger inputs) are not on the same net'
+    assert same_net('J6.1', 'J3.1'), \
+        'J6.1 and J3.1 (parallel trigger inputs) are not on the same net'
     assert same_net('J6.1', 'R14.1'), \
         'J6.1 is not on the same net as R14.1 (series input resistor)'
 

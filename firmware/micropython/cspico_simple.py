@@ -29,10 +29,10 @@ ledArm = Signal(Pin(27, Pin.OUT)) #Arm 'on' LED
 ledStatus = Signal(Pin(7, Pin.OUT)) #Simple status LED
 ledStatus.on()
 
-# Due to original PCB being single-layer milled board, these buttons
-# used different "active" status to simplify the board routing. This
-# was left the same for final PCB.
-buttonArm = Signal(Pin(28,  Pin.IN, pull=Pin.PULL_DOWN))
+# Upstream's buttons had opposite "active" polarity, to simplify routing
+# on the original single-layer milled board. Rev-2026 puts both switches
+# on GND, so both are active-low against an internal pullup.
+buttonArm = Signal(Pin(28,  Pin.IN, pull=Pin.PULL_UP), invert=True)
 buttonPulse = Signal(Pin(11, Pin.IN, pull=Pin.PULL_UP), invert=True)
 
 # The 'charged' input routes to two pins, one of them is an ADC pin.

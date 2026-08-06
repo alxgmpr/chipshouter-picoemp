@@ -170,7 +170,11 @@ FOOTPRINTS = {
     'U2': 'Package_TO_SOT_SMD:SOT-23-5',
     'J1': 'picoemp:SMA_Linx_CONSMA020_062_G_EdgeMount',
     'J2': 'Connector_JST:JST_XH_S2B-XH-A_1x02_P2.50mm_Horizontal',
-    'J4': 'picoemp:SMA_Linx_CONSMA020_062_G_EdgeMount',
+    # J3 is the trigger SMA and J4 the HV terminal block. These were the
+    # other way round until 2026-08-05; the PCB is authoritative and the
+    # schematic was re-designated to match it.
+    'J3': 'picoemp:SMA_Linx_CONSMA020_062_G_EdgeMount',
+    'J4': 'picoemp:TerminalBlock_Phoenix_MKDSN-1,5-2-5.08_1x02_P5.08mm_Horizontal',
     'J5': 'Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical',
     'J6': 'Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical',
     'R14': 'Resistor_SMD:R_0603_1608Metric',
@@ -272,23 +276,31 @@ def test_bypass_resistor_is_dnp(syms):
 
 
 def test_trigger_sma_is_populated(syms):
-    """J4 is fitted, not DNP.
+    """The trigger SMA is fitted, not DNP.
+
+    This is J3. It was J4 until 2026-08-05, when the schematic was
+    re-designated against the PCB and J3/J4 swapped roles.
 
     It started as an optional footprint. That is why it was given the cramped
-    east strip when the USB notch and J4 competed for the north edge -- the
-    always-used part won and the optional one took the compromise. J4 being
-    populated changes that trade, so if this ever flips back to DNP the
-    placement reasoning should be revisited too.
+    east strip when the USB notch and the trigger SMA competed for the north
+    edge -- the always-used part won and the optional one took the
+    compromise. Its being populated changes that trade, so if this ever flips
+    back to DNP the placement reasoning should be revisited too.
+    """
+    j3 = next(s for s in syms if s.ref == 'J3')
+    assert not j3.dnp, 'J3 is a fitted connector; DNP would contradict the BOM'
+    assert j3.in_bom, 'J3 must be in the BOM'
+
+
+def test_hv_terminal_block_is_wide_pitch(syms):
+    """The HV terminal block carries ~500V. 2.54mm fails IEC 60664-1 creepage.
+
+    This is J4. It was J3 until 2026-08-05, when the schematic was
+    re-designated against the PCB and J3/J4 swapped roles -- J3 is now the
+    trigger SMA. The test follows the connector, not the designator.
     """
     j4 = next(s for s in syms if s.ref == 'J4')
-    assert not j4.dnp, 'J4 is a fitted connector; DNP would contradict the BOM'
-    assert j4.in_bom, 'J4 must be in the BOM'
-
-
-def test_j3_is_wide_pitch(syms):
-    """J3 carries ~500V. 2.54mm fails IEC 60664-1 creepage."""
-    j3 = next(s for s in syms if s.ref == 'J3')
-    assert j3.footprint, 'J3 has no footprint'
-    assert '2.54mm' not in j3.footprint, 'J3 must not be 2.54mm pitch'
-    assert any(p in j3.footprint for p in ('5.08mm', '5.0mm', '3.96mm')), \
-        f'J3 footprint {j3.footprint!r} does not look like a wide-pitch connector'
+    assert j4.footprint, 'J4 has no footprint'
+    assert '2.54mm' not in j4.footprint, 'J4 must not be 2.54mm pitch'
+    assert any(p in j4.footprint for p in ('5.08mm', '5.0mm', '3.96mm')), \
+        f'J4 footprint {j4.footprint!r} does not look like a wide-pitch connector'

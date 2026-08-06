@@ -68,9 +68,11 @@ def main():
 
     led_walk()
 
-    # SW1 pulls ARM_SW up to +3V3, so pressed reads high against a pulldown.
-    arm = Pin(PIN_ARM_SW, Pin.IN, Pin.PULL_DOWN)
-    # SW2 pulls PULSE_SW down to GND, so pressed reads low against a pullup.
+    # Both buttons pull their net down to GND, so pressed reads low against
+    # a pullup. SW1 used to pull ARM_SW up to +3V3 instead; that asymmetry
+    # was inherited from upstream's milled single-layer prototype and was
+    # dropped when the arm switch moved to GND.
+    arm = Pin(PIN_ARM_SW, Pin.IN, Pin.PULL_UP)
     pulse = Pin(PIN_PULSE_SW, Pin.IN, Pin.PULL_UP)
     # CHARGED needs BOTH its pads configured. The RP2040 resets every GPIO
     # pad with its pull-down enabled (PADS_BANK0 reset value 0x56, bit 2
@@ -90,7 +92,7 @@ def main():
         print('WARNING: CHARGED is in the indeterminate band -- the digital '
               'level above is not trustworthy.')
 
-    ok_arm = wait_for_press('ARM', arm, 1)
+    ok_arm = wait_for_press('ARM', arm, 0)
     ok_pulse = wait_for_press('PULSE', pulse, 0)
 
     print('=== RESULT: %s ===' % ('PASS' if (ok_arm and ok_pulse) else 'FAIL'))

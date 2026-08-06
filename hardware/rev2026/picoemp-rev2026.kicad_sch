@@ -408,7 +408,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector:Conn_01x04_Pin"
+		(symbol "Connector:Conn_01x05_Pin"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -419,7 +419,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "J"
-				(at 0 5.08 0)
+				(at 0 7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -428,7 +428,7 @@
 					)
 				)
 			)
-			(property "Value" "Conn_01x04_Pin"
+			(property "Value" "Conn_01x05_Pin"
 				(at 0 -7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -460,7 +460,7 @@
 					)
 				)
 			)
-			(property "Description" "Generic connector, single row, 01x04, script generated"
+			(property "Description" "Generic connector, single row, 01x05, script generated"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -503,7 +503,18 @@
 					)
 				)
 			)
-			(symbol "Conn_01x04_Pin_1_1"
+			(symbol "Conn_01x05_Pin_1_1"
+				(rectangle
+					(start 0.8636 5.207)
+					(end 0 4.953)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
 				(rectangle
 					(start 0.8636 2.667)
 					(end 0 2.413)
@@ -546,6 +557,18 @@
 					)
 					(fill
 						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 5.08) (xy 0.8636 5.08)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
 					)
 				)
 				(polyline
@@ -597,7 +620,7 @@
 					)
 				)
 				(pin passive line
-					(at 5.08 2.54 180)
+					(at 5.08 5.08 180)
 					(length 3.81)
 					(name "Pin_1"
 						(effects
@@ -615,7 +638,7 @@
 					)
 				)
 				(pin passive line
-					(at 5.08 0 180)
+					(at 5.08 2.54 180)
 					(length 3.81)
 					(name "Pin_2"
 						(effects
@@ -633,7 +656,7 @@
 					)
 				)
 				(pin passive line
-					(at 5.08 -2.54 180)
+					(at 5.08 0 180)
 					(length 3.81)
 					(name "Pin_3"
 						(effects
@@ -651,7 +674,7 @@
 					)
 				)
 				(pin passive line
-					(at 5.08 -5.08 180)
+					(at 5.08 -2.54 180)
 					(length 3.81)
 					(name "Pin_4"
 						(effects
@@ -661,6 +684,24 @@
 						)
 					)
 					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -5.08 180)
+					(length 3.81)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5258,16 +5299,6 @@
 		)
 		(uuid "8f1298f6-47a2-4d50-9b20-bbfd54a20d7e")
 	)
-	(text "Physical\n"
-		(exclude_from_sim no)
-		(at 29.972 185.166 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "a2e4b620-6dd7-46cb-96ab-1267a3241c9f")
-	)
 	(text "Input Power: 2x AA Battery"
 		(exclude_from_sim no)
 		(at 146.05 41.91 0)
@@ -5816,6 +5847,16 @@
 	)
 	(wire
 		(pts
+			(xy 189.23 87.63) (xy 201.93 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07ee6a28-3ca5-447b-ae2b-2a5bd35caf1c")
+	)
+	(wire
+		(pts
 			(xy 182.88 309.88) (xy 182.88 297.18)
 		)
 		(stroke
@@ -5926,16 +5967,6 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 208.28) (xy 80.01 208.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "17ae34b5-f914-405d-bf11-118cb40a074f")
-	)
-	(wire
-		(pts
 			(xy 279.4 368.3) (xy 279.4 358.14)
 		)
 		(stroke
@@ -6017,7 +6048,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 208.28) (xy 43.18 208.28)
+			(xy 201.93 82.55) (xy 191.77 82.55)
 		)
 		(stroke
 			(width 0)
@@ -6337,16 +6368,6 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 210.82) (xy 80.01 210.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "45e29fb4-6ce4-417b-872d-ead569d4b28b")
-	)
-	(wire
-		(pts
 			(xy 337.82 83.82) (xy 355.6 83.82)
 		)
 		(stroke
@@ -6354,6 +6375,16 @@
 			(type default)
 		)
 		(uuid "466b9629-20f8-406d-87a4-848d95483b24")
+	)
+	(wire
+		(pts
+			(xy 189.23 87.63) (xy 189.23 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4710502a-d5de-4fa4-a090-c7785d6098a8")
 	)
 	(wire
 		(pts
@@ -6444,16 +6475,6 @@
 			(type default)
 		)
 		(uuid "58f7e8dd-0bfa-4e51-977a-64d03b33c521")
-	)
-	(wire
-		(pts
-			(xy 80.01 208.28) (xy 80.01 205.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5ae30b89-add6-41d5-97c9-b4486a7fc859")
 	)
 	(wire
 		(pts
@@ -6577,16 +6598,6 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 205.74) (xy 35.56 218.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6ca86b3b-2dfc-4e96-826a-9c2671aa7671")
-	)
-	(wire
-		(pts
 			(xy 355.6 101.6) (xy 373.38 101.6)
 		)
 		(stroke
@@ -6647,7 +6658,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 205.74) (xy 82.55 205.74)
+			(xy 201.93 80.01) (xy 191.77 80.01)
 		)
 		(stroke
 			(width 0)
@@ -7117,16 +7128,6 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 210.82) (xy 80.01 218.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b64273d4-8253-4499-be13-4b11ead4d9e5")
-	)
-	(wire
-		(pts
 			(xy 373.38 72.39) (xy 373.38 60.96)
 		)
 		(stroke
@@ -7154,6 +7155,16 @@
 			(type default)
 		)
 		(uuid "badf2d24-01ac-445d-8338-492f9c87d540")
+	)
+	(wire
+		(pts
+			(xy 248.92 132.08) (xy 248.92 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bb272b3a-b1c7-4a50-82c4-5ac9a05b7ec6")
 	)
 	(wire
 		(pts
@@ -7257,13 +7268,13 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 205.74) (xy 53.34 205.74)
+			(xy 201.93 77.47) (xy 189.23 77.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c94d1767-3f81-4556-9093-240be16e4ac7")
+		(uuid "c6845696-d970-4ad2-b777-a0905284f25a")
 	)
 	(wire
 		(pts
@@ -7274,16 +7285,6 @@
 			(type default)
 		)
 		(uuid "cbc7b18f-69dc-4787-80b6-193aaf7bceb7")
-	)
-	(wire
-		(pts
-			(xy 248.92 132.08) (xy 248.92 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cc2b37bd-2310-4b98-944c-48d683ca1a20")
 	)
 	(wire
 		(pts
@@ -7317,7 +7318,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 213.36) (xy 82.55 213.36)
+			(xy 201.93 85.09) (xy 191.77 85.09)
 		)
 		(stroke
 			(width 0)
@@ -7597,6 +7598,16 @@
 	)
 	(wire
 		(pts
+			(xy 189.23 71.12) (xy 189.23 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fded6ab0-cdc3-4e86-9c69-7e1d4a4f1b5c")
+	)
+	(wire
+		(pts
 			(xy 365.76 345.44) (xy 383.54 345.44)
 		)
 		(stroke
@@ -7636,7 +7647,7 @@
 		(uuid "0b962cbc-ee0b-4473-bf46-bab5602c297c")
 	)
 	(label "HVPULSE"
-		(at 43.18 208.28 0)
+		(at 191.77 82.55 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7666,7 +7677,7 @@
 		(uuid "234c2753-4cd9-4fab-a06e-ba4e5956dba5")
 	)
 	(label "VBUS"
-		(at 142.24 57.15 0)
+		(at 142.24 63.5 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7776,7 +7787,7 @@
 		(uuid "5fdd4b70-4ddf-4acc-9495-bc26e157f53b")
 	)
 	(label "HVPWM"
-		(at 82.55 213.36 0)
+		(at 191.77 85.09 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8046,7 +8057,7 @@
 		(uuid "f0ac43e8-1373-4cf7-ad3d-20a9b4ccd1d0")
 	)
 	(label "CHARGED"
-		(at 82.55 205.74 0)
+		(at 191.77 80.01 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8166,6 +8177,17 @@
 				(justify right bottom)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 83.82 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "dd691376-9ce7-4865-a9c5-de189ef01d37")
 		)
@@ -8193,7 +8215,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "05844182-07b9-4107-b598-500957eec812")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR05"
 			(at 147.32 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -8254,7 +8276,7 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR010")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -8361,6 +8383,17 @@
 				(justify left bottom)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 223.52 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "721a5072-8f37-43cd-84a8-c0aac66ac6ba")
 		)
@@ -8388,7 +8421,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0cbae324-6d03-480d-827e-86ebbeedd03d")
-		(property "Reference" "P1"
+		(property "Reference" "J6"
 			(at 66.675 76.2 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8442,6 +8475,17 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "connector/pin_header_socket"
+			(at 66.04 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "7"
 			(uuid "80b3adbb-caba-4417-bdb3-eae8e47549fd")
 		)
@@ -8466,7 +8510,7 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "P1")
+					(reference "J6")
 					(unit 1)
 				)
 			)
@@ -8561,6 +8605,17 @@
 		)
 		(property "DigiKey" "399-5089-2-ND"
 			(at 267.19 617.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 377.19 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8687,6 +8742,17 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 279.4 355.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "99c55fbd-6366-45d5-bccf-9d9f22e5c0f1")
 		)
@@ -8714,7 +8780,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "145cc40e-3768-4af4-8a25-3cdd47d7ac93")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR01"
 			(at 55.88 156.21 0)
 			(hide yes)
 			(show_name no)
@@ -8775,7 +8841,7 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR07")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -8983,6 +9049,17 @@
 		)
 		(property "DigiKey" "311-100HRCT-ND"
 			(at 242.58 553.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 322.58 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9247,7 +9324,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2b749afb-00a0-4171-af76-b697c7e53c8d")
-		(property "Reference" "#PWR020"
+		(property "Reference" "#PWR018"
 			(at 373.38 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -9308,7 +9385,7 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR020")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -9440,7 +9517,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2e7db19b-bb9e-4fb7-bbdb-43ba3415c299")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR014"
 			(at 271.78 372.11 0)
 			(hide yes)
 			(show_name no)
@@ -9501,7 +9578,7 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR03")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -9519,7 +9596,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3af3e60f-b699-49bd-8c5d-429c3b3b085d")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR015"
 			(at 281.94 304.8 0)
 			(hide yes)
 			(show_name no)
@@ -9580,7 +9657,7 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR04")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -9598,7 +9675,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3bcc58d0-b8a8-4837-81ba-9cdcee219be1")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR08"
 			(at 182.88 297.18 0)
 			(hide yes)
 			(show_name no)
@@ -9659,7 +9736,7 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR01")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -9993,6 +10070,17 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 274.32 297.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "387d8446-3b9e-4277-baa9-467e9bbc4fe8")
 		)
@@ -10109,6 +10197,17 @@
 		)
 		(property "MPN" "APT1608SURCK"
 			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 233.68 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10270,7 +10369,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4dc4d74d-5bab-46cd-b671-276f0d58d3b9")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR013"
 			(at 256.54 228.6 0)
 			(hide yes)
 			(show_name no)
@@ -10331,7 +10430,85 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR02")
+					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 189.23 71.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "553cbc08-82fc-4f85-9b00-871798367b8c")
+		(property "Reference" "#PWR09"
+			(at 189.23 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 189.23 66.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 189.23 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 189.23 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 189.23 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "697c1c13-f60c-40ac-bb78-25978734d6c7")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -10426,6 +10603,17 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "package/TO_SOT/SMD"
+			(at 381 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "0d18dbec-0ed7-479c-bcb2-63a79251874e")
 		)
@@ -10456,7 +10644,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5767bbc2-f478-4624-8fd4-ac8bbabeef62")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR02"
 			(at 78.74 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -10517,7 +10705,7 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR011")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -10603,6 +10791,17 @@
 		)
 		(property "Manufacturer" "Alpha & Omega Semiconductor"
 			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "package/gullwing"
+			(at 259.08 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10731,6 +10930,17 @@
 				(justify right bottom)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 350.52 335.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "309b850f-7997-4e0d-aef0-4a6fb580290a")
 		)
@@ -10847,12 +11057,26 @@
 				)
 			)
 		)
-		(property "BOM Comments" "HV storage cap, 5.7x5.0x2.0 plain chip on C_2220_5750Metric. Buy spares -- no soft termination, and MH2 is 9.9mm away, so go gentle tightening that screw." (at 0 0 0)
+		(property "BOM Comments" "HV storage cap, 5.7x5.0x2.0 plain chip on C_2220_5750Metric. Buy spares -- no soft termination, and MH2 is 9.9mm away, so go gentle tightening that screw."
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
+			)
+		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 345.44 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -10971,6 +11195,17 @@
 				(justify right bottom)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 83.82 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "6d08ba59-b626-42ea-9632-e89cc7e75b2c")
 		)
@@ -11078,6 +11313,17 @@
 		)
 		(property "MPN" "C2012X5R1H475K125AB"
 			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 287.02 297.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11202,6 +11448,17 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 355.6 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "9a7b03a7-5290-4823-b0fa-09678f453da3")
 		)
@@ -11284,89 +11541,21 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "fiducial"
+			(at 148.59 194.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
 					(reference "FID1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 35.56 218.44 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6e9242da-f654-418c-bb4d-31373d6c2aeb")
-		(property "Reference" "#PWR06"
-			(at 35.56 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 38.1 219.7099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 35.56 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 35.56 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 35.56 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "5c4174a5-e147-408f-a4cf-f6fe5feaf73a")
-		)
-		(instances
-			(project "picoemp-rev2026"
-				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -11453,7 +11642,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 80.01 218.44 0)
+		(at 189.23 92.71 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11463,8 +11652,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "80422243-770a-4279-9d04-2530f0bad794")
-		(property "Reference" "#PWR013"
-			(at 80.01 224.79 0)
+		(property "Reference" "#PWR010"
+			(at 189.23 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11475,7 +11664,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 80.01 223.52 0)
+			(at 189.23 97.79 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11485,7 +11674,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 80.01 218.44 0)
+			(at 189.23 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11496,7 +11685,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 80.01 218.44 0)
+			(at 189.23 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11507,7 +11696,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 80.01 218.44 0)
+			(at 189.23 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11523,7 +11712,7 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR013")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -11541,7 +11730,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "80ff3f19-1718-4b8d-8c59-d1de8d03ebef")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR06"
 			(at 165.1 146.05 0)
 			(hide yes)
 			(show_name no)
@@ -11602,7 +11791,7 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR08")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -11709,6 +11898,17 @@
 		)
 		(property "MPN" "APT1608CGCK"
 			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 66.04 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11834,6 +12034,17 @@
 					(size 1.27 1.27)
 				)
 				(justify right bottom)
+			)
+		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 256.54 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -12073,6 +12284,17 @@
 		)
 		(property "MPN" "APT1608SURCK"
 			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 66.04 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12423,6 +12645,17 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "package/gullwing"
+			(at 259.08 355.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f68913c1-2bfb-44d0-a228-eca96e1ed7c4")
 		)
@@ -12443,7 +12676,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 123.19 210.82 0)
+		(at 137.16 201.93 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12454,7 +12687,7 @@
 		(fields_autoplaced yes)
 		(uuid "a003b8dc-0d27-462b-a829-d71204539c9f")
 		(property "Reference" "MH2"
-			(at 125.73 209.5499 0)
+			(at 139.7 200.6599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12465,7 +12698,7 @@
 			)
 		)
 		(property "Value" "M3"
-			(at 125.73 212.0899 0)
+			(at 139.7 203.1999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12476,7 +12709,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 123.19 210.82 0)
+			(at 137.16 201.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12487,7 +12720,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 123.19 210.82 0)
+			(at 137.16 201.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12498,7 +12731,18 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 123.19 210.82 0)
+			(at 137.16 201.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
+			(at 137.16 201.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12618,6 +12862,17 @@
 				(justify right bottom)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 213.36 342.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "d51f77ac-062f-449a-afdd-576c01440212")
 		)
@@ -12733,6 +12988,17 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 337.82 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "d275ac9b-68a6-461d-bbd3-274f9fb0e307")
 		)
@@ -12743,85 +13009,6 @@
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
 					(reference "R16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3V3")
-		(at 248.92 129.54 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ab0bfb7c-8482-46ac-a2f4-278f51a14e23")
-		(property "Reference" "#PWR015"
-			(at 248.92 129.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 251.46 128.2699 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 248.92 129.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 248.92 129.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 248.92 129.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "fa73b912-4c3a-4bc0-bfd3-05c2a3c459c8")
-		)
-		(instances
-			(project "picoemp-rev2026"
-				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -12839,7 +13026,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "addda965-92f3-4544-8e1c-1d31cf890e2e")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR016"
 			(at 289.56 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -12900,7 +13087,7 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR05")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -12918,7 +13105,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b5dc0e9a-592b-4e37-8c21-45cd086226a1")
-		(property "Reference" "J4"
+		(property "Reference" "J3"
 			(at 316.23 92.9639 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12995,12 +13182,15 @@
 				)
 			)
 		)
-		(property "DigiKey" "343-CONSMA020.062-G-ND" (at 0 0 0)
+		(property "DigiKey" "343-CONSMA020.062-G-ND"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -13012,7 +13202,7 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "J4")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -13119,6 +13309,17 @@
 					(size 1.27 1.27)
 				)
 				(justify right bottom)
+			)
+		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 368.3 246.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -13239,6 +13440,17 @@
 				(justify right bottom)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 243.84 363.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "296f9d90-581a-4610-8965-58116920b3fd")
 		)
@@ -13343,6 +13555,17 @@
 				(justify right bottom)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 347.98 236.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "ddf2de01-6310-4f9a-ab83-8e31112d4d13")
 		)
@@ -13353,89 +13576,6 @@
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
 					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_01x02_Pin")
-		(at 58.42 205.74 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "be82102a-9c83-4d6b-ace8-374575497906")
-		(property "Reference" "P2"
-			(at 59.69 205.7399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "Header 2"
-			(at 59.69 208.2799 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 58.42 205.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 58.42 205.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 58.42 205.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "59036fe7-bc1f-4726-ac8f-77a2a6d84e65")
-		)
-		(pin "2"
-			(uuid "44828417-9cdd-40da-9862-1635b9f1e99b")
-		)
-		(instances
-			(project "picoemp-rev2026"
-				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "P2")
 					(unit 1)
 				)
 			)
@@ -13498,6 +13638,17 @@
 			)
 		)
 		(property "Description" "Fiducial Marker"
+			(at 148.59 209.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "fiducial"
 			(at 148.59 209.55 0)
 			(hide yes)
 			(show_name no)
@@ -13574,6 +13725,17 @@
 			)
 		)
 		(property "Description" "Fiducial Marker"
+			(at 148.59 201.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "fiducial"
 			(at 148.59 201.93 0)
 			(hide yes)
 			(show_name no)
@@ -13692,6 +13854,17 @@
 					(size 1.27 1.27)
 				)
 				(justify right bottom)
+			)
+		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 213.36 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -13849,7 +14022,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c673e48c-ce26-4168-b681-94e863285959")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR012"
 			(at 256.54 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -13910,7 +14083,7 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR016")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -13918,7 +14091,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 123.19 195.58 0)
+		(at 137.16 194.31 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13929,7 +14102,7 @@
 		(fields_autoplaced yes)
 		(uuid "d18877b0-4851-4e5b-9c00-15c4656de34c")
 		(property "Reference" "MH1"
-			(at 125.73 194.3099 0)
+			(at 139.7 193.0399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13940,7 +14113,7 @@
 			)
 		)
 		(property "Value" "M3"
-			(at 125.73 196.8499 0)
+			(at 139.7 195.5799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13951,7 +14124,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 123.19 195.58 0)
+			(at 137.16 194.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13962,7 +14135,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 123.19 195.58 0)
+			(at 137.16 194.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13973,7 +14146,18 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 123.19 195.58 0)
+			(at 137.16 194.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
+			(at 137.16 194.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14097,6 +14281,17 @@
 				(justify right bottom)
 			)
 		)
+		(property "KiLib_Generator" "connector/JST"
+			(at 142.24 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "01272a96-8358-4d90-9c95-9ae47445bb25")
 		)
@@ -14114,7 +14309,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 123.19 228.6 0)
+		(at 137.16 213.36 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14124,8 +14319,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d6d2d0c7-96f8-4f66-be55-da48dd271883")
-		(property "Reference" "#PWR018"
-			(at 123.19 234.95 0)
+		(property "Reference" "#PWR03"
+			(at 137.16 219.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14136,7 +14331,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 123.19 233.68 0)
+			(at 137.16 218.44 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14146,7 +14341,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 123.19 228.6 0)
+			(at 137.16 213.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14157,7 +14352,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 123.19 228.6 0)
+			(at 137.16 213.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14168,7 +14363,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 123.19 228.6 0)
+			(at 137.16 213.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14184,7 +14379,7 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR018")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -14277,12 +14472,15 @@
 				)
 			)
 		)
-		(property "DigiKey" "343-CONSMA020.062-G-ND" (at 0 0 0)
+		(property "DigiKey" "343-CONSMA020.062-G-ND"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "2"
@@ -14313,7 +14511,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e8267d87-8aee-4058-8dbd-b4738c582f3b")
-		(property "Reference" "J3"
+		(property "Reference" "J4"
 			(at 387.35 215.8999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14421,7 +14619,7 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "J3")
+					(reference "J4")
 					(unit 1)
 				)
 			)
@@ -14673,6 +14871,82 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 248.92 134.62 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ebe93e0e-d7a6-4c2d-b87e-b31ea36b049b")
+		(property "Reference" "#PWR011"
+			(at 248.92 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 248.92 138.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 248.92 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 248.92 134.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6545d15b-eec0-4e32-8f1e-c10339e1adc7")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 241.3 299.72 180)
 		(unit 1)
@@ -14775,6 +15049,17 @@
 				(justify right bottom)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 241.3 299.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "0a0c6d3c-09b0-4d40-831d-f2b300c37622")
 		)
@@ -14785,84 +15070,6 @@
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
 					(reference "R5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3V3")
-		(at 80.01 205.74 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ee878990-ac13-472f-9fc3-87644ccba791")
-		(property "Reference" "#PWR012"
-			(at 80.01 205.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 77.47 201.422 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 80.01 205.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 80.01 205.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 80.01 205.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "fc021dda-dbe8-4f50-a4fd-11d797dd4004")
-		)
-		(instances
-			(project "picoemp-rev2026"
-				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -14971,6 +15178,17 @@
 				(justify right bottom)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 330.2 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "d11e55b7-d33d-478a-a8f9-17f0e7dd42be")
 		)
@@ -14996,9 +15214,8 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "f507a9cb-66f9-440f-82b9-dd5ed32476fd")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR04"
 			(at 142.24 158.75 0)
 			(hide yes)
 			(show_name no)
@@ -15010,7 +15227,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 144.78 153.6699 0)
+			(at 139.954 156.718 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15059,7 +15276,7 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR09")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -15163,6 +15380,17 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "package/gullwing"
+			(at 378.46 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "0a18d811-7e94-498c-9a66-5e194688acb3")
 		)
@@ -15189,7 +15417,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 123.19 226.06 0)
+		(at 137.16 210.82 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15200,7 +15428,7 @@
 		(fields_autoplaced yes)
 		(uuid "fc45bec8-a8ca-4b07-bc5a-e31b37b09899")
 		(property "Reference" "MH3"
-			(at 125.73 223.5199 0)
+			(at 139.7 208.2799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15211,7 +15439,7 @@
 			)
 		)
 		(property "Value" "M3"
-			(at 125.73 226.0599 0)
+			(at 139.7 210.8199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15222,7 +15450,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
-			(at 123.19 226.06 0)
+			(at 137.16 210.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15233,7 +15461,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 123.19 226.06 0)
+			(at 137.16 210.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15244,7 +15472,18 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 123.19 226.06 0)
+			(at 137.16 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
+			(at 137.16 210.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15278,7 +15517,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fc7be4c0-22d5-46b8-84d9-7dd14152ce61")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR07"
 			(at 167.64 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -15339,7 +15578,7 @@
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "#PWR014")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -15461,8 +15700,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x04_Pin")
-		(at 97.79 208.28 0)
+		(lib_id "Connector:Conn_01x05_Pin")
+		(at 207.01 82.55 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -15473,8 +15712,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fcd1cf48-280c-4314-8f21-6c97182fd6f9")
-		(property "Reference" "P3"
-			(at 99.06 208.2799 0)
+		(property "Reference" "J5"
+			(at 208.28 82.5499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15485,7 +15724,8 @@
 			)
 		)
 		(property "Value" "Header 4"
-			(at 99.06 210.8199 0)
+			(at 208.28 83.8199 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15495,8 +15735,8 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
-			(at 97.79 208.28 0)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical"
+			(at 207.01 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15507,7 +15747,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 97.79 208.28 0)
+			(at 207.01 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15517,8 +15757,19 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x04, script generated"
-			(at 97.79 208.28 0)
+		(property "Description" "Generic connector, single row, 01x05, script generated"
+			(at 207.01 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "connector/pin_header_socket"
+			(at 207.01 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15540,10 +15791,13 @@
 		(pin "1"
 			(uuid "d4f83522-96a7-4364-8550-3b51e95e5378")
 		)
+		(pin "5"
+			(uuid "e5a9f8ce-f742-4db9-b342-cc27268171e4")
+		)
 		(instances
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
-					(reference "P3")
+					(reference "J5")
 					(unit 1)
 				)
 			)
