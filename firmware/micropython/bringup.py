@@ -8,7 +8,7 @@
 # Run with:  mpremote connect <port> run bringup.py
 # Do not save this as main.py -- it is a test, not the firmware.
 
-from machine import Pin
+from machine import Pin, ADC
 import utime
 
 PIN_STATUS_LED = 7
@@ -17,6 +17,9 @@ PIN_CHARGE_LED = 27
 PIN_ARM_SW = 28
 PIN_PULSE_SW = 11
 PIN_CHARGED = 18
+# CHARGED lands on two Pico pads: GP18 (U1.24) and GP26/ADC0 (U1.31). Both
+# must be configured -- see the comment in main().
+PIN_CHARGED_ADC = 26
 
 LEDS = (
     ('STATUS', PIN_STATUS_LED),
@@ -69,12 +72,23 @@ def main():
     arm = Pin(PIN_ARM_SW, Pin.IN, Pin.PULL_DOWN)
     # SW2 pulls PULSE_SW down to GND, so pressed reads low against a pullup.
     pulse = Pin(PIN_PULSE_SW, Pin.IN, Pin.PULL_UP)
-    # R6 already pulls CHARGED up to +3V3; the opto pulls it low when the
-    # rail is charged. No internal pull.
-    charged = Pin(PIN_CHARGED, Pin.IN)
+    # CHARGED needs BOTH its pads configured. The RP2040 resets every GPIO
+    # pad with its pull-down enabled (PADS_BANK0 reset value 0x56, bit 2
+    # PDE=1), and CHARGED reaches two pads. Leaving GP26 at its default puts
+    # a second ~65k pull-down on the net; the pair in parallel against R6's
+    # 22k pull-up divides it to roughly 2 V, inside the RP2040's
+    # indeterminate band (VIL 0.99 V, VIH 2.31 V), and the digital read
+    # becomes arbitrary. Configuring GP26 as an analog input disables its
+    # digital pull, leaving R6 -- the intended pull-up -- in charge.
+    charged_adc = ADC(PIN_CHARGED_ADC)
+    charged = Pin(PIN_CHARGED, Pin.IN, None)
 
-    print('CHARGED idle level: %d (1 = not charged, expected at rest)'
-          % charged.value())
+    volts = charged_adc.read_u16() * 3.3 / 65535
+    print('CHARGED idle: level %d, %.2f V (expect 1 and > 2.9 V at rest)'
+          % (charged.value(), volts))
+    if 1.0 < volts < 2.9:
+        print('WARNING: CHARGED is in the indeterminate band -- the digital '
+              'level above is not trustworthy.')
 
     ok_arm = wait_for_press('ARM', arm, 1)
     ok_pulse = wait_for_press('PULSE', pulse, 0)

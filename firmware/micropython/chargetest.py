@@ -10,11 +10,14 @@
 #
 # Run with:  mpremote connect <port> run chargetest.py
 
-from machine import Pin, PWM
+from machine import Pin, PWM, ADC
 import utime
 
 PIN_HVPWM = 20
 PIN_CHARGED = 18
+# CHARGED lands on two Pico pads: GP18 (U1.24) and GP26/ADC0 (U1.31). Both
+# must be configured -- see the comment in main().
+PIN_CHARGED_ADC = 26
 PIN_HV_DET_LED = 6
 
 # Empirically tuned upstream; ~250 V on C3. Do not retune.
@@ -23,6 +26,13 @@ PWM_DUTY_U16 = 800
 
 CHARGE_TIMEOUT_MS = 10000
 DISCHARGE_TIMEOUT_MS = 30000
+
+# CHARGED is read as a voltage, not a logic level. At rest R6's 22k pull-up
+# holds the net near 3.3 V; a conducting LDA111 drags it to near 0. Reading
+# the ADC instead of the pin removes any dependence on where the RP2040's
+# input thresholds happen to fall.
+CHARGED_MAX_V = 1.0   # at or below this, the opto is conducting
+IDLE_MIN_V = 2.9      # at or above this, the opto is off
 
 
 def pwm_off():
@@ -42,13 +52,32 @@ def main():
     print('Shield on. SMA capped. Hands clear of J1.')
 
     pwm_off()
-    charged = Pin(PIN_CHARGED, Pin.IN)
+    # Both CHARGED pads must be configured. The RP2040 resets every GPIO pad
+    # with its pull-down enabled (PADS_BANK0 reset value 0x56, bit 2 PDE=1),
+    # and CHARGED reaches two of them. Leaving GP26 at its default puts a
+    # second ~65k pull-down on the net; the pair in parallel against R6's 22k
+    # pull-up divides it to roughly 2 V, inside the RP2040's indeterminate
+    # band, and a digital read of GP18 becomes arbitrary. Configuring GP26 as
+    # an analog input disables its digital pull and gives us a real voltage.
+    charged_adc = ADC(PIN_CHARGED_ADC)
+    Pin(PIN_CHARGED, Pin.IN, None)
     hv_led = Pin(PIN_HV_DET_LED, Pin.OUT)
     hv_led.off()
 
-    if charged.value() == 0:
+    def volts():
+        return charged_adc.read_u16() * 3.3 / 65535
+
+    at_rest = volts()
+    print('CHARGED at rest: %.2f V' % at_rest)
+    if at_rest <= CHARGED_MAX_V:
         print('ABORT: CHARGED already asserted before we started.')
         print('Hold SW3 for one second and re-run.')
+        return
+    if at_rest < IDLE_MIN_V:
+        print('ABORT: CHARGED sits at %.2f V, between %.1f and %.1f V.'
+              % (at_rest, CHARGED_MAX_V, IDLE_MIN_V))
+        print('That is neither charged nor idle. Do not charge into an')
+        print('unreadable sense line -- investigate before re-running.')
         return
 
     print('Charging, up to %d ms...' % CHARGE_TIMEOUT_MS)
@@ -58,7 +87,7 @@ def main():
         pwm_on()
         deadline = utime.ticks_add(start, CHARGE_TIMEOUT_MS)
         while utime.ticks_diff(deadline, utime.ticks_ms()) > 0:
-            if charged.value() == 0:
+            if volts() <= CHARGED_MAX_V:
                 elapsed = utime.ticks_diff(utime.ticks_ms(), start)
                 break
             utime.sleep_ms(10)
@@ -73,13 +102,13 @@ def main():
         return
 
     hv_led.on()
-    print('CHARGED asserted after %d ms.' % elapsed)
+    print('CHARGED asserted after %d ms, at %.2f V.' % (elapsed, volts()))
     print('Now press and hold SW3 for one second to discharge.')
 
     start = utime.ticks_ms()
     deadline = utime.ticks_add(start, DISCHARGE_TIMEOUT_MS)
     while utime.ticks_diff(deadline, utime.ticks_ms()) > 0:
-        if charged.value() == 1:
+        if volts() >= IDLE_MIN_V:
             hv_led.off()
             print('CHARGED released after %d ms.'
                   % utime.ticks_diff(utime.ticks_ms(), start))

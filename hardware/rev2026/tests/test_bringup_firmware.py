@@ -179,6 +179,51 @@ def test_chargetest_pwm_is_bounded():
         'between starting the PWM and entering the try would leave it running'
 
 
+@pytest.mark.parametrize('script', [BRINGUP, CHARGETEST], ids=['bringup', 'chargetest'])
+def test_charged_readers_configure_both_pads(script):
+    """A script reading CHARGED must configure GP26 as well as GP18.
+
+    CHARGED lands on two Pico pads -- GP18 (U1.24) and GP26/ADC0 (U1.31).
+    The RP2040 resets every pad with its pull-down enabled (PADS_BANK0
+    reset value 0x56, bit 2 PDE=1), so a script that configures only GP18
+    leaves GP26's ~65k pull-down hanging on the net. Two pull-downs in
+    parallel against R6's 22k pull-up divide the net to roughly 2 V, which
+    sits inside the RP2040's indeterminate band (VIL 0.99 V, VIH 2.31 V).
+    The digital read then returns 0 or 1 arbitrarily.
+
+    Observed on board #1 on 2026-08-05: bringup.py read 1 at rest and
+    chargetest.py read 0 at rest, twenty minutes apart, with nothing
+    electrical having changed. Measuring the net through ADC0 showed
+    3.20 V once GP26 was configured, confirming no charge was present.
+    """
+    consts = _constants(script)
+    if 'PIN_CHARGED' not in consts:
+        pytest.skip(f'{script.name} does not read CHARGED')
+    assert 'PIN_CHARGED_ADC' in consts, \
+        (f'{script.name} reads CHARGED on GP18 but never configures GP26, the '
+         f'other pad on that net -- its default pull-down will drag the net '
+         f'into the indeterminate input band')
+    assert consts['PIN_CHARGED_ADC'] == 26, \
+        f"PIN_CHARGED_ADC = {consts['PIN_CHARGED_ADC']}, expected 26 (ADC0)"
+
+
+@pytest.mark.parametrize('script', [BRINGUP, CHARGETEST], ids=['bringup', 'chargetest'])
+def test_charged_pads_are_on_one_net(node_to_net, script):
+    """Both configured pads really are the same net on this board."""
+    consts = _constants(script)
+    if 'PIN_CHARGED' not in consts:
+        pytest.skip(f'{script.name} does not read CHARGED')
+    nets = set()
+    for name in ('PIN_CHARGED', 'PIN_CHARGED_ADC'):
+        gpio = consts[name]
+        node = f'U1.{GPIO_TO_PAD[gpio]}'
+        assert node in node_to_net, f'{name} = GP{gpio} ({node}) is not connected'
+        nets.add(node_to_net[node])
+    assert len(nets) == 1, \
+        f'{script.name}: GP18 and GP26 are on different nets {nets} -- the ' \
+        f'two-pad assumption behind this fix does not hold'
+
+
 def test_chargetest_has_a_charge_timeout():
     """A charge attempt must be time-bounded, per the spec's Phase 3."""
     consts = _constants(CHARGETEST)

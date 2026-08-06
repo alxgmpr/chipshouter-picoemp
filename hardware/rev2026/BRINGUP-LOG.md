@@ -107,6 +107,48 @@ cannot sense the LEDs. The four LED rows above are operator-confirmed.
 Two other `/dev/tty.usbmodem*` ports on this host belong to an unrelated
 device and do not respond to mpremote.
 
+### Firmware defect found at the start of Phase 3 — CHARGED misread
+
+`chargetest.py` aborted with "CHARGED already asserted" on its first run,
+having read the same pin as 1 in Phase 2 twenty minutes earlier with nothing
+electrical changed in between.
+
+**No high voltage was involved.** Measured through ADC0, the `CHARGED` net sat
+at a steady 3.20 V for 20 s including an SW3 press. A charged rail would have
+had the LDA111 sinking current and holding the net near 0, and SW3 would have
+produced a visible step. Neither happened.
+
+Root cause: the RP2040 resets every GPIO pad with its pull-down enabled
+(`PADS_BANK0` reset value `0x56`, bit 2 `PDE=1`), and `CHARGED` reaches **two**
+pads — GP18 (U1.24) and GP26/ADC0 (U1.31). Both scripts configured only GP18,
+leaving GP26's ~65 kΩ pull-down on the net. Two pull-downs in parallel against
+R6's 22 kΩ pull-up divide the net to roughly 2 V, inside the RP2040's
+indeterminate band (VIL 0.99 V, VIH 2.31 V). The digital read was arbitrary.
+
+Diagnostic evidence — the level flipped on the exact line that reconfigured
+GP26:
+
+```
+Pin(18, IN)             = 1
+Pin(18, IN, PULL_DOWN)  = 0
+Pin(18, IN, None)       = 0
+-- configuring ADC0 on GP26 --
+GP26 net voltage        = 2.767 V  -> settles 3.20 V
+Pin(18, IN, None) now   = 1
+```
+
+Fix: configure both pads. `ADC(26)` disables that pad's digital pull, leaving
+R6 as the only pull-up. `chargetest.py` now also reads `CHARGED` as a voltage
+rather than a logic level, and refuses to charge if the net sits between 1.0
+and 2.9 V rather than guessing. Verified on the board: 3.20–3.22 V steady,
+GP18 = 1 on every sample.
+
+**Upstream `cspico_simple.py` has the same defect** — `Signal(Pin(18, Pin.IN),
+invert=True)` with GP26 never touched. It mostly works because a genuinely
+charged rail pulls the net hard to near 0 V, which reads correctly; the failure
+mode is a spurious "charged" at rest, which is what was seen here. Not fixed —
+this port does not modify upstream firmware.
+
 Not carried out: the Phase 1 current cross-check. Supply draw with
 MicroPython running was not re-measured, so the 0.87 mA reading above
 remains unexplained rather than confirmed as a DMM burden artifact. Low
