@@ -99,13 +99,35 @@ move without that shorted `HV_OUT` to `HV_RTN`. D3/D4/D5 used to foul as well
 and no longer do. This is the last thing between here and a shield that sits
 flat.
 
-**MH1/MH2 are on the shield screw axes** — (112.640, 100.622) and
-(136.140, 139.122). They used to sit at the HV-end corners, which the box covers,
-making them unreachable. Getting MH1 there needed R10 moved to
-(116.900, 103.400) rot 180 with `GND` jogged onto B.Cu past the hole, because
-nothing routes west of that hole: 0.425 mm to the isolation slot against the
-0.65 mm a 0.25 mm track needs. Nearest copper to MH1 is now +2.210 mm from the
-hole edge.
+**MH1/MH2 are on the shield screw axes** — MH1 (136.140, 100.622) and
+MH2 (112.640, 139.122). They used to sit at the HV-end corners, which the box
+covers, making them unreachable.
+
+⚠️ **They were on the wrong diagonal until 2026-08-05 and both moved.** The
+re-axed Hammond model is in **KiCad's 3D-model frame, where +Y runs opposite to
+board Y**. Measured directly out of `lib/models/Hammond_1551G_Box.step`, the two
+Ø2.50 bores sit at model (−11.75, −19.25) and (+11.75, +19.25); mapped through
+the Y negation those land at board (112.640, 139.122) and (136.140, 100.622) —
+the numbers this file already quoted as `(±19.25, ∓11.75)`. The holes had been
+placed from the raw model coordinates instead, putting them on the opposite
+diagonal. No rotation fixes a diagonal, only a flip, so the box would only have
+screwed on from the underside.
+
+**Two conflicts came with the swap and are still open.** `HV_GATE` runs through
+MH2 — the segment (112.900, 137.230)→(116.910, 141.240) is 0.000 mm off the hole
+and the run down x = 112.900 is 0.060 mm off it, both against a 0.250 mm hole
+clearance. And MH1's courtyard overlaps `R5` and `D4`; a #4 head (≈2.75 mm
+radius) clears R5's nearest pad edge by **0.015 mm** and D4's by 0.53 mm, so R5
+is the one to move.
+
+**The two 1.27 mm longitudinal slots are gone** (removed 2026-08-05). They were
+inherited from REV04, where they received the 1551B top half's protruding wall
+lip (model X = ±11.63, ~0.8 mm deep) and its two locating posts (±10.66,
+2.5 mm deep). The 1551G box has `zmin = -1e-07` — a dead flat rim, nothing below
+the PCB face — so the slots received nothing, and at centres ±14.41 mm from board
+centre they matched neither shell. No copper crossed either one. Removing them
+also frees the channel west of the old MH1 that had forced R10 to
+(116.900, 103.400) rot 180 with `GND` jogged onto B.Cu.
 
 **~~Intra-HV clearance at SW3 — 0.498 mm.~~ Resolved.** The
 `Intra-HV spacing at full rail voltage` rule now reports **zero** violations at
