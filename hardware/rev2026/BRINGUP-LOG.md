@@ -49,3 +49,33 @@ D2 blocks in this direction and R2 is the only path, as predicted. Resolved.
 reads low through T1's secondary and D2 and does not indicate a fault.
 
 Notes: Board had not been energized before these readings.
+
+---
+
+## Phase 1 — first power
+
+Date: 2026-08-05
+PSU: 5.0 V into J2. USB unplugged. Pico unprogrammed.
+
+The PSU's current-limit function was unavailable (constant-voltage only), so
+the DMM was used in series on its mA range instead — a direct current reading,
+with the mA-jack fuse as the limit. Voltage was then read in a second pass with
+the DMM back on volts.
+
+| Reading | Expected | Measured | Pass |
+|---|---|---|---|
+| Supply current | < 100 mA, no limit | 0.87 mA | ✅ |
+| Pico 3V3(OUT) → GND | 3.3 V ±5 % | 3.285 V (−0.45 %) | ✅ |
+
+### Note on the 0.87 mA
+
+Lower than an unprogrammed Pico normally idles at — the RP2040 bootrom's USB
+device mode runs the core and usually draws tens of mA. The likely cause is
+DMM burden voltage: on a low autoranged mA scale the shunt resistance drops
+the input enough that the RP2040 never starts, and a core that isn't running
+keeps the current low, which keeps the DMM on the low range.
+
+Not a concern for what Phase 1 tests. Sub-mA draw with the 3V3 rail up means
+no leakage path anywhere, which is the stronger version of the result we
+wanted. Cross-check in Phase 2: with MicroPython flashed, draw should rise to
+tens of mA. If it does not, revisit this.
