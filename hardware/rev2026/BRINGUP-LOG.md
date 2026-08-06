@@ -317,3 +317,131 @@ CHARGED, and discharges on SW3. Stock firmware is installed as `main.py`.
   MicroPython running was not taken.
 - **Upstream `cspico_simple.py` has the CHARGED two-pad defect** described
   above. Not fixed here; did not manifest on this board.
+- **The trigger front-end has never been exercised.** U2, R14, R15 and the
+  input SMA went on the board in this port and no phase touched them. No
+  firmware in the repo reads GP0 either — `bringup.py`, `chargetest.py` and
+  `cspico_simple.py` all ignore it. Phase 5 below is written but not run.
+
+---
+
+## Phase 5 — trigger front-end
+
+Date: **not yet run.** Everything below is the procedure and its expected
+values; the Measured and Pass columns are blank on purpose.
+
+Script: `firmware/micropython/trigtest.py`
+
+The chain, from the netlist:
+
+```
+J3 SMA centre ──┬── TRIG_IN ── R14 100R ──┬── U2.2 (A) ──> U2.4 (Y) ── GP0 (U1.1)
+J6.1 header ────┘        net "TRIG_BUF" ──┴── R15 10k ── GND
+
+U2 = 74LVC1G17 Schmitt buffer, SOT-23-5, on +3V3 with C6 100n
+R16 = 0R bypass across the buffer, DNP — must stay unfitted
+```
+
+Two naming traps. **`TRIG_BUF` is the buffer's input node, not its output** —
+the output net is plain `GP0`. And `GP0` is not on any header, so the only
+places to probe it are U2 pin 4 and the Pico's pin 1.
+
+**Board #1 designators.** This is rev B naming. On board #1 the trigger SMA is
+`J4`, and the 7-pin header is `P1` — so the loopback jumper described below is
+`P1.1 ↔ P1.2` there, not `J6.1 ↔ J6.2`. `trigtest.py` prints the rev B names.
+
+### 5.0 — cold checks
+
+Unpowered. Confirm U2, R14, R15 and C6 are actually populated first, and that
+R16 is not.
+
+| # | Measurement | Expected | Measured | Pass |
+|---|---|---|---|---|
+| 5.0.1 | J3 centre → J6.1, probed at the far end of a mated cable | 0 Ω | | |
+| 5.0.2 | J3 centre → U2.2 | 100 Ω (R14) | | |
+| 5.0.3 | U2.2 → GND | 10 kΩ (R15) | | |
+| 5.0.4 | J3 centre → GND | 10.1 kΩ | | |
+| 5.0.5 | J3 shell → GND | 0 Ω | | |
+| 5.0.6 | U2.5 → Pico 3V3 | 0 Ω | | |
+| 5.0.7 | U2.3 → GND | 0 Ω | | |
+| 5.0.8 | U2.5 → GND | not a short | | |
+| 5.0.9 | U2.2 → Pico pin 1 | open — **not** 0 Ω | | |
+
+5.0.1 through the mated cable rather than the pad, because the edge-launch
+SMA's centre-pin joint is the thing most likely to be bad. 5.0.9 catches R16
+fitted, which would put the unbuffered node straight onto GP0.
+
+### 5.1 — powered, static
+
+USB power, nothing connected to the trigger.
+
+| # | Measurement | Expected | Measured | Pass |
+|---|---|---|---|---|
+| 5.1.1 | U2.2 at rest | 0 V (R15 pulls it down) | | |
+| 5.1.2 | U2.4 at rest | 0 V | | |
+| 5.1.3 | U2.2 with TRIG_IN jumpered to J5.1 (+3V3) | 3.3 V | | |
+| 5.1.4 | U2.4, same | 3.3 V | | |
+| 5.1.5 | both, jumper removed | back to 0 V | | |
+
+### 5.2 — threshold and hysteresis
+
+Bench PSU into `TRIG_IN`, current limit 10 mA, swept slowly 0 → 2 V and back
+while watching U2.4 with the DMM. Datasheet numbers are the VCC = 3.0 V column
+of the Nexperia 74LVC1G17, rev 16.1; the rail here is 3.3 V, so the real trip
+points sit a little above these.
+
+| # | Measurement | Expected | Measured | Pass |
+|---|---|---|---|---|
+| 5.2.1 | Rising trip point (V_T+) | 1.29 – 1.71 V | | |
+| 5.2.2 | Falling trip point (V_T−) | 0.88 – 1.24 V | | |
+| 5.2.3 | Gap between them (V_H) | 0.31 – 0.64 V | | |
+
+Two distinct trip points is the point of the measurement — it is what
+distinguishes a real Schmitt part from a plain buffer fitted by mistake.
+Input leakage is ≤ 1 µA, so R14 drops nothing and the applied voltage is the
+node voltage.
+
+### 5.3 — firmware
+
+```
+mpremote connect <port> run trigtest.py
+```
+
+Needs one jumper, `J6.1 ↔ J6.2` (`P1.1 ↔ P1.2` on board #1), and **nothing
+else on TRIG_IN or the SMA** — GP1 would be fighting it. The script drives its
+own trigger through the whole chain and checks GP0 follows, so it is
+self-checking rather than operator-judged.
+
+| Check | Expected | Observed | Pass |
+|---|---|---|---|
+| `IDLE` | PASS — GP0 low and steady, trigger open | | |
+| `DC` | PASS — GP0 follows 0/1/0 | | |
+| `EDGES` | PASS — 50 sent, 50 counted | | |
+| `NARROW 100/10/1 us, back-to-back` | PASS on all four | | |
+| `RESULT` | PASS | | |
+
+Then remove the jumper. The script's `WATCH` phase mirrors GP0 onto the STATUS
+LED for 15 s and counts rising edges, which is how the SMA gets tested — the
+jumper cannot reach it.
+
+It cannot make high voltage: GP20 and GP14 are never referenced, enforced by
+`tests/test_bringup_firmware.py::test_cannot_drive_hv`.
+
+### 5.4 — before plugging a pulse generator into the SMA
+
+**There is no 50 Ω on this input.** R15 is a 10 k pulldown, not a terminator.
+A generator whose amplitude is calibrated into 50 Ω delivers twice that into
+an open end, so a 5 V setting arrives at the buffer as ~10 V — against a
+5.5 V tolerant input with a 6.5 V absolute maximum. Set the generator to
+high-Z, or fit a 50 Ω feedthrough terminator at the board, or measure the
+amplitude at the SMA before connecting it.
+
+The same reflection is why long unterminated coax with fast edges can produce
+extra counted edges. The Schmitt's 0.3 – 0.6 V of hysteresis absorbs small
+overshoot, not a 2 V reflection.
+
+`J3`'s shell is board `GND`, so the coax bonds the target's ground to the
+PicoEMP's low-voltage ground and hence to USB. It does not touch the HV
+isolation barrier, but it is a ground loop with whatever is being glitched.
+
+Propagation delay through U2 is 3.0 ns typ / 5.5 ns max at 3.0 – 3.6 V —
+below what a logic analyser resolves, and far below the RP2040's response.
