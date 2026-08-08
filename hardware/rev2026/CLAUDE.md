@@ -84,12 +84,19 @@ and you still get zero. If you see any DRC warning, you introduced it.
 
 ## Related work in this repo
 
-- **`feat/isolated-hv-sense` branch** — an in-progress AMC3336 + TLP170J block
-  for calibrated isolated rail measurement. Does not pass the gates; `U4` has no
-  footprint and nothing is placed. Not part of this design yet.
-- **`../altium_src/kc/` is a separate, incomplete REV04 migration, not this
-  project.** Its HV sense section is wired wrong. Do not use it as a reference —
-  see its README.
-- **`relayout-shifted-25mm` branch** differs substantially in routing and is not
-  a merge candidate. Note it now carries the same origin as `rev2026`, so the
-  25.4 mm shift no longer distinguishes it, contrary to older notes.
+Two branches carry work that is deliberately not on `rev2026`. Neither passes
+the gates; both are parked rather than abandoned.
+
+- **`feat/isolated-hv-sense`** — an AMC3336 + TLP170J block for calibrated
+  isolated rail measurement, 16 parts. `U4` has no footprint and nothing is
+  placed on the PCB.
+- **`feat/hv-loop-return-plane`** — a solid `HV_RTN` pour on B.Cu (~142 mm²)
+  under the C3/Q2/J1 forward traces, to cut discharge-loop inductance by letting
+  the return current image the go current across the dielectric instead of
+  enclosing a large coplanar loop. The current board has **no** such pour: its
+  200 zones are 197 teardrops, the `MCU GND Pour`, and two `Pad Keep Out TP7`
+  keepouts. Branched off before Rev B, so it needs rebasing.
+
+**`../altium_src/kc/` is a separate, incomplete REV04 migration, not this
+project.** Its HV sense section is wired wrong. Do not use it as a reference —
+see its README.
