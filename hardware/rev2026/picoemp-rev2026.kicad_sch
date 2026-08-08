@@ -6486,10 +6486,6 @@
 		(uuid "0b6a7a6e-f0f3-4141-9abd-7fb317168361")
 	)
 	(no_connect
-		(at 119.38 127)
-		(uuid "278923c3-a5a0-408c-a82e-280d78b66a86")
-	)
-	(no_connect
 		(at 165.1 104.14)
 		(uuid "2cfd9f00-e9a4-4529-9171-38397b6da8c8")
 	)
@@ -6548,10 +6544,6 @@
 	(no_connect
 		(at 318.77 241.3)
 		(uuid "c1007e18-2172-414f-81fe-dfcf2ae61d16")
-	)
-	(no_connect
-		(at 119.38 132.08)
-		(uuid "d618a83a-eb3c-4c54-8b91-0dcc72b80a9e")
 	)
 	(no_connect
 		(at 165.1 99.06)
@@ -9188,16 +9180,6 @@
 		)
 		(uuid "e3be4fcc-c7d6-43f6-83f0-b102821e9d80")
 	)
-	(label "HV_RTN"
-		(at 121.92 304.8 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e7122c1c-1f44-41f6-a652-560bb62c8f94")
-	)
 	(label "TRIG_IN"
 		(at 297.18 83.82 0)
 		(effects
@@ -10397,7 +10379,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Reinforced isolated delta-sigma modulator with integrated DC/DC. Reads HV_RAIL via the R17/R18/R19 divider with no HV-side supply. CLKIN must be driven at 9-21 MHz by the Pico (PIO, 125MHz/8 = 15.625MHz); DOUT is a bitstream needing a sinc3 filter. VCM window is only -0.8/+0.6 V - the divider is sized for 0.80 V at a 300 V rail. Crosses the isolation barrier."
 			(at 129.54 289.56 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10407,6 +10389,15 @@
 				)
 			)
 		)
+    (property "MPN" "AMC3336DWER" (at 129.54 289.56 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
+    (property "Manufacturer" "Texas Instruments" (at 129.54 289.56 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
+    (property "DigiKey" "296-AMC3336DWER-ND" (at 129.54 289.56 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "54cdd899-1487-4b66-8e93-1c4bc3632cc6")
 		)
@@ -13411,7 +13402,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 332.74 190.5 0)
+		(at 80.01 359.41 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13421,7 +13412,7 @@
 		(dnp no)
 		(uuid "6fb05d04-0fb5-48dc-b68d-43946a774a02")
 		(property "Reference" "R21"
-			(at 332.74 186.69 0)
+			(at 80.01 355.6 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13431,7 +13422,7 @@
 			)
 		)
 		(property "Value" "680R"
-			(at 332.74 194.31 0)
+			(at 80.01 363.22 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13440,8 +13431,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 332.74 190.5 0)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 80.01 359.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13452,7 +13443,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 332.74 190.5 0)
+			(at 80.01 359.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13462,8 +13453,8 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 332.74 190.5 0)
+		(property "Description" "U4 photorelay LED series resistor. (3.3 - 1.15) / 3 mA = 717 ohm -> 680R, ~3x the 1 mA max trigger current for margin."
+			(at 80.01 359.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14481,7 +14472,7 @@
 	)
 	(symbol
 		(lib_id "picoemp:TLP170J")
-		(at 110.49 482.6 0)
+		(at 104.14 359.41 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14492,7 +14483,7 @@
 		(fields_autoplaced yes)
 		(uuid "91e8a40f-e8e9-4260-9bc1-792666a5ef2f")
 		(property "Reference" "U4"
-			(at 110.49 472.44 0)
+			(at 104.14 349.25 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14502,7 +14493,7 @@
 			)
 		)
 		(property "Value" "TLP170J"
-			(at 110.49 474.98 0)
+			(at 104.14 351.79 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14511,8 +14502,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 110.49 482.6 0)
+		(property "Footprint" "Package_DIP:SMDIP-4_W7.62mm"
+			(at 104.14 359.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14522,8 +14513,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 110.49 482.6 0)
+		(property "Datasheet" "https://toshiba.semicon-storage.com/us/semiconductor/product/isolators-solid-state-relays/photorelay-mosfet-output/detail.TLP170J.html"
+			(at 104.14 359.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14533,8 +14524,8 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 110.49 482.6 0)
+		(property "Description" "MOSFET photorelay, 600 V off-state / 90 mA / 60 ohm, 4-SOP. Commanded discharge across HV_SENSE-HV_RTN, parallel with SW3. Gives the SAFE button a low-voltage path outside the shield and lets firmware auto-discharge on disarm. I_FT 1 mA max; R21 sets ~3 mA. Turn-on 8 ms / turn-off 3 ms - fine for discharge, too slow for any chopped-measurement scheme. Crosses the isolation barrier."
+			(at 104.14 359.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14542,6 +14533,42 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "TLP170J(TP,F)"
+			(at 104.14 359.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Toshiba"
+			(at 104.14 359.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey" "264-TLP170J(TPF)CT-ND"
+			(at 104.14 359.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Notes" "FOOTPRINT UNVERIFIED: Toshiba 2.54SOP4 lead span is ~7.0 mm vs this footprint's 7.62 mm row spacing. Check against the package drawing before fab."
+			(at 104.14 359.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -18282,6 +18309,76 @@
 				)
 			)
 		)
+	)
+	(label "PRLY_LED_A"
+		(at 96.52 356.87 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b0ea59b5-6bcd-410f-a586-7dd7ec29a63e")
+	)
+	(label "GND"
+		(at 96.52 361.95 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b485eb56-4e66-46d0-91b6-999b317f15f2")
+	)
+	(label "HV_SENSE"
+		(at 111.76 356.87 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0fb91595-3d1e-4ea4-8900-8573c36dfb0a")
+	)
+	(label "HV_RTN"
+		(at 111.76 361.95 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3bbf5d76-454c-49c2-868e-afe7e30be69d")
+	)
+	(label "SAFE_DRV"
+		(at 80.01 356.87 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "57788d55-26a3-4ce4-89b3-4e1c79c618ea")
+	)
+	(label "PRLY_LED_A"
+		(at 80.01 361.95 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "727bda44-7138-430c-8b31-d418f1ce10c4")
+	)
+	(label "SAFE_DRV"
+		(at 119.38000000000001 132.08 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b822cd26-38ee-429c-97c2-d907afbedefe")
 	)
 	(sheet_instances
 		(path "/"
