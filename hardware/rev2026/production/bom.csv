@@ -10,7 +10,7 @@
 "J1,J3","EDGE-SMA","picoemp:SMA_Linx_CONSMA020_062_G_EdgeMount","CONSMA020.062-G","TE Connectivity Linx","343-CONSMA020.062-G-ND","","2"
 "J2","1x2_Pin_Header","Connector_JST:JST_XH_S2B-XH-A_1x02_P2.50mm_Horizontal","S2B-XH-A(LF)(SN)","JST","455-2257-ND","","1"
 "J4","MKDSN 1,5/2-5,08","picoemp:TerminalBlock_Phoenix_MKDSN-1,5-2-5.08_1x02_P5.08mm_Horizontal","1548128","Phoenix Contact","","","1"
-"J5","Header 4","Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical","","","","","1"
+"J5","Header 5","Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical","","","","","1"
 "J6","Header 7","Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical","","","","","1"
 "Q1","LDA111STR","picoemp:SOP-6_LDA111","LDA111STR","IXYS SEMICONDUCTOR","212-LDA111SCT-ND","","1"
 "Q2","RGT16BM65DTL","Package_TO_SOT_SMD:TO-252-3_TabPin2","RGT16BM65DTL","ROHM","","","1"

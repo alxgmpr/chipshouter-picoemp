@@ -20,7 +20,7 @@ Ref,Val,Package,PosX,PosY,Rot,Side
 "J2","1x2_Pin_Header","JST_XH_S2B-XH-A_1x02_P2.50mm_Horizontal",29.545000,118.150000,90.000000,top
 "J3","EDGE-SMA","SMA_Linx_CONSMA020_062_G_EdgeMount",33.000000,129.600000,-90.000000,top
 "J4","MKDSN 1,5/2-5,08","TerminalBlock_Phoenix_MKDSN-1,5-2-5.08_1x02_P5.08mm_Horizontal",28.200000,17.300000,90.000000,top
-"J5","Header 4","PinHeader_1x05_P2.54mm_Vertical",14.920000,56.650000,90.000000,top
+"J5","Header 5","PinHeader_1x05_P2.54mm_Vertical",14.920000,56.650000,90.000000,top
 "J6","Header 7","PinHeader_1x07_P2.54mm_Vertical",6.600000,110.690000,0.000000,top
 "MH1","M3","MountingHole_3.2mm_M3",31.740000,49.278000,0.000000,top
 "MH2","M3","MountingHole_3.2mm_M3",8.240000,10.778000,0.000000,top

@@ -1,25 +1,26 @@
-# ChipSHOUTER-PicoEMP
+# ChipSHOUTER-PicoEMP — Rev-2026
 
 [![CC BY-SA 3.0][cc-by-sa-shield]][cc-by-sa]
 
-![](hardware/picoemp-red.jpeg)
-
-The PicoEMP is a low-cost Electromagnetic Fault Injection (EMFI) tool, designed *specifically* for self-study and hobbiest research. Under the safety shield it looks like this:
-
-![](hardware/picoemp.jpeg)
-
-You can see some details of the design in the [Intro Video](https://www.youtube.com/watch?v=nB5arJi-tVE).
-
----
-
-## Rev-2026 — a KiCad rework of REV04 (this fork)
-
-This fork adds **[`hardware/rev2026/`](hardware/rev2026/)**, a KiCad 10 port and
-rework of the REV04 board. Upstream ships Altium sources and gerbers; this is an
+A fork of [newaetech/chipshouter-picoemp](https://github.com/newaetech/chipshouter-picoemp)
+adding **[`hardware/rev2026/`](hardware/rev2026/)** — a KiCad 10 port and rework
+of the REV04 board. Upstream ships Altium sources and gerbers; this is an
 editable KiCad project you can actually modify, with the design rules that matter
 written down and enforced.
 
-**What's different from REV04:**
+**[→ Rev-2026 documentation](hardware/rev2026/docs/)** &nbsp;·&nbsp;
+[design notes](hardware/rev2026/docs/design-notes.md) &nbsp;·&nbsp;
+[bring-up log](hardware/rev2026/docs/bringup.md) &nbsp;·&nbsp;
+[open issues](hardware/rev2026/docs/open-issues.md) &nbsp;·&nbsp;
+[fab outputs](hardware/rev2026/production/)
+
+[Upstream's original README is preserved below.](#upstream-readme)
+
+![](hardware/picoemp-red.jpeg)
+
+---
+
+## What's different from REV04
 
 * **Two upstream bugs fixed** — `R9` carried `R4`'s part data (75 Ω MPN on a 2 k
   part), and `C5` had no value.
@@ -34,7 +35,7 @@ written down and enforced.
   [`picoemp-rev2026.kicad_dru`](hardware/rev2026/picoemp-rev2026.kicad_dru).
 * **All header footprints corrected** from 1.00/1.27 mm to 2.54 mm.
 
-### Building one
+## Building one
 
 1. **Boards** — upload
    [`hardware/rev2026/production/picoemp-rev2026-gerbers.zip`](hardware/rev2026/production/)
@@ -58,20 +59,39 @@ Nobody has fabbed from the current files yet — board #1 was built from an earl
 layout — and several known-imperfect items are not DRC violations, so no
 automated check will catch them.
 
-### Status
+## Status
 
 Both gates pass: 90 tests, and DRC reports 0 violations, 0 unconnected items and
 0 schematic-parity issues. One board has been assembled and brought up: it
 charges to roughly 261 V in about 2.1 seconds, asserts `CHARGED`, and discharges
 on the button. **Pulsing has never been exercised** — there was no injection tip.
 
-Full documentation: **[`hardware/rev2026/docs/`](hardware/rev2026/docs/)**.
+Two branches carry parked work that is not on `rev2026` and does not pass the
+gates: [`feat/isolated-hv-sense`](../../tree/feat/isolated-hv-sense) (an AMC3336
+block for calibrated isolated rail measurement) and
+[`feat/hv-loop-return-plane`](../../tree/feat/hv-loop-return-plane) (a B.Cu
+`HV_RTN` pour to cut discharge-loop inductance).
 
-> ⚠️ Everything in the safety notes below applies to this board too. It charges a
-> capacitor to roughly 250 V, and the capacitor holds charge after power is
-> removed.
+> ⚠️ **This is a high-voltage device.** It charges a capacitor to roughly 250 V,
+> and the capacitor holds charge after power is removed. Everything in upstream's
+> safety notes below applies to this board too — in particular, never operate it
+> without the shield.
 
 ---
+
+<a name="upstream-readme"></a>
+
+# Upstream README
+
+Everything below is [NewAE's original README](https://github.com/newaetech/chipshouter-picoemp),
+preserved unchanged. It describes the REV04 board that Rev-2026 is derived from,
+and its safety guidance applies equally here.
+
+The PicoEMP is a low-cost Electromagnetic Fault Injection (EMFI) tool, designed *specifically* for self-study and hobbiest research. Under the safety shield it looks like this:
+
+![](hardware/picoemp.jpeg)
+
+You can see some details of the design in the [Intro Video](https://www.youtube.com/watch?v=nB5arJi-tVE).
 
 ## Thanks / Contributors
 

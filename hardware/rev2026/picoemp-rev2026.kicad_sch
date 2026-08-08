@@ -15723,7 +15723,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "Header 4"
+		(property "Value" "Header 5"
 			(at 208.28 83.8199 0)
 			(hide yes)
 			(show_name no)
