@@ -1,9 +1,8 @@
 # PicoEMP Rev-2026 — KiCad project
 
 A KiCad 10 port and rework of the ChipShouter-PicoEMP REV04 EM fault-injection
-board. Two copper layers, 1.6 mm thick, **52 footprints** (45 SMD / 4 THT
-(`J2`, `J4`, `J5`, `J6`) / 3 mounting holes), 52 schematic components across
-64 nets (38 named, 26 `unconnected-*`).
+board. Two copper layers, 1.6 mm thick. The PCB carries **52 footprints**
+(45 SMD / 4 THT (`J2`, `J4`, `J5`, `J6`) / 3 mounting holes).
 
 The board makes ~250 V on a 0.47 µF capacitor and dumps it through an IGBT into
 an injection coil. Treat every `HV_*` net as live — **except `HVPULSE` and
@@ -11,9 +10,20 @@ an injection coil. Treat every `HV_*` net as live — **except `HVPULSE` and
 the `HV` netclass. That class is exactly `HV_RAIL`, `HV_RTN`, `HV_RECT`,
 `HV_OUT`, `HV_SENSE`, `HV_SENSE_LED`, `HV_GATE`, `HV_GATE_DRV`.
 
+⚠️ **The schematic is ahead of the PCB.** On `feat/isolated-hv-sense` the
+schematic has **72 components across 73 nets** (51 named) — 20 more than the
+PCB. `--schematic-parity` reports **41 issues** and three tests fail. That is
+the expected mid-change state, not breakage; see "Isolated HV sense (in
+progress)" below. On `rev2026` the two match at 52.
+
+**Repo location moved** to `/Users/alex/chipshouter-picoemp` (was
+`hardware/rev2026` under a `Downloads/chipshouter-picoemp-main` checkout).
+`rev2026` is now the mainline; `origin` is
+`github.com/alxgmpr/chipshouter-picoemp`, and `upstream` is newaetech's.
+
 ---
 
-## ⚠️ Two traps that will waste your time
+## ⚠️ Traps that will waste your time
 
 **1. Designators were rewritten in commit `4b62ed2` ("Rev B").** The schematic
 had been re-annotated with reset, which renumbers sequentially and destroys
@@ -40,6 +50,27 @@ The `relayout-shifted-25mm` branch is *no longer* distinguished by this: both it
 and `rev2026` now carry the same origin. It still differs substantially in
 routing and is still not a merge candidate, but not for the reason older notes
 give.
+
+**3. `U1` carries No Connect flags on most unused GPIOs.** Wiring a net to one
+of them does not remove the flag — you get a `no_connect_connected` warning and,
+worse, a net KiCad thinks should not exist. GP8, GP9, GP10, GP12, GP13 and GP15
+all had flags that had to be deleted before use. **Dump every flag and map it to
+a pin before you wire anything**, rather than discovering them one ERC run at a
+time:
+
+```bash
+grep -o '(no_connect[^)]*(at [-0-9.]* [-0-9.]*)' picoemp-rev2026.kicad_sch
+```
+
+Still flagged and genuinely free: GP16, GP17, GP19, GP21, GP22 (right side,
+x = 165.10), plus `RUN`, `3V3_EN`, `VSYS`, `SWCLK`, `SWDIO`.
+
+**4. Renaming a net label does not reroute a wire.** Relabelling `R11`'s pin to
+`HV_DET_DRV` silently pulled `U1.9` onto the new net, because the `U1.9 → R11.1`
+wire was still there — the rename renamed the whole net. If you are moving a pin
+onto a different net, **delete the wire**, then relabel, then check the exported
+netlist. Deleting the wire also orphans any label that sat on it and leaves the
+far pin floating; both need cleaning up afterwards.
 
 ---
 
@@ -102,16 +133,37 @@ cd hardware/rev2026 && uv run --with pytest pytest tests/
 /Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli pcb drc --severity-error --schematic-parity --exit-code-violations -o /tmp/drc.rpt hardware/rev2026/picoemp-rev2026.kicad_pcb
 ```
 
-Current state, verified **2026-08-05**: **85 tests pass**; DRC reports **0
+**On `rev2026`** (verified 2026-08-05): **85 tests pass**; DRC reports **0
 violations, 0 unconnected, 0 schematic-parity issues**, exit code 0.
 
 **DRC warnings are empty too.** Run the same command without `--severity-error`
 and you still get zero — the `Intra-HV spacing at full rail voltage` rule passes
 at its 0.8 mm target. If you see any DRC warning, you introduced it.
 
-**ERC is not clean: 1 warning.** `unconnected_wire_endpoint` at
-(318.77 mm, 236.22 mm) — a dangling 1.27 mm horizontal wire stub. Harmless but
-real; it is the only thing standing between here and a clean ERC.
+**On `feat/isolated-hv-sense`** (verified 2026-08-06) the gates are
+*deliberately* red, because the schematic is ahead of the PCB. Expected state:
+
+| Check | State | Why |
+|---|---|---|
+| Tests | **87 pass / 3 fail** of 90 | see below |
+| DRC parity | **41 issues** | 20 new schematic parts not yet on the PCB |
+| ERC | **0 errors, 3 warnings** | see below |
+
+The three failing tests are all consequences of the change, not regressions:
+
+- `test_all_expected_refs_present` — the expected-refs list needs the 20 new
+  designators added.
+- `test_bringup_pin_map_matches_netlist` and `test_chargetest_pin_map_matches_netlist`
+  — both assert `PIN_HV_DET_LED = GP6` sits on `HV_DET_LED`. `D6` is now driven
+  by `Q5` in hardware and GP6 is free, so **`firmware/micropython/bringup.py`
+  and `chargetest.py` need their pin maps updated.**
+
+**ERC's 3 warnings are the floor, not a to-do list.** Two are
+`ground_pin_not_ground` on the AMC3336's `HGND` / `DCDC_HGND`, and they are
+*correct* — `HV_RTN` is the floating HV return and deliberately is not `GND`.
+Silencing them properly would mean defining an `HV_RTN` power symbol. The third
+is `unconnected_wire_endpoint` at (318.77 mm, 236.22 mm), a dangling 1.27 mm
+stub that predates this work.
 
 ---
 
@@ -136,7 +188,75 @@ oversight.
 
 ---
 
+## Isolated HV sense (in progress, `feat/isolated-hv-sense`)
+
+Schematic complete, **PCB untouched**. Adds programmable rail voltage, a SAFE
+button reachable with the shield on, and an HV-present indicator that does not
+depend on firmware.
+
+```
+HV_RAIL ─ R17(20M) ─ R18(20M) ─┬─ R19(107k) ─ HV_RTN     divider, 40M total
+                               └─ U3.6 INP  + C7 (1n)     AMC3336 input
+U3 CLKIN ← GP8   U3 DOUT → GP9   U3 DIAG → GP10 (R20 47k pull-up)
+U4 (TLP170J) across HV_SENSE↔HV_RTN, parallel with SW3 — commanded discharge
+U4 LED ← R21(680R) ← GP12        SW4 SAFE button → GP13
+D10 green ← R22(1k) ← GP15       Q5 P-FET: CHARGED → R11 → D6 (red)
+```
+
+**GPIO map for the new nets** — GP8 `SD_CLK`, GP9 `SD_DAT`, GP10 `SD_DIAG`,
+GP12 `SAFE_DRV`, GP13 `SAFE_SW`, GP15 `SAFE_LED_DRV`. GP6 is now **free** (`D6`
+moved to hardware drive).
+
+**Why the divider is 40 MΩ and separate from the existing sense chain.** It
+cannot tap `HV_SENSE`: `SW3` and `U4` short that node to `HV_RTN` on discharge,
+so a measurement taken there reads zero the instant you press SAFE — with the
+cap still charged. It must sit directly across `C3`. 40 MΩ is a deliberate
+compromise: the existing 20.3 MΩ chain already burns 3.08 mW at 250 V against
+roughly 5.9 mW average going into the cap, so **divider standing loss is the
+same order as the charge power** and directly costs rep rate. 40 MΩ adds
+1.56 mW (~15% slower recovery). Going higher trades that against surface
+leakage at 300 V.
+
+**Sizing.** `R19` 107 k gives 0.800 V at a 300 V rail — 20% under the ±1 V FSR,
+with common mode at 0.40 V inside the tight −0.8 / +0.6 V window. `C7` 1 nF
+against the ~107 kΩ source gives f_c = 1.5 kHz, three decades below CLKIN.
+`R17`/`R18` are two 20 M in series so each stands off ~150 V rather than 300 V.
+
+**`Q5` is a P-FET, not a BJT, on purpose.** `CHARGED` is active-LOW when HV is
+present, so the red LED needs an inverting stage. The 20 M chain limits `Q1`'s
+LED to ~12 µA, so its phototransistor only sinks tens of µA — a base resistor
+would load a node the existing `CHARGED` logic depends on. A gate draws nothing.
+
+**Indicator semantics, which are the point of the exercise:** red lit =
+definitely charged, and true with a dead MCU. **Red dark ≠ safe** — `Q1` goes
+dark somewhere in the tens of volts while `C3` still holds a hazardous charge.
+Only green claims safe, and only green has a measurement behind it. **Green must
+be blinked, never held solid**, so a latched pin on a hung CPU cannot fake it.
+That is a firmware requirement with no hardware enforcement.
+
+---
+
 ## Open items
+
+**On `feat/isolated-hv-sense`, in rough order:**
+
+1. **`U4` footprint is unverified.** It is set to
+   `Package_DIP:SMDIP-4_W7.62mm`, but Toshiba specs the 2.54SOP4 lead span at
+   ~7.0 mm against that footprint's 7.62 mm row spacing. Recorded in `U4`'s
+   `Notes` property. **Check against the package drawing before fab.**
+2. **Firmware pin maps.** `bringup.py` and `chargetest.py` still expect
+   `PIN_HV_DET_LED = GP6`; `D6` is hardware-driven now and GP6 is free.
+3. **`tests/test_schematic.py` expected-refs list** needs the 20 new designators.
+4. **BOM fields.** `U3`, `U4`, `Q5`, `SW4` have MPN/Manufacturer/DigiKey set;
+   `R17`–`R22`, `C7`–`C15` and `D10` are still bare. Use
+   `tools/normalize_fields.py` — note the Konnect *batch* editor only updates
+   fields that already exist, though `edit_schematic_component` can create them.
+5. **PCB.** Nothing placed or routed. This is the HV-section relayout, and it is
+   the bulk of the remaining work — `U3` is a 7.5 × 10.3 mm SOIC-16W that has to
+   straddle the barrier (y ≈ 128–135) *inside* the shield, in the densest part of
+   the board, with `CLKIN`/`DOUT` routing out under the shield wall. That region
+   almost certainly cannot absorb it without rearranging `Q1`/`T1`/`T2`/`R1`.
+6. **Re-check the 1 mm barrier rule** against the SOIC-16W and 4-SOP packages.
 
 **MH1's screw head clears `R5` by 0.090 mm.** MH1 (136.140, 126.022); a #4 head
 (≈2.75 mm radius) reaches to within 0.090 mm of `R5`'s nearest pad edge and
@@ -274,8 +394,38 @@ Models are gitignored (Hammond's are not under this project's licence);
 - **Charge voltage is ~250 V**, from the firmware, not from component ratings.
   C3 is 630 V rated and Q2 650 V; those are headroom. The upstream barrier
   design rating is 400 V and the hi-pot proof test was 1 kV.
-- **The isolation barrier is crossed by exactly three parts** — `T1`, `T2`
-  (transformers) and `Q1` (optocoupler). Nothing on `HV_RTN` touches `GND`.
+- **The rail can go to 300 V for free, and 301 V is expensive.** The `.dru`
+  justifies every HV clearance against IPC-2221A's **171–300 V** bucket. At
+  300 V nothing changes but a divider ratio and a firmware threshold, and every
+  part stays comfortable (`C3` 48%, `Q2` 46%, `D2` 50%, `J4` 75% of rating) for
+  +44% energy. Above 300 V you move bucket, the `.dru`'s reasoning is void, and
+  every gap needs re-deriving starting from the 0.498 mm worst case. 400 V also
+  puts `D2` at 67% and sits exactly on the barrier's 400 V design rating. Note
+  the gain is smaller than arithmetic suggests: `C3` is X7T and loses
+  significant capacitance under DC bias — **nobody has measured the actual
+  stored energy.**
+- **Do not try to put a linear optocoupler (IL300/HCNR20x) on the sense chain.**
+  It was tried and the datasheet numbers kill it. IL300's K2 is specified at
+  I_F = 10 mA and its linearity is characterised only from 2–10 mA; the 20 M
+  chain gives **12.3 µA**, which is 163× below that. Signal is 111 nA against a
+  25 nA max dark current — 22% error, doubling every 10 °C. Getting in-spec
+  needs 125 kΩ total, i.e. a 59 ms bleed and 0.5 W burned continuously.
+  The general rule: **an LED needs current, a voltage amplifier does not.** Any
+  optocoupler hits this wall; the AMC3336's 1 GΩ input does not.
+- **AMC3336 `CLKIN` must be MCU-generated, not a crystal or XO.** A bare crystal
+  cannot drive it at all (CLKIN is a digital input with a 1.5 MΩ pulldown, not an
+  oscillator inverter). An XO would work electrically but makes the firmware
+  harder: the bitstream is synchronous to CLKIN, and PIO cannot be clocked from
+  an external pin, so you would be edge-detecting an async clock. PIO-generated
+  is synchronous by construction — 125 MHz ÷ 8 = 15.625 MHz, and ÷8 stays in the
+  9–21 MHz window at 150 MHz (RP2350) too. Jitter is irrelevant on a DC rail.
+- **The isolation barrier is crossed by five parts** on
+  `feat/isolated-hv-sense`, three on `rev2026` — `T1`, `T2` (transformers),
+  `Q1` (optocoupler), and on the feature branch also `U3` (AMC3336, SOIC-16W)
+  and `U4` (TLP170J, 4-SOP). Nothing on `HV_RTN` touches `GND`. **The 1 mm
+  `HV isolation barrier` DRC rule has not yet been checked against the two new
+  packages** — the SOIC-16W's ~8 mm input-to-output creepage should pass
+  comfortably; the 4-SOP needs measuring.
 - **The HV sense chain is** `HV_RAIL → R2 (300K) → HV_SENSE → R1 (20M) →
   Q1 LED → HV_RTN`. `SW3` and **`J4`** are both in parallel across
   `HV_SENSE ↔ HV_RTN`, i.e. across `R1` + the opto LED. Pressing SW3 shunts the
@@ -319,6 +469,17 @@ Models are gitignored (Hammond's are not under this project's licence);
 - Python via `uv` only (`uv run --with pytest pytest`), never bare `pip`.
 - Symbols and footprints resolve as `picoemp:<name>` from `lib/` via
   `${KIPRJMOD}`. Keep project-local; do not depend on system libraries.
+- **All KiCad file edits go through the Konnect MCP tools**, never text editing —
+  UUIDs and cross-references do not survive it, and this file has already been
+  through one designator scramble. Two things that cost time:
+  **(a)** the placement tools resolve symbols only from KiCad's *global* library
+  table, so `picoemp:<name>` fails with "Library 'picoemp' not found" even though
+  `sym-lib-table` declares it. Project-local parts have to be placed in eeschema
+  by hand, then wired via MCP.
+  **(b)** tool names moved from `mcp__konnect__*` to `mcp__kicad__*` for most
+  operations after a server restart, while the toolset loader stayed on
+  `mcp__konnect__`. If a tool is missing, re-run `load_toolset` and search both
+  prefixes.
 - BOM fields are normalised to `MPN` / `Manufacturer` / `DigiKey`.
   `tools/normalize_fields.py` sets and adds properties but does not delete them.
 - `out/`, `__pycache__/` and `.pytest_cache/` are gitignored. Analysis output
