@@ -1,7 +1,14 @@
 out/
 __pycache__/
 .pytest_cache/
-lib/models/Hammond_*.step
 preview-*
-lib/models/SMA_Linx_*.step
 analysis/
+
+# Third-party 3D models — not under this project's licence.
+# tools/fetch_hammond_shield_model.py and tools/prepare_linx_sma_model.py
+# re-download and re-axe these.
+lib/models/Hammond_*.step
+lib/models/SMA_Linx_*.step
+
+# Regenerable: plugin output. See production/README.md.
+bom/ibom.html

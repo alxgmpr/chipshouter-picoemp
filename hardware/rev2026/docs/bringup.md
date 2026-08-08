@@ -1,9 +1,12 @@
-# Rev-2026 Bring-Up Log — Board #1
+# Rev-2026 bring-up log — board #1
 
-Plan: `docs/superpowers/plans/2026-08-05-picoemp-rev2026-bringup.md`
-Spec: `docs/superpowers/specs/2026-08-05-picoemp-rev2026-bringup-design.md`
+A record of what was actually measured on the first assembled board, in the
+order it happened, including the two things that went wrong and why.
 
 Equipment: DMM; bench PSU with current limit. No scope, no HV probe.
+
+See also [design-notes.md](design-notes.md) for why the board is built this way,
+and [open-issues.md](open-issues.md) for what remains unverified.
 
 ---
 
@@ -302,17 +305,19 @@ CHARGED, and discharges on SW3. Stock firmware is installed as `main.py`.
 - **No injection tip, so pulsing has never been exercised.** Suggested parts:
   Würth `744710603` inductor plus a `CONSMA013.062` edge-mount SMA male. See
   `hardware/injection_tips/README.md`.
-- **Mounting holes mirrored.** MH1/MH2 sit on the opposite diagonal to the
-  1551G's screw bores; the shield is Kapton-taped rather than screwed. The
-  proposed fix is to swap MH1's and MH2's Y coordinates — but see the next
-  item before editing anything.
-- **The shield seats flush, contradicting the layout record.** `CLAUDE.md` and
-  `LAYOUT-HANDOFF.md` both state Q2 fouls the shield rim with 0.00 mm clear
-  against 2.32 mm needed, and call it the last open item before the shield
-  sits flat. It sits flat on the physical board. Either that note is stale or
-  the fabbed board differs from the working copy — which is itself on the
-  `+25.4 mm` shifted layout rather than the `rev2026` geometry. Establish
-  which revision was actually fabbed before touching MH1/MH2.
+- ~~**Mounting holes mirrored.**~~ **Resolved 2026-08-05.** MH1/MH2 did sit on
+  the opposite diagonal to the 1551G's screw bores, so the shield was
+  Kapton-taped rather than screwed on board #1. They are now MH1
+  (136.140, 126.022) and MH2 (112.640, 164.522), which are the shield screw
+  axes. The cause was reading the bore positions straight out of the Hammond
+  model without mapping through KiCad's Y negation — see design-notes.md. Note
+  that no rotation fixes a mirrored diagonal; only a flip would, which would put
+  the box on from the underside.
+- ~~**The shield seats flush, contradicting the layout record.**~~ **Resolved.**
+  The physical board was right and the note was stale: `Q2` was recorded as
+  fouling the rim with 0.00 mm clear against 2.32 mm needed, and it in fact
+  clears by 1.327 mm. Three other parts do still intrude on the rim band — see
+  [open-issues.md](open-issues.md).
 - **Phase 1's 0.87 mA draw was never explained**, and the cross-check with
   MicroPython running was not taken.
 - **Upstream `cspico_simple.py` has the CHARGED two-pad defect** described

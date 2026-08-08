@@ -19,3 +19,15 @@ fp-info-cache
 # BOM skill working files
 datasheets/
 bom/orders/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Agent tooling / working state
+.claude/
+.superpowers/
+*.mcp-backups/
+analysis/

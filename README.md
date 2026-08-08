@@ -10,6 +10,69 @@ The PicoEMP is a low-cost Electromagnetic Fault Injection (EMFI) tool, designed 
 
 You can see some details of the design in the [Intro Video](https://www.youtube.com/watch?v=nB5arJi-tVE).
 
+---
+
+## Rev-2026 — a KiCad rework of REV04 (this fork)
+
+This fork adds **[`hardware/rev2026/`](hardware/rev2026/)**, a KiCad 10 port and
+rework of the REV04 board. Upstream ships Altium sources and gerbers; this is an
+editable KiCad project you can actually modify, with the design rules that matter
+written down and enforced.
+
+**What's different from REV04:**
+
+* **Two upstream bugs fixed** — `R9` carried `R4`'s part data (75 Ω MPN on a 2 k
+  part), and `C5` had no value.
+* **A buffered trigger front-end** — a 74LVC1G17 Schmitt buffer with a series
+  resistor and pulldown, plus an optional SMA input, instead of running the
+  trigger straight into the Pico.
+* **A bigger HV shield.** The 5.08 mm Phoenix terminal block is 13.80 mm tall and
+  does not fit under upstream's 1551B half-shell, which gives 5.80 mm. This board
+  uses an **inverted Hammond 1551G box** with 15.05 mm of clear height.
+* **The 1 mm isolation barrier is enforced by a DRC rule** rather than by
+  convention, with its reasoning and sources recorded in
+  [`picoemp-rev2026.kicad_dru`](hardware/rev2026/picoemp-rev2026.kicad_dru).
+* **All header footprints corrected** from 1.00/1.27 mm to 2.54 mm.
+
+### Building one
+
+1. **Boards** — upload
+   [`hardware/rev2026/production/picoemp-rev2026-gerbers.zip`](hardware/rev2026/production/)
+   to any fab. Two layers, 1.6 mm, 40.010 × 130.000 mm. The 1.6 mm thickness is
+   required: the edge-mount SMA clamps the board edge and is specified for 0.062″.
+2. **Parts** — [`production/bom.csv`](hardware/rev2026/production/) has MPNs,
+   manufacturers and DigiKey part numbers for all 46 placed parts.
+   [`bom/digikey-1board.txt`](hardware/rev2026/bom/) and `digikey-5boards.txt`
+   are paste-ready DigiKey cart lists. **`R16` is DNP — do not fit it.**
+3. **Shield** — Hammond 1551G, inverted, lid used as an underside cover on the
+   same two #4 × ½″ screws. Trim `J4`'s pins to clear the lid's 3.05 mm recess.
+4. **Firmware** — unchanged from upstream, in
+   [`firmware/micropython/`](firmware/micropython/). This port does not modify it.
+5. **Bring it up** — follow
+   [`docs/bringup.md`](hardware/rev2026/docs/bringup.md), which is a real log
+   from a real board rather than a checklist someone imagined.
+
+**Read [`production/README.md`](hardware/rev2026/production/) and
+[`docs/open-issues.md`](hardware/rev2026/docs/open-issues.md) before ordering.**
+Nobody has fabbed from the current files yet — board #1 was built from an earlier
+layout — and several known-imperfect items are not DRC violations, so no
+automated check will catch them.
+
+### Status
+
+Both gates pass: 90 tests, and DRC reports 0 violations, 0 unconnected items and
+0 schematic-parity issues. One board has been assembled and brought up: it
+charges to roughly 261 V in about 2.1 seconds, asserts `CHARGED`, and discharges
+on the button. **Pulsing has never been exercised** — there was no injection tip.
+
+Full documentation: **[`hardware/rev2026/docs/`](hardware/rev2026/docs/)**.
+
+> ⚠️ Everything in the safety notes below applies to this board too. It charges a
+> capacitor to roughly 250 V, and the capacitor holds charge after power is
+> removed.
+
+---
+
 ## Thanks / Contributors
 
 PicoEMP is a community-focused project, with major contributions from:
