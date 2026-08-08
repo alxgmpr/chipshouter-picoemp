@@ -227,6 +227,597 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Analog_ADC:AMC3336"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at -1.27 22.86 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "AMC3336"
+				(at 0 20.32 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm"
+				(at 31.75 41.91 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/amc3336.pdf"
+				(at 33.02 39.37 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Reinforced Isolated Delta-Sigma Modulator With Integrated DC/DC Converter, SOIC-16W"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "isolated adc delta sigma integrated power supply"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOIC*7.5x10.3mm*P1.27mm*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "AMC3336_0_1"
+				(rectangle
+					(start -15.24 15.24)
+					(end 15.24 -15.24)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 15.24) (xy 0 13.97)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 13.462) (xy 0 12.192)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 11.684) (xy 0 10.414)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 9.906) (xy 0 8.636)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 8.128) (xy 0 6.858)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 6.35) (xy 0 5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 4.572) (xy 0 3.302)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.794) (xy 0 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.016) (xy 0 -0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -0.762) (xy 0 -2.032)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -4.318) (xy 0 -5.588)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -6.096) (xy 0 -7.366)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -7.874) (xy 0 -9.144)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -9.652) (xy 0 -10.922)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -11.43) (xy 0 -12.7)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -13.208) (xy 0 -14.478)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "AMC3336_1_1"
+				(pin power_out line
+					(at -17.78 12.7 0)
+					(length 2.54)
+					(name "DCDC_OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at -17.78 7.62 0)
+					(length 2.54)
+					(name "DCDC_HGND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -17.78 2.54 0)
+					(length 2.54)
+					(name "HLDO_IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -7.62 -15.24 90)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at -17.78 0 0)
+					(length 2.54)
+					(name "HLDO_OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -17.78 -5.08 0)
+					(length 2.54)
+					(name "INP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -17.78 -12.7 0)
+					(length 2.54)
+					(name "INN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -5.08 -17.78 90)
+					(length 2.54)
+					(name "HGND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 5.08 -17.78 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 17.78 -10.16 180)
+					(length 2.54)
+					(name "DOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 17.78 -7.62 180)
+					(length 2.54)
+					(name "CLKIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 5.08 17.78 270)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 17.78 12.7 180)
+					(length 2.54)
+					(name "LDO_OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 17.78 -2.54 180)
+					(length 2.54)
+					(name "DIAG"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 17.78 5.08 180)
+					(length 2.54)
+					(name "DCDC_GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 17.78 10.16 180)
+					(length 2.54)
+					(name "DCDC_IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:Conn_01x02_Pin"
 			(pin_names
 				(offset 1.016)
@@ -4907,6 +5498,155 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "picoemp:TLP170J"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 0 7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TLP170J"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TLP170J_0_1"
+				(rectangle
+					(start -5.08 -5.08)
+					(end 5.08 5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 2.54 180)
+					(length 2.54)
+					(name "OUT1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name "OUT2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+3V3"
 			(power global)
 			(pin_numbers
@@ -5790,20 +6530,12 @@
 		(uuid "85e0e4b3-4e1c-4b1b-9878-71cc4b039804")
 	)
 	(no_connect
-		(at 119.38 124.46)
-		(uuid "a1e95763-1d74-4e9f-b3c9-9fe560343eb6")
-	)
-	(no_connect
 		(at 119.38 86.36)
 		(uuid "a2517ad5-04e8-4c20-b424-8c2056625cf7")
 	)
 	(no_connect
 		(at 165.1 106.68)
 		(uuid "a639584b-301f-4c69-bb37-3132b48610ce")
-	)
-	(no_connect
-		(at 119.38 121.92)
-		(uuid "a692a694-bbc0-4732-a400-3b933ed78270")
 	)
 	(no_connect
 		(at 137.16 78.74)
@@ -7646,6 +8378,16 @@
 		)
 		(uuid "0b962cbc-ee0b-4473-bf46-bab5602c297c")
 	)
+	(label "HV_SENSE_ADC"
+		(at 80.01 267.97 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0e17eec0-ab1e-4277-8002-502147cc025a")
+	)
 	(label "HVPULSE"
 		(at 191.77 82.55 0)
 		(effects
@@ -7655,6 +8397,26 @@
 			(justify left bottom)
 		)
 		(uuid "11bfb702-af1e-4a88-b3ae-758ed4293c3a")
+	)
+	(label "HV_RTN"
+		(at 105.41 327.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "15fa0467-2067-48be-8601-0561612c87b5")
+	)
+	(label "HV_RTN"
+		(at 100.33 292.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1bc76808-8886-4193-a0f9-e96512b08833")
 	)
 	(label "GP5"
 		(at 109.22 114.3 0)
@@ -7676,6 +8438,16 @@
 		)
 		(uuid "234c2753-4cd9-4fab-a06e-ba4e5956dba5")
 	)
+	(label "HV_DIV_A"
+		(at 80.01 252.73 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2370ab30-9caa-45cf-9a98-54606465c591")
+	)
 	(label "VBUS"
 		(at 142.24 63.5 0)
 		(effects
@@ -7685,6 +8457,26 @@
 			(justify left bottom)
 		)
 		(uuid "24d700ae-a658-42e7-b479-14c935088ba5")
+	)
+	(label "SD_DAT"
+		(at 147.32 299.72 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "25afc31e-25ed-4b4c-92d0-d0fbd5836196")
+	)
+	(label "GND"
+		(at 165.1 327.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2906eea6-708c-4277-ad2a-3a89f4565824")
 	)
 	(label "GP0"
 		(at 337.82 68.58 0)
@@ -7696,6 +8488,36 @@
 		)
 		(uuid "293d97d0-206c-4276-a233-b04c13f372ee")
 	)
+	(label "HV_DCDC"
+		(at 111.76 276.86 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2ac696dd-8bd7-4fd1-b39b-845868f0876b")
+	)
+	(label "HV_DCDC"
+		(at 115.57 247.65 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2b90f9b9-0fd8-4037-be1c-cf197b3d3de4")
+	)
+	(label "HV_RTN"
+		(at 115.57 252.73 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2d673a2a-3dde-48c4-95ec-c80ca0898e4e")
+	)
 	(label "LED_CHARGE_A"
 		(at 229.87 114.3 0)
 		(effects
@@ -7705,6 +8527,16 @@
 			(justify left bottom)
 		)
 		(uuid "2d874c50-39a7-456e-84ac-dca9e9d3ec41")
+	)
+	(label "HV_HLDO"
+		(at 111.76 289.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "32b07cb1-61ea-4b70-bd34-8145265e6dc4")
 	)
 	(label "CHARGED"
 		(at 182.88 238.76 0)
@@ -7726,6 +8558,46 @@
 		)
 		(uuid "372a52b6-2d7d-475d-8a99-5141a69a62a9")
 	)
+	(label "HV_DCDC"
+		(at 105.41 247.65 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3abb0009-ac9d-4645-af2b-aa70aeec9cf0")
+	)
+	(label "HV_RTN"
+		(at 95.25 252.73 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3ae7c8fa-3f7a-4a14-854a-5fae0fe5b519")
+	)
+	(label "SD_DAT"
+		(at 119.38 124.46 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3d654944-11d9-4760-b55e-5c2da1bb999a")
+	)
+	(label "HV_RTN"
+		(at 124.46 307.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "40596a1f-afae-4d82-bc3e-6161884ee089")
+	)
 	(label "LED_HV_DET_A"
 		(at 69.85 116.84 0)
 		(effects
@@ -7745,6 +8617,56 @@
 			(justify left bottom)
 		)
 		(uuid "409b970a-e72a-41e8-9940-63f042dede4d")
+	)
+	(label "SD_LDO"
+		(at 147.32 279.4 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "42dc400e-f161-4232-bb63-317764df2bf1")
+	)
+	(label "SD_DIAG"
+		(at 147.32 292.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4b404206-8078-4d32-b4a7-35e135441a13")
+	)
+	(label "HV_HLDO"
+		(at 105.41 322.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4f9c8bd2-cc8c-45e0-a71a-b0ab07b93565")
+	)
+	(label "GND"
+		(at 175.26 327.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "55221ade-b03e-47aa-80f5-076bd8474c38")
+	)
+	(label "HV_DIV_A"
+		(at 80.01 262.89 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5767139c-ba20-4b01-94ff-8aef90cf65b2")
 	)
 	(label "HV_SENSE"
 		(at 381 218.44 180)
@@ -7766,6 +8688,16 @@
 		)
 		(uuid "5b68a4fc-4aae-4b4d-90aa-f9b14fde4cde")
 	)
+	(label "HV_DCDC"
+		(at 95.25 247.65 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5d95b60a-47e6-458a-8a9d-1bfe22536df4")
+	)
 	(label "STATUS_LED"
 		(at 91.44 119.38 0)
 		(effects
@@ -7786,6 +8718,26 @@
 		)
 		(uuid "5fdd4b70-4ddf-4acc-9495-bc26e157f53b")
 	)
+	(label "SD_CLK"
+		(at 147.32 297.18 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "628a19d7-8af0-41d3-81a6-cfd0b754a90a")
+	)
+	(label "+3V3"
+		(at 165.1 322.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "669599fb-c156-4a73-a55f-c4e34ba903ce")
+	)
 	(label "HVPWM"
 		(at 191.77 85.09 0)
 		(effects
@@ -7795,6 +8747,16 @@
 			(justify left bottom)
 		)
 		(uuid "69f9142a-83f7-4415-8f9f-eac1a6d0dcc0")
+	)
+	(label "HV_RTN"
+		(at 111.76 281.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6bda021e-6984-4104-a606-7c2845379660")
 	)
 	(label "HV_RTN"
 		(at 345.44 292.1 0)
@@ -7815,6 +8777,16 @@
 			(justify left bottom)
 		)
 		(uuid "740108d6-2d70-4d88-ab3f-9c6bd9ecbc00")
+	)
+	(label "SD_DIAG"
+		(at 180.34 297.18 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "75b25213-23f8-4d5d-9a3b-ed1db74d62b2")
 	)
 	(label "PRI_CLAMP"
 		(at 193.04 309.88 0)
@@ -7886,6 +8858,16 @@
 		)
 		(uuid "84d214b8-dfc4-4f9c-b512-9ab87e8d289c")
 	)
+	(label "HV_SENSE_ADC"
+		(at 100.33 287.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8c1ed782-1d05-4f4d-9c55-f73c1e1c69cb")
+	)
 	(label "TRIG_IN"
 		(at 109.22 78.74 0)
 		(effects
@@ -7905,6 +8887,16 @@
 			(justify left bottom)
 		)
 		(uuid "8d3953be-4b09-4b33-9011-cc909b29984b")
+	)
+	(label "SD_CLK"
+		(at 119.38 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8e7e9088-ddfa-4964-9410-db2135b27ad9")
 	)
 	(label "GP0"
 		(at 392.43 83.82 0)
@@ -7926,6 +8918,26 @@
 		)
 		(uuid "9e41903c-7992-47b8-b300-b7736e6d46b3")
 	)
+	(label "+3V3"
+		(at 180.34 302.26 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9ecc17d1-2a6a-4b7d-8092-7f89bf19bce4")
+	)
+	(label "HV_RTN"
+		(at 105.41 252.73 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a18eeb03-00d8-4b4b-b921-21997506bc29")
+	)
 	(label "HV_RAIL"
 		(at 345.44 281.94 0)
 		(effects
@@ -7946,6 +8958,26 @@
 		)
 		(uuid "a62bd42d-60ce-4ab6-aeec-d0cd89d13812")
 	)
+	(label "HV_RTN"
+		(at 111.76 302.26 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a6501915-91f8-44d2-b627-78c718c1ed92")
+	)
+	(label "HV_RTN"
+		(at 95.25 327.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a6f0dc43-44b6-4c45-bdbc-f69b48acbf3f")
+	)
 	(label "TRIG_BUF"
 		(at 342.9 83.82 0)
 		(effects
@@ -7955,6 +8987,26 @@
 			(justify left bottom)
 		)
 		(uuid "a7d18d15-0139-4abc-b67c-c8a8bbf2d432")
+	)
+	(label "HV_DCDC"
+		(at 111.76 287.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ab7eb05e-884f-473a-b96f-5ce9b21977b7")
+	)
+	(label "HV_HLDO"
+		(at 95.25 322.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "af008927-8ad9-4001-87c8-f33a9c64a62a")
 	)
 	(label "Q3_GATE"
 		(at 233.68 294.64 0)
@@ -7966,6 +9018,26 @@
 		)
 		(uuid "b1945cfd-e217-403e-b633-ab173b7ea182")
 	)
+	(label "HV_RAIL"
+		(at 80.01 247.65 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b3342266-5d33-443d-b36c-6e5d9b0d83e3")
+	)
+	(label "SD_LDO"
+		(at 147.32 276.86 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b33bb8ee-3b7d-404a-bace-a76aa7a6989a")
+	)
 	(label "T1_PRI_B"
 		(at 274.32 294.64 0)
 		(effects
@@ -7975,6 +9047,46 @@
 			(justify left bottom)
 		)
 		(uuid "b380a3d1-7f7e-423e-9588-077cc5ef4b62")
+	)
+	(label "HV_SENSE_ADC"
+		(at 111.76 294.64 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b5c7dc7c-b844-4a3b-935d-c9c011db4c40")
+	)
+	(label "+3V3"
+		(at 175.26 322.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b6a80b1e-a37e-433a-9ba0-a81e436c1a43")
+	)
+	(label "GND"
+		(at 134.62 307.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b7e63c95-b099-49c3-b012-acb32a796cf0")
+	)
+	(label "+3V3"
+		(at 134.62 271.78 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "bd75d7bb-ef83-495b-afca-a85e30e4a1ab")
 	)
 	(label "T2_PRI_A"
 		(at 261.62 350.52 0)
@@ -8006,6 +9118,16 @@
 		)
 		(uuid "c6bf0a90-bd85-4539-b853-5b437c91afe3")
 	)
+	(label "GND"
+		(at 147.32 284.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c8c3c0f7-acf3-4eab-a9ef-24d9220a1947")
+	)
 	(label "HVPULSE"
 		(at 107.95 137.16 0)
 		(effects
@@ -8016,6 +9138,16 @@
 		)
 		(uuid "d0847690-1b9a-404a-abcf-f7d2f0945a48")
 	)
+	(label "HV_SENSE_ADC"
+		(at 80.01 281.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d664ab18-2921-404c-93a7-a4b33cb82d15")
+	)
 	(label "HV_DET_LED"
 		(at 91.44 116.84 0)
 		(effects
@@ -8025,6 +9157,46 @@
 			(justify left bottom)
 		)
 		(uuid "d7eb4adc-407d-432a-b8bc-b77f0bfcb180")
+	)
+	(label "GND"
+		(at 170.18 252.73 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "dd9de6a0-ada3-4543-9759-0166446eb942")
+	)
+	(label "SD_DIAG"
+		(at 119.38 127 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e07fddf1-fbc7-40a8-b90b-3ca74ca4e8fb")
+	)
+	(label "SD_LDO"
+		(at 170.18 247.65 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e3be4fcc-c7d6-43f6-83f0-b102821e9d80")
+	)
+	(label "HV_RTN"
+		(at 121.92 304.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e7122c1c-1f44-41f6-a652-560bb62c8f94")
 	)
 	(label "TRIG_IN"
 		(at 297.18 83.82 0)
@@ -8055,6 +9227,16 @@
 			(justify left bottom)
 		)
 		(uuid "f0ac43e8-1373-4cf7-ad3d-20a9b4ccd1d0")
+	)
+	(label "HV_RTN"
+		(at 80.01 287.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f382f1b5-1145-40bf-9374-6612a8fb34a6")
 	)
 	(label "CHARGED"
 		(at 191.77 80.01 0)
@@ -8961,6 +10143,84 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Small")
+		(at 165.1 325.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1accb0b6-af06-4c50-ae42-6d0772e91f3a")
+		(property "Reference" "C14"
+			(at 165.1 321.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1uF"
+			(at 165.1 328.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 165.1 325.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 165.1 325.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 165.1 325.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "19c31d2c-6382-493d-be70-d343ee997428")
+		)
+		(pin "2"
+			(uuid "9c66f4cc-e8c4-4bd1-8d80-2b71aab9e117")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "C14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 322.58 83.82 90)
 		(unit 1)
@@ -9079,6 +10339,126 @@
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
 					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Analog_ADC:AMC3336")
+		(at 129.54 289.56 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1e90fb81-f121-4cd9-b570-80616d307f8f")
+		(property "Reference" "U3"
+			(at 129.54 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AMC3336DWER"
+			(at 129.54 293.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm"
+			(at 129.54 289.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/amc3336.pdf"
+			(at 129.54 289.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 129.54 289.56 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "54cdd899-1487-4b66-8e93-1c4bc3632cc6")
+		)
+		(pin "2"
+			(uuid "a34a5cf1-9a5c-4acb-85ba-5c90340179e8")
+		)
+		(pin "3"
+			(uuid "d1d0d049-e056-46ce-b045-0adf23216ef5")
+		)
+		(pin "4"
+			(uuid "4a1d3179-e0dc-4f2f-a675-372e56f30597")
+		)
+		(pin "5"
+			(uuid "0cf1143f-cf63-406a-aaa7-339fcfdfb135")
+		)
+		(pin "6"
+			(uuid "5f455969-2827-4f23-bbd6-5cf796fa5898")
+		)
+		(pin "7"
+			(uuid "782470ed-2a4b-4840-b999-c4894e37abde")
+		)
+		(pin "8"
+			(uuid "950fdf4f-e67b-4320-b073-18951265243d")
+		)
+		(pin "9"
+			(uuid "20a2f788-998f-439e-9592-0b00235cbbe9")
+		)
+		(pin "10"
+			(uuid "827df0ad-6053-4c5e-b3ed-491403286543")
+		)
+		(pin "11"
+			(uuid "f527c560-3f37-47f2-817f-b806e6e426d9")
+		)
+		(pin "12"
+			(uuid "968ccab1-c952-4e08-99dc-48b38ff8fa4b")
+		)
+		(pin "13"
+			(uuid "c303ab6d-641b-40bb-a2cb-2e2f670f2029")
+		)
+		(pin "14"
+			(uuid "2a70186b-eea3-4aa1-9987-bb474564a0b9")
+		)
+		(pin "15"
+			(uuid "4415e7db-fddc-4dae-ab9e-c6c716206dac")
+		)
+		(pin "16"
+			(uuid "4eaaa205-0309-4a59-9220-1bda761130ba")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -9579,6 +10959,84 @@
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
 					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 180.34 299.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "361d63f2-78ab-4d17-aa03-449002624e5b")
+		(property "Reference" "R20"
+			(at 180.34 295.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "47k"
+			(at 180.34 303.53 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 180.34 299.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 180.34 299.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 180.34 299.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "043e132e-8519-4bc6-a171-bd20266abd7a")
+		)
+		(pin "2"
+			(uuid "2dc1ac27-9f81-42d4-a4a2-bb498352beb3")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "R20")
 					(unit 1)
 				)
 			)
@@ -10358,6 +11816,162 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Small")
+		(at 95.25 250.19 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4460ad9e-c27b-43b8-8a75-3128313dd0aa")
+		(property "Reference" "C8"
+			(at 95.25 246.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1uF"
+			(at 95.25 254 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 95.25 250.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 95.25 250.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 95.25 250.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "59c048b7-db3f-414c-a760-bf194debbbb5")
+		)
+		(pin "2"
+			(uuid "11cd5ead-ea98-4515-9676-f44a59147a95")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "C8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 105.41 250.19 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "44ca455f-c49e-4a6e-96a2-4e8fa7be2850")
+		(property "Reference" "C9"
+			(at 105.41 246.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1n"
+			(at 105.41 254 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 105.41 250.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 105.41 250.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 105.41 250.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f31e67b2-9a1a-4c3a-8035-11c87464b8f5")
+		)
+		(pin "2"
+			(uuid "bd093d24-6736-490e-b7ba-318f0b79c698")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3V3")
 		(at 256.54 228.6 0)
 		(unit 1)
@@ -10431,6 +12045,84 @@
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
 					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 80.01 265.43 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4ed5643d-6b61-4d24-8bf9-e84f8782983b")
+		(property "Reference" "R18"
+			(at 80.01 261.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "20M"
+			(at 80.01 269.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_2010_5025Metric"
+			(at 80.01 265.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 80.01 265.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 80.01 265.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "08cd48da-7cf6-432f-b7f5-0f5a8fcad8fa")
+		)
+		(pin "2"
+			(uuid "29b2c2e5-3fb1-4325-944d-fa7db102e6ee")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -10830,6 +12522,84 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Small")
+		(at 175.26 325.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "58ca768e-f43b-4e1f-aba3-342ff52a8f22")
+		(property "Reference" "C15"
+			(at 175.26 321.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1n"
+			(at 175.26 328.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 175.26 325.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 175.26 325.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 175.26 325.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7a71489f-8ef3-418d-8f26-75a9993eca47")
+		)
+		(pin "2"
+			(uuid "67eab621-6cf7-497a-b0ab-687bbebe78a3")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "C15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 350.52 335.28 270)
 		(unit 1)
@@ -11089,6 +12859,84 @@
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
 					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 105.41 325.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6005bb27-9412-4c92-83f8-764096648cfe")
+		(property "Reference" "C12"
+			(at 105.41 321.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100n"
+			(at 105.41 328.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 105.41 325.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 105.41 325.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 105.41 325.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3161a7c4-e6cd-409a-a87b-e01e31b1472f")
+		)
+		(pin "2"
+			(uuid "ccd9fb60-91e8-4a79-8618-ac02d01ad1f4")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -11556,6 +13404,84 @@
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
 					(reference "FID1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 332.74 190.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6fb05d04-0fb5-48dc-b68d-43946a774a02")
+		(property "Reference" "R21"
+			(at 332.74 186.69 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "680R"
+			(at 332.74 194.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 332.74 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 332.74 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 332.74 190.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a5a5f77c-c23c-495f-8dbb-14061cc8ceba")
+		)
+		(pin "2"
+			(uuid "d3013bbb-c99d-4d87-8b51-e240f8049c50")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "R21")
 					(unit 1)
 				)
 			)
@@ -12320,6 +14246,326 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Small")
+		(at 170.18 250.19 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8fc8e74a-59a7-4222-b38f-18e21abbf5b5")
+		(property "Reference" "C13"
+			(at 170.18 246.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100n"
+			(at 170.18 254 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 170.18 250.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.18 250.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 170.18 250.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4124c538-5404-4ab0-bb4f-1c793cc32fa5")
+		)
+		(pin "2"
+			(uuid "d503b927-f031-4aa8-8b75-e62dc0826e43")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 80.01 250.19 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "902dacda-9585-40b9-9249-4f28addf9131")
+		(property "Reference" "R17"
+			(at 80.01 246.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "20M"
+			(at 80.01 254 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_2010_5025Metric"
+			(at 80.01 250.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 80.01 250.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 80.01 250.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6192eb32-b969-4249-b049-1c8b3ab3abc9")
+		)
+		(pin "2"
+			(uuid "ad737239-bf59-4929-8d88-e548b3d50c12")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 100.33 289.56 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "918907b7-636f-4e32-b5ca-4b0bd875a252")
+		(property "Reference" "C7"
+			(at 100.33 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1n"
+			(at 100.33 293.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 100.33 289.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 100.33 289.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 100.33 289.56 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6a8af90b-b967-44db-a325-da21103bf13b")
+		)
+		(pin "2"
+			(uuid "cc523eae-d634-4be6-b724-7102c6756a4e")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "picoemp:TLP170J")
+		(at 110.49 482.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "91e8a40f-e8e9-4260-9bc1-792666a5ef2f")
+		(property "Reference" "U4"
+			(at 110.49 472.44 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TLP170J"
+			(at 110.49 474.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 110.49 482.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 110.49 482.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 110.49 482.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6c77e9a2-adcb-4f7a-a067-695a8acb1409")
+		)
+		(pin "2"
+			(uuid "950287bf-f7c4-4826-bac4-bff1bc6937d9")
+		)
+		(pin "3"
+			(uuid "e9df8c2a-9892-490c-a150-2c3cabb25536")
+		)
+		(pin "4"
+			(uuid "6bfbf859-f5a7-4ac1-b2dc-4654ad330bbe")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "U4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "picoemp:ATB322524")
 		(at 304.8 281.94 90)
 		(unit 1)
@@ -12756,6 +15002,84 @@
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
 					(reference "MH2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 80.01 284.48 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a06dbd8a-da36-4bf1-bf29-b93f593fc640")
+		(property "Reference" "R19"
+			(at 80.01 280.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "107k"
+			(at 80.01 288.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 80.01 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 80.01 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 80.01 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "829f4294-fe59-4b6a-bf7c-0f80ac1f87c0")
+		)
+		(pin "2"
+			(uuid "81067eca-d465-4fce-bff3-1eb005dcab8e")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -13750,6 +16074,84 @@
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
 					(reference "FID2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 115.57 250.19 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c16227c7-d6dc-49ec-854d-2b60f6782407")
+		(property "Reference" "C10"
+			(at 115.57 246.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100n"
+			(at 115.57 254 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 115.57 250.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 115.57 250.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 115.57 250.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c9c1f4c8-524a-41fd-9344-ff5db48a8b94")
+		)
+		(pin "2"
+			(uuid "cfe6c0b4-bdae-458f-8f1a-c0107149b304")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -15798,6 +18200,84 @@
 			(project "picoemp-rev2026"
 				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
 					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 95.25 325.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fce96141-c0a4-4bf5-8e91-3a00362789f0")
+		(property "Reference" "C11"
+			(at 95.25 321.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1uF"
+			(at 95.25 328.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 95.25 325.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 95.25 325.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 95.25 325.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "217434c2-e64d-4e7d-b8cb-c4cb2fe04563")
+		)
+		(pin "2"
+			(uuid "b83ac690-143c-49a7-bced-e75fbf93f6b4")
+		)
+		(instances
+			(project "picoemp-rev2026"
+				(path "/2587a454-e9b8-4dd2-940e-91a5ec62d2c9"
+					(reference "C11")
 					(unit 1)
 				)
 			)
