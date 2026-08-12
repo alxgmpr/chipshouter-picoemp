@@ -1,23 +1,36 @@
 import kicad_parse as kp
 
-# Every non-power reference expected in the design, post-Task-9.
+# Every non-power reference expected in the design.
 #
-# C6, J4 (the new trigger-input SMA), R14, R15, R16, and U2 are Task 9's
-# trigger front-end additions (see docs/superpowers/specs/
-# 2026-07-25-picoemp-rev2026-design.md section 6.4). J4 and R16 are DNP.
+# C6, J3 (the trigger-input SMA), R14, R15, R16 and U2 are the trigger
+# front-end (see docs/superpowers/specs/2026-07-25-picoemp-rev2026-design.md
+# section 6.4). R16 is the only DNP part -- it is an optional 0R link that
+# bypasses U2's Schmitt buffer, not a depopulated function.
+#
+# NOTE on designators: the Rev B repair (commit 4b62ed2) swapped the roles of
+# J3 and J4 and folded P1/P2/P3 into J5 and J6. J4 is the Phoenix HV terminal
+# block and IS populated; older notes calling J4 the trigger SMA or DNP are
+# stale.
+#
+# C7-C15, D10, Q5, R17-R22, SW4, U3 and U4 are the isolated HV sense block:
+# U3 AMC3336 + divider (R17/R18/R19) + decoupling, U4 TLP170J photorelay for
+# commanded discharge, SW4/D10 the SAFE button and green indicator, and Q5 the
+# P-FET that drives D6 from CHARGED in hardware.
 EXPECTED_REFS = {
     'C1', 'C2', 'C3', 'C5', 'C6',
-    'D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'D9',
+    'C7', 'C8', 'C9', 'C10', 'C11', 'C12', 'C13', 'C14', 'C15',
+    'D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'D9', 'D10',
     'FID1', 'FID2', 'FID3',
     'J1', 'J2', 'J3', 'J4',
     'MH1', 'MH2', 'MH3',
     'J5', 'J6',
-    'Q1', 'Q2', 'Q3', 'Q4',
+    'Q1', 'Q2', 'Q3', 'Q4', 'Q5',
     'R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R9',
     'R10', 'R11', 'R12', 'R13', 'R14', 'R15', 'R16',
-    'SW1', 'SW2', 'SW3',
+    'R17', 'R18', 'R19', 'R20', 'R21', 'R22',
+    'SW1', 'SW2', 'SW3', 'SW4',
     'T1', 'T2',
-    'U1', 'U2',
+    'U1', 'U2', 'U3', 'U4',
 }
 
 

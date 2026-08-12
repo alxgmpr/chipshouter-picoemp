@@ -18,7 +18,9 @@ PIN_CHARGED = 18
 # CHARGED lands on two Pico pads: GP18 (U1.24) and GP26/ADC0 (U1.31). Both
 # must be configured -- see the comment in main().
 PIN_CHARGED_ADC = 26
-PIN_HV_DET_LED = 6
+# D6 (red, HV present) is no longer driven from a GPIO. Q5 inverts CHARGED in
+# hardware, so the LED tracks the rail with no MCU in the path -- it will light
+# on its own during this test and stay true even if this script dies.
 
 # Empirically tuned upstream; ~250 V on C3. Do not retune.
 PWM_FREQ_HZ = 2500
@@ -61,8 +63,6 @@ def main():
     # an analog input disables its digital pull and gives us a real voltage.
     charged_adc = ADC(PIN_CHARGED_ADC)
     Pin(PIN_CHARGED, Pin.IN, None)
-    hv_led = Pin(PIN_HV_DET_LED, Pin.OUT)
-    hv_led.off()
 
     def volts():
         return charged_adc.read_u16() * 3.3 / 65535
@@ -101,22 +101,20 @@ def main():
         print('Press SW3 anyway before touching the board.')
         return
 
-    hv_led.on()
     print('CHARGED asserted after %d ms, at %.2f V.' % (elapsed, volts()))
+    print('D6 (red) should now be lit -- Q5 drives it from CHARGED directly.')
     print('Now press and hold SW3 for one second to discharge.')
 
     start = utime.ticks_ms()
     deadline = utime.ticks_add(start, DISCHARGE_TIMEOUT_MS)
     while utime.ticks_diff(deadline, utime.ticks_ms()) > 0:
         if volts() >= IDLE_MIN_V:
-            hv_led.off()
             print('CHARGED released after %d ms.'
                   % utime.ticks_diff(utime.ticks_ms(), start))
             print('=== RESULT: PASS ===')
             return
         utime.sleep_ms(10)
 
-    hv_led.off()
     print('=== RESULT: FAIL -- CHARGED still asserted after %d ms ==='
           % DISCHARGE_TIMEOUT_MS)
     print('The rail may still be live. Hold SW3 and do not touch J1.')

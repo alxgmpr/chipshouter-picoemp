@@ -1,9 +1,10 @@
 # PicoEMP bring-up self-test -- Phase 2
 #
-# Exercises every LED, both buttons and the CHARGED input, and prints a
-# structured result. It CANNOT make high voltage: GP20 (HVPWM) and GP14
-# (HVPULSE) are never referenced, so both stay high-Z and R5/R10 hold the
-# Q3/Q4 gates at GND. tests/test_bringup_firmware.py enforces that.
+# Exercises every driven LED, all three buttons and the CHARGED input, and
+# prints a structured result. It CANNOT make high voltage: GP20 (HVPWM) and
+# GP14 (HVPULSE) are never referenced, so both stay high-Z and R5/R10 hold the
+# Q3/Q4 gates at GND. GP12 (SAFE_DRV) is likewise never driven, so the U4
+# photorelay stays open. tests/test_bringup_firmware.py enforces that.
 #
 # Run with:  mpremote connect <port> run bringup.py
 # Do not save this as main.py -- it is a test, not the firmware.
@@ -12,19 +13,23 @@ from machine import Pin, ADC
 import utime
 
 PIN_STATUS_LED = 7
-PIN_HV_DET_LED = 6
 PIN_CHARGE_LED = 27
+PIN_SAFE_LED = 15
 PIN_ARM_SW = 28
 PIN_PULSE_SW = 11
+PIN_SAFE_SW = 13
 PIN_CHARGED = 18
 # CHARGED lands on two Pico pads: GP18 (U1.24) and GP26/ADC0 (U1.31). Both
 # must be configured -- see the comment in main().
 PIN_CHARGED_ADC = 26
 
+# D6 (red, HV present) is deliberately absent: Q5 inverts CHARGED in hardware,
+# so no GPIO drives it and there is nothing here to exercise. Confirm it by
+# charging the rail (chargetest.py), not by blinking it. GP6 is now free.
 LEDS = (
     ('STATUS', PIN_STATUS_LED),
-    ('HV_DET', PIN_HV_DET_LED),
     ('CHARGE', PIN_CHARGE_LED),
+    ('SAFE', PIN_SAFE_LED),
 )
 
 BUTTON_TIMEOUT_MS = 15000
@@ -68,12 +73,17 @@ def main():
 
     led_walk()
 
-    # Both buttons pull their net down to GND, so pressed reads low against
-    # a pullup. SW1 used to pull ARM_SW up to +3V3 instead; that asymmetry
-    # was inherited from upstream's milled single-layer prototype and was
-    # dropped when the arm switch moved to GND.
+    # All three buttons pull their net down to GND, so pressed reads low
+    # against a pullup. SW1 used to pull ARM_SW up to +3V3 instead; that
+    # asymmetry was inherited from upstream's milled single-layer prototype
+    # and was dropped when the arm switch moved to GND.
+    #
+    # SW4 (SAFE) is read only. It does NOT drive SAFE_DRV (GP12) here -- the
+    # photorelay is left alone so this script cannot actuate anything on the
+    # HV side, same reasoning as HVPWM/HVPULSE above.
     arm = Pin(PIN_ARM_SW, Pin.IN, Pin.PULL_UP)
     pulse = Pin(PIN_PULSE_SW, Pin.IN, Pin.PULL_UP)
+    safe = Pin(PIN_SAFE_SW, Pin.IN, Pin.PULL_UP)
     # CHARGED needs BOTH its pads configured. The RP2040 resets every GPIO
     # pad with its pull-down enabled (PADS_BANK0 reset value 0x56, bit 2
     # PDE=1), and CHARGED reaches two pads. Leaving GP26 at its default puts
@@ -94,8 +104,10 @@ def main():
 
     ok_arm = wait_for_press('ARM', arm, 0)
     ok_pulse = wait_for_press('PULSE', pulse, 0)
+    ok_safe = wait_for_press('SAFE', safe, 0)
 
-    print('=== RESULT: %s ===' % ('PASS' if (ok_arm and ok_pulse) else 'FAIL'))
+    ok = ok_arm and ok_pulse and ok_safe
+    print('=== RESULT: %s ===' % ('PASS' if ok else 'FAIL'))
 
 
 main()

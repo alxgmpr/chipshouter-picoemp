@@ -34,12 +34,17 @@ GPIO_TO_PAD = {
 }
 
 # bringup.py constant name -> net-name fragment its GPIO must land on.
+#
+# PIN_HV_DET_LED is deliberately absent. D6 was firmware-driven off GP6 until
+# Q5 (P-FET, gate on CHARGED) took it over in hardware, so there is no GPIO to
+# assert against and GP6 is free.
 BRINGUP_PINS = {
     'PIN_STATUS_LED': 'STATUS_LED',
-    'PIN_HV_DET_LED': 'HV_DET_LED',
     'PIN_CHARGE_LED': 'CHARGE_LED',
+    'PIN_SAFE_LED': 'SAFE_LED_DRV',
     'PIN_ARM_SW': 'ARM_SW',
     'PIN_PULSE_SW': 'PULSE_SW',
+    'PIN_SAFE_SW': 'SAFE_SW',
     'PIN_CHARGED': 'CHARGED',
 }
 
@@ -148,10 +153,11 @@ def test_never_references_pwm(script):
 
 def test_chargetest_pin_map_matches_netlist(node_to_net):
     """chargetest.py's own pin constants land on the right nets."""
+    # PIN_HV_DET_LED is gone: Q5 drives D6 from CHARGED in hardware, so
+    # chargetest no longer touches a GPIO for it. See BRINGUP_PINS above.
     expected = {
         'PIN_HVPWM': 'HVPWM',
         'PIN_CHARGED': 'CHARGED',
-        'PIN_HV_DET_LED': 'HV_DET_LED',
     }
     consts = _constants(CHARGETEST)
     for name, fragment in expected.items():
